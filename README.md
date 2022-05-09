@@ -14,17 +14,17 @@ d) Some SBML models incorporate ``events'', which are discontinuous changes in m
 
 Based on the manuscript, the exemplar SBML models along with their bond graph equivalents are as follows:
 
-1. BIOMD0000000017: Pyruvate distribution
+**1. BIOMD0000000017:** Pyruvate distribution
 All the reactions have arbitrary formulations but they are all irreversible. We tried to approximate them with irreversible mass action formulation.
 
-2. MODEL1004070000: The pentose phosphate pathway
+**2. MODEL1004070000:** The pentose phosphate pathway
 The reactions were described in reversible and irreversible mass action kinetics.
 
 The composition of the two bond graph models is given in:
 
-3. GeneralApproachGit
+**3. GeneralApproachGit**
 
 Since we couldn't find a model that would both meet our criteria and include all the four types of supported reactions (reversible/irreversible mass action and reversible/irreversible Michaelis Menten), we created our desired SBML model: 
 
-4. reversibleMA_reversibleMM_irreversibleMM: includes all four types of supported reactions.
+**4. reversibleMA_reversibleMM_irreversibleMM:** includes all four types of supported reactions.
 
