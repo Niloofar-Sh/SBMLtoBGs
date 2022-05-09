@@ -26,5 +26,5 @@ The composition of the two bond graph models is given in:
 
 Since we couldn't find a model that would both meet our criteria and include all the four types of supported reactions (reversible/irreversible mass action and reversible/irreversible Michaelis Menten), we created our desired SBML model: 
 
-**4. reversibleMA_reversibleMM_irreversibleMM:** includes all four types of supported reactions. Find the files here: [https://github.com/Niloofar-Sh/SBMLtoBGs/blob/main/reversibleMA_reversibleMM_irreversibleMM/reversMAMM_irreversMMMA.ipynb].
+**4. reversibleMA_reversibleMM_irreversibleMM:** includes all four types of supported reactions. Find the Jupyter file here: [https://github.com/Niloofar-Sh/SBMLtoBGs/blob/main/reversibleMA_reversibleMM_irreversibleMM/reversMAMM_irreversMMMA.ipynb].
 
