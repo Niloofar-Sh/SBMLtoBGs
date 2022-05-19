@@ -30,3 +30,5 @@ Since we couldn't find a model that would both meet our criteria and include all
 
 **4. reversibleMA_reversibleMM_irreversibleMA_irreversibleMM:** includes all four types of supported reactions. Find the Jupyter file here: [https://github.com/Niloofar-Sh/SBMLtoBGs/blob/main/reversibleMA_reversibleMM_irreversibleMA_irreversibleMM/reversMAMM_irreversMMMA.ipynb].
 
+**5. Verified_other_conversions:** includes other SBML models that have been converted into bond graphs using our function. Find the files here: [https://github.com/Niloofar-Sh/SBMLtoBGs/tree/main/Verified_other_conversions]
+
