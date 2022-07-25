@@ -1,0 +1,1852 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" metaid="_061622" level="2" version="4">
+  <model metaid="_061635" id="Houser2012_pheromone_Ste12" name="Houser2012_pheromone_Ste12">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This model is from the article:      <br/>
+        <strong>Positive roles for negative regulators in the mating response of yeast.</strong>
+        <br/>
+          Houser JR, Ford E, Nagiec MJ, Errede B, Elston TC.      <em>Mol Syst Biol</em>
+          2012 June 5;8:586      <a href="http://www.ncbi.nlm.nih.gov/pubmed/22669614">22669614</a>
+          ,      <br/>
+        <strong>Abstract:</strong>
+        <br/>
+          All cells must detect and respond to changes in their environment, often through changes in gene expression. The yeast pheromone pathway has been extensively characterized, and is an ideal system for studying transcriptional regulation. Here we combine computational and experimental approaches to study transcriptional regulation mediated by Ste12, the key transcription factor in the pheromone response. Our mathematical model is able to explain multiple counterintuitive experimental results and led to several novel findings. First, we found that the transcriptional repressors Dig1 and Dig2 positively affect transcription by stabilizing Ste12. This stabilization through protein-protein interactions creates a large pool of Ste12 that is rapidly activated following pheromone stimulation. Second, we found that protein degradation follows saturating kinetics, explaining the long half-life of Ste12 in mutants expressing elevated amounts of Ste12. Finally, our model reveals a novel mechanism for robust perfect adaptation through protein-protein interactions that enhance complex stability. This mechanism allows the transcriptional response to act on a shorter time scale than upstream pathway activity.      </p>
+    </body>
+  </notes>
+  <annotation>
+    <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+      <vcell:VCMLSpecific>
+        <vcell:BioModel KeyValue="64339001" Name="Houser2012_pheromone_Ste12"/>
+        <vcell:SimulationSpec KeyValue="64338956" Name="Application0"/>
+      </vcell:VCMLSpecific>
+    </vcell:VCellInfo>
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+      <rdf:Description rdf:about="#_061635">
+        <bqmodel:is>
+          <rdf:Bag>
+            <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1204040000"/>
+          </rdf:Bag>
+        </bqmodel:is>
+        <bqmodel:isDescribedBy>
+          <rdf:Bag>
+            <rdf:li rdf:resource="http://identifiers.org/pubmed/22669614"/>
+          </rdf:Bag>
+        </bqmodel:isDescribedBy>
+        <bqbiol:hasTaxon>
+          <rdf:Bag>
+            <rdf:li rdf:resource="http://identifiers.org/taxonomy/4932"/>
+          </rdf:Bag>
+        </bqbiol:hasTaxon>
+        <bqbiol:isVersionOf>
+          <rdf:Bag>
+            <rdf:li rdf:resource="http://www.geneontology.org/GO:0005186"/>
+          </rdf:Bag>
+        </bqbiol:isVersionOf>
+      </rdf:Description>
+    </rdf:RDF>
+  </annotation>
+  <listOfUnitDefinitions>
+    <unitDefinition metaid="_061648" id="substance">
+      <listOfUnits>
+        <unit metaid="_061660" kind="item" exponent="1" scale="0" multiplier="1"/>
+      </listOfUnits>
+    </unitDefinition>
+    <unitDefinition metaid="_061672" id="volume">
+      <listOfUnits>
+        <unit metaid="_061684" kind="metre" exponent="3" scale="0" multiplier="1e-06"/>
+      </listOfUnits>
+    </unitDefinition>
+    <unitDefinition metaid="_061696" id="area">
+      <listOfUnits>
+        <unit metaid="_061708" kind="metre" exponent="2" scale="0" multiplier="1e-06"/>
+      </listOfUnits>
+    </unitDefinition>
+    <unitDefinition metaid="_061720" id="molecules">
+      <listOfUnits>
+        <unit metaid="_061732" kind="item" exponent="1" scale="0" multiplier="1"/>
+      </listOfUnits>
+    </unitDefinition>
+    <unitDefinition metaid="_061744" id="umol_um3_litre_1">
+      <listOfUnits>
+        <unit metaid="_061756" kind="mole" exponent="1" scale="0" multiplier="1e-21"/>
+      </listOfUnits>
+    </unitDefinition>
+    <unitDefinition metaid="_061768" id="um2">
+      <listOfUnits>
+        <unit metaid="_061780" kind="metre" exponent="2" scale="0" multiplier="1e-06"/>
+      </listOfUnits>
+    </unitDefinition>
+    <unitDefinition metaid="_061792" id="uM_um3_molecules_1">
+      <listOfUnits>
+        <unit metaid="_061804" kind="dimensionless" exponent="1" scale="0" multiplier="1e-21"/>
+        <unit metaid="_061816" kind="item" exponent="-1" scale="0" multiplier="1"/>
+        <unit metaid="_061828" kind="mole" exponent="1" scale="0" multiplier="1"/>
+      </listOfUnits>
+    </unitDefinition>
+    <unitDefinition metaid="_061840" id="s_1">
+      <listOfUnits>
+        <unit metaid="_061852" kind="second" exponent="-1" scale="0" multiplier="1"/>
+      </listOfUnits>
+    </unitDefinition>
+    <unitDefinition metaid="_061864" id="uM_1_s_1">
+      <listOfUnits>
+        <unit metaid="_061876" kind="dimensionless" exponent="1" scale="0" multiplier="1000"/>
+        <unit metaid="_061888" kind="metre" exponent="3" scale="0" multiplier="1"/>
+        <unit metaid="_061900" kind="mole" exponent="-1" scale="0" multiplier="1"/>
+        <unit metaid="_061912" kind="second" exponent="-1" scale="0" multiplier="1"/>
+      </listOfUnits>
+    </unitDefinition>
+    <unitDefinition metaid="_061924" id="_one_">
+      <listOfUnits>
+        <unit metaid="_061936" kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
+      </listOfUnits>
+    </unitDefinition>
+    <unitDefinition metaid="_061948" id="uM">
+      <listOfUnits>
+        <unit metaid="_061960" kind="dimensionless" exponent="1" scale="0" multiplier="0.001"/>
+        <unit metaid="_061972" kind="metre" exponent="-3" scale="0" multiplier="1"/>
+        <unit metaid="_061984" kind="mole" exponent="1" scale="0" multiplier="1"/>
+      </listOfUnits>
+    </unitDefinition>
+    <unitDefinition metaid="_061996" id="uM_s_1">
+      <listOfUnits>
+        <unit metaid="_062008" kind="dimensionless" exponent="1" scale="0" multiplier="0.001"/>
+        <unit metaid="_062020" kind="metre" exponent="-3" scale="0" multiplier="1"/>
+        <unit metaid="_062032" kind="mole" exponent="1" scale="0" multiplier="1"/>
+        <unit metaid="_062044" kind="second" exponent="-1" scale="0" multiplier="1"/>
+      </listOfUnits>
+    </unitDefinition>
+  </listOfUnitDefinitions>
+  <listOfCompartments>
+    <compartment metaid="_062056" id="c0" name="c0" spatialDimensions="3" size="1" constant="true"/>
+  </listOfCompartments>
+  <listOfSpecies>
+    <species metaid="_062068" id="T1" compartment="c0" initialConcentration="0" substanceUnits="molecules" hasOnlySubstanceUnits="false" boundaryCondition="false">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:Compound Name="T1"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+    </species>
+    <species metaid="_062080" id="TS" compartment="c0" initialConcentration="0" substanceUnits="molecules" hasOnlySubstanceUnits="false" boundaryCondition="false">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:Compound Name="TS"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+    </species>
+    <species metaid="_062092" id="TSD1" compartment="c0" initialConcentration="0" substanceUnits="molecules" hasOnlySubstanceUnits="false" boundaryCondition="false">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:Compound Name="TSD1"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+    </species>
+    <species metaid="_062104" id="Ste12B" compartment="c0" initialConcentration="0" substanceUnits="molecules" hasOnlySubstanceUnits="false" boundaryCondition="false">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:Compound Name="Ste12B"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+    </species>
+    <species metaid="_062116" id="T1B" compartment="c0" initialConcentration="0" substanceUnits="molecules" hasOnlySubstanceUnits="false" boundaryCondition="false">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:Compound Name="T1B"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+    </species>
+    <species metaid="_062128" id="S_2" compartment="c0" initialConcentration="0" substanceUnits="molecules" hasOnlySubstanceUnits="false" boundaryCondition="false">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:Compound Name="S_2"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+    </species>
+    <species metaid="_062140" id="SD1" compartment="c0" initialConcentration="0" substanceUnits="molecules" hasOnlySubstanceUnits="false" boundaryCondition="false">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:Compound Name="SD1"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+    </species>
+    <species metaid="_062152" id="SD2" compartment="c0" initialConcentration="0" substanceUnits="molecules" hasOnlySubstanceUnits="false" boundaryCondition="false">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:Compound Name="SD2"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+    </species>
+    <species metaid="_062164" id="SD1D2" compartment="c0" initialConcentration="0" substanceUnits="molecules" hasOnlySubstanceUnits="false" boundaryCondition="false">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:Compound Name="SD1D2"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+    </species>
+    <species metaid="_062176" id="Dig2" compartment="c0" initialConcentration="60.2" substanceUnits="molecules" hasOnlySubstanceUnits="false" boundaryCondition="false">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:Compound Name="Dig2"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+    </species>
+    <species metaid="_062188" id="Fus3" compartment="c0" initialConcentration="0" substanceUnits="molecules" hasOnlySubstanceUnits="false" boundaryCondition="false">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:Compound Name="Fus3"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+    </species>
+    <species metaid="_062200" id="FUS1" compartment="c0" initialConcentration="0" substanceUnits="molecules" hasOnlySubstanceUnits="false" boundaryCondition="false">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:Compound Name="FUS1"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+    </species>
+    <species metaid="_062212" id="Ste12" compartment="c0" initialConcentration="0" substanceUnits="molecules" hasOnlySubstanceUnits="false" boundaryCondition="false">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:Compound Name="Ste12"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+    </species>
+    <species metaid="_062224" id="Dig1" compartment="c0" initialConcentration="150.5" substanceUnits="molecules" hasOnlySubstanceUnits="false" boundaryCondition="false">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:Compound Name="Dig1"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+    </species>
+    <species metaid="_062236" id="Fus1" compartment="c0" initialConcentration="0" substanceUnits="molecules" hasOnlySubstanceUnits="false" boundaryCondition="false">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:Compound Name="Fus1"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+    </species>
+  </listOfSpecies>
+  <listOfParameters>
+    <parameter metaid="_062248" id="KMOLE" value="0.00166112956810631" units="uM_um3_molecules_1" constant="true"/>
+    <parameter metaid="_062260" id="d_s" value="0.0578" units="s_1" constant="true"/>
+    <parameter metaid="_062272" id="kc" value="8.33" units="uM_1_s_1" constant="true"/>
+    <parameter metaid="_062284" id="kr_sd1d2" value="6.13e-08" units="s_1" constant="true"/>
+    <parameter metaid="_062296" id="P1" units="_one_" constant="false"/>
+    <parameter metaid="_062308" id="KD1" value="0.0061" units="uM" constant="true"/>
+    <parameter metaid="_062320" id="KD2" value="0.5" units="uM" constant="true"/>
+    <parameter metaid="_062332" id="KD3" value="0.32" units="uM" constant="true"/>
+    <parameter metaid="_062344" id="P2" units="_one_" constant="false"/>
+    <parameter metaid="_062356" id="P3" units="_one_" constant="false"/>
+    <parameter metaid="_062368" id="I" value="0" units="_one_" constant="false"/>
+    <parameter metaid="_062380" id="k_a" units="uM_1_s_1" constant="false"/>
+    <parameter metaid="_062392" id="k_p1" value="0.25" units="_one_" constant="true"/>
+    <parameter metaid="_062404" id="k_p5" value="0.01" units="_one_" constant="true"/>
+    <parameter metaid="_062416" id="k_p2" value="0.0085" units="uM" constant="true"/>
+    <parameter metaid="_062428" id="Km_sat" value="5.5e-05" units="uM_s_1" constant="true"/>
+    <parameter metaid="_062440" id="KD_sat" value="0.46" units="uM" constant="true"/>
+    <parameter metaid="_062452" id="J2" units="uM_1_s_1" constant="false"/>
+    <parameter metaid="_062464" id="J1_r16" units="uM_1_s_1" constant="false"/>
+  </listOfParameters>
+  <listOfRules>
+    <assignmentRule metaid="_062476" variable="P1">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <cn> 0.00166112956810631 </cn>
+          <ci> S_2 </ci>
+          <apply>
+            <divide/>
+            <cn> 1 </cn>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <cn> 0.00166112956810631 </cn>
+                <ci> S_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn> 0.00166112956810631 </cn>
+                <ci> Ste12 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn> 0.00166112956810631 </cn>
+                <ci> SD1 </ci>
+              </apply>
+              <ci> KD1 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </assignmentRule>
+    <assignmentRule metaid="_062488" variable="P2">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <cn> 0.00166112956810631 </cn>
+          <ci> S_2 </ci>
+          <apply>
+            <divide/>
+            <cn> 1 </cn>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <cn> 0.00166112956810631 </cn>
+                <ci> S_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn> 0.00166112956810631 </cn>
+                <ci> Ste12 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn> 0.00166112956810631 </cn>
+                <ci> SD1 </ci>
+              </apply>
+              <ci> KD3 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </assignmentRule>
+    <assignmentRule metaid="_062500" variable="P3">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <cn> 0.00166112956810631 </cn>
+          <ci> TS </ci>
+          <apply>
+            <divide/>
+            <cn> 1 </cn>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <cn> 0.00166112956810631 </cn>
+                <ci> TS </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn> 0.00166112956810631 </cn>
+                <ci> TSD1 </ci>
+              </apply>
+              <ci> KD2 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </assignmentRule>
+    <assignmentRule metaid="_062512" variable="k_a">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <cn> 1.55 </cn>
+          <ci> I </ci>
+        </apply>
+      </math>
+    </assignmentRule>
+    <assignmentRule metaid="_062524" variable="J2">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <cn> 0.00145 </cn>
+          <ci> I </ci>
+        </apply>
+      </math>
+    </assignmentRule>
+    <assignmentRule metaid="_062536" variable="J1_r16">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <cn> 0.003 </cn>
+          <ci> I </ci>
+        </apply>
+      </math>
+    </assignmentRule>
+  </listOfRules>
+  <listOfReactions>
+    <reaction metaid="_062548" id="r18" name="r18">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_062560" species="TSD1" stoichiometry="1"/>
+        <speciesReference metaid="_062572" species="Fus3" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_062584" species="T1B" stoichiometry="1"/>
+        <speciesReference metaid="_062596" species="Ste12B" stoichiometry="1"/>
+        <speciesReference metaid="_062608" species="Dig1" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_318822" species="TSD1"/>
+        <modifierSpeciesReference metaid="_318834" species="Fus3"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_062620">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn> 0.00166112956810631 </cn>
+            <ci> TSD1 </ci>
+            <ci> d_tsd1 </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> k_p1 </ci>
+                <apply>
+                  <plus/>
+                  <cn> 0.01 </cn>
+                  <apply>
+                    <times/>
+                    <cn> 0.00166112956810631 </cn>
+                    <ci> Fus3 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <plus/>
+                    <cn> 0.01 </cn>
+                    <ci> k_p2 </ci>
+                    <apply>
+                      <times/>
+                      <cn> 0.00166112956810631 </cn>
+                      <ci> Fus3 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> k_p3 </ci>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_062631" id="d_tsd1" value="3.17e-05" units="s_1"/>
+          <parameter metaid="_062643" id="k_p3" value="0.5" units="_one_"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_062655" id="r11" name="r11">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfProducts>
+        <speciesReference metaid="_062667" species="T1" stoichiometry="1"/>
+      </listOfProducts>
+      <kineticLaw metaid="_062679">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <ci> k_tec1 </ci>
+              <apply>
+                <times/>
+                <ci> kfb2 </ci>
+                <ci> P3 </ci>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_062691" id="k_tec1" value="5e-07" units="uM_s_1"/>
+          <parameter metaid="_062703" id="kfb2" value="2.5e-06" units="uM_s_1"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_062715" id="r6" name="r6">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_062727" species="Ste12" stoichiometry="1"/>
+        <speciesReference metaid="_062739" species="Fus3" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_062751" species="Ste12B" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_318846" species="Ste12"/>
+        <modifierSpeciesReference metaid="_318858" species="Fus3"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_062763">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn> 0.00166112956810631 </cn>
+            <ci> Ste12 </ci>
+            <ci> d_s12 </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> k_p1 </ci>
+                <apply>
+                  <plus/>
+                  <cn> 0.01 </cn>
+                  <apply>
+                    <times/>
+                    <cn> 0.00166112956810631 </cn>
+                    <ci> Fus3 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <plus/>
+                    <cn> 0.01 </cn>
+                    <ci> k_p2 </ci>
+                    <apply>
+                      <times/>
+                      <cn> 0.00166112956810631 </cn>
+                      <ci> Fus3 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> k_p3 </ci>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_062775" id="d_s12" value="0.0037" units="s_1"/>
+          <parameter metaid="_062787" id="k_p3" value="0.5" units="_one_"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_062799" id="r14" name="r14">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_062811" species="SD2" stoichiometry="1"/>
+        <speciesReference metaid="_062823" species="Fus3" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_062835" species="Ste12B" stoichiometry="1"/>
+        <speciesReference metaid="_062847" species="Dig2" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_318870" species="SD2"/>
+        <modifierSpeciesReference metaid="_318883" species="Fus3"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_062859">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn> 0.00166112956810631 </cn>
+            <ci> SD2 </ci>
+            <ci> d_sd2 </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> k_p1 </ci>
+                <apply>
+                  <plus/>
+                  <cn> 0.01 </cn>
+                  <apply>
+                    <times/>
+                    <cn> 0.00166112956810631 </cn>
+                    <ci> Fus3 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <plus/>
+                    <cn> 0.01 </cn>
+                    <ci> k_p2 </ci>
+                    <apply>
+                      <times/>
+                      <cn> 0.00166112956810631 </cn>
+                      <ci> Fus3 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> k_p3 </ci>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_062871" id="d_sd2" value="0.00033" units="s_1"/>
+          <parameter metaid="_062883" id="k_p3" value="0.5" units="_one_"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_062895" id="r22" name="r22">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_062907" species="TSD1" stoichiometry="1"/>
+        <speciesReference metaid="_062919" species="Fus3" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_062931" species="T1B" stoichiometry="1"/>
+        <speciesReference metaid="_062943" species="SD1" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_318895" species="TSD1"/>
+        <modifierSpeciesReference metaid="_318908" species="Fus3"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_062955">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn> 0.00166112956810631 </cn>
+            <ci> TSD1 </ci>
+            <ci> J2 </ci>
+            <apply>
+              <plus/>
+              <cn> 0.01 </cn>
+              <apply>
+                <times/>
+                <cn> 0.00166112956810631 </cn>
+                <ci> Fus3 </ci>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_062967" id="r21" name="r21">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfProducts>
+        <speciesReference metaid="_062979" species="Fus3" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_318920" species="Fus3"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_062991">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> I </ci>
+                <ci> a </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> d_f3 </ci>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> Fus3 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_063003" id="a" value="0.00166666666666667" units="uM_s_1"/>
+          <parameter metaid="_063015" id="d_f3" value="0.0015" units="s_1"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_063027" id="r16" name="r16">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_063039" species="T1" stoichiometry="1"/>
+        <speciesReference metaid="_063051" species="Fus3" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_063063" species="T1B" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_318932" species="Fus3"/>
+        <modifierSpeciesReference metaid="_318944" species="T1"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_063075">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <ci> d_tec1 </ci>
+              <apply>
+                <times/>
+                <ci> J1_r16 </ci>
+                <apply>
+                  <plus/>
+                  <cn> 0.01 </cn>
+                  <apply>
+                    <times/>
+                    <cn> 0.00166112956810631 </cn>
+                    <ci> Fus3 </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <cn> 0.00166112956810631 </cn>
+            <ci> T1 </ci>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_063087" id="d_tec1" value="0.0006" units="s_1"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_063099" id="r8" name="r8">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_063111" species="FUS1" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_063123" species="Fus1" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_318956" species="FUS1"/>
+        <modifierSpeciesReference metaid="_318968" species="Fus1"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_063135">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> kpf1 </ci>
+                <cn> 0.00166112956810631 </cn>
+                <ci> FUS1 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> d_pf1 </ci>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> Fus1 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_063147" id="kpf1" value="0.0001" units="s_1"/>
+          <parameter metaid="_063159" id="d_pf1" value="0.00013" units="s_1"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_063171" id="r3" name="r3">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_063183" species="Ste12" stoichiometry="1"/>
+        <speciesReference metaid="_063195" species="Dig2" stoichiometry="1"/>
+        <speciesReference metaid="_063207" species="Fus3" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_063219" species="SD2" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_318980" species="Ste12"/>
+        <modifierSpeciesReference metaid="_318992" species="Dig2"/>
+        <modifierSpeciesReference metaid="_319004" species="SD2"/>
+        <modifierSpeciesReference metaid="_319017" species="Fus3"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_063231">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> kc </ci>
+                <cn> 0.00166112956810631 </cn>
+                <ci> Ste12 </ci>
+                <cn> 0.00166112956810631 </cn>
+                <ci> Dig2 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> kr_sd2 </ci>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> SD2 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <cn> 0.01 </cn>
+                    <apply>
+                      <times/>
+                      <cn> 0.00166112956810631 </cn>
+                      <ci> Fus3 </ci>
+                    </apply>
+                  </apply>
+                  <ci> k_a </ci>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> SD2 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_063243" id="kr_sd2" value="3.2e-07" units="s_1"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_063255" id="r7" name="r7">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfProducts>
+        <speciesReference metaid="_063267" species="FUS1" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_319029" species="FUS1"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_063279">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> kf1 </ci>
+                <ci> P2 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> d_mR </ci>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> FUS1 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_063291" id="kf1" value="1" units="uM_s_1"/>
+          <parameter metaid="_063303" id="d_mR" value="0.00115" units="s_1"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_063315" id="r0" name="r0">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfProducts>
+        <speciesReference metaid="_063327" species="Ste12" stoichiometry="1"/>
+      </listOfProducts>
+      <kineticLaw metaid="_063339">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <ci> k_s12 </ci>
+              <apply>
+                <times/>
+                <ci> kfb1 </ci>
+                <ci> P1 </ci>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_063351" id="k_s12" value="2e-05" units="uM_s_1"/>
+          <parameter metaid="_063363" id="kfb1" value="1.7e-05" units="uM_s_1"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_063375" id="r1" name="r1">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_063387" species="Ste12" stoichiometry="1"/>
+        <speciesReference metaid="_063399" species="Ste12" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_063411" species="S_2" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_319041" species="Ste12"/>
+        <modifierSpeciesReference metaid="_319053" species="S_2"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_063423">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> kc </ci>
+                <cn> 0.00166112956810631 </cn>
+                <ci> Ste12 </ci>
+                <cn> 0.00166112956810631 </cn>
+                <ci> Ste12 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> S_2 </ci>
+                  <ci> d_s </ci>
+                </apply>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_063435" id="r10" name="r10">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_063447" species="TS" stoichiometry="1"/>
+        <speciesReference metaid="_063459" species="Dig1" stoichiometry="1"/>
+        <speciesReference metaid="_063471" species="Fus3" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_063483" species="TSD1" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_319065" species="TS"/>
+        <modifierSpeciesReference metaid="_319077" species="Dig1"/>
+        <modifierSpeciesReference metaid="_319089" species="Fus3"/>
+        <modifierSpeciesReference metaid="_319101" species="TSD1"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_063495">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> kc </ci>
+                <cn> 0.00166112956810631 </cn>
+                <ci> TS </ci>
+                <cn> 0.00166112956810631 </cn>
+                <ci> Dig1 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <ci> kr_tsd1 </ci>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <plus/>
+                        <cn> 0.01 </cn>
+                        <apply>
+                          <times/>
+                          <cn> 0.00166112956810631 </cn>
+                          <ci> Fus3 </ci>
+                        </apply>
+                      </apply>
+                      <ci> k_a </ci>
+                    </apply>
+                  </apply>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> TSD1 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_063507" id="kr_tsd1" value="2.23e-06" units="s_1"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_063519" id="r20" name="r20">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_063531" species="TS" stoichiometry="1"/>
+        <speciesReference metaid="_063543" species="Fus3" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_063555" species="T1B" stoichiometry="1"/>
+        <speciesReference metaid="_063567" species="Ste12" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_319113" species="TS"/>
+        <modifierSpeciesReference metaid="_319125" species="Fus3"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_063579">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> J2 </ci>
+            <cn> 0.00166112956810631 </cn>
+            <ci> TS </ci>
+            <apply>
+              <plus/>
+              <cn> 0.01 </cn>
+              <apply>
+                <times/>
+                <cn> 0.00166112956810631 </cn>
+                <ci> Fus3 </ci>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_063591" id="r12" name="r12">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_063603" species="S_2" stoichiometry="1"/>
+        <speciesReference metaid="_063615" species="Fus3" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_063627" species="Ste12B" stoichiometry="1"/>
+        <speciesReference metaid="_063639" species="Ste12B" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_319137" species="S_2"/>
+        <modifierSpeciesReference metaid="_319149" species="Fus3"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_063651">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn> 0.00166112956810631 </cn>
+            <ci> S_2 </ci>
+            <ci> d_s2 </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> k_p1 </ci>
+                <apply>
+                  <plus/>
+                  <cn> 0.01 </cn>
+                  <apply>
+                    <times/>
+                    <cn> 0.00166112956810631 </cn>
+                    <ci> Fus3 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <plus/>
+                    <cn> 0.01 </cn>
+                    <ci> k_p2 </ci>
+                    <apply>
+                      <times/>
+                      <cn> 0.00166112956810631 </cn>
+                      <ci> Fus3 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> k_p3 </ci>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_063663" id="d_s2" value="0.00083" units="s_1"/>
+          <parameter metaid="_063675" id="k_p3" value="0.5" units="_one_"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_063687" id="r19" name="r19">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_063699" species="T1B" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_063711" species="Ste12B" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_319161" species="T1B"/>
+        <modifierSpeciesReference metaid="_319173" species="Ste12B"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_063723">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn> 0.00166112956810631 </cn>
+            <ci> T1B </ci>
+            <ci> Km_sat </ci>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> Ste12B </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> T1B </ci>
+                </apply>
+                <ci> KD_sat </ci>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_063735" id="r17" name="r17">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_063747" species="TS" stoichiometry="1"/>
+        <speciesReference metaid="_063759" species="Fus3" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_063771" species="T1B" stoichiometry="1"/>
+        <speciesReference metaid="_063783" species="Ste12B" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_319185" species="TS"/>
+        <modifierSpeciesReference metaid="_319197" species="Fus3"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_063795">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn> 0.00166112956810631 </cn>
+            <ci> TS </ci>
+            <ci> d_ts </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> k_p1 </ci>
+                <apply>
+                  <plus/>
+                  <cn> 0.01 </cn>
+                  <apply>
+                    <times/>
+                    <cn> 0.00166112956810631 </cn>
+                    <ci> Fus3 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <plus/>
+                    <cn> 0.01 </cn>
+                    <ci> k_p2 </ci>
+                    <apply>
+                      <times/>
+                      <cn> 0.00166112956810631 </cn>
+                      <ci> Fus3 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> k_p3 </ci>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_063807" id="d_ts" value="1.12e-05" units="s_1"/>
+          <parameter metaid="_063819" id="k_p3" value="0.5" units="_one_"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_063831" id="r4" name="r4">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_063843" species="SD1" stoichiometry="1"/>
+        <speciesReference metaid="_063855" species="Dig2" stoichiometry="1"/>
+        <speciesReference metaid="_063867" species="Fus3" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_063879" species="SD1D2" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_319209" species="SD1"/>
+        <modifierSpeciesReference metaid="_319221" species="Dig2"/>
+        <modifierSpeciesReference metaid="_319233" species="SD1D2"/>
+        <modifierSpeciesReference metaid="_319245" species="Fus3"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_063891">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> kc </ci>
+                <cn> 0.00166112956810631 </cn>
+                <ci> SD1 </ci>
+                <cn> 0.00166112956810631 </cn>
+                <ci> Dig2 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> kr_sd1d2 </ci>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> SD1D2 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <cn> 0.01 </cn>
+                    <apply>
+                      <times/>
+                      <cn> 0.00166112956810631 </cn>
+                      <ci> Fus3 </ci>
+                    </apply>
+                  </apply>
+                  <ci> k_a </ci>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> SD1D2 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_063903" id="r15" name="r15">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_063915" species="Ste12B" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_063927" species="T1B" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_319257" species="Ste12B"/>
+        <modifierSpeciesReference metaid="_319269" species="T1B"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_063939">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn> 0.00166112956810631 </cn>
+            <ci> Ste12B </ci>
+            <ci> Km_sat </ci>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> Ste12B </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> T1B </ci>
+                </apply>
+                <ci> KD_sat </ci>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_063951" id="r9" name="r9">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_063963" species="T1" stoichiometry="1"/>
+        <speciesReference metaid="_063975" species="Ste12" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_063987" species="TS" stoichiometry="1"/>
+        <speciesReference metaid="_063999" species="Ste12B" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_319281" species="T1"/>
+        <modifierSpeciesReference metaid="_319294" species="Ste12"/>
+        <modifierSpeciesReference metaid="_319306" species="TS"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_064011">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> kc </ci>
+                <cn> 0.00166112956810631 </cn>
+                <ci> T1 </ci>
+                <cn> 0.00166112956810631 </cn>
+                <ci> Ste12 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> kr_ts </ci>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> TS </ci>
+                </apply>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_064023" id="kr_ts" value="2.57e-08" units="s_1"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_064035" id="r13" name="r13">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_064047" species="SD1" stoichiometry="1"/>
+        <speciesReference metaid="_064059" species="Fus3" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_064071" species="Dig1" stoichiometry="1"/>
+        <speciesReference metaid="_064083" species="Ste12B" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_319318" species="SD1"/>
+        <modifierSpeciesReference metaid="_319330" species="Fus3"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_064095">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn> 0.00166112956810631 </cn>
+            <ci> SD1 </ci>
+            <ci> d_sd1 </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> k_p1 </ci>
+                <apply>
+                  <plus/>
+                  <cn> 0.01 </cn>
+                  <apply>
+                    <times/>
+                    <cn> 0.00166112956810631 </cn>
+                    <ci> Fus3 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <plus/>
+                    <cn> 0.01 </cn>
+                    <ci> k_p2 </ci>
+                    <apply>
+                      <times/>
+                      <cn> 0.00166112956810631 </cn>
+                      <ci> Fus3 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> k_p3 </ci>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_064107" id="d_sd1" value="0.00074" units="s_1"/>
+          <parameter metaid="_064119" id="k_p3" value="0.5" units="_one_"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_064131" id="r5" name="r5">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_064143" species="SD2" stoichiometry="1"/>
+        <speciesReference metaid="_064155" species="Dig1" stoichiometry="1"/>
+        <speciesReference metaid="_064167" species="Fus3" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_064179" species="SD1D2" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_319342" species="SD2"/>
+        <modifierSpeciesReference metaid="_319354" species="Dig1"/>
+        <modifierSpeciesReference metaid="_319366" species="SD1D2"/>
+        <modifierSpeciesReference metaid="_319378" species="Fus3"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_064191">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> kc </ci>
+                <cn> 0.00166112956810631 </cn>
+                <ci> SD2 </ci>
+                <cn> 0.00166112956810631 </cn>
+                <ci> Dig1 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> kr_sd1d2 </ci>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> SD1D2 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <cn> 0.01 </cn>
+                    <apply>
+                      <times/>
+                      <cn> 0.00166112956810631 </cn>
+                      <ci> Fus3 </ci>
+                    </apply>
+                  </apply>
+                  <ci> k_a </ci>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> SD1D2 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="_064203" id="r2" name="r2">
+      <annotation>
+        <vcell:VCellInfo xmlns:vcell="http://sourceforge.net/projects/vcell">
+          <vcell:VCMLSpecific>
+            <vcell:SimpleReaction Structure="c0"/>
+            <vcell:ReactionRate Name="J"/>
+          </vcell:VCMLSpecific>
+        </vcell:VCellInfo>
+      </annotation>
+      <listOfReactants>
+        <speciesReference metaid="_064215" species="Ste12" stoichiometry="1"/>
+        <speciesReference metaid="_064227" species="Dig1" stoichiometry="1"/>
+        <speciesReference metaid="_064239" species="Fus3" stoichiometry="1"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference metaid="_064251" species="SD1" stoichiometry="1"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference metaid="_319390" species="Ste12"/>
+        <modifierSpeciesReference metaid="_319402" species="Dig1"/>
+        <modifierSpeciesReference metaid="_319415" species="SD1"/>
+        <modifierSpeciesReference metaid="_319427" species="Fus3"/>
+      </listOfModifiers>
+      <kineticLaw metaid="_064263">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> kc </ci>
+                <cn> 0.00166112956810631 </cn>
+                <ci> Ste12 </ci>
+                <cn> 0.00166112956810631 </cn>
+                <ci> Dig1 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> kr_sd1 </ci>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> SD1 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <cn> 0.01 </cn>
+                    <apply>
+                      <times/>
+                      <cn> 0.00166112956810631 </cn>
+                      <ci> Fus3 </ci>
+                    </apply>
+                  </apply>
+                  <ci> k_a </ci>
+                  <cn> 0.00166112956810631 </cn>
+                  <ci> SD1 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <ci> c0 </ci>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <cn> 1 </cn>
+              <ci> KMOLE </ci>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter metaid="_064275" id="kr_sd1" value="1.7e-06" units="s_1"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+  </listOfReactions>
+</model>
+</sbml>

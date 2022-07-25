@@ -1,0 +1,1363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" metaid="_184003" level="2" version="4">
+  <model metaid="_145444" id="Salazar2009_PhotoperiodicRegulation" name="Salazar2009_PhotoperiodicRegulation">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This a model from the article:      <br/>
+        <strong>Prediction of photoperiodic regulators from quantitative gene circuit models.</strong>
+        <br/>
+          Salazar JD, Saithong T, Brown PE, Foreman J, Locke JC, Halliday KJ, Carré IA, Rand DA, Millar AJ      <em>Cell</em>
+          2009 Dec; 139(6): 1170-9      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20005809">20005809</a>
+          ,      <br/>
+        <strong>Abstract:</strong>
+        <br/>
+          Photoperiod sensors allow physiological adaptation to the changing seasons. The prevalent hypothesis is that day length perception is mediated through coupling of an endogenous rhythm with an external light signal. Sufficient molecular data are available to test this quantitatively in plants, though not yet in mammals. In Arabidopsis, the clock-regulated genes CONSTANS (CO) and FLAVIN, KELCH, F-BOX (FKF1) and their light-sensitive proteins are thought to form an external coincidence sensor. Here, we model the integration of light and timing information by CO, its target gene FLOWERING LOCUS T (FT), and the circadian clock. Among other predictions, our models show that FKF1 activates FT. We demonstrate experimentally that this effect is independent of the known activation of CO by FKF1, thus we locate a major, novel controller of photoperiodism. External coincidence is part of a complex photoperiod sensor: modeling makes this complexity explicit and may thus contribute to crop improvement.      </p>
+      <br/>
+      <p>
+        <b>Note:</b>
+      </p>
+      <p>There are four models described in the paper. This model corresponds to model 3 (which is a combination of model 1 and model 2). The SBML file is redeveloped from Kevin S</p>
+      <p/>
+      <p>This model is same as      <a href="http://www.ebi.ac.uk/biomodels/BIOMD0000000055">BIOMD0000000055</a>
+          , but with revised light function.      </p>
+    <p>This model originates from BioModels Database: A Database of Annotated Published Models (http://www.ebi.ac.uk/biomodels/). It is copyright (c) 2005-2011 The BioModels.net Team.      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+  <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not..      <br/>
+  <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+</p>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#_145444">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1005050000"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/pubmed/20005809"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/3702"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="urn:miriam:obo.goGO:0032922"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfFunctionDefinitions>
+  <functionDefinition metaid="_145549" id="lightFunction" name="lightFunction">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar>
+          <ci> t </ci>
+        </bvar>
+        <bvar>
+          <ci> lightOffset </ci>
+        </bvar>
+        <bvar>
+          <ci> lightAmplitude </ci>
+        </bvar>
+        <bvar>
+          <ci> phase </ci>
+        </bvar>
+        <bvar>
+          <ci> photoPeriod </ci>
+        </bvar>
+        <bvar>
+          <ci> cyclePeriod </ci>
+        </bvar>
+        <bvar>
+          <ci> twilightPeriod </ci>
+        </bvar>
+        <apply>
+          <plus/>
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <ci> lightOffset </ci>
+              <apply>
+                <times/>
+                <cn> 0.5 </cn>
+                <ci> lightAmplitude </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <tanh/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> cyclePeriod </ci>
+                        <apply>
+                          <minus/>
+                          <apply>
+                            <divide/>
+                            <apply>
+                              <plus/>
+                              <ci> t </ci>
+                              <ci> phase </ci>
+                            </apply>
+                            <ci> cyclePeriod </ci>
+                          </apply>
+                          <apply>
+                            <floor/>
+                            <apply>
+                              <divide/>
+                              <apply>
+                                <floor/>
+                                <apply>
+                                  <plus/>
+                                  <ci> t </ci>
+                                  <ci> phase </ci>
+                                </apply>
+                              </apply>
+                              <ci> cyclePeriod </ci>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <ci> twilightPeriod </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 0.5 </cn>
+              <ci> lightAmplitude </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <tanh/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <minus/>
+                      <apply>
+                        <times/>
+                        <ci> cyclePeriod </ci>
+                        <apply>
+                          <minus/>
+                          <apply>
+                            <divide/>
+                            <apply>
+                              <plus/>
+                              <ci> t </ci>
+                              <ci> phase </ci>
+                            </apply>
+                            <ci> cyclePeriod </ci>
+                          </apply>
+                          <apply>
+                            <floor/>
+                            <apply>
+                              <divide/>
+                              <apply>
+                                <floor/>
+                                <apply>
+                                  <plus/>
+                                  <ci> t </ci>
+                                  <ci> phase </ci>
+                                </apply>
+                              </apply>
+                              <ci> cyclePeriod </ci>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <ci> photoPeriod </ci>
+                    </apply>
+                    <ci> twilightPeriod </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <cn> 0.5 </cn>
+            <ci> lightAmplitude </ci>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <tanh/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <times/>
+                      <ci> cyclePeriod </ci>
+                      <apply>
+                        <minus/>
+                        <apply>
+                          <divide/>
+                          <apply>
+                            <plus/>
+                            <ci> t </ci>
+                            <ci> phase </ci>
+                          </apply>
+                          <ci> cyclePeriod </ci>
+                        </apply>
+                        <apply>
+                          <floor/>
+                          <apply>
+                            <divide/>
+                            <apply>
+                              <floor/>
+                              <apply>
+                                <plus/>
+                                <ci> t </ci>
+                                <ci> phase </ci>
+                              </apply>
+                            </apply>
+                            <ci> cyclePeriod </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <ci> cyclePeriod </ci>
+                  </apply>
+                  <ci> twilightPeriod </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </lambda>
+    </math>
+  </functionDefinition>
+</listOfFunctionDefinitions><listOfCompartments>
+  <compartment metaid="_145445" id="compartment" name="compartment" size="1"/>
+</listOfCompartments><listOfSpecies>
+  <species metaid="_145447" id="cCOp" name="cCOp" compartment="compartment" initialConcentration="0"/>
+  <species metaid="_145449" id="cFTm" name="cFTm" compartment="compartment" initialConcentration="0"/>
+  <species metaid="_145450" id="cLc" name="cLc" compartment="compartment" initialConcentration="0.015"/>
+  <species metaid="_145452" id="cLm" name="cLm" compartment="compartment" initialConcentration="0.539"/>
+  <species metaid="_145453" id="cLn" name="cLn" compartment="compartment" initialConcentration="0.0855"/>
+  <species metaid="_145455" id="cPn" name="cPn" compartment="compartment" initialConcentration="0.835"/>
+  <species metaid="_145456" id="cTc" name="cTc" compartment="compartment" initialConcentration="8.7"/>
+  <species metaid="_145458" id="cTm" name="cTm" compartment="compartment" initialConcentration="0.456"/>
+  <species metaid="_145459" id="cTn" name="cTn" compartment="compartment" initialConcentration="0.4"/>
+  <species metaid="_145461" id="cXc" name="cXc" compartment="compartment" initialConcentration="1.34"/>
+  <species metaid="_145462" id="cXm" name="cXm" compartment="compartment" initialConcentration="0.08"/>
+  <species metaid="_145464" id="cXn" name="cXn" compartment="compartment" initialConcentration="0.4"/>
+  <species metaid="_145465" id="cYc" name="cYc" compartment="compartment" initialConcentration="0.004"/>
+  <species metaid="_145467" id="cYm" name="cYm" compartment="compartment" initialConcentration="0.037"/>
+  <species metaid="_145468" id="cYn" name="cYn" compartment="compartment" initialConcentration="0.013"/>
+</listOfSpecies><listOfParameters>
+  <parameter metaid="_145550" id="q1" name="q1" value="2.4514"/>
+  <parameter metaid="_145551" id="n1" name="n1" value="5.1694"/>
+  <parameter metaid="_145552" id="a" name="a" value="3.3064"/>
+  <parameter metaid="_145553" id="g1" name="g1" value="0.876738488"/>
+  <parameter metaid="_145555" id="m1" name="m1" value="1.5283"/>
+  <parameter metaid="_145556" id="k1" name="k1" value="1.817"/>
+  <parameter metaid="_145558" id="p1" name="p1" value="0.8295"/>
+  <parameter metaid="_145559" id="r1" name="r1" value="16.8363"/>
+  <parameter metaid="_145561" id="r2" name="r2" value="0.1687"/>
+  <parameter metaid="_145562" id="m2" name="m2" value="20.44"/>
+  <parameter metaid="_145564" id="k2" name="k2" value="1.5644"/>
+  <parameter metaid="_145565" id="m3" name="m3" value="3.6888"/>
+  <parameter metaid="_145567" id="k3" name="k3" value="1.2765"/>
+  <parameter metaid="_145568" id="n2" name="n2" value="3.0087"/>
+  <parameter metaid="_145570" id="b" name="b" value="1.0258"/>
+  <parameter metaid="_145571" id="g2" name="g2" value="0.036805783"/>
+  <parameter metaid="_145573" id="g3" name="g3" value="0.26593318"/>
+  <parameter metaid="_145574" id="c" name="c" value="1.0258"/>
+  <parameter metaid="_145576" id="m4" name="m4" value="3.8231"/>
+  <parameter metaid="_145577" id="k4" name="k4" value="2.5734"/>
+  <parameter metaid="_145579" id="p2" name="p2" value="4.324"/>
+  <parameter metaid="_145580" id="r3" name="r3" value="0.3166"/>
+  <parameter metaid="_145582" id="r4" name="r4" value="2.1509"/>
+  <parameter metaid="_145583" id="m5" name="m5" value="0.0013"/>
+  <parameter metaid="_145585" id="m6" name="m6" value="3.1741"/>
+  <parameter metaid="_145586" id="k5" name="k5" value="2.7454"/>
+  <parameter metaid="_145588" id="m7" name="m7" value="0.0492"/>
+  <parameter metaid="_145589" id="m8" name="m8" value="4.0424"/>
+  <parameter metaid="_145591" id="k6" name="k6" value="0.4033"/>
+  <parameter metaid="_145592" id="n3" name="n3" value="0.2431"/>
+  <parameter metaid="_145594" id="d" name="d" value="1.4422"/>
+  <parameter metaid="_145595" id="g4" name="g4" value="0.538811228"/>
+  <parameter metaid="_145597" id="m9" name="m9" value="10.1132"/>
+  <parameter metaid="_145598" id="k7" name="k7" value="6.5585"/>
+  <parameter metaid="_145600" id="p3" name="p3" value="2.147"/>
+  <parameter metaid="_145601" id="r5" name="r5" value="1.0352"/>
+  <parameter metaid="_145603" id="r6" name="r6" value="3.3017"/>
+  <parameter metaid="_145604" id="m10" name="m10" value="0.2179"/>
+  <parameter metaid="_145606" id="k8" name="k8" value="0.6632"/>
+  <parameter metaid="_145607" id="m11" name="m11" value="3.3442"/>
+  <parameter metaid="_145609" id="k9" name="k9" value="17.1111"/>
+  <parameter metaid="_145610" id="q2" name="q2" value="2.40178"/>
+  <parameter metaid="_145612" id="n4" name="n4" value="0.0857"/>
+  <parameter metaid="_145613" id="n5" name="n5" value="0.1649"/>
+  <parameter metaid="_145615" id="g5" name="g5" value="1.17803247"/>
+  <parameter metaid="_145616" id="g6" name="g6" value="0.064455137"/>
+  <parameter metaid="_145618" id="f" name="f" value="1.0237"/>
+  <parameter metaid="_145619" id="e" name="e" value="3.6064"/>
+  <parameter metaid="_145621" id="m12" name="m12" value="4.297"/>
+  <parameter metaid="_145622" id="k10" name="k10" value="1.7303"/>
+  <parameter metaid="_145624" id="p4" name="p4" value="0.2485"/>
+  <parameter metaid="_145625" id="r7" name="r7" value="2.2123"/>
+  <parameter metaid="_145627" id="r8" name="r8" value="0.2002"/>
+  <parameter metaid="_145628" id="m13" name="m13" value="0.1347"/>
+  <parameter metaid="_145630" id="k11" name="k11" value="1.8258"/>
+  <parameter metaid="_145631" id="m14" name="m14" value="0.6114"/>
+  <parameter metaid="_145633" id="k12" name="k12" value="1.8066"/>
+  <parameter metaid="_145634" id="p5" name="p5" value="0.5"/>
+  <parameter metaid="_145636" id="k13" name="k13" value="1.2"/>
+  <parameter metaid="_145637" id="q3" name="q3" value="1"/>
+  <parameter metaid="_145639" id="m15" name="m15" value="1.2"/>
+  <parameter metaid="_145640" id="lightAmplitude" name="lightAmplitude" value="1"/>
+  <parameter metaid="_145642" id="lightOffset" name="lightOffset" value="0"/>
+  <parameter metaid="_145643" id="cyclePeriod" name="cyclePeriod" value="24"/>
+  <parameter metaid="_145645" id="photoPeriod" name="photoPeriod" value="8"/>
+  <parameter metaid="_145646" id="phase" name="phase" value="0"/>
+  <parameter metaid="_145648" id="twilightPeriod" name="twilightPeriod" value="0.0416666667"/>
+  <parameter metaid="_145649" id="two11_Fch_0" name="two11_Fch_0" value="8"/>
+  <parameter metaid="_145651" id="four12_Fch_0" name="four12_Fch_0" value="8"/>
+  <parameter metaid="_145652" id="vCOm" name="vCOm" value="1.1452"/>
+  <parameter metaid="_145654" id="vCOp" name="vCOp" value="9.2242"/>
+  <parameter metaid="_145655" id="kCOp" name="kCOp" value="2.0976"/>
+  <parameter metaid="_145657" id="vCOFT" name="vCOFT" value="0.6683"/>
+  <parameter metaid="_145658" id="kCOFT" name="kCOFT" value="7.3533"/>
+  <parameter metaid="_145660" id="vFT" name="vFT" value="1.8674"/>
+  <parameter metaid="_145661" id="kFT" name="kFT" value="5.3925"/>
+</listOfParameters><listOfReactions>
+  <reaction metaid="_145469" id="one11" name="one11" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_184015" species="cLm"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_184027" species="cPn"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_184039">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <ci> lightFunction </ci>
+            <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+            <ci> lightOffset </ci>
+            <ci> lightAmplitude </ci>
+            <ci> phase </ci>
+            <ci> photoPeriod </ci>
+            <ci> cyclePeriod </ci>
+            <ci> twilightPeriod </ci>
+          </apply>
+          <ci> q1 </ci>
+          <ci> cPn </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145470" id="two11" name="two11" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_184051" species="cLm"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_184063" species="cXn"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_184075">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> n1 </ci>
+              <apply>
+                <power/>
+                <ci> cXn </ci>
+                <ci> a </ci>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <power/>
+                <ci> g1 </ci>
+                <ci> a </ci>
+              </apply>
+              <apply>
+                <power/>
+                <ci> cXn </ci>
+                <ci> a </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145471" id="three11" name="three11" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184087" species="cLm"/>
+    </listOfReactants>
+    <kineticLaw metaid="_184099">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> m1 </ci>
+              <ci> cLm </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> k1 </ci>
+              <ci> cLm </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145473" id="one12" name="one12" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_184111" species="cLc"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_184123" species="cLm"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_184135">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <ci> p1 </ci>
+          <ci> cLm </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145474" id="three12" name="three12" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184148" species="cLn"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_184160" species="cLc"/>
+    </listOfProducts>
+    <kineticLaw metaid="_184172">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <ci> r2 </ci>
+          <ci> cLn </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145476" id="four12" name="four12" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184184" species="cLc"/>
+    </listOfReactants>
+    <kineticLaw metaid="_184196">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> m2 </ci>
+              <ci> cLc </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> k2 </ci>
+              <ci> cLc </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145477" id="one13" name="one13" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184208" species="cLc"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_184220" species="cLn"/>
+    </listOfProducts>
+    <kineticLaw metaid="_184232">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <ci> r1 </ci>
+          <ci> cLc </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145479" id="three13" name="three13" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184244" species="cLn"/>
+    </listOfReactants>
+    <kineticLaw metaid="_184257">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> m3 </ci>
+              <ci> cLn </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> k3 </ci>
+              <ci> cLn </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145480" id="one14" name="one14" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_184269" species="cTm"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_184281" species="cLn"/>
+      <modifierSpeciesReference metaid="_184293" species="cYn"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_184305">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> n2 </ci>
+              <apply>
+                <power/>
+                <ci> cYn </ci>
+                <ci> b </ci>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <power/>
+                <ci> g2 </ci>
+                <ci> b </ci>
+              </apply>
+              <apply>
+                <power/>
+                <ci> cYn </ci>
+                <ci> b </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <power/>
+              <ci> g3 </ci>
+              <ci> c </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <power/>
+                <ci> g3 </ci>
+                <ci> c </ci>
+              </apply>
+              <apply>
+                <power/>
+                <ci> cLn </ci>
+                <ci> c </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145482" id="two14" name="two14" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184317" species="cTm"/>
+    </listOfReactants>
+    <kineticLaw metaid="_184329">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> m4 </ci>
+              <ci> cTm </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> k4 </ci>
+              <ci> cTm </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145483" id="one15" name="one15" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_184341" species="cTc"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_184353" species="cTm"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_184366">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <ci> p2 </ci>
+          <ci> cTm </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145485" id="three15" name="three15" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184378" species="cTn"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_184391" species="cTc"/>
+    </listOfProducts>
+    <kineticLaw metaid="_184403">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <ci> r4 </ci>
+          <ci> cTn </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145486" id="four15" name="four15" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184415" species="cTc"/>
+    </listOfReactants>
+    <kineticLaw metaid="_184428">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <ci> lightFunction </ci>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+                  <ci> lightOffset </ci>
+                  <ci> lightAmplitude </ci>
+                  <ci> phase </ci>
+                  <ci> photoPeriod </ci>
+                  <ci> cyclePeriod </ci>
+                  <ci> twilightPeriod </ci>
+                </apply>
+              </apply>
+              <ci> m5 </ci>
+            </apply>
+            <ci> m6 </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <ci> cTc </ci>
+            <apply>
+              <plus/>
+              <ci> k5 </ci>
+              <ci> cTc </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145488" id="one16" name="one16" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184440" species="cTc"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_184452" species="cTn"/>
+    </listOfProducts>
+    <kineticLaw metaid="_184464">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <ci> r3 </ci>
+          <ci> cTc </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145489" id="three16" name="three16" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184476" species="cTn"/>
+    </listOfReactants>
+    <kineticLaw metaid="_184488">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <ci> lightFunction </ci>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+                  <ci> lightOffset </ci>
+                  <ci> lightAmplitude </ci>
+                  <ci> phase </ci>
+                  <ci> photoPeriod </ci>
+                  <ci> cyclePeriod </ci>
+                  <ci> twilightPeriod </ci>
+                </apply>
+              </apply>
+              <ci> m7 </ci>
+            </apply>
+            <ci> m8 </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <ci> cTn </ci>
+            <apply>
+              <plus/>
+              <ci> k6 </ci>
+              <ci> cTn </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145491" id="one17" name="one17" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_184500" species="cXm"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_184512" species="cTn"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_184524">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> n3 </ci>
+              <apply>
+                <power/>
+                <ci> cTn </ci>
+                <ci> d </ci>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <power/>
+                <ci> g4 </ci>
+                <ci> d </ci>
+              </apply>
+              <apply>
+                <power/>
+                <ci> cTn </ci>
+                <ci> d </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145492" id="two17" name="two17" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184536" species="cXm"/>
+    </listOfReactants>
+    <kineticLaw metaid="_184548">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> m9 </ci>
+              <ci> cXm </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> k7 </ci>
+              <ci> cXm </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145494" id="one18" name="one18" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_184560" species="cXc"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_184572" species="cXm"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_184584">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <ci> p3 </ci>
+          <ci> cXm </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145495" id="three18" name="three18" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184596" species="cXn"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_184608" species="cXc"/>
+    </listOfProducts>
+    <kineticLaw metaid="_184620">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <ci> r6 </ci>
+          <ci> cXn </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145497" id="four18" name="four18" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184632" species="cXc"/>
+    </listOfReactants>
+    <kineticLaw metaid="_184644">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> m10 </ci>
+              <ci> cXc </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> k8 </ci>
+              <ci> cXc </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145498" id="one19" name="one19" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184656" species="cXc"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_184669" species="cXn"/>
+    </listOfProducts>
+    <kineticLaw metaid="_184681">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <ci> r5 </ci>
+          <ci> cXc </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145500" id="three19" name="three19" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184693" species="cXn"/>
+    </listOfReactants>
+    <kineticLaw metaid="_184705">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> m11 </ci>
+              <ci> cXn </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> k9 </ci>
+              <ci> cXn </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145501" id="one20" name="one20" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_184717" species="cYm"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_184730" species="cLn"/>
+      <modifierSpeciesReference metaid="_184742" species="cPn"/>
+      <modifierSpeciesReference metaid="_184754" species="cTn"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_184766">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <ci> lightFunction </ci>
+                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+                <ci> lightOffset </ci>
+                <ci> lightAmplitude </ci>
+                <ci> phase </ci>
+                <ci> photoPeriod </ci>
+                <ci> cyclePeriod </ci>
+                <ci> twilightPeriod </ci>
+              </apply>
+              <ci> q2 </ci>
+              <ci> cPn </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <ci> lightFunction </ci>
+                      <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+                      <ci> lightOffset </ci>
+                      <ci> lightAmplitude </ci>
+                      <ci> phase </ci>
+                      <ci> photoPeriod </ci>
+                      <ci> cyclePeriod </ci>
+                      <ci> twilightPeriod </ci>
+                    </apply>
+                    <ci> n4 </ci>
+                  </apply>
+                  <ci> n5 </ci>
+                </apply>
+                <apply>
+                  <power/>
+                  <ci> g5 </ci>
+                  <ci> e </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <power/>
+                  <ci> g5 </ci>
+                  <ci> e </ci>
+                </apply>
+                <apply>
+                  <power/>
+                  <ci> cTn </ci>
+                  <ci> e </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <power/>
+              <ci> g6 </ci>
+              <ci> f </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <power/>
+                <ci> g6 </ci>
+                <ci> f </ci>
+              </apply>
+              <apply>
+                <power/>
+                <ci> cLn </ci>
+                <ci> f </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145503" id="two20" name="two20" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184778" species="cYm"/>
+    </listOfReactants>
+    <kineticLaw metaid="_184790">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> m12 </ci>
+              <ci> cYm </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> k10 </ci>
+              <ci> cYm </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145504" id="one21" name="one21" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_184802" species="cYc"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_184815" species="cYm"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_184827">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <ci> p4 </ci>
+          <ci> cYm </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145506" id="three21" name="three21" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184839" species="cYn"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_184851" species="cYc"/>
+    </listOfProducts>
+    <kineticLaw metaid="_184863">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <ci> r8 </ci>
+          <ci> cYn </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145507" id="four21" name="four21" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184875" species="cYc"/>
+    </listOfReactants>
+    <kineticLaw metaid="_184887">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> m13 </ci>
+              <ci> cYc </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> k11 </ci>
+              <ci> cYc </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145509" id="one22" name="one22" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184899" species="cYc"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_184911" species="cYn"/>
+    </listOfProducts>
+    <kineticLaw metaid="_184923">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <ci> r7 </ci>
+          <ci> cYc </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145510" id="three22" name="three22" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184935" species="cYn"/>
+    </listOfReactants>
+    <kineticLaw metaid="_184947">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> m14 </ci>
+              <ci> cYn </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> k12 </ci>
+              <ci> cYn </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145512" id="one23" name="one23" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_184959" species="cPn"/>
+    </listOfProducts>
+    <kineticLaw metaid="_184971">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <minus/>
+            <cn type="integer"> 1 </cn>
+            <apply>
+              <ci> lightFunction </ci>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+              <ci> lightOffset </ci>
+              <ci> lightAmplitude </ci>
+              <ci> phase </ci>
+              <ci> photoPeriod </ci>
+              <ci> cyclePeriod </ci>
+              <ci> twilightPeriod </ci>
+            </apply>
+          </apply>
+          <ci> p5 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145513" id="two23" name="two23" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_184984" species="cPn"/>
+    </listOfReactants>
+    <kineticLaw metaid="_184996">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> m15 </ci>
+              <ci> cPn </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> k13 </ci>
+              <ci> cPn </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145515" id="three23" name="three23" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_185008" species="cPn"/>
+    </listOfReactants>
+    <kineticLaw metaid="_185020">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <ci> q3 </ci>
+          <apply>
+            <ci> lightFunction </ci>
+            <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+            <ci> lightOffset </ci>
+            <ci> lightAmplitude </ci>
+            <ci> phase </ci>
+            <ci> photoPeriod </ci>
+            <ci> cyclePeriod </ci>
+            <ci> twilightPeriod </ci>
+          </apply>
+          <ci> cPn </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145516" id="COpistranslatedfromCOmthatisassumedtobeequaltocTn" name="COpistranslatedfromCOmthatisassumedtobeequaltocTn" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_185032" species="cCOp"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_185044" species="cTn"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_185056">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <ci> vCOm </ci>
+          <ci> cTn </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145518" id="COpdegradation" name="COpdegradation" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_185068" species="cCOp"/>
+    </listOfReactants>
+    <kineticLaw metaid="_185080">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment </ci>
+          <apply>
+            <minus/>
+            <cn type="integer"> 1 </cn>
+            <apply>
+              <ci> lightFunction </ci>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+              <ci> lightOffset </ci>
+              <ci> lightAmplitude </ci>
+              <ci> phase </ci>
+              <ci> photoPeriod </ci>
+              <ci> cyclePeriod </ci>
+              <ci> twilightPeriod </ci>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> vCOp </ci>
+              <ci> cCOp </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> kCOp </ci>
+              <ci> cCOp </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145519" id="FTinductionbyCOp" name="FTinductionbyCOp" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_185092" species="cFTm"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_185104" species="cCOp"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_185116">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> compartment </ci>
+            <ci> vCOFT </ci>
+            <ci> cCOp </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> kCOFT </ci>
+            <ci> cCOp </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145521" id="FTmdegradation" name="FTmdegradation" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_185128" species="cFTm"/>
+    </listOfReactants>
+    <kineticLaw metaid="_185140">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> compartment </ci>
+            <ci> vFT </ci>
+            <ci> cFTm </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> kFT </ci>
+            <ci> cFTm </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+</model>
+</sbml>

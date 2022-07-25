@@ -1,0 +1,1296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version3" metaid="_729554" level="2" version="3">
+  <model metaid="metaid_0000002" id="Ciliberto2003_Swe1Network" name="Ciliberto2003_Swe1Network">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This a model from the article:      <br/>
+        <strong>Mathematical model of the morphogenesis checkpoint in budding yeast.</strong>
+        <br/>
+          Ciliberto A, Novak B, Tyson JJ.      <em>J Cell Biol</em>
+          2003 Dec 22;163(6):1243-54      <a href="http://www.ncbi.nlm.nih.gov/pubmed/14691135">14691135</a>
+          ,      <br/>
+        <strong>Abstract:</strong>
+        <br/>
+          The morphogenesis checkpoint in budding yeast delays progression through the
+cell cycle in response to stimuli that prevent bud formation. Central to the
+checkpoint mechanism is Swe1 kinase: normally inactive, its activation halts
+cell cycle progression in G2. We propose a molecular network for Swe1 control,
+based on published observations of budding yeast and analogous control signals
+in fission yeast. The proposed Swe1 network is merged with a model of
+cyclin-dependent kinase regulation, converted into a set of differential
+equations and studied by numerical simulation. The simulations accurately
+reproduce the phenotypes of a dozen checkpoint mutants. Among other predictions,
+the model attributes a new role to Hsl1, a kinase known to play a role in Swe1
+degradation: Hsl1 must also be indirectly responsible for potent inhibition of
+Swe1 activity. The model supports the idea that the morphogenesis checkpoint,
+like other checkpoints, raises the cell size threshold for progression from one
+phase of the cell cycle to the next.      </p>
+      <p>This model was taken from the      <a href="http://www.cellml.org/models">CellML repository</a>
+          and automatically converted to SBML.      <br/>
+          The original model was:      <a href="http://www.cellml.org/models/ciliberto_novak_tyson_2003_version03">
+        <strong>Ciliberto A, Novak B, Tyson JJ. (2003) - version03</strong>
+      </a>
+      <br/>
+          The original CellML model was created by:      <br/>
+      <strong>Lloyd, Catherine, May</strong>
+      <br/>
+          c.lloyd@aukland.ac.nz      <br/>
+          The University of Auckland      <br/>
+          The Bioengineering Institute      <br/></p>
+    <p>This model originates from BioModels Database: A Database of Annotated Published Models (http://www.ebi.ac.uk/biomodels/). It is copyright (c) 2005-2011 The BioModels.net Team.      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+  <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not..      <br/>
+  <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+</p>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#metaid_0000002">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL0913285268"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/pubmed/14691135"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/4892"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://www.geneontology.org/GO:0000075"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfUnitDefinitions>
+  <unitDefinition metaid="_729566" id="minute" name="minute">
+    <listOfUnits>
+      <unit metaid="_729578" kind="second" multiplier="60"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_729590" id="first_order_rate_constant" name="first_order_rate_constant">
+    <listOfUnits>
+      <unit metaid="_729602" kind="second" exponent="-1" multiplier="60"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_729614" id="time" name="time">
+    <listOfUnits>
+      <unit metaid="_729626" kind="second" multiplier="60"/>
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions><listOfCompartments>
+  <compartment metaid="_492430" id="Compartment" size="1" units="litre"/>
+</listOfCompartments><listOfParameters>
+  <parameter metaid="_492470" id="Clb2" name="Clb2" value="0.184" units="dimensionless" constant="false"/>
+  <parameter metaid="_492471" id="epsilon" name="epsilon" value="0.5" units="dimensionless"/>
+  <parameter metaid="_492472" id="Jm" name="Jm" value="10" units="dimensionless"/>
+  <parameter metaid="_492474" id="ks_clb" name="ks_clb" value="0.015" units="first_order_rate_constant"/>
+  <parameter metaid="_492475" id="PClb2" name="PClb2" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_492476" id="Trim" name="Trim" value="0.084" units="dimensionless" constant="false"/>
+  <parameter metaid="_492478" id="PTrim" name="PTrim" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_492479" id="Mcm_a" name="Mcm_a" value="0.933" units="dimensionless" constant="false"/>
+  <parameter metaid="_492480" id="Ji_mcm" name="Ji_mcm" value="0.1" units="dimensionless"/>
+  <parameter metaid="_492482" id="Ja_mcm" name="Ja_mcm" value="0.1" units="dimensionless"/>
+  <parameter metaid="_492483" id="ki_mcm" name="ki_mcm" value="0.15" units="first_order_rate_constant"/>
+  <parameter metaid="_492484" id="ka_mcm" name="ka_mcm" value="1" units="first_order_rate_constant"/>
+  <parameter metaid="_492486" id="Sic1" name="Sic1" value="0.003" units="dimensionless" constant="false"/>
+  <parameter metaid="_492487" id="ks_sic" name="ks_sic" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_492488" id="Mih1_a" name="Mih1_a" value="0.808" units="dimensionless" constant="false"/>
+  <parameter metaid="_492490" id="Ji_mih" name="Ji_mih" value="0.1" units="dimensionless"/>
+  <parameter metaid="_492491" id="Ja_mih" name="Ja_mih" value="0.1" units="dimensionless"/>
+  <parameter metaid="_492492" id="Vi_mih" name="Vi_mih" value="0.3" units="first_order_rate_constant"/>
+  <parameter metaid="_492493" id="Va_mih" name="Va_mih" value="1" units="first_order_rate_constant"/>
+  <parameter metaid="_492495" id="IE_a" name="IE_a" value="0.522" units="dimensionless" constant="false"/>
+  <parameter metaid="_492496" id="Ji_ie" name="Ji_ie" value="0.01" units="dimensionless"/>
+  <parameter metaid="_492497" id="Ja_ie" name="Ja_ie" value="0.01" units="dimensionless"/>
+  <parameter metaid="_492499" id="ki_ie" name="ki_ie" value="0.04" units="first_order_rate_constant"/>
+  <parameter metaid="_492500" id="ka_ie" name="ka_ie" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_492501" id="Cdc20_a" name="Cdc20_a" value="1.438" units="dimensionless" constant="false"/>
+  <parameter metaid="_492503" id="Cdc20" name="Cdc20" value="1.172" units="dimensionless" constant="false"/>
+  <parameter metaid="_492504" id="ks_cdc20_1" name="ks_cdc20_1" value="0.005" units="first_order_rate_constant"/>
+  <parameter metaid="_492505" id="ks_cdc20_2" name="ks_cdc20_2" value="0.3" units="first_order_rate_constant"/>
+  <parameter metaid="_492507" id="Js_cdc20" name="Js_cdc20" value="0.3" units="dimensionless"/>
+  <parameter metaid="_492508" id="Cdh1_a" name="Cdh1_a" value="0.993" units="dimensionless" constant="false"/>
+  <parameter metaid="_492509" id="Ji_cdh" name="Ji_cdh" value="0.01" units="dimensionless"/>
+  <parameter metaid="_492511" id="Ja_cdh" name="Ja_cdh" value="0.01" units="dimensionless"/>
+  <parameter metaid="_492512" id="ki_cdh" name="ki_cdh" value="35" units="first_order_rate_constant"/>
+  <parameter metaid="_492513" id="ka_cdh_1" name="ka_cdh_1" value="1" units="first_order_rate_constant"/>
+  <parameter metaid="_492515" id="ki_cdh_1" name="ki_cdh_1" value="2" units="first_order_rate_constant"/>
+  <parameter metaid="_492516" id="ka_cdh_2" name="ka_cdh_2" value="10" units="first_order_rate_constant"/>
+  <parameter metaid="_492517" id="Cln" name="Cln" value="0.054" units="dimensionless" constant="false"/>
+  <parameter metaid="_492519" id="ks_cln" name="ks_cln" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_492520" id="kd_cln" name="kd_cln" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_492521" id="SBF_a" name="SBF_a" value="0.124" units="dimensionless" constant="false"/>
+  <parameter metaid="_492523" id="Ji_sbf" name="Ji_sbf" value="0.01" units="dimensionless"/>
+  <parameter metaid="_492524" id="Ja_sbf" name="Ja_sbf" value="0.01" units="dimensionless"/>
+  <parameter metaid="_492525" id="ki_sbf_1" name="ki_sbf_1" value="1" units="first_order_rate_constant"/>
+  <parameter metaid="_492527" id="ka_sbf_1" name="ka_sbf_1" value="1" units="first_order_rate_constant"/>
+  <parameter metaid="_492528" id="ki_sbf_2" name="ki_sbf_2" value="2" units="first_order_rate_constant"/>
+  <parameter metaid="_492529" id="ka_sbf_2" name="ka_sbf_2" value="0" units="first_order_rate_constant"/>
+  <parameter metaid="_492531" id="Swe1" name="Swe1" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_492532" id="ks_swe" name="ks_swe" value="0.0025" units="first_order_rate_constant"/>
+  <parameter metaid="_492533" id="ks_sweC" name="ks_sweC" value="0" units="first_order_rate_constant"/>
+  <parameter metaid="_492535" id="PSwe1" name="PSwe1" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_492536" id="Swe1M" name="Swe1M" value="0.018" units="dimensionless" constant="false"/>
+  <parameter metaid="_492537" id="PSwe1M" name="PSwe1M" value="0.013" units="dimensionless" constant="false"/>
+  <parameter metaid="_492539" id="kd_swe_2" name="kd_swe_2" value="0.05" units="first_order_rate_constant"/>
+  <parameter metaid="_492540" id="BE" name="BE" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_492541" id="ks_bud" name="ks_bud" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_492543" id="kd_bud" name="kd_bud" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_492544" id="M" name="M" value="0.802" units="dimensionless" constant="false"/>
+  <parameter metaid="_492545" id="mu" name="mu" value="0.005" units="first_order_rate_constant"/>
+  <parameter metaid="_492547" id="IE" name="IE" units="dimensionless" constant="false"/>
+  <parameter metaid="_492548" id="IE_total" name="IE_total" value="1" units="dimensionless"/>
+  <parameter metaid="_492549" id="Cdh1" name="Cdh1" units="dimensionless" constant="false"/>
+  <parameter metaid="_492551" id="Cdh1_total" name="Cdh1_total" value="1" units="dimensionless"/>
+  <parameter metaid="_492552" id="Mih1" name="Mih1" units="dimensionless" constant="false"/>
+  <parameter metaid="_492553" id="Mih1_total" name="Mih1_total" value="1" units="dimensionless"/>
+  <parameter metaid="_492555" id="Mcm" name="Mcm" units="dimensionless" constant="false"/>
+  <parameter metaid="_492556" id="Mcm_total" name="Mcm_total" value="1" units="dimensionless"/>
+  <parameter metaid="_492557" id="SBF" name="SBF" units="dimensionless" constant="false"/>
+  <parameter metaid="_492559" id="SBF_total" name="SBF_total" value="1" units="dimensionless"/>
+  <parameter metaid="_492560" id="Swe1_total" name="Swe1_total" units="dimensionless" constant="false"/>
+  <parameter metaid="_492561" id="BUD" name="BUD" units="dimensionless" constant="false"/>
+  <parameter metaid="_492563" id="Ji_cdc20" name="Ji_cdc20" value="0.001" units="dimensionless"/>
+  <parameter metaid="_492564" id="Ja_cdc20" name="Ja_cdc20" value="0.001" units="dimensionless"/>
+  <parameter metaid="_492565" id="ki_cdc20" name="ki_cdc20" value="0.25" units="first_order_rate_constant"/>
+  <parameter metaid="_492567" id="kd_cdc20" name="kd_cdc20" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_492568" id="ka_cdc20" name="ka_cdc20" value="1" units="first_order_rate_constant"/>
+  <parameter metaid="_492569" id="khsl1" name="khsl1" value="1" units="first_order_rate_constant"/>
+  <parameter metaid="_492571" id="khsl1r" name="khsl1r" value="0.01" units="first_order_rate_constant"/>
+  <parameter metaid="_492572" id="kd_swe_1" name="kd_swe_1" value="0.007" units="first_order_rate_constant"/>
+  <parameter metaid="_492573" id="Ji_wee" name="Ji_wee" value="0.05" units="dimensionless"/>
+  <parameter metaid="_492575" id="Ja_wee" name="Ja_wee" value="0.05" units="dimensionless"/>
+  <parameter metaid="_492576" id="Vi_wee" name="Vi_wee" value="1" units="first_order_rate_constant"/>
+  <parameter metaid="_492577" id="Va_wee" name="Va_wee" value="0.3" units="first_order_rate_constant"/>
+  <parameter metaid="_492578" id="kd_clb_1" name="kd_clb_1" value="0.015" units="first_order_rate_constant"/>
+  <parameter metaid="_492580" id="kd_clb_2" name="kd_clb_2" value="1" units="first_order_rate_constant"/>
+  <parameter metaid="_492581" id="kd_clb_3" name="kd_clb_3" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_492582" id="kswe" name="kswe" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_492584" id="kmih" name="kmih" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_492585" id="kass" name="kass" value="300" units="first_order_rate_constant"/>
+  <parameter metaid="_492586" id="kdiss" name="kdiss" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_492588" id="kd_sic" name="kd_sic" value="0.01" units="first_order_rate_constant"/>
+  <parameter metaid="_492589" id="kd_sic_1" name="kd_sic_1" value="1" units="first_order_rate_constant"/>
+  <parameter metaid="_492590" id="kd_sic_2" name="kd_sic_2" value="3" units="first_order_rate_constant"/>
+  <parameter metaid="_492592" id="kswe_1" name="kswe_1" value="2" units="first_order_rate_constant"/>
+  <parameter metaid="_492593" id="kswe_2" name="kswe_2" value="0.01" units="first_order_rate_constant"/>
+  <parameter metaid="_492594" id="kswe_3" name="kswe_3" value="0.2" units="first_order_rate_constant"/>
+  <parameter metaid="_492596" id="kmih_1" name="kmih_1" value="5" units="first_order_rate_constant"/>
+  <parameter metaid="_492597" id="kmih_2" name="kmih_2" value="0.5" units="first_order_rate_constant"/>
+</listOfParameters><listOfRules>
+  <rateRule metaid="_492433" variable="Clb2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> ks_clb </ci>
+              <apply>
+                <plus/>
+                <ci> epsilon </ci>
+                <ci> Mcm_a </ci>
+              </apply>
+              <ci> M </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <cn> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> M </ci>
+                <ci> Jm </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kmih </ci>
+            <ci> PClb2 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kdiss </ci>
+            <ci> Trim </ci>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <ci> kd_sic </ci>
+              <apply>
+                <times/>
+                <ci> kd_sic_1 </ci>
+                <ci> Cln </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kd_sic_2 </ci>
+                <ci> Clb2 </ci>
+              </apply>
+            </apply>
+            <ci> Trim </ci>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <ci> kd_clb_1 </ci>
+              <apply>
+                <times/>
+                <ci> kd_clb_2 </ci>
+                <ci> Cdh1_a </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kd_clb_3 </ci>
+                <ci> Cdc20_a </ci>
+              </apply>
+            </apply>
+            <ci> Clb2 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kswe </ci>
+            <ci> Clb2 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kass </ci>
+            <ci> Sic1 </ci>
+            <ci> Clb2 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492434" variable="PClb2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> kswe </ci>
+            <ci> Clb2 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kdiss </ci>
+            <ci> PTrim </ci>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <ci> kd_sic </ci>
+              <apply>
+                <times/>
+                <ci> kd_sic_1 </ci>
+                <ci> Cln </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kd_sic_2 </ci>
+                <ci> Clb2 </ci>
+              </apply>
+            </apply>
+            <ci> PTrim </ci>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <ci> kd_clb_1 </ci>
+              <apply>
+                <times/>
+                <ci> kd_clb_2 </ci>
+                <ci> Cdh1_a </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kd_clb_3 </ci>
+                <ci> Cdc20_a </ci>
+              </apply>
+            </apply>
+            <ci> PClb2 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kmih </ci>
+            <ci> PClb2 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kass </ci>
+            <ci> Sic1 </ci>
+            <ci> PClb2 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492435" variable="Trim">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> kass </ci>
+            <ci> Sic1 </ci>
+            <ci> Clb2 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kmih </ci>
+            <ci> PTrim </ci>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> kdiss </ci>
+            <ci> Trim </ci>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <ci> kd_sic </ci>
+              <apply>
+                <times/>
+                <ci> kd_sic_1 </ci>
+                <ci> Cln </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kd_sic_2 </ci>
+                <ci> Clb2 </ci>
+              </apply>
+            </apply>
+            <ci> Trim </ci>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <ci> kd_clb_1 </ci>
+              <apply>
+                <times/>
+                <ci> kd_clb_2 </ci>
+                <ci> Cdh1_a </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kd_clb_3 </ci>
+                <ci> Cdc20_a </ci>
+              </apply>
+            </apply>
+            <ci> Trim </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kswe </ci>
+            <ci> Trim </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492436" variable="PTrim">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> kswe </ci>
+            <ci> Trim </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kass </ci>
+            <ci> Sic1 </ci>
+            <ci> PClb2 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> kdiss </ci>
+            <ci> PTrim </ci>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <ci> kd_sic </ci>
+              <apply>
+                <times/>
+                <ci> kd_sic_1 </ci>
+                <ci> Cln </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kd_sic_2 </ci>
+                <ci> Clb2 </ci>
+              </apply>
+            </apply>
+            <ci> PTrim </ci>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <ci> kd_clb_1 </ci>
+              <apply>
+                <times/>
+                <ci> kd_clb_2 </ci>
+                <ci> Cdh1_a </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kd_clb_3 </ci>
+                <ci> Cdc20_a </ci>
+              </apply>
+            </apply>
+            <ci> PTrim </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kmih </ci>
+            <ci> PTrim </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492438" variable="Mcm_a">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> ki_mcm </ci>
+            </apply>
+            <ci> Mcm_a </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> Ji_mcm </ci>
+            <ci> Mcm_a </ci>
+          </apply>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> ka_mcm </ci>
+            <ci> Mcm </ci>
+            <ci> Clb2 </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> Ja_mcm </ci>
+            <ci> Mcm </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492439" variable="Sic1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <ci> ks_sic </ci>
+          <apply>
+            <times/>
+            <ci> kdiss </ci>
+            <apply>
+              <plus/>
+              <ci> PTrim </ci>
+              <ci> Trim </ci>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <ci> kd_clb_1 </ci>
+              <apply>
+                <times/>
+                <ci> kd_clb_2 </ci>
+                <ci> Cdh1_a </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kd_clb_3 </ci>
+                <ci> Cdc20_a </ci>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> PTrim </ci>
+              <ci> Trim </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <ci> kd_sic </ci>
+              <apply>
+                <times/>
+                <ci> kd_sic_1 </ci>
+                <ci> Cln </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kd_sic_2 </ci>
+                <ci> Clb2 </ci>
+              </apply>
+            </apply>
+            <ci> Sic1 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kass </ci>
+            <ci> Sic1 </ci>
+            <apply>
+              <plus/>
+              <ci> Clb2 </ci>
+              <ci> PClb2 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492440" variable="Mih1_a">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> Vi_mih </ci>
+            </apply>
+            <ci> Mih1_a </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> Ji_mih </ci>
+            <ci> Mih1_a </ci>
+          </apply>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> Va_mih </ci>
+            <ci> Clb2 </ci>
+            <ci> Mih1 </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> Ja_mih </ci>
+            <ci> Mih1 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492441" variable="IE_a">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> ki_ie </ci>
+            </apply>
+            <ci> IE_a </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> Ji_ie </ci>
+            <ci> IE_a </ci>
+          </apply>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> ka_ie </ci>
+            <ci> Clb2 </ci>
+            <ci> IE </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> Ja_ie </ci>
+            <ci> IE </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492443" variable="Cdc20_a">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> ka_cdc20 </ci>
+            <ci> IE_a </ci>
+            <ci> Cdc20 </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> Ja_cdc20 </ci>
+            <ci> Cdc20 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> ki_cdc20 </ci>
+              <ci> Cdc20_a </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Ji_cdc20 </ci>
+              <ci> Cdc20_a </ci>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kd_cdc20 </ci>
+            <ci> Cdc20_a </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492444" variable="Cdc20">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <ci> ks_cdc20_1 </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> ks_cdc20_2 </ci>
+              <apply>
+                <power/>
+                <ci> Clb2 </ci>
+                <cn> 4 </cn>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <power/>
+                <ci> Js_cdc20 </ci>
+                <cn> 4 </cn>
+              </apply>
+              <apply>
+                <power/>
+                <ci> Clb2 </ci>
+                <cn> 4 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> ki_cdc20 </ci>
+              <ci> Cdc20_a </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Ji_cdc20 </ci>
+              <ci> Cdc20_a </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> ka_cdc20 </ci>
+              <ci> IE_a </ci>
+              <ci> Cdc20 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Ja_cdc20 </ci>
+              <ci> Cdc20 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kd_cdc20 </ci>
+            <ci> Cdc20 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492445" variable="Cdh1_a">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> ki_cdh </ci>
+                  <ci> Clb2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> ki_cdh_1 </ci>
+                  <ci> Cln </ci>
+                </apply>
+              </apply>
+            </apply>
+            <ci> Cdh1_a </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> Ji_cdh </ci>
+            <ci> Cdh1_a </ci>
+          </apply>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <ci> ka_cdh_1 </ci>
+              <apply>
+                <times/>
+                <ci> ka_cdh_2 </ci>
+                <ci> Cdc20_a </ci>
+              </apply>
+            </apply>
+            <ci> Cdh1 </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> Ja_cdh </ci>
+            <ci> Cdh1 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492447" variable="Cln">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> ks_cln </ci>
+          <ci> SBF_a </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> kd_cln </ci>
+          <ci> Cln </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492448" variable="SBF_a">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <apply>
+                <plus/>
+                <ci> ki_sbf_1 </ci>
+                <apply>
+                  <times/>
+                  <ci> ki_sbf_2 </ci>
+                  <ci> Clb2 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <ci> SBF_a </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> Ji_sbf </ci>
+            <ci> SBF_a </ci>
+          </apply>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> ka_sbf_1 </ci>
+                <ci> M </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> ka_sbf_2 </ci>
+                <ci> Cln </ci>
+              </apply>
+            </apply>
+            <ci> SBF </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> Ja_sbf </ci>
+            <ci> SBF </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492449" variable="Swe1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> ks_swe </ci>
+            <ci> SBF_a </ci>
+          </apply>
+          <ci> ks_sweC </ci>
+          <apply>
+            <times/>
+            <ci> khsl1r </ci>
+            <ci> Swe1M </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> Va_wee </ci>
+              <ci> PSwe1 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Ja_wee </ci>
+              <ci> PSwe1 </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> khsl1 </ci>
+            <ci> BUD </ci>
+            <ci> Swe1 </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> Vi_wee </ci>
+              <ci> Clb2 </ci>
+              <ci> Swe1 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Ji_wee </ci>
+              <ci> Swe1 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kd_swe_1 </ci>
+            <ci> Swe1 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492451" variable="PSwe1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> khsl1r </ci>
+            <ci> PSwe1M </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> Vi_wee </ci>
+              <ci> Swe1 </ci>
+              <ci> Clb2 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Ji_wee </ci>
+              <ci> Swe1 </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> khsl1 </ci>
+            <ci> BUD </ci>
+            <ci> PSwe1 </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> Va_wee </ci>
+              <ci> PSwe1 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Ja_wee </ci>
+              <ci> PSwe1 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kd_swe_1 </ci>
+            <ci> PSwe1 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492452" variable="Swe1M">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> khsl1 </ci>
+            <ci> BUD </ci>
+            <ci> Swe1 </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> Va_wee </ci>
+              <ci> PSwe1M </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Ja_wee </ci>
+              <ci> PSwe1M </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> khsl1r </ci>
+            <ci> Swe1M </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> Vi_wee </ci>
+              <ci> Clb2 </ci>
+              <ci> Swe1M </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Ji_wee </ci>
+              <ci> Swe1M </ci>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kd_swe_1 </ci>
+            <ci> Swe1M </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492453" variable="PSwe1M">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> khsl1 </ci>
+            <ci> BUD </ci>
+            <ci> PSwe1 </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> Vi_wee </ci>
+              <ci> Clb2 </ci>
+              <ci> Swe1M </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Ji_wee </ci>
+              <ci> Swe1M </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> khsl1r </ci>
+            <ci> PSwe1M </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> Va_wee </ci>
+              <ci> PSwe1M </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Ja_wee </ci>
+              <ci> PSwe1M </ci>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kd_swe_2 </ci>
+            <ci> PSwe1M </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492455" variable="BE">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> ks_bud </ci>
+          <ci> Cln </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> kd_bud </ci>
+          <ci> BE </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_492456" variable="M">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> mu </ci>
+        <ci> M </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <assignmentRule metaid="_492457" variable="IE">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> IE_total </ci>
+        <ci> IE_a </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_492459" variable="Cdh1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> Cdh1_total </ci>
+        <ci> Cdh1_a </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_492460" variable="Mih1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> Mih1_total </ci>
+        <ci> Mih1_a </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_492461" variable="Mcm">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> Mcm_total </ci>
+        <ci> Mcm_a </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_492463" variable="SBF">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> SBF_total </ci>
+        <ci> SBF_a </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_492464" variable="Swe1_total">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> Swe1 </ci>
+        <ci> PSwe1 </ci>
+        <ci> Swe1M </ci>
+        <ci> PSwe1M </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_492465" variable="BUD">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <cn> 0 </cn>
+          <apply>
+            <and/>
+            <apply>
+              <leq/>
+              <ci> BE </ci>
+              <cn> 0.6 </cn>
+            </apply>
+            <apply>
+              <lt/>
+              <ci> Clb2 </ci>
+              <cn> 0.2 </cn>
+            </apply>
+          </apply>
+        </piece>
+        <otherwise>
+          <cn> 1 </cn>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_492467" variable="kmih">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <ci> kmih_1 </ci>
+          <ci> Mih1_a </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> kmih_2 </ci>
+          <ci> Mih1 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_492468" variable="kswe">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <ci> kswe_1 </ci>
+          <ci> Swe1 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> kswe_2 </ci>
+          <ci> Swe1M </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> kswe_3 </ci>
+          <ci> PSwe1 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+</listOfRules>
+</model>
+</sbml>

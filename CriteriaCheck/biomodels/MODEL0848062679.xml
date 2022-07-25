@@ -1,0 +1,1640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version3" metaid="_500331" level="2" version="3">
+  <model metaid="metaid_0000002" id="Irvine1999_CardiacSodiumChannel" name="Irvine1999_CardiacSodiumChannel">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This a model from the article:      <br/>
+        <strong>Cardiac sodium channel Markov model with temperature dependence and recovery
+from inactivation.</strong>
+        <br/>
+          Irvine LA, Jafri MS, Winslow RL.      <em>Biophys J</em>
+          1999 Apr;76(4):1868-85      <a href="http://www.ncbi.nlm.nih.gov/pubmed/10096885">10096885</a>
+          ,      <br/>
+        <strong>Abstract:</strong>
+        <br/>
+          A Markov model of the cardiac sodium channel is presented. The model is similar
+to the CA1 hippocampal neuron sodium channel model developed by Kuo and Bean
+(1994. Neuron. 12:819-829) with the following modifications: 1) an additional
+open state is added; 2) open-inactivated transitions are made voltage-dependent;
+and 3) channel rate constants are exponential functions of enthalpy, entropy,
+and voltage and have explicit temperature dependence. Model parameters are
+determined using a simulated annealing algorithm to minimize the error between
+model responses and various experimental data sets. The model reproduces a wide
+range of experimental data including ionic currents, gating currents, tail
+currents, steady-state inactivation, recovery from inactivation, and open time
+distributions over a temperature range of 10 degrees C to 25 degrees C. The
+model also predicts measures of single channel activity such as first latency,
+probability of a null sweep, and probability of reopening.      </p>
+      <p>This model was taken from the      <a href="http://www.cellml.org/models">CellML repository</a>
+          and automatically converted to SBML.      <br/>
+          The original model was:      <a href="http://www.cellml.org/models/irvine_jafri_winslow_1999_version02">
+        <strong>Irvine LA, Jafri MS, Winslow RL. (1999) - version02</strong>
+      </a>
+      <br/>
+          The original CellML model was created by:      <br/>
+      <strong>Lloyd, Catherine, May</strong>
+      <br/>
+          c.lloyd@aukland.ac.nz      <br/>
+          The University of Auckland      <br/>
+          The Bioengineering Institute      <br/></p>
+    <p>This model originates from BioModels Database: A Database of Annotated Published Models (http://www.ebi.ac.uk/biomodels/). It is copyright (c) 2005-2011 The BioModels.net Team.      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+  <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not..      <br/>
+  <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+</p>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#metaid_0000002">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL0848062679"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/pubmed/10096885"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/go/GO:0086006"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+      <bqbiol:occursIn>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/bto/BTO:0002320"/>
+        </rdf:Bag>
+      </bqbiol:occursIn>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfUnitDefinitions>
+  <unitDefinition metaid="_500343" id="ms" name="ms">
+    <listOfUnits>
+      <unit metaid="_500355" kind="second" scale="-3"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_500367" id="V" name="V">
+    <listOfUnits>
+      <unit metaid="_500379" kind="volt"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_500391" id="per_V" name="per_V">
+    <listOfUnits>
+      <unit metaid="_500403" kind="volt" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_500415" id="J_mol" name="J_mol">
+    <listOfUnits>
+      <unit metaid="_500427" kind="joule"/>
+      <unit metaid="_500439" kind="mole" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_500451" id="J_mol_K" name="J_mol_K">
+    <listOfUnits>
+      <unit metaid="_500463" kind="joule"/>
+      <unit metaid="_500475" kind="mole" exponent="-1"/>
+      <unit metaid="_500487" kind="kelvin" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_500499" id="first_order_rate_constant" name="first_order_rate_constant">
+    <listOfUnits>
+      <unit metaid="_500511" kind="second" exponent="-1" scale="-3"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_500523" id="J_K" name="J_K">
+    <listOfUnits>
+      <unit metaid="_500535" kind="joule"/>
+      <unit metaid="_500548" kind="kelvin" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_500560" id="K" name="K">
+    <listOfUnits>
+      <unit metaid="_500572" kind="kelvin"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_500584" id="J_ms" name="J_ms">
+    <listOfUnits>
+      <unit metaid="_500596" kind="joule"/>
+      <unit metaid="_500608" kind="second" scale="-3"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_500620" id="C_mol" name="C_mol">
+    <listOfUnits>
+      <unit metaid="_500632" kind="coulomb"/>
+      <unit metaid="_500644" kind="mole" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_500656" id="time" name="time">
+    <listOfUnits>
+      <unit metaid="_500668" kind="second" scale="-3"/>
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions><listOfCompartments>
+  <compartment metaid="_661177" id="Compartment" size="1" units="litre"/>
+</listOfCompartments><listOfParameters>
+  <parameter metaid="_661236" id="V" name="V" value="-0.12" units="V"/>
+  <parameter metaid="_661238" id="i_Na" name="i_Na" units="dimensionless" constant="false"/>
+  <parameter metaid="_661240" id="E_Na" name="E_Na" value="0.044675" units="V"/>
+  <parameter metaid="_661242" id="g_Na" name="g_Na" value="0.0131" units="per_V"/>
+  <parameter metaid="_661244" id="P_open" name="P_open" units="dimensionless" constant="false"/>
+  <parameter metaid="_661246" id="O1" name="O1" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_661248" id="O2" name="O2" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_661250" id="C0" name="C0" value="1" units="dimensionless" constant="false"/>
+  <parameter metaid="_661252" id="C1" name="C1" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_661254" id="C2" name="C2" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_661256" id="C3" name="C3" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_661258" id="C4" name="C4" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_661260" id="C0I" name="C0I" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_661262" id="C1I" name="C1I" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_661264" id="C2I" name="C2I" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_661266" id="C3I" name="C3I" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_661268" id="C4I" name="C4I" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_661270" id="I" name="I" value="0" units="dimensionless" constant="false"/>
+  <parameter metaid="_661272" id="a" name="a" value="2.5218" units="dimensionless"/>
+  <parameter metaid="_661274" id="alpha" name="alpha" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_661276" id="beta" name="beta" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_661278" id="cf" name="cf" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_661280" id="cn" name="cn" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_661282" id="of" name="of" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_661284" id="on" name="on" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_661286" id="eta" name="eta" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_661288" id="gamma" name="gamma" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_661290" id="delta" name="delta" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_661292" id="epsilon" name="epsilon" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_661294" id="omega" name="omega" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_661296" id="v" name="v" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_661298" id="gamma_gamma" name="gamma_gamma" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_661300" id="delta_delta" name="delta_delta" units="first_order_rate_constant" constant="false"/>
+  <parameter metaid="_661302" id="R" name="R" value="8.314472" units="J_mol_K"/>
+  <parameter metaid="_661304" id="T" name="T" value="286" units="K"/>
+  <parameter metaid="_661306" id="F" name="F" value="96500" units="C_mol"/>
+  <parameter metaid="_661308" id="k" name="k" value="1.3806504e-23" units="J_K"/>
+  <parameter metaid="_661310" id="h" name="h" value="6.62607095e-31" units="J_ms"/>
+  <parameter metaid="_661312" id="z_alpha" name="z_alpha" value="0"/>
+  <parameter metaid="_661314" id="z_beta" name="z_beta" value="-0.9701"/>
+  <parameter metaid="_661316" id="z_gamma" name="z_gamma" value="1.5703"/>
+  <parameter metaid="_661318" id="z_delta" name="z_delta" value="-1.3266"/>
+  <parameter metaid="_661320" id="z_on" name="z_on" value="0.6625"/>
+  <parameter metaid="_661322" id="z_of" name="z_of" value="0"/>
+  <parameter metaid="_661324" id="z_gamma_gamma" name="z_gamma_gamma" value="0"/>
+  <parameter metaid="_661326" id="z_delta_delta" name="z_delta_delta" value="-3.5596"/>
+  <parameter metaid="_661328" id="z_epsilon" name="z_epsilon" value="0"/>
+  <parameter metaid="_661330" id="z_omega" name="z_omega" value="0"/>
+  <parameter metaid="_661332" id="z_eta" name="z_eta" value="1.5717"/>
+  <parameter metaid="_661334" id="z_v" name="z_v" value="-1.3281"/>
+  <parameter metaid="_661336" id="z_cn" name="z_cn" value="0"/>
+  <parameter metaid="_661338" id="z_cf" name="z_cf" value="0"/>
+  <parameter metaid="_661340" id="delta_H_alpha" name="delta_H_alpha" value="116900" units="J_mol"/>
+  <parameter metaid="_661342" id="delta_H_beta" name="delta_H_beta" value="263870" units="J_mol"/>
+  <parameter metaid="_661344" id="delta_H_cf" name="delta_H_cf" value="57533" units="J_mol"/>
+  <parameter metaid="_661346" id="delta_H_cn" name="delta_H_cn" value="293270" units="J_mol"/>
+  <parameter metaid="_661348" id="delta_H_of" name="delta_H_of" value="79035" units="J_mol"/>
+  <parameter metaid="_661350" id="delta_H_on" name="delta_H_on" value="62385" units="J_mol"/>
+  <parameter metaid="_661352" id="delta_H_eta" name="delta_H_eta" value="150333" units="J_mol"/>
+  <parameter metaid="_661354" id="delta_H_gamma" name="delta_H_gamma" value="200240" units="J_mol"/>
+  <parameter metaid="_661356" id="delta_H_delta" name="delta_H_delta" value="127970" units="J_mol"/>
+  <parameter metaid="_661358" id="delta_H_epsilon" name="delta_H_epsilon" value="79183" units="J_mol"/>
+  <parameter metaid="_661360" id="delta_H_omega" name="delta_H_omega" value="123020" units="J_mol"/>
+  <parameter metaid="_661362" id="delta_H_v" name="delta_H_v" value="121900" units="J_mol"/>
+  <parameter metaid="_661364" id="delta_H_gamma_gamma" name="delta_H_gamma_gamma" value="-99967" units="J_mol"/>
+  <parameter metaid="_661366" id="delta_H_delta_delta" name="delta_H_delta_delta" value="62555" units="J_mol"/>
+  <parameter metaid="_661368" id="delta_S_alpha" name="delta_S_alpha" value="224.114" units="J_mol_K"/>
+  <parameter metaid="_661370" id="delta_S_beta" name="delta_S_beta" value="708.146" units="J_mol_K"/>
+  <parameter metaid="_661372" id="delta_S_cf" name="delta_S_cf" value="0.00711" units="J_mol_K"/>
+  <parameter metaid="_661374" id="delta_S_cn" name="delta_S_cn" value="786.217" units="J_mol_K"/>
+  <parameter metaid="_661376" id="delta_S_of" name="delta_S_of" value="1.51" units="J_mol_K"/>
+  <parameter metaid="_661378" id="delta_S_on" name="delta_S_on" value="39.295" units="J_mol_K"/>
+  <parameter metaid="_661380" id="delta_S_eta" name="delta_S_eta" value="338.915" units="J_mol_K"/>
+  <parameter metaid="_661382" id="delta_S_gamma" name="delta_S_gamma" value="529.952" units="J_mol_K"/>
+  <parameter metaid="_661384" id="delta_S_delta" name="delta_S_delta" value="229.205" units="J_mol_K"/>
+  <parameter metaid="_661386" id="delta_S_epsilon" name="delta_S_epsilon" value="70.078" units="J_mol_K"/>
+  <parameter metaid="_661388" id="delta_S_omega" name="delta_S_omega" value="225.175" units="J_mol_K"/>
+  <parameter metaid="_661390" id="delta_S_v" name="delta_S_v" value="193.265" units="J_mol_K"/>
+  <parameter metaid="_661392" id="delta_S_gamma_gamma" name="delta_S_gamma_gamma" value="-578.317" units="J_mol_K"/>
+  <parameter metaid="_661394" id="delta_S_delta_delta" name="delta_S_delta_delta" value="-130.639" units="J_mol_K"/>
+</listOfParameters><listOfRules>
+  <rateRule metaid="_661179" variable="C0">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> beta </ci>
+            <ci> C1 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> cf </ci>
+            <ci> C0I </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <ci> cn </ci>
+            <apply>
+              <times/>
+              <cn> 4 </cn>
+              <ci> alpha </ci>
+            </apply>
+          </apply>
+          <ci> C0 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_661181" variable="C1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <cn> 2 </cn>
+            <ci> beta </ci>
+            <ci> C2 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <cn> 4 </cn>
+            <ci> alpha </ci>
+            <ci> C0 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <ci> cf </ci>
+              <ci> a </ci>
+            </apply>
+            <ci> C1I </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <ci> beta </ci>
+            <apply>
+              <times/>
+              <cn> 3 </cn>
+              <ci> alpha </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> cn </ci>
+              <ci> a </ci>
+            </apply>
+          </apply>
+          <ci> C1 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_661183" variable="C2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <cn> 3 </cn>
+            <ci> beta </ci>
+            <ci> C3 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <cn> 3 </cn>
+            <ci> alpha </ci>
+            <ci> C1 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <ci> cf </ci>
+              <apply>
+                <power/>
+                <ci> a </ci>
+                <cn> 2 </cn>
+              </apply>
+            </apply>
+            <ci> C2I </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <cn> 2 </cn>
+              <ci> beta </ci>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 2 </cn>
+              <ci> alpha </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> cn </ci>
+              <apply>
+                <power/>
+                <ci> a </ci>
+                <cn> 2 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <ci> C2 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_661185" variable="C3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <cn> 4 </cn>
+            <ci> beta </ci>
+            <ci> C4 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <cn> 2 </cn>
+            <ci> alpha </ci>
+            <ci> C2 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <ci> cf </ci>
+              <apply>
+                <power/>
+                <ci> a </ci>
+                <cn> 3 </cn>
+              </apply>
+            </apply>
+            <ci> C3I </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <cn> 3 </cn>
+              <ci> beta </ci>
+            </apply>
+            <ci> alpha </ci>
+            <apply>
+              <times/>
+              <ci> cn </ci>
+              <apply>
+                <power/>
+                <ci> a </ci>
+                <cn> 3 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <ci> C3 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_661187" variable="C4">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> delta </ci>
+            <ci> O1 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> v </ci>
+            <ci> O2 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> alpha </ci>
+            <ci> C3 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <ci> cf </ci>
+              <apply>
+                <power/>
+                <ci> a </ci>
+                <cn> 4 </cn>
+              </apply>
+            </apply>
+            <ci> C4I </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <cn> 4 </cn>
+              <ci> beta </ci>
+            </apply>
+            <ci> gamma </ci>
+            <ci> eta </ci>
+            <apply>
+              <times/>
+              <ci> cn </ci>
+              <apply>
+                <power/>
+                <ci> a </ci>
+                <cn> 4 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <ci> C4 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_661189" variable="O1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> gamma </ci>
+            <ci> C4 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> omega </ci>
+            <ci> O2 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> of </ci>
+            <ci> I </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <ci> delta </ci>
+            <ci> epsilon </ci>
+            <ci> on </ci>
+          </apply>
+          <ci> O1 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_661191" variable="O2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> epsilon </ci>
+            <ci> O1 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> eta </ci>
+            <ci> C4 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <ci> v </ci>
+            <ci> omega </ci>
+          </apply>
+          <ci> O2 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_661193" variable="C0I">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <ci> beta </ci>
+              <ci> a </ci>
+            </apply>
+            <ci> C1I </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> cn </ci>
+            <ci> C0 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <ci> cf </ci>
+            <apply>
+              <times/>
+              <cn> 4 </cn>
+              <ci> alpha </ci>
+              <ci> a </ci>
+            </apply>
+          </apply>
+          <ci> C0I </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_661195" variable="C1I">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn> 2 </cn>
+                <ci> beta </ci>
+              </apply>
+              <ci> a </ci>
+            </apply>
+            <ci> C2I </ci>
+          </apply>
+          <apply>
+            <times/>
+            <cn> 4 </cn>
+            <ci> alpha </ci>
+            <ci> a </ci>
+            <ci> C0I </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> cn </ci>
+            <ci> a </ci>
+            <ci> C1 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <ci> beta </ci>
+              <ci> a </ci>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 3 </cn>
+              <ci> alpha </ci>
+              <ci> a </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> cf </ci>
+              <ci> a </ci>
+            </apply>
+          </apply>
+          <ci> C1I </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_661197" variable="C2I">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn> 3 </cn>
+                <ci> beta </ci>
+              </apply>
+              <ci> a </ci>
+            </apply>
+            <ci> C3I </ci>
+          </apply>
+          <apply>
+            <times/>
+            <cn> 3 </cn>
+            <ci> alpha </ci>
+            <ci> a </ci>
+            <ci> C1I </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> cn </ci>
+            <apply>
+              <power/>
+              <ci> a </ci>
+              <cn> 2 </cn>
+            </apply>
+            <ci> C2 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn> 2 </cn>
+                <ci> beta </ci>
+              </apply>
+              <ci> a </ci>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 2 </cn>
+              <ci> alpha </ci>
+              <ci> a </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> cf </ci>
+              <apply>
+                <power/>
+                <ci> a </ci>
+                <cn> 2 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <ci> C2I </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_661199" variable="C3I">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn> 4 </cn>
+                <ci> beta </ci>
+              </apply>
+              <ci> a </ci>
+            </apply>
+            <ci> C4I </ci>
+          </apply>
+          <apply>
+            <times/>
+            <cn> 2 </cn>
+            <ci> alpha </ci>
+            <ci> a </ci>
+            <ci> C2I </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> cn </ci>
+            <apply>
+              <power/>
+              <ci> a </ci>
+              <cn> 3 </cn>
+            </apply>
+            <ci> C3 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn> 3 </cn>
+                <ci> beta </ci>
+              </apply>
+              <ci> a </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> alpha </ci>
+              <ci> a </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> cf </ci>
+              <apply>
+                <power/>
+                <ci> a </ci>
+                <cn> 3 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <ci> C3I </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_661201" variable="C4I">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> delta_delta </ci>
+            <ci> I </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> alpha </ci>
+            <ci> a </ci>
+            <ci> C3I </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> cn </ci>
+            <apply>
+              <power/>
+              <ci> a </ci>
+              <cn> 4 </cn>
+            </apply>
+            <ci> C4 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn> 4 </cn>
+                <ci> beta </ci>
+              </apply>
+              <ci> a </ci>
+            </apply>
+            <ci> gamma_gamma </ci>
+            <apply>
+              <divide/>
+              <ci> cf </ci>
+              <apply>
+                <power/>
+                <ci> a </ci>
+                <cn> 4 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <ci> C4I </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_661203" variable="I">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> gamma_gamma </ci>
+            <ci> C4I </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> on </ci>
+            <ci> O1 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <ci> delta_delta </ci>
+            <ci> of </ci>
+          </apply>
+          <ci> I </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <assignmentRule metaid="_661205" variable="i_Na">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> g_Na </ci>
+        <ci> P_open </ci>
+        <apply>
+          <minus/>
+          <ci> V </ci>
+          <ci> E_Na </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_661207" variable="P_open">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> O1 </ci>
+        <ci> O2 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_661209" variable="alpha">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> k </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> h </ci>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <ci> delta_H_alpha </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> delta_S_alpha </ci>
+              <ci> R </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> z_alpha </ci>
+                <ci> F </ci>
+                <ci> V </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_661211" variable="beta">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> k </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> h </ci>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <ci> delta_H_beta </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> delta_S_beta </ci>
+              <ci> R </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> z_beta </ci>
+                <ci> F </ci>
+                <ci> V </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_661213" variable="gamma">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> k </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> h </ci>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <ci> delta_H_gamma </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> delta_S_gamma </ci>
+              <ci> R </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> z_gamma </ci>
+                <ci> F </ci>
+                <ci> V </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_661215" variable="delta">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> k </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> h </ci>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <ci> delta_H_delta </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> delta_S_delta </ci>
+              <ci> R </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> z_delta </ci>
+                <ci> F </ci>
+                <ci> V </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_661217" variable="on">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> k </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> h </ci>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <ci> delta_H_on </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> delta_S_on </ci>
+              <ci> R </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> z_on </ci>
+                <ci> F </ci>
+                <ci> V </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_661219" variable="of">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> k </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> h </ci>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <ci> delta_H_of </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> delta_S_of </ci>
+              <ci> R </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> z_of </ci>
+                <ci> F </ci>
+                <ci> V </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_661221" variable="gamma_gamma">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> k </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> h </ci>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <ci> delta_H_gamma_gamma </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> delta_S_gamma_gamma </ci>
+              <ci> R </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> z_gamma_gamma </ci>
+                <ci> F </ci>
+                <ci> V </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_661223" variable="delta_delta">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> k </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> h </ci>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <ci> delta_H_delta_delta </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> delta_S_delta_delta </ci>
+              <ci> R </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> z_delta_delta </ci>
+                <ci> F </ci>
+                <ci> V </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_661225" variable="epsilon">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> k </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> h </ci>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <ci> delta_H_epsilon </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> delta_S_epsilon </ci>
+              <ci> R </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> z_epsilon </ci>
+                <ci> F </ci>
+                <ci> V </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_661227" variable="omega">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> k </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> h </ci>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <ci> delta_H_omega </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> delta_S_omega </ci>
+              <ci> R </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> z_omega </ci>
+                <ci> F </ci>
+                <ci> V </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_661229" variable="eta">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> k </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> h </ci>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <ci> delta_H_eta </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> delta_S_eta </ci>
+              <ci> R </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> z_eta </ci>
+                <ci> F </ci>
+                <ci> V </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_661231" variable="v">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> k </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> h </ci>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <ci> delta_H_v </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> delta_S_v </ci>
+              <ci> R </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> z_v </ci>
+                <ci> F </ci>
+                <ci> V </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_661233" variable="cn">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> k </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> h </ci>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <ci> delta_H_cn </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> delta_S_cn </ci>
+              <ci> R </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> z_cn </ci>
+                <ci> F </ci>
+                <ci> V </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_661235" variable="cf">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> k </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> h </ci>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <ci> delta_H_cf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> delta_S_cf </ci>
+              <ci> R </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> z_cf </ci>
+                <ci> F </ci>
+                <ci> V </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> R </ci>
+                <ci> T </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+</listOfRules>
+</model>
+</sbml>

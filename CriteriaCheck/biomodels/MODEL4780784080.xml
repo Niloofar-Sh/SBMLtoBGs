@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2" metaid="_077815" level="2" version="1">
+  <model metaid="_245768" id="testid" name="Hayashi1999_NOSynth_Phospho">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    This model features the phosphorylation of rat brain neuronal NOS expressed in E. coli or Sf9 cells, which leads to a decrease in Vmax of the phosphorylated enzyme, with little change of both the Km for L-arginine and Kact for CaM. This is based on &lt;a href = &quot;http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids=10400690&quot;&gt;Hayashi Y. et al. J Biol Chem. (1999) 274(29):20597-602&lt;/a&gt;. They report of phosphorylatin being carried out by CaM kinases I alpha, II alpha and IV. The rates used have been obtained from their paper and from other reported data.    <p>This model originates from BioModels Database: A Database of Annotated Published Models (http://www.ebi.ac.uk/biomodels/). It is copyright (c) 2005-2011 The BioModels.net Team.      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+    <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not..      <br/>
+    <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+</p>
+</body>
+</notes><annotation xmlns:celldesigner="http://www.sbml.org/2001/ns/celldesigner" xmlns:doqcs="http://www.doqcs.ncbs.res.in" xmlns:jd="http://www.sys-bio.org/sbml">
+  <doqcs:timestamp>Tue Nov  7 15:58:17 2006</doqcs:timestamp>
+  <doqcs:accesstype>pathway</doqcs:accesstype>
+  <doqcs:transcriber>Sudhir Sivakumaran, NCBS</doqcs:transcriber>
+  <doqcs:developer>Sudhir Sivakumaran, NCBS</doqcs:developer>
+  <doqcs:species>rat; Mammalian</doqcs:species>
+  <doqcs:tissue>Brain - Neuronal; expressed in E.coli</doqcs:tissue>
+  <doqcs:cellcompartment>Cytosol</doqcs:cellcompartment>
+  <doqcs:methodology>Quantitative match to experiments, Qualitative</doqcs:methodology>
+  <doqcs:model_implementation>Exact GENESIS implementation</doqcs:model_implementation>
+  <doqcs:model_validation>Approximates original data , Quantitatively predicts new data</doqcs:model_validation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#_245768">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL4780784080"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/pubmed/10400690"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/10114"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/go/GO:0010749"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+      <bqbiol:occursIn>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/bto/BTO:0000142"/>
+        </rdf:Bag>
+      </bqbiol:occursIn>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfUnitDefinitions>
+  <unitDefinition metaid="_077827" id="vol_secINV">
+    <listOfUnits>
+      <unit metaid="_077839" kind="litre"/>
+      <unit metaid="_077851" kind="second" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_077863" id="vol_uMINVsecINV">
+    <listOfUnits>
+      <unit metaid="_077875" kind="litre" exponent="2"/>
+      <unit metaid="_077887" kind="mole" exponent="-1" scale="-6"/>
+      <unit metaid="_077899" kind="second" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_077912" id="substance">
+    <listOfUnits>
+      <unit metaid="_077924" kind="mole" scale="-6"/>
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions><listOfCompartments>
+  <compartment metaid="_245772" id="default_compartment" size="1e-18"/>
+  <compartment metaid="_245787" id="geometry" size="1.6667e-18"/>
+</listOfCompartments><listOfSpecies>
+  <species metaid="_245788" id="NOS_slash_nNOS" compartment="geometry" initialConcentration="0.5"/>
+  <species metaid="_245807" id="NOS_slash_NOS_star_" compartment="geometry" initialConcentration="0"/>
+  <species metaid="_245827" id="NOS_slash_Ca_minus_CaMnNOS" compartment="geometry" initialConcentration="0"/>
+  <species metaid="_245847" id="NOS_slash_Ca_minus_CaMnNOS_slash_kenz_slash_kenz_cplx" compartment="geometry" initialConcentration="0"/>
+  <species metaid="_245849" id="NOS_slash_NO" compartment="geometry" initialConcentration="0"/>
+  <species metaid="_245867" id="NOS_slash_cit" compartment="geometry" initialConcentration="0"/>
+  <species metaid="_245887" id="NOS_slash_Larg" compartment="geometry" initialConcentration="100"/>
+  <species metaid="_245907" id="NOS_slash_CaMKIV_slash_kenz_slash_kenz_cplx" compartment="geometry" initialConcentration="0"/>
+  <species metaid="_245908" id="NOS_slash_CaMKIIalpha_slash_kenz_slash_kenz_cplx" compartment="geometry" initialConcentration="0"/>
+  <species metaid="_245927" id="NOS_slash_CaMKIalpha_slash_kenz_slash_kenz_cplx" compartment="geometry" initialConcentration="0"/>
+  <species metaid="_245928" id="NOS_slash_CaMKIV" compartment="geometry" initialConcentration="1" boundaryCondition="true" constant="true">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Activity is similar to CaMKIalpha, with ~0.7 mol of 32p/mol of nNOS. (Hayashi et 1999,JBC,274(29):20597-20602)</body>
+    </notes>
+  </species>
+  <species metaid="_245947" id="NOS_slash_CaMKIIalpha" compartment="geometry" initialConcentration="1" boundaryCondition="true" constant="true">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        CaMKIIalpha caused the most rapid phosphorylation of nNOS, with half-maximal phosphorylation apparent at 3 min and plateau level at 10 min. (Hayashi et al., 1999,JBC,274(29):20597-20602). The Maximal Phosphorylation of nNOS was observed at ~0.4 mol of 32p/mol of nNOS under their conditions.</body>
+    </notes>
+  </species>
+  <species metaid="_245968" id="NOS_slash_CaMKIalpha" compartment="geometry" initialConcentration="1" boundaryCondition="true" constant="true">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Phosphorylates nNOS, but not as effective as CaMKIIalpha. (Hayashi et al., 1999,JBC,274(29):20597-20602.) Report of Plateau Level in their phosphorylation plots reaching after 100 min. -- ~0.4 mol of 32p/mol of nNOS.</body>
+    </notes>
+  </species>
+  <species metaid="_245987" id="NOS_slash_CaM_minus_Ca4" compartment="geometry" initialConcentration="20" boundaryCondition="true" constant="true"/>
+</listOfSpecies><listOfReactions>
+  <reaction metaid="_245988" id="NOS_slash_Ca_minus_CaMbind_nNOS">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Those binding CaM have a high Kd, including nNOS, ~&lt;=10nM. The binding of CaM to nNOS has been demonstrated to act as the trigger necessary for electron transfer and catalytic activity. (Marletta, 1997;36:12337-12345).</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_077936" species="NOS_slash_nNOS"/>
+      <speciesReference metaid="_077949" species="NOS_slash_CaM_minus_Ca4"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_077961" species="NOS_slash_Ca_minus_CaMnNOS"/>
+    </listOfProducts>
+    <kineticLaw metaid="_077974">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*NOS_slash_nNOS*NOS_slash_CaM_minus_Ca4-kb*NOS_slash_Ca_minus_CaMnNOS</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> NOS_slash_nNOS </ci>
+            <ci> NOS_slash_CaM_minus_Ca4 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> NOS_slash_Ca_minus_CaMnNOS </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_077986" id="kf" value="5.41666666666667e-18" units="vol_uMINVsecINV"/>
+        <parameter metaid="_077998" id="kb" value="8.33333333333333e-20" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_246007" id="NOS_slash_dephosporyl">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        kf -13.9 These rates used to keep the basal level of nNOS at reasonable levels.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_078010" species="NOS_slash_NOS_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_078022" species="NOS_slash_nNOS"/>
+    </listOfProducts>
+    <kineticLaw metaid="_078034">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*NOS_slash_NOS_star_-kb*NOS_slash_nNOS</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> NOS_slash_NOS_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> NOS_slash_nNOS </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_078046" id="kf" value="2.31666666666667e-17" units="vol_secINV"/>
+        <parameter metaid="_078058" id="kb" value="0" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_246027" id="NOS_slash_Ca_minus_CaMnNOS_slash_kenz_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Km for purified NOS is estimated between 1 - 10 uM. (Prog in Neurobiology, 2001, 64: 365-391) Vmax for unphosporylated NOS, the active form, is 500-1500 nmol/nmol/min (Montellano et al., 1998, JBC,26(12): 1185-1189). Hayashi et al., JBC, 1999, 274(29):20597-20602 report Vmax (nmol/min/mg) of nNOS Unphosporylated at 95.7 (+-) 4.2</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_078070" species="NOS_slash_Larg"/>
+      <speciesReference metaid="_078082" species="NOS_slash_Ca_minus_CaMnNOS"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_078094" species="NOS_slash_Ca_minus_CaMnNOS_slash_kenz_slash_kenz_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_078107">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*NOS_slash_Larg*NOS_slash_Ca_minus_CaMnNOS-k2*NOS_slash_Ca_minus_CaMnNOS_slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> NOS_slash_Larg </ci>
+            <ci> NOS_slash_Ca_minus_CaMnNOS </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> NOS_slash_Ca_minus_CaMnNOS_slash_kenz_slash_kenz_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_078120" id="k1" value="1.38891666666667e-17" units="vol_uMINVsecINV"/>
+        <parameter metaid="_078132" id="k2" value="1.11113333333333e-16" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_246047" id="NOS_slash_Ca_minus_CaMnNOS_slash_kenz_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_078144" species="NOS_slash_Ca_minus_CaMnNOS_slash_kenz_slash_kenz_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_078156" species="NOS_slash_NO"/>
+      <speciesReference metaid="_078169" species="NOS_slash_cit"/>
+      <speciesReference metaid="_078181" species="NOS_slash_Ca_minus_CaMnNOS"/>
+    </listOfProducts>
+    <kineticLaw metaid="_078193">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*NOS_slash_Ca_minus_CaMnNOS_slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> NOS_slash_Ca_minus_CaMnNOS_slash_kenz_slash_kenz_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_078205" id="k3" value="2.77783333333333e-17" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_246067" id="NOS_slash_CaMKIV_slash_kenz_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Hayashi et al., 1999, JBC,274(29):20597-20602. and other reported data from sources.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_078217" species="NOS_slash_nNOS"/>
+      <speciesReference metaid="_078229" species="NOS_slash_CaMKIV"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_078241" species="NOS_slash_CaMKIV_slash_kenz_slash_kenz_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_078253">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*NOS_slash_nNOS*NOS_slash_CaMKIV-k2*NOS_slash_CaMKIV_slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> NOS_slash_nNOS </ci>
+            <ci> NOS_slash_CaMKIV </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> NOS_slash_CaMKIV_slash_kenz_slash_kenz_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_078265" id="k1" value="3e-17" units="vol_uMINVsecINV"/>
+        <parameter metaid="_078277" id="k2" value="1.2e-16" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_246087" id="NOS_slash_CaMKIV_slash_kenz_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_078289" species="NOS_slash_CaMKIV_slash_kenz_slash_kenz_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_078301" species="NOS_slash_NOS_star_"/>
+      <speciesReference metaid="_078313" species="NOS_slash_CaMKIV"/>
+    </listOfProducts>
+    <kineticLaw metaid="_078325">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*NOS_slash_CaMKIV_slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> NOS_slash_CaMKIV_slash_kenz_slash_kenz_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_078337" id="k3" value="3e-17" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_246090" id="NOS_slash_CaMKIIalpha_slash_kenz_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Hayashi et al., 1999, JBC,274(29):20597-20602. and from various other datas.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_078349" species="NOS_slash_nNOS"/>
+      <speciesReference metaid="_078361" species="NOS_slash_CaMKIIalpha"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_078373" species="NOS_slash_CaMKIIalpha_slash_kenz_slash_kenz_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_078385">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*NOS_slash_nNOS*NOS_slash_CaMKIIalpha-k2*NOS_slash_CaMKIIalpha_slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> NOS_slash_nNOS </ci>
+            <ci> NOS_slash_CaMKIIalpha </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> NOS_slash_CaMKIIalpha_slash_kenz_slash_kenz_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_078397" id="k1" value="4.75e-17" units="vol_uMINVsecINV"/>
+        <parameter metaid="_078409" id="k2" value="1.9e-16" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_246107" id="NOS_slash_CaMKIIalpha_slash_kenz_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_078421" species="NOS_slash_CaMKIIalpha_slash_kenz_slash_kenz_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_078433" species="NOS_slash_NOS_star_"/>
+      <speciesReference metaid="_078445" species="NOS_slash_CaMKIIalpha"/>
+    </listOfProducts>
+    <kineticLaw metaid="_078457">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*NOS_slash_CaMKIIalpha_slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> NOS_slash_CaMKIIalpha_slash_kenz_slash_kenz_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_078469" id="k3" value="4.75e-17" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_246127" id="NOS_slash_CaMKIalpha_slash_kenz_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        enzyme parameters used from different literature. Hayashi et al., JBC,274(29):20597-20602.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_078481" species="NOS_slash_nNOS"/>
+      <speciesReference metaid="_078493" species="NOS_slash_CaMKIalpha"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_078505" species="NOS_slash_CaMKIalpha_slash_kenz_slash_kenz_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_078517">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*NOS_slash_nNOS*NOS_slash_CaMKIalpha-k2*NOS_slash_CaMKIalpha_slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> NOS_slash_nNOS </ci>
+            <ci> NOS_slash_CaMKIalpha </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> NOS_slash_CaMKIalpha_slash_kenz_slash_kenz_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_078529" id="k1" value="2.83333333333333e-17" units="vol_uMINVsecINV"/>
+        <parameter metaid="_078541" id="k2" value="1.13333333333333e-16" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_246147" id="NOS_slash_CaMKIalpha_slash_kenz_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_078553" species="NOS_slash_CaMKIalpha_slash_kenz_slash_kenz_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_078565" species="NOS_slash_NOS_star_"/>
+      <speciesReference metaid="_078577" species="NOS_slash_CaMKIalpha"/>
+    </listOfProducts>
+    <kineticLaw metaid="_078589">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*NOS_slash_CaMKIalpha_slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> NOS_slash_CaMKIalpha_slash_kenz_slash_kenz_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_078601" id="k3" value="2.83333333333333e-17" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+</model>
+</sbml>

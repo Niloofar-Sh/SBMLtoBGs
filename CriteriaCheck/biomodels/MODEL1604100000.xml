@@ -1,0 +1,3431 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version3" level="2" metaid="_6cc02b97-de3d-46e1-a54e-269acde7a74f" version="3">
+  <model name="Mukhopadhyay2013 - T cell receptor proximal signaling reveals emergent ultrasensitivity" id="MODEL1604100000" metaid="af239141-9234-4f9d-b034-b68fdbf8e536">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <div class="dc:title">Mukhopadhyay2013 - T cell receptor proximal
+signaling reveals emergent ultrasensitivity</div>
+<div class="dc:bibliographicCitation">
+  <p>This model is described in the article:</p>
+  <div class="bibo:title">
+    <a href="http://identifiers.org/pubmed/23555234" title="Access to this publication">Systems model of T cell
+    receptor proximal signaling reveals emergent
+    ultrasensitivity.</a>
+  </div>
+  <div class="bibo:authorList">Mukhopadhyay H, Cordoba SP, Maini
+  PK, van der Merwe PA, Dushek O.</div>
+  <div class="bibo:Journal">PLoS Comput. Biol. 2013; 9(3):
+  e1003004</div>
+  <p>Abstract:</p>
+  <div class="bibo:abstract">
+    <p>Receptor phosphorylation is thought to be tightly regulated
+    because phosphorylated receptors initiate signaling cascades
+    leading to cellular activation. The T cell antigen receptor
+    (TCR) on the surface of T cells is phosphorylated by the kinase
+    Lck and dephosphorylated by the phosphatase CD45 on multiple
+    immunoreceptor tyrosine-based activation motifs (ITAMs).
+    Intriguingly, Lck sequentially phosphorylates ITAMs and ZAP-70,
+    a cytosolic kinase, binds to phosphorylated ITAMs with
+    differential affinities. The purpose of multiple ITAMs, their
+    sequential phosphorylation, and the differential ZAP-70
+    affinities are unknown. Here, we use a systems model to show
+    that this signaling architecture produces emergent
+    ultrasensitivity resulting in switch-like responses at the
+    scale of individual TCRs. Importantly, this switch-like
+    response is an emergent property, so that removal of multiple
+    ITAMs, sequential phosphorylation, or differential affinities
+    abolishes the switch. We propose that highly regulated TCR
+    phosphorylation is achieved by an emergent switch-like response
+    and use the systems model to design novel chimeric antigen
+    receptors for therapy.</p>
+  </div>
+</div>
+<div class="dc:publisher">
+  <p>This model is hosted on 
+  <a href="http://www.ebi.ac.uk/biomodels/">BioModels Database</a>
+  and identified by: 
+  <a href="http://identifiers.org/biomodels.db/MODEL1604100000">MODEL1604100000</a>.</p>
+  <p>To cite BioModels Database, please use: 
+  <a href="http://identifiers.org/pubmed/20587024" title="Latest BioModels Database publication">BioModels Database:
+  An enhanced, curated and annotated resource for published
+  quantitative kinetic models</a>.</p>
+</div>
+<div class="dc:license">
+  <p>To the extent possible under law, all copyright and related or
+  neighbouring rights to this encoded model have been dedicated to
+  the public domain worldwide. Please refer to 
+  <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Access to: CC0 1.0 Universal (CC0 1.0), Public Domain Dedication">CC0
+  Public Domain Dedication</a> for more information.</p>
+</div>
+</body>
+    </notes>
+    <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+	<rdf:Description rdf:about="#af239141-9234-4f9d-b034-b68fdbf8e536">
+	<bqmodel:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1604100000"/>
+	</rdf:Bag>
+	</bqmodel:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+      <listOfCompartments>
+      <compartment id="cell" size="1" metaid="_8a4440ce-79eb-4a9b-ac5b-4e723b62a778"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species compartment="cell" name="S(Y1~U,Y2~U,Y3~U,b~0)" id="S1" initialConcentration="100" metaid="a3cea765-26d1-490e-b121-bbe7bfad4c77"/>
+      <species compartment="cell" name="E(b)" id="S2" initialConcentration="100" metaid="c6413efe-4db4-4094-808f-6e5d8b88e0de"/>
+      <species compartment="cell" name="F(b)" id="S3" initialConcentration="100" metaid="_97980025-8039-4b35-a237-9074a72368b3"/>
+      <species compartment="cell" name="Z(b)" id="S4" initialConcentration="5000" metaid="_5e4ff2b1-b31f-487b-b6db-555dd0d05f95"/>
+      <species compartment="cell" name="E(b!1).S(Y1~U!1,Y2~U,Y3~U,b~1)" id="S5" initialConcentration="0" metaid="_837323d5-c75c-4274-a8c0-6811308612a5"/>
+      <species compartment="cell" name="S(Y1~P,Y2~U,Y3~U,b~0)" id="S6" initialConcentration="0" metaid="_517bc0cf-0934-474a-ad9f-104a68be9c2f"/>
+      <species compartment="cell" name="F(b!1).S(Y1~P!1,Y2~U,Y3~U,b~1)" id="S7" initialConcentration="0" metaid="_7676e9f3-ad78-4d68-bdf2-4cea2e4032f1"/>
+      <species compartment="cell" name="E(b!1).S(Y1~P!1,Y2~U,Y3~U,b~1)" id="S8" initialConcentration="0" metaid="_34225cc6-f40b-4f31-8372-434e18c3f906"/>
+      <species compartment="cell" name="S(Y1~2P,Y2~U,Y3~U,b~0)" id="S9" initialConcentration="0" metaid="_492b2a4f-0f6a-48a4-9e11-b54699baa650"/>
+      <species compartment="cell" name="F(b!1).S(Y1~2P!1,Y2~U,Y3~U,b~1)" id="S10" initialConcentration="0" metaid="_04aa00cb-8960-4a30-accf-ce77659ea7d1"/>
+      <species compartment="cell" name="E(b!1).S(Y1~2P,Y2~U!1,Y3~U,b~1)" id="S11" initialConcentration="0" metaid="_5c2401ef-d388-473a-9323-dd425e3b6fec"/>
+      <species compartment="cell" name="S(Y1~2P!1,Y2~U,Y3~U,b~0).Z(b!1)" id="S12" initialConcentration="0" metaid="fb4d0ee3-e211-4a65-81ef-86ff79939026"/>
+      <species compartment="cell" name="E(b!1).S(Y1~2P!2,Y2~U!1,Y3~U,b~1).Z(b!2)" id="S13" initialConcentration="0" metaid="_0cca60d0-0962-4f34-bc00-fe68368351a4"/>
+      <species compartment="cell" name="S(Y1~2P,Y2~P,Y3~U,b~0)" id="S14" initialConcentration="0" metaid="c750e0fa-322b-4ae1-86fd-ee4cd8105882"/>
+      <species compartment="cell" name="S(Y1~2P!1,Y2~P,Y3~U,b~0).Z(b!1)" id="S15" initialConcentration="0" metaid="_084f5372-d8de-40cf-9939-1b8a38fd87f8"/>
+      <species compartment="cell" name="F(b!1).S(Y1~2P,Y2~P!1,Y3~U,b~1)" id="S16" initialConcentration="0" metaid="e2f41c6b-24d1-4ee8-8231-42222d753788"/>
+      <species compartment="cell" name="E(b!1).S(Y1~2P,Y2~P!1,Y3~U,b~1)" id="S17" initialConcentration="0" metaid="_05096596-c005-463c-8f0d-a2f6675c376b"/>
+      <species compartment="cell" name="F(b!1).S(Y1~2P!2,Y2~P!1,Y3~U,b~1).Z(b!2)" id="S18" initialConcentration="0" metaid="_5cc735b0-91fe-4764-aa45-b0fe5ebdbe43"/>
+      <species compartment="cell" name="E(b!1).S(Y1~2P!2,Y2~P!1,Y3~U,b~1).Z(b!2)" id="S19" initialConcentration="0" metaid="_26d73cd0-fc66-4280-87ad-0b7fa638f313"/>
+      <species compartment="cell" name="S(Y1~2P,Y2~2P,Y3~U,b~0)" id="S20" initialConcentration="0" metaid="_8f2d6b87-0078-4ce3-b101-c08b5593f59a"/>
+      <species compartment="cell" name="S(Y1~2P!1,Y2~2P,Y3~U,b~0).Z(b!1)" id="S21" initialConcentration="0" metaid="_178264ff-b2eb-4248-9c1e-b6c319d37a69"/>
+      <species compartment="cell" name="F(b!1).S(Y1~2P,Y2~2P!1,Y3~U,b~1)" id="S22" initialConcentration="0" metaid="ba0eb262-f9f9-4de0-8979-9a01419032fc"/>
+      <species compartment="cell" name="E(b!1).S(Y1~2P,Y2~2P,Y3~U!1,b~1)" id="S23" initialConcentration="0" metaid="_2db2c225-52a9-4772-a17e-cb5d311b6cad"/>
+      <species compartment="cell" name="S(Y1~2P,Y2~2P!1,Y3~U,b~0).Z(b!1)" id="S24" initialConcentration="0" metaid="_7b0bbb3a-fdf8-4d94-b681-a781c7aabc91"/>
+      <species compartment="cell" name="F(b!1).S(Y1~2P!2,Y2~2P!1,Y3~U,b~1).Z(b!2)" id="S25" initialConcentration="0" metaid="_9ff0c6f2-478a-42b2-8ff2-1e60117a3f9e"/>
+      <species compartment="cell" name="E(b!1).S(Y1~2P!2,Y2~2P,Y3~U!1,b~1).Z(b!2)" id="S26" initialConcentration="0" metaid="c72dd94a-2eb5-4bac-9ceb-a608a89751ca"/>
+      <species compartment="cell" name="E(b!1).S(Y1~2P,Y2~2P!2,Y3~U!1,b~1).Z(b!2)" id="S27" initialConcentration="0" metaid="_4a3376dd-6a1a-4749-a31e-8c123bc73477"/>
+      <species compartment="cell" name="S(Y1~2P,Y2~2P,Y3~P,b~0)" id="S28" initialConcentration="0" metaid="_3fa2fc88-3757-4ab9-a3c8-0293589da2af"/>
+      <species compartment="cell" name="S(Y1~2P!1,Y2~2P!2,Y3~U,b~0).Z(b!1).Z(b!2)" id="S29" initialConcentration="0" metaid="_523224fb-684f-47d4-9fa4-94e7e9a935c8"/>
+      <species compartment="cell" name="E(b!1).S(Y1~2P!2,Y2~2P!3,Y3~U!1,b~1).Z(b!2).Z(b!3)" id="S30" initialConcentration="0" metaid="e2de8379-6c37-4ea1-967d-ee00f7e251a9"/>
+      <species compartment="cell" name="S(Y1~2P!1,Y2~2P,Y3~P,b~0).Z(b!1)" id="S31" initialConcentration="0" metaid="_41f19ad6-a29a-4139-808a-1f795c337ab5"/>
+      <species compartment="cell" name="S(Y1~2P,Y2~2P!1,Y3~P,b~0).Z(b!1)" id="S32" initialConcentration="0" metaid="_3b2bcf40-8d79-42b0-b6d6-6ad049cf2e6a"/>
+      <species compartment="cell" name="F(b!1).S(Y1~2P,Y2~2P,Y3~P!1,b~1)" id="S33" initialConcentration="0" metaid="_2c2e7d89-ba03-4963-9da2-4f1bb7d47920"/>
+      <species compartment="cell" name="E(b!1).S(Y1~2P,Y2~2P,Y3~P!1,b~1)" id="S34" initialConcentration="0" metaid="_7d60d285-19ef-459f-8454-03a9acd967d2"/>
+      <species compartment="cell" name="S(Y1~2P!1,Y2~2P!2,Y3~P,b~0).Z(b!1).Z(b!2)" id="S35" initialConcentration="0" metaid="_7567079c-8200-4e03-92d4-0f46f23e8684"/>
+      <species compartment="cell" name="F(b!1).S(Y1~2P!2,Y2~2P,Y3~P!1,b~1).Z(b!2)" id="S36" initialConcentration="0" metaid="bba45bac-b83c-4ab0-90b0-5452fc253686"/>
+      <species compartment="cell" name="F(b!1).S(Y1~2P,Y2~2P!2,Y3~P!1,b~1).Z(b!2)" id="S37" initialConcentration="0" metaid="_3eaeb6c1-c28b-4744-9537-2fcdf2fc9743"/>
+      <species compartment="cell" name="E(b!1).S(Y1~2P!2,Y2~2P,Y3~P!1,b~1).Z(b!2)" id="S38" initialConcentration="0" metaid="_0ad67fb1-0769-48db-893b-4c18a707b20c"/>
+      <species compartment="cell" name="E(b!1).S(Y1~2P,Y2~2P!2,Y3~P!1,b~1).Z(b!2)" id="S39" initialConcentration="0" metaid="_6a3c12ed-85d6-4569-b6d1-3f3425544abf"/>
+      <species compartment="cell" name="S(Y1~2P,Y2~2P,Y3~2P,b~0)" id="S40" initialConcentration="0" metaid="b19fb594-6400-4d19-907f-6adfab7ee9c1"/>
+      <species compartment="cell" name="F(b!1).S(Y1~2P!2,Y2~2P!3,Y3~P!1,b~1).Z(b!2).Z(b!3)" id="S41" initialConcentration="0" metaid="_4f3facb3-0b32-49a6-8b63-410bfe98c39f"/>
+      <species compartment="cell" name="E(b!1).S(Y1~2P!2,Y2~2P!3,Y3~P!1,b~1).Z(b!2).Z(b!3)" id="S42" initialConcentration="0" metaid="dad3838a-eaa1-4a2e-b7ee-988c8723942c"/>
+      <species compartment="cell" name="S(Y1~2P!1,Y2~2P,Y3~2P,b~0).Z(b!1)" id="S43" initialConcentration="0" metaid="_900d4f0c-d740-4177-a08f-687237dcca20"/>
+      <species compartment="cell" name="S(Y1~2P,Y2~2P!1,Y3~2P,b~0).Z(b!1)" id="S44" initialConcentration="0" metaid="_025b3e82-f601-4cea-8a9b-78832e8f08d4"/>
+      <species compartment="cell" name="F(b!1).S(Y1~2P,Y2~2P,Y3~2P!1,b~1)" id="S45" initialConcentration="0" metaid="ab35e4f6-4900-44fb-ad69-b7d077a9408c"/>
+      <species compartment="cell" name="S(Y1~2P,Y2~2P,Y3~2P!1,b~0).Z(b!1)" id="S46" initialConcentration="0" metaid="_975ee15c-927b-4909-8e46-e4f7d28db649"/>
+      <species compartment="cell" name="S(Y1~2P!1,Y2~2P!2,Y3~2P,b~0).Z(b!1).Z(b!2)" id="S47" initialConcentration="0" metaid="d88f6c9d-9fe3-4a05-8a26-8bc3412c5586"/>
+      <species compartment="cell" name="F(b!1).S(Y1~2P!2,Y2~2P,Y3~2P!1,b~1).Z(b!2)" id="S48" initialConcentration="0" metaid="b275d617-aadc-483e-b0bc-5af372d42cd1"/>
+      <species compartment="cell" name="F(b!1).S(Y1~2P,Y2~2P!2,Y3~2P!1,b~1).Z(b!2)" id="S49" initialConcentration="0" metaid="_7735d608-fde6-4246-a88b-13b801ba84a8"/>
+      <species compartment="cell" name="S(Y1~2P!1,Y2~2P,Y3~2P!2,b~0).Z(b!1).Z(b!2)" id="S50" initialConcentration="0" metaid="ac5d2a47-357c-4909-b5fd-5f101425aacd"/>
+      <species compartment="cell" name="S(Y1~2P,Y2~2P!1,Y3~2P!2,b~0).Z(b!1).Z(b!2)" id="S51" initialConcentration="0" metaid="ad8083e2-2ae8-438d-9c88-14cc435f3d22"/>
+      <species compartment="cell" name="F(b!1).S(Y1~2P!2,Y2~2P!3,Y3~2P!1,b~1).Z(b!2).Z(b!3)" id="S52" initialConcentration="0" metaid="_306dfa2d-08a9-46cb-afbd-a8bd323a2c92"/>
+      <species compartment="cell" name="S(Y1~2P!1,Y2~2P!2,Y3~2P!3,b~0).Z(b!1).Z(b!2).Z(b!3)" id="S53" initialConcentration="0" metaid="c878e3ab-4c31-4505-853a-68b79cdc7dbb"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="ek_on" metaid="f10ff19f-e44d-45f3-a6ee-cf54a9ed3231" value="0.0001"/>
+      <parameter id="ek_off" metaid="a91faaac-7e27-4c9c-bf26-e72e566fcc2a" value="10"/>
+      <parameter id="ek_cat" metaid="_56d513de-ca30-4dd2-853a-8d611bbdefe2" value="10"/>
+      <parameter id="fk_on" metaid="_78888bc4-5b55-4783-8e8f-604f6d947fd6" value="0.0001"/>
+      <parameter id="fk_off" metaid="_2fffa300-7c6e-410c-b38b-6b76045f4469" value="10"/>
+      <parameter id="fk_cat" metaid="f86b35c3-457d-4f3c-af70-ee4046119bf1" value="10"/>
+      <parameter id="zap_on" metaid="e9e56a31-f68b-47c5-8fea-4ee7b5a86a4b" value="1"/>
+      <parameter id="zap_off1" metaid="_9fc27c99-74c8-4c3d-aa50-351b445bbc97" value="10"/>
+      <parameter id="zap_off2" metaid="b56bf684-17fa-4abf-b736-0870188e1fa8" value="1"/>
+      <parameter id="zap_off3" metaid="f83a8444-3032-4af4-9b46-c3976d483cf6" value="0.1"/>
+      <parameter id="E_T" metaid="e4ee900f-2a3d-4712-ba28-100ca83c6512" value="100"/>
+      <parameter id="F_T" metaid="_67006dc3-3430-4a2c-b4d8-465990d38a53" value="100"/>
+      <parameter id="S_T" metaid="bec8efbc-b8e8-4dac-979b-74f549c1bdfc" value="100"/>
+      <parameter id="Z_T" metaid="b37a736c-ba9c-42c2-b1fc-cbfbdee2087b" value="5000"/>
+      <parameter constant="false" id="Bound_ZAP" metaid="d1b36a55-b7bd-4756-9407-00dc90548aa7"/>
+      <parameter constant="false" id="Szero" metaid="_76663355-6602-4932-adbe-207c958bff29"/>
+      <parameter constant="false" id="Sone" metaid="_171abc3c-f638-4b31-a87e-aa762bcd9f1e"/>
+      <parameter constant="false" id="Stwo" metaid="cb494a50-5055-4529-96f3-be4be2cc393f"/>
+      <parameter constant="false" id="Sthree" metaid="a28fe5f9-952a-4e7f-abc6-45a56f5bb561"/>
+      <parameter constant="false" id="Sfour" metaid="dbb72c48-bec4-4c55-a954-3dcbda801380"/>
+      <parameter constant="false" id="Sfive" metaid="_612a2c5a-e3e7-4cac-8d25-4e0a5ab14ad3"/>
+      <parameter constant="false" id="Ssix" metaid="d677fb56-357a-4311-8ff8-bfccb9100f77"/>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule variable="Bound_ZAP" metaid="_5f0e3609-9271-4771-9cef-b0776117fd0d">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <plus/>
+            <ci> S12 </ci>
+            <ci> S13 </ci>
+            <ci> S15 </ci>
+            <ci> S18 </ci>
+            <ci> S19 </ci>
+            <ci> S21 </ci>
+            <ci> S24 </ci>
+            <ci> S25 </ci>
+            <ci> S26 </ci>
+            <ci> S27 </ci>
+            <apply>
+              <times/>
+              <cn> 2 </cn>
+              <ci> S29 </ci>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 2 </cn>
+              <ci> S30 </ci>
+            </apply>
+            <ci> S31 </ci>
+            <ci> S32 </ci>
+            <apply>
+              <times/>
+              <cn> 2 </cn>
+              <ci> S35 </ci>
+            </apply>
+            <ci> S36 </ci>
+            <ci> S37 </ci>
+            <ci> S38 </ci>
+            <ci> S39 </ci>
+            <apply>
+              <times/>
+              <cn> 2 </cn>
+              <ci> S41 </ci>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 2 </cn>
+              <ci> S42 </ci>
+            </apply>
+            <ci> S43 </ci>
+            <ci> S44 </ci>
+            <ci> S46 </ci>
+            <apply>
+              <times/>
+              <cn> 2 </cn>
+              <ci> S47 </ci>
+            </apply>
+            <ci> S48 </ci>
+            <ci> S49 </ci>
+            <apply>
+              <times/>
+              <cn> 2 </cn>
+              <ci> S50 </ci>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 2 </cn>
+              <ci> S51 </ci>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 2 </cn>
+              <ci> S52 </ci>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 3 </cn>
+              <ci> S53 </ci>
+            </apply>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule variable="Szero" metaid="_505f0865-2fd0-4a57-9737-4058ea299d32">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <plus/>
+            <ci> S1 </ci>
+            <ci> S5 </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule variable="Sone" metaid="aea6dc7a-ab5c-462a-be1f-7cb017e2848b">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <plus/>
+            <ci> S6 </ci>
+            <ci> S7 </ci>
+            <ci> S8 </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule variable="Stwo" metaid="_39814920-f47d-4fea-a1a8-7012544fa10e">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <plus/>
+            <ci> S9 </ci>
+            <ci> S10 </ci>
+            <ci> S11 </ci>
+            <ci> S12 </ci>
+            <ci> S13 </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule variable="Sthree" metaid="a1afc804-4379-4dd8-97cb-bf7ace951bfb">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <plus/>
+            <ci> S14 </ci>
+            <ci> S15 </ci>
+            <ci> S16 </ci>
+            <ci> S17 </ci>
+            <ci> S18 </ci>
+            <ci> S19 </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule variable="Sfour" metaid="c4014e6d-8ee7-42ce-9d4b-b530828a28d5">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <plus/>
+            <ci> S20 </ci>
+            <ci> S21 </ci>
+            <ci> S22 </ci>
+            <ci> S23 </ci>
+            <ci> S24 </ci>
+            <ci> S25 </ci>
+            <ci> S26 </ci>
+            <ci> S27 </ci>
+            <ci> S29 </ci>
+            <ci> S30 </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule variable="Sfive" metaid="e113f285-a98f-4491-ab30-a79388c93347">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <plus/>
+            <ci> S28 </ci>
+            <ci> S31 </ci>
+            <ci> S32 </ci>
+            <ci> S33 </ci>
+            <ci> S34 </ci>
+            <ci> S35 </ci>
+            <ci> S36 </ci>
+            <ci> S37 </ci>
+            <ci> S38 </ci>
+            <ci> S39 </ci>
+            <ci> S41 </ci>
+            <ci> S42 </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule variable="Ssix" metaid="d5423b1a-5947-457f-acfc-7f5830fd0e0e">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <plus/>
+            <ci> S40 </ci>
+            <ci> S43 </ci>
+            <ci> S44 </ci>
+            <ci> S45 </ci>
+            <ci> S46 </ci>
+            <ci> S47 </ci>
+            <ci> S48 </ci>
+            <ci> S49 </ci>
+            <ci> S50 </ci>
+            <ci> S51 </ci>
+            <ci> S52 </ci>
+            <ci> S53 </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="R1" metaid="_58dd491e-25bd-40fe-b3f4-554a78097dde" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="a3062b28-bc9d-4f85-a7e0-5a0de1d4c3f6" species="S1"/>
+          <speciesReference metaid="_6e0e2059-7029-4825-81af-b1ec9e454e1c" species="S2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_14132299-64f3-4d62-be03-ab2483f6cd19" species="S5"/>
+        </listOfProducts>
+        <kineticLaw metaid="_8766c7f2-993f-429a-99b6-757698f1a496">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_on </ci>
+              <ci> S1 </ci>
+              <ci> S2 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R2" metaid="ee27119c-a0f3-48bc-a143-c2c3d68647ef" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="c21184f9-9202-42a1-b64a-e0ae49acb0ab" species="S5"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="d09c8ec5-b790-4faf-bd69-c1241b6541f9" species="S1"/>
+          <speciesReference metaid="_32371113-5253-43d5-98ea-94ec640bfcc2" species="S2"/>
+        </listOfProducts>
+        <kineticLaw metaid="_966b68a5-a898-4e3f-9310-6fb7f52b366c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_off </ci>
+              <ci> S5 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R3" metaid="a0181ae5-33ba-4932-bb46-70fe0c4f335a" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_6f962a88-813a-4cac-8b93-399994a80be9" species="S5"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_87690c5b-c748-434b-b914-c5d978ac36af" species="S2"/>
+          <speciesReference metaid="_4dfaea23-4c3a-49e2-931a-48da768a913e" species="S6"/>
+        </listOfProducts>
+        <kineticLaw metaid="dcc51472-539b-4863-85a2-6cbce1772b37">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_cat </ci>
+              <ci> S5 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R4" metaid="_87537e5d-7415-490a-9fc0-b5d841d77522" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="c41523c9-30ec-4265-aa07-6b0f2a75bb9b" species="S3"/>
+          <speciesReference metaid="_8574a68a-cc0b-4536-af4f-14d2fb435ab3" species="S6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_0bd11449-051d-4e4c-9ba1-4290bd3ee7cf" species="S7"/>
+        </listOfProducts>
+        <kineticLaw metaid="_9183bb21-2683-4b75-ab29-e43b61397c63">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_on </ci>
+              <ci> S3 </ci>
+              <ci> S6 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R5" metaid="_1a21e230-e744-4d30-8e22-a08e24d75ee8" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8c7126c2-02e4-4985-8211-7b75b25e3410" species="S2"/>
+          <speciesReference metaid="_857ab5b3-d724-419b-a180-e584bb6635b3" species="S6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_4b184994-c1b0-4c81-ba1b-f8640eccb6ee" species="S8"/>
+        </listOfProducts>
+        <kineticLaw metaid="_7f09076d-0bb9-49ff-bf4e-4cfa07a697c9">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_on </ci>
+              <ci> S2 </ci>
+              <ci> S6 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R6" metaid="_4dc21c55-da50-4810-af65-57e6c1a6c76a" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_53a5ff98-8051-4aac-8f4b-ba29dead3394" species="S7"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_38aae0f6-a64f-425e-8f73-1bbf17d3495a" species="S3"/>
+          <speciesReference metaid="_917107ef-f8f3-44a3-9a0e-fd5055c5afe0" species="S6"/>
+        </listOfProducts>
+        <kineticLaw metaid="_7173bb99-5f83-43c4-9f96-e55ae83e8444">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_off </ci>
+              <ci> S7 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R7" metaid="e1b9bc58-ad1c-4bc1-b44e-2e6e13157072" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_7dffcd29-cb75-482c-9878-adc2997216b3" species="S7"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="ba976323-7d65-4cad-8ba0-4ed4e511b980" species="S1"/>
+          <speciesReference metaid="_5ee29884-cfcf-48fa-b83f-dc5c466596ab" species="S3"/>
+        </listOfProducts>
+        <kineticLaw metaid="e7b65d75-6080-476d-bde9-c223ded3d5b5">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_cat </ci>
+              <ci> S7 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R8" metaid="_16222e5a-3086-4ff0-89c8-7c655b9f0e22" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="a1358792-bacd-4e38-bd17-aba2322a7099" species="S8"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5b6e0cac-3433-49c9-941e-3eafae6bd369" species="S2"/>
+          <speciesReference metaid="f6b1ec73-1bc5-4972-b651-1d85b1c598fb" species="S6"/>
+        </listOfProducts>
+        <kineticLaw metaid="e4dd3934-ee75-41e0-ac8b-99ed9365f111">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_off </ci>
+              <ci> S8 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R9" metaid="_38892f11-f5ad-479f-b0f6-a12cb38cd38e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="bfd30dc0-9674-42aa-b846-9ff659df247f" species="S8"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_582ef9a8-cf9f-4377-960a-0825786a2936" species="S2"/>
+          <speciesReference metaid="_53e0533b-2484-4dec-8bd6-d63b0e4d263b" species="S9"/>
+        </listOfProducts>
+        <kineticLaw metaid="a33c8ab3-3303-45cf-a6a4-81ca818ef134">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_cat </ci>
+              <ci> S8 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R10" metaid="_59cfe679-153d-4a47-a489-a294cad1e17b" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_2c4d6ad0-af7e-48ec-b803-cd932296a9b7" species="S3"/>
+          <speciesReference metaid="a2545302-8fcb-47ff-9360-60d6f7ceb81c" species="S9"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_751b0736-5b1f-4b86-ae3e-97d90528a1b7" species="S10"/>
+        </listOfProducts>
+        <kineticLaw metaid="dbcb56db-9077-4c63-b9fb-85f56bdfb156">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_on </ci>
+              <ci> S3 </ci>
+              <ci> S9 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R11" metaid="_63d14a41-76b6-4eef-9745-19f8bf25a40e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_7b00d945-17c2-45cc-8c6b-ada75ee2d004" species="S2"/>
+          <speciesReference metaid="_4eb09b0d-2123-4887-9369-c7bf81c7415e" species="S9"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_22926aa6-0cf9-477c-b480-054c4f99a985" species="S11"/>
+        </listOfProducts>
+        <kineticLaw metaid="e3600ddb-4606-4d3f-aeb1-7b1ab4b6629a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_on </ci>
+              <ci> S2 </ci>
+              <ci> S9 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R12" metaid="be7b0139-6669-4f6d-bc64-56be73607f6a" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_9d4e4c82-2813-4c92-b2a0-fdb82689d41a" species="S4"/>
+          <speciesReference metaid="_3875e331-0671-4b9d-a2bc-1fe22f098a0c" species="S9"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="f54473df-73fc-43af-a406-10120079a5ac" species="S12"/>
+        </listOfProducts>
+        <kineticLaw metaid="bb3f726e-c6c2-43f9-8e65-756b29d3e566">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S9 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R13" metaid="_4eb8b46a-d73d-4495-902e-c0b312fd11fe" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_95932174-69fc-4f9d-954b-4b78c773a833" species="S10"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e27bdcc3-c880-4335-84a3-ecc7199bf0e1" species="S3"/>
+          <speciesReference metaid="_5b7d6624-45e2-4ed9-9b81-98f8ffd663a7" species="S9"/>
+        </listOfProducts>
+        <kineticLaw metaid="a2aad566-b5b7-42f6-b4b5-730562fd72a2">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_off </ci>
+              <ci> S10 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R14" metaid="_83571396-2e04-4614-be9c-dde2f6ccb3fe" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8967020c-31c7-46aa-a388-cd1ca3691343" species="S10"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9f5af2c4-6486-49d0-a0ec-e07285cf6177" species="S3"/>
+          <speciesReference metaid="ec1e7405-b82b-46fe-b2b4-f8f677242409" species="S6"/>
+        </listOfProducts>
+        <kineticLaw metaid="_2ac2453b-7003-4b94-a7fb-076efa44ad21">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_cat </ci>
+              <ci> S10 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R15" metaid="eb762b9a-9c7d-4562-920b-d6082e325936" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="b7f4e145-2119-4f6e-9089-accfc8e27f3f" species="S2"/>
+          <speciesReference metaid="_85729bb6-3b2a-469a-ba2a-4a47bf440631" species="S12"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e1edf739-0feb-42b2-aa8d-4a3fc2b4b950" species="S13"/>
+        </listOfProducts>
+        <kineticLaw metaid="eeef3724-0b2b-4bad-9299-a6b1df724df8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_on </ci>
+              <ci> S2 </ci>
+              <ci> S12 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R16" metaid="_9076caea-6d30-4450-bfc8-33c5d0aed107" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_668e39c4-4bd2-466d-892b-57b3ef9a5ead" species="S11"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_79464cba-3dcc-4c55-afc5-169a1ac8fc96" species="S2"/>
+          <speciesReference metaid="_7fa353c7-e589-4700-a41b-35b5144e8386" species="S9"/>
+        </listOfProducts>
+        <kineticLaw metaid="a4f4b099-aa32-41f7-a24c-193fb9962301">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_off </ci>
+              <ci> S11 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R17" metaid="_56a507b1-16ed-4fdc-b768-f932fa87928c" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="a08a4103-3c42-41e2-b9df-a71cb7bc3132" species="S11"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="d2d66a16-04d7-42d4-b102-8ecfa09b26d6" species="S2"/>
+          <speciesReference metaid="_90563fb5-93b9-4893-af23-4c90779c2328" species="S14"/>
+        </listOfProducts>
+        <kineticLaw metaid="_472dc0f9-98af-4b07-bfb5-4167c8a94caf">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_cat </ci>
+              <ci> S11 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R18" metaid="d0361d72-2d7b-4248-8adc-d5899def3b0c" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="eef3aab3-7682-4757-a8b0-da938b5511c8" species="S4"/>
+          <speciesReference metaid="c1f505f2-18a3-4f8f-8394-91bb5f569790" species="S11"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9def1029-898f-4edd-94ad-aa1a5ae6f6cd" species="S13"/>
+        </listOfProducts>
+        <kineticLaw metaid="a0bdfab8-800d-4219-b484-11dec7c74f35">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S11 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R19" metaid="_495e66f8-f130-4b93-bc0c-36051bc9662f" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8e68bc5b-51c5-4cab-a64f-bafb87090914" species="S12"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5094cd9c-ec69-4651-a6f7-f189668764a6" species="S4"/>
+          <speciesReference metaid="_56047c8a-e85d-49d9-a7c8-5e695979a5df" species="S9"/>
+        </listOfProducts>
+        <kineticLaw metaid="_40fa2cc7-e7a7-4338-9dbc-5a445583cbfb">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S12 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R20" metaid="e324ebc2-9179-43ed-9895-91adb8226b9f" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="ce40a734-6c70-4f6c-b72f-70a7db394e67" species="S13"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e8804591-c8fb-4381-9b32-8a45bed2e54d" species="S2"/>
+          <speciesReference metaid="b9dcf5ea-8b5b-4d65-8916-ba81f3595a17" species="S12"/>
+        </listOfProducts>
+        <kineticLaw metaid="_205992c8-6ef8-4ce3-b6ea-00c00d26674e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_off </ci>
+              <ci> S13 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R21" metaid="_785dddec-55a1-4bca-bde0-4192ee64dc15" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="e5e51b9b-89c2-4909-8000-039c37d32dab" species="S13"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_645448c6-ff08-452f-8255-8f94ec7e0663" species="S2"/>
+          <speciesReference metaid="dd0d4205-1855-4302-91d2-7c0be4bbab73" species="S15"/>
+        </listOfProducts>
+        <kineticLaw metaid="ee7c7014-effb-4888-8506-fa3759423c61">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_cat </ci>
+              <ci> S13 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R22" metaid="f8a4c081-272a-4586-b358-352345674082" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_35c561d0-812c-4a74-8e71-c320623dfd69" species="S3"/>
+          <speciesReference metaid="_182ffb75-a2bb-445a-b953-75f419e268ac" species="S14"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="db8c0c4a-dc9d-4ce3-a3d7-07c5181bafef" species="S16"/>
+        </listOfProducts>
+        <kineticLaw metaid="_260d2596-5f58-4b0e-959d-ac54aa431dea">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_on </ci>
+              <ci> S3 </ci>
+              <ci> S14 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R23" metaid="_84b1fc8a-bfef-47d7-b555-811357b79435" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="a57a155e-d216-4e52-b2fe-88c99dc8bfb2" species="S2"/>
+          <speciesReference metaid="e1635a31-9a3f-4c3b-91ac-b41d4d8b0cd2" species="S14"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_15a9aa20-7434-4d4a-a53c-5b8d9820a1ea" species="S17"/>
+        </listOfProducts>
+        <kineticLaw metaid="_6da3ba5e-e90c-4446-af12-d23376360d10">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_on </ci>
+              <ci> S2 </ci>
+              <ci> S14 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R24" metaid="_04a0b349-6e5a-474b-815a-65d0baa9abf7" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_53dee5c6-bd83-4ff1-be25-c633c2a5824e" species="S4"/>
+          <speciesReference metaid="ad0d0e56-6d42-4fa9-9b37-4b0a5a5c17d0" species="S14"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="cf3aaed7-7dea-4f8e-9c25-77ab47d0bcde" species="S15"/>
+        </listOfProducts>
+        <kineticLaw metaid="_417d85e1-3d2b-46da-9720-916e20027561">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S14 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R25" metaid="_6f8185c3-594d-4ea5-b4d7-a30440b2812e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_14320bb0-5be0-43b1-8eb4-0ba821f214c4" species="S13"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="ec705908-0199-4890-a506-aaf8855acdd9" species="S4"/>
+          <speciesReference metaid="_039079f0-043a-4b3e-9fb5-9912c9004ef4" species="S11"/>
+        </listOfProducts>
+        <kineticLaw metaid="_1dbcd3a6-8157-4ab0-864e-e85029952777">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S13 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R26" metaid="b4f736ba-a041-41cb-bbfa-7986a7897c1c" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_1adb71f0-af83-4a05-8623-006d0246e141" species="S3"/>
+          <speciesReference metaid="_147cb945-16dc-4a09-9856-5eb641a227bb" species="S15"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_62f9a197-fe9b-4fc5-9cff-9cbb98e2b2a3" species="S18"/>
+        </listOfProducts>
+        <kineticLaw metaid="_74a2fdb3-574d-4010-a9e8-def7ba4c0c3c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_on </ci>
+              <ci> S3 </ci>
+              <ci> S15 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R27" metaid="c270b046-b384-4582-b5d8-fe230d4e03d9" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_127a1519-ac26-43e0-9ca9-b39e2c4504b1" species="S16"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="b05d9977-6002-45de-89c6-9062c6b22c3e" species="S3"/>
+          <speciesReference metaid="d2994523-e292-4b7e-84a8-09debf06022a" species="S14"/>
+        </listOfProducts>
+        <kineticLaw metaid="_9b4108f6-e6a8-414e-8af0-cef1ba74f70c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_off </ci>
+              <ci> S16 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R28" metaid="b77afa10-a1a3-4e85-993b-96afd085d149" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_5f522c1f-9798-4f8b-b5c7-b3bf8db1c491" species="S16"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5a8f9211-7cb8-4820-a77e-a6f68fa6e647" species="S3"/>
+          <speciesReference metaid="ab4735ed-a88f-4466-88c9-5efd2140261c" species="S9"/>
+        </listOfProducts>
+        <kineticLaw metaid="_137a9c42-f750-478d-a4d5-834d49d20ef5">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_cat </ci>
+              <ci> S16 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R29" metaid="a01de70c-c4ab-4042-a376-c44f207777a9" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="d8e7fa26-bcad-4128-a220-c90c2906b42a" species="S2"/>
+          <speciesReference metaid="_44294f83-2b86-4024-933b-f52906f9d61c" species="S15"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="dec1a8f3-2c79-4eb4-9263-7928c1b0a9a2" species="S19"/>
+        </listOfProducts>
+        <kineticLaw metaid="e5b41697-f769-4729-a87b-f9e9779912cb">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_on </ci>
+              <ci> S2 </ci>
+              <ci> S15 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R30" metaid="_36db55c0-9dea-4aa7-a809-b88124fa62b8" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_1e5bc802-d656-4223-82ee-32bb9d3a3b34" species="S17"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="f596bdb0-b8df-4905-8954-266d9a911d54" species="S2"/>
+          <speciesReference metaid="dddba06f-e9f6-422f-8e1a-b5241f4a3f35" species="S14"/>
+        </listOfProducts>
+        <kineticLaw metaid="_36b878ac-09e7-4a75-a79a-505f6089d3cc">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_off </ci>
+              <ci> S17 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R31" metaid="_399323fd-7766-4e04-a44c-ce31b2f7d411" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f77abb01-7a72-4655-a2b5-f6c2fe16a4d4" species="S17"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_0ab936e5-1990-443f-98a9-4b2a919355ea" species="S2"/>
+          <speciesReference metaid="_90143b49-2ecf-4e8d-a337-8fdbd5db950b" species="S20"/>
+        </listOfProducts>
+        <kineticLaw metaid="_8354d44d-4f69-4413-b54f-b65a40f7c4a1">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_cat </ci>
+              <ci> S17 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R32" metaid="df8cd66d-4c50-4b1a-80f1-ce2b9b6ea28c" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_295fd842-7290-4f1c-9c74-f65cb198cfc7" species="S4"/>
+          <speciesReference metaid="c32b378a-d3c7-4ec1-960d-eb96a01d1f67" species="S16"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_34232a94-4bf6-432f-b4d0-c4cd66ca0f75" species="S18"/>
+        </listOfProducts>
+        <kineticLaw metaid="fb6a3843-8e9d-42bd-92ea-c961900b0abb">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S16 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R33" metaid="_9e1987aa-b090-4c79-9d0a-b5222574c94e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_19d541e2-5520-45e8-94bd-bbd5d21ca291" species="S4"/>
+          <speciesReference metaid="b573db0d-61e6-4960-a70e-d28946da367f" species="S17"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9ea46f1b-0595-43f0-b802-17aac2ddbcf1" species="S19"/>
+        </listOfProducts>
+        <kineticLaw metaid="b4fa81b1-ba2b-4285-bcb3-ee25cb72c5ca">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S17 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R34" metaid="_7675166a-8a36-40cb-a075-521d40689f12" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_9958adc1-95cf-4884-a985-59514a364e4e" species="S15"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="da71bed4-454c-47d5-afe8-6e0170a9edfa" species="S4"/>
+          <speciesReference metaid="_1f19ff9d-d135-453d-9e07-0fb048f80bc1" species="S14"/>
+        </listOfProducts>
+        <kineticLaw metaid="b9c0683c-a15b-4b6f-bbf6-15a6bedd919f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S15 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R35" metaid="f20f8e2e-cf48-4d0c-a062-1a4c45743ddf" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8317bb0c-2e05-41c0-9ea5-1968a2f11d05" species="S18"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5c5c7ff7-ee95-4497-b5b6-79c179446414" species="S3"/>
+          <speciesReference metaid="_527ad7a1-13e4-4537-bf61-c0dd135a60e6" species="S15"/>
+        </listOfProducts>
+        <kineticLaw metaid="_69c456e1-7a33-40bc-a9eb-2702636cdc36">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_off </ci>
+              <ci> S18 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R36" metaid="_96b02faa-eaf2-4a72-98e8-565850d35b7d" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_688ab877-5d49-41a7-a263-709ff24049c0" species="S18"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8a94cf5b-e0aa-42ca-b488-59d68f4eff39" species="S3"/>
+          <speciesReference metaid="_85738aab-ee29-409b-8d45-870ad58d38f8" species="S12"/>
+        </listOfProducts>
+        <kineticLaw metaid="_2bcc3930-d225-4d0c-af41-92d1f462dd69">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_cat </ci>
+              <ci> S18 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R37" metaid="ca5eeb77-01f0-4be4-8071-b522b575cb9d" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="c857f5a2-f9f7-4fb2-a313-519bf1c814eb" species="S19"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1c946e0c-5525-4b23-ba76-5e0e69acd382" species="S2"/>
+          <speciesReference metaid="_5e0e1d9f-a9f9-425a-8b54-e4ebbfced5bc" species="S15"/>
+        </listOfProducts>
+        <kineticLaw metaid="aed84e7e-974a-46ef-a6ae-c9f79a43f9bf">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_off </ci>
+              <ci> S19 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R38" metaid="_090030d6-e70f-455e-9bd1-45155c5b6aea" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_1c395bde-4584-4836-baee-e57c990df3ee" species="S19"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_0e2c7ac4-709b-4bf3-8f01-4ffc64e7ca39" species="S2"/>
+          <speciesReference metaid="_2546af60-9601-4ba8-a791-ed17370ca004" species="S21"/>
+        </listOfProducts>
+        <kineticLaw metaid="fe00ca7c-4f29-4799-8f29-d08204f45d75">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_cat </ci>
+              <ci> S19 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R39" metaid="e56d2a38-23e0-4cb4-a776-1ea44ab93fb5" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f12136a3-0480-46f9-b307-28b1d24ea0db" species="S3"/>
+          <speciesReference metaid="_9807152b-ad2e-4fb6-8d96-3f19a23fd3e3" species="S20"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_6e83f8c9-2efc-4891-9ac3-5c8278ca39bb" species="S22"/>
+        </listOfProducts>
+        <kineticLaw metaid="_00fb15dd-1c5a-44aa-8c7a-251533434242">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_on </ci>
+              <ci> S3 </ci>
+              <ci> S20 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R40" metaid="_205cc2cb-7ba9-46ff-bb93-fe9704ef06ec" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_9d9423b5-157b-4744-a7ac-432745c64e28" species="S2"/>
+          <speciesReference metaid="_6c2fed21-6274-42a0-9548-f6f5f8f73ba2" species="S20"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8c1048b3-52d9-4ea7-9f64-470331873817" species="S23"/>
+        </listOfProducts>
+        <kineticLaw metaid="eb7a796b-d0b6-4d85-b45c-3e435ca0239f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_on </ci>
+              <ci> S2 </ci>
+              <ci> S20 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R41" metaid="_5936ba8e-455b-450c-a004-73f25130f826" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="aeba4795-9ead-45b6-983b-89ac2c248cce" species="S4"/>
+          <speciesReference metaid="_44352216-ef01-46af-b29c-8e943bb37374" species="S20"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5ace5e70-a602-4dfa-81e4-2f1fcd51c26f" species="S21"/>
+        </listOfProducts>
+        <kineticLaw metaid="e9e6d5d6-2848-4999-921d-c750f510f766">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S20 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R42" metaid="_216d6fd1-481b-42c5-9b7d-6e06cd0e0ba8" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_4b799b20-7f8c-43d7-aea2-163170959d47" species="S18"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_94bb6e76-9a43-4c66-b45d-097ad0b7c7d1" species="S4"/>
+          <speciesReference metaid="_31edd0b5-43f5-4889-8951-e7cf95c634a1" species="S16"/>
+        </listOfProducts>
+        <kineticLaw metaid="_53c8bc63-423d-4827-a297-7bcae5d7dc05">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S18 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R43" metaid="f422421d-3991-4aa1-8704-14378cfa70fd" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="bea9b9a6-adbd-42e3-8492-9c2439407d22" species="S19"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5535ee95-600f-47b8-aa3b-645188f7f08c" species="S4"/>
+          <speciesReference metaid="_5ed9e390-916c-401e-af33-db03ea9e795f" species="S17"/>
+        </listOfProducts>
+        <kineticLaw metaid="a0a2b5ef-d8e4-42f5-983c-7f3a74742b76">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S19 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R44" metaid="_9fc48cec-2c37-404b-81c9-3cbe67c02ff1" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_30e7415a-c852-490b-ba99-7a9f954d89dd" species="S4"/>
+          <speciesReference metaid="b8c08906-b5c0-40ca-9ade-4fd099e6c043" species="S20"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_005e2885-bee6-4609-9a1c-86692113c34b" species="S24"/>
+        </listOfProducts>
+        <kineticLaw metaid="_81fb721a-d32b-4655-bda0-c4bdae95944d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S20 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R45" metaid="_00170cf2-5142-4f5e-a93e-c2a67ac124f1" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="c402deff-28c9-4228-a8e7-7c092e6cfc5e" species="S3"/>
+          <speciesReference metaid="_997a7191-34fc-4aba-b0d4-213af362b87e" species="S21"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_100296cc-1ec4-443f-82a7-301fab391ce2" species="S25"/>
+        </listOfProducts>
+        <kineticLaw metaid="daa1d722-cfd9-4957-8bfc-eb80865e6fb6">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_on </ci>
+              <ci> S3 </ci>
+              <ci> S21 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R46" metaid="_0ae71e9d-b351-4299-b4f6-51cdf5813483" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f9ec06aa-5285-4b94-b455-4130d2347977" species="S22"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_7ba78178-f9f9-424e-b0e7-d0463904a4fb" species="S3"/>
+          <speciesReference metaid="_8180a458-3d96-4caa-8a2c-756759c874e1" species="S20"/>
+        </listOfProducts>
+        <kineticLaw metaid="_3cae3405-9bbb-4971-b238-434ca96db563">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_off </ci>
+              <ci> S22 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R47" metaid="_6f36a709-7148-4f04-90cc-2816cd2d09e7" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="debad1dd-2c3c-4071-bb39-9328f2014ae2" species="S22"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="c6abd120-5a5d-409d-ab23-7df20aa9975d" species="S3"/>
+          <speciesReference metaid="_73e53760-fb1f-4639-a19f-12edb2c3ef55" species="S14"/>
+        </listOfProducts>
+        <kineticLaw metaid="de237e53-8198-48f8-b181-f7e1e47c55c1">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_cat </ci>
+              <ci> S22 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R48" metaid="_89e4c596-3893-40af-83de-f1dea521061d" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_4157b3ff-55c6-4b2c-904e-f09338cd2372" species="S2"/>
+          <speciesReference metaid="_6df234a3-58b0-43b2-aaf0-c84aed60df58" species="S21"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_03a648fa-7763-455f-86cf-681c1985ebe4" species="S26"/>
+        </listOfProducts>
+        <kineticLaw metaid="_0cf3f136-84c8-4d1b-9805-ea6765c4c125">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_on </ci>
+              <ci> S2 </ci>
+              <ci> S21 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R49" metaid="_82beef29-1192-4e5a-84a6-127ecc9ce645" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_62c2a671-93b9-4712-b15a-33aadd2508b8" species="S2"/>
+          <speciesReference metaid="_50477832-bdc0-468a-8403-aab2a51b3ab3" species="S24"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e8f0c838-9db4-4507-80ef-8aeff699ecf6" species="S27"/>
+        </listOfProducts>
+        <kineticLaw metaid="_09a5bb60-bab9-4d90-89d1-1067b951f9d5">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_on </ci>
+              <ci> S2 </ci>
+              <ci> S24 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R50" metaid="dd6ea033-2125-4ce6-9290-f34c9c5d3fe5" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_09a3d7c9-c122-4e36-bf75-3f50676acb34" species="S23"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="c8a9abc4-99ce-49b0-a40d-c97ba7ab62ea" species="S2"/>
+          <speciesReference metaid="f841faf4-801c-4451-a5ea-2d8b602839b6" species="S20"/>
+        </listOfProducts>
+        <kineticLaw metaid="_8a9464c3-78ca-419c-aed9-75cbfd3fdb61">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_off </ci>
+              <ci> S23 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R51" metaid="b4c8d33a-8c79-4d5c-8edd-09531a12cf29" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="ee9d233d-318c-475d-8ab3-338b457501a8" species="S23"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9a966d79-ec4d-4d67-b76c-de0188e9f58a" species="S2"/>
+          <speciesReference metaid="c191e4e5-d6ea-4f6c-bd4d-1ee2f770fd42" species="S28"/>
+        </listOfProducts>
+        <kineticLaw metaid="bd6db876-f7e0-4b45-a6ea-daa33accb306">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_cat </ci>
+              <ci> S23 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R52" metaid="cc027e64-fa39-4000-a84b-c9bb464219f0" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_79770768-c124-4aef-8d7e-544ea616ce7b" species="S4"/>
+          <speciesReference metaid="_1a14d6a0-55ee-41f1-b0bb-0356d3129d5e" species="S22"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="aac3f373-dee7-4119-be82-047190f5eaa5" species="S25"/>
+        </listOfProducts>
+        <kineticLaw metaid="_6a3dfb2e-f347-4cf2-89c5-1ef59580bc5c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S22 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R53" metaid="d73f70b1-bf38-4c47-b097-ae9df2ef0558" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_207cd662-808b-4c9f-a4dd-296f51a8e7a7" species="S4"/>
+          <speciesReference metaid="_0794374a-28af-4dc2-948e-a5bd5e4e83ef" species="S23"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="aa5f7f3f-829f-4cd2-94ed-f3daba899855" species="S26"/>
+        </listOfProducts>
+        <kineticLaw metaid="_6a731eb5-2141-4c51-bd0c-b0f093ad0d3c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S23 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R54" metaid="_0559d1a4-418d-4f42-9a6a-8337d00f93e7" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_264f8141-3c00-4bf7-b553-46333ff27bc5" species="S4"/>
+          <speciesReference metaid="bfd22017-fa7d-4bb3-9648-7d332ad9448f" species="S24"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_6ec5197c-287e-46fe-af83-fe8e436e29c8" species="S29"/>
+        </listOfProducts>
+        <kineticLaw metaid="eab1b93e-2e08-42ef-b738-95c639be95ac">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S24 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R55" metaid="d53d7ea7-f7c8-4980-81a6-36c758beef29" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="ca9d61fc-e9df-42c3-a4a2-fc5011de880e" species="S21"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_237e86d9-e31c-4a2a-8a57-d5517d6aedfc" species="S4"/>
+          <speciesReference metaid="_13917364-beaf-4ea1-8354-afd7062befaf" species="S20"/>
+        </listOfProducts>
+        <kineticLaw metaid="_92996f79-1228-4755-af37-e4c0c3604be5">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S21 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R56" metaid="c0d32dad-108d-4a2f-a57b-f715bcae2da1" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_85bcc9e7-7137-42a2-8039-494008380c59" species="S4"/>
+          <speciesReference metaid="_424d71cb-b32b-4a51-93d4-bfc0b1b9486d" species="S21"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_6b218d27-0268-47a5-afce-7d51e6883e67" species="S29"/>
+        </listOfProducts>
+        <kineticLaw metaid="_08365467-13ef-4461-8388-f66083943fd2">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S21 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R57" metaid="_0a062501-b5c6-4e3f-9a1b-1275ff040686" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_95070fb7-4741-42d1-98a5-42d74a34a23a" species="S4"/>
+          <speciesReference metaid="_96f9129f-133e-45db-97bc-e8fb3111120f" species="S23"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_3bf3e873-5bc9-49bb-a2b1-47d46b34634f" species="S27"/>
+        </listOfProducts>
+        <kineticLaw metaid="f7a45b64-dcbd-45e8-aacb-b076bd3035a5">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S23 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R58" metaid="_32f8e8a4-c7c3-4fff-8183-4b0e4084693b" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_867dbb76-a343-4090-8cb3-6a693dd5c3a9" species="S24"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a758cd3a-4ef3-4e38-933d-9f88af06246a" species="S4"/>
+          <speciesReference metaid="_70169302-f421-48d8-bc37-d7aa0f00df84" species="S20"/>
+        </listOfProducts>
+        <kineticLaw metaid="_30a6fea5-1362-4dbc-a14d-dd820972ee1f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S24 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R59" metaid="_7ef98f62-7c3d-436b-80c1-ee133248eb53" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_51ff2a0d-a0a4-4852-83af-46c5d22120dd" species="S25"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="feed86d1-360d-416b-b5b6-37fd17d7f451" species="S3"/>
+          <speciesReference metaid="_12950cb0-83cc-408e-9cf2-837f8ac356a7" species="S21"/>
+        </listOfProducts>
+        <kineticLaw metaid="fd8c5704-9aa1-4141-9a5b-6645075a8eae">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_off </ci>
+              <ci> S25 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R60" metaid="ea4a983c-f583-404c-852a-60115a26b288" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="edd58510-4b6e-4103-a056-94655a859dbc" species="S25"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e7296111-a020-42de-992a-204316ba1880" species="S3"/>
+          <speciesReference metaid="_09919353-5506-4eba-b94b-a8f8171dbcfe" species="S15"/>
+        </listOfProducts>
+        <kineticLaw metaid="d4a64b1d-2ce7-4162-860b-b4335391854c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_cat </ci>
+              <ci> S25 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R61" metaid="_020e2b83-0c3f-407a-bd14-4cffb83d7425" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_33fba61e-18cc-4186-b88e-9f30e24d2d92" species="S2"/>
+          <speciesReference metaid="de1b31f5-f43d-4111-858c-e8b07710db98" species="S29"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1942a959-2c89-4ba9-89ba-cfd35f145b40" species="S30"/>
+        </listOfProducts>
+        <kineticLaw metaid="_94c5c81d-55ca-49af-aea0-d04d3a3f2f50">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_on </ci>
+              <ci> S2 </ci>
+              <ci> S29 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R62" metaid="_04771f19-353e-44ad-9d25-e6f0784bf141" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_19c6fcb5-df40-42b4-a055-9524e737e4a7" species="S26"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_100d46d9-1128-4b6e-8a29-1bbf32bc6c20" species="S2"/>
+          <speciesReference metaid="_4a2bc285-c62f-4cdb-9262-caaa3553f5bd" species="S21"/>
+        </listOfProducts>
+        <kineticLaw metaid="_6122adda-38f0-467a-8b2e-ab28c034bcba">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_off </ci>
+              <ci> S26 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R63" metaid="_4e920275-8430-4642-ad67-1159f5386675" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_68e16e37-d108-4198-be4c-570b518da598" species="S27"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_3079d6ad-cbf6-4241-96e6-60ae34fbe85c" species="S2"/>
+          <speciesReference metaid="_7e841509-b0c1-45c2-84a3-1df576d25125" species="S24"/>
+        </listOfProducts>
+        <kineticLaw metaid="ef4dc058-f3f6-440c-bfd3-c9d1d270a4c3">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_off </ci>
+              <ci> S27 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R64" metaid="f8a0ce69-a51f-40a7-b8a6-c8ab7fe1ba07" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="ef54a27b-0f71-41a0-84e5-aa00efd94ae3" species="S26"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_85425c4c-02a0-4f7c-988b-78b4412e41c6" species="S2"/>
+          <speciesReference metaid="_6a539577-9513-4600-8138-a4ebf6f9e8cc" species="S31"/>
+        </listOfProducts>
+        <kineticLaw metaid="b7ef97f0-dcc4-4d5c-ad82-cdcb387301df">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_cat </ci>
+              <ci> S26 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R65" metaid="_237bb696-9f08-442b-9acf-f8a1d812ebe0" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8429d55c-49e4-4b53-8d16-bbcb61904e40" species="S27"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9d0140e0-7be8-4b77-b634-4ddb7541b7b5" species="S2"/>
+          <speciesReference metaid="_2668104c-0329-4fb2-9ffa-c4fd8475730f" species="S32"/>
+        </listOfProducts>
+        <kineticLaw metaid="_81c74173-9c05-4165-8ee6-2f1facf7610d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_cat </ci>
+              <ci> S27 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R66" metaid="_808a54f5-3135-4696-8f74-d76621850637" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_739751b5-7cbf-4d61-b1c7-5aa30eecb735" species="S3"/>
+          <speciesReference metaid="f4a8469d-5d71-4f07-a992-90cc77c0c40e" species="S28"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5f6e92fc-8f5d-4707-88b3-8c9b049bb49d" species="S33"/>
+        </listOfProducts>
+        <kineticLaw metaid="_84d62ec2-2e76-4145-83a7-c5226b046f54">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_on </ci>
+              <ci> S3 </ci>
+              <ci> S28 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R67" metaid="_6a868bae-17a2-4134-b0f2-6ce902ca9db0" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_67787702-08ac-43ec-a590-164ddedf59d1" species="S2"/>
+          <speciesReference metaid="df5d751c-8080-4038-90d0-bff022950dc4" species="S28"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="d45e003d-352b-4f6f-88f5-0a7c416b974d" species="S34"/>
+        </listOfProducts>
+        <kineticLaw metaid="_3cfa7434-7631-4cc8-b8b6-a687fd5d6a68">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_on </ci>
+              <ci> S2 </ci>
+              <ci> S28 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R68" metaid="_6440062c-60a4-4d79-bd6b-f2932c2db542" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_09063f2c-fae4-46d1-a40b-66ea49e14b5e" species="S4"/>
+          <speciesReference metaid="_5dc92f08-fe36-4edb-8c24-72090eaa489d" species="S27"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="d8579c3a-26f0-427f-a4be-49e3039e3c93" species="S30"/>
+        </listOfProducts>
+        <kineticLaw metaid="da0e3619-23b4-44b4-a556-a8744bfd808c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S27 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R69" metaid="_5855d75f-0f0a-4e41-9ae7-f90904b8dacb" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="df79af4f-55c8-48cd-949b-754c392b6b1e" species="S4"/>
+          <speciesReference metaid="_46a8815d-e06e-486c-be41-5fb6c679d8c0" species="S28"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_81704c45-a52b-4f30-ba96-21abad047e08" species="S31"/>
+        </listOfProducts>
+        <kineticLaw metaid="a726e0ec-84d8-4d68-80d3-c08a6eada799">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S28 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R70" metaid="_6a0d525f-87c4-481c-a816-8a88f1d9b2fe" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="bc536ab0-0baa-45a2-b893-bc777aff3c3b" species="S25"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="cca68c1a-cfa1-41f5-9a46-5671e4e1eae4" species="S4"/>
+          <speciesReference metaid="_9812abfb-3da6-4602-b630-f7323b17a2f9" species="S22"/>
+        </listOfProducts>
+        <kineticLaw metaid="a73a3bf4-0140-465c-84a5-da68eaaf69f3">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S25 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R71" metaid="bcffa7ec-ebe6-4506-984d-dbf698e85d89" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_98b6a7c5-4d33-4933-ad06-73fac950b032" species="S26"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="ae132600-afe7-40cd-a78a-62bf7af82fcc" species="S4"/>
+          <speciesReference metaid="_99f0c816-8e6f-4db4-b244-a75145b5891f" species="S23"/>
+        </listOfProducts>
+        <kineticLaw metaid="_57849d9c-436c-4591-88d5-3443504b93ce">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S26 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R72" metaid="_018afa25-fafc-491c-bcba-7923ede5ef18" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="bbeee88e-3617-4250-9354-9223570a9640" species="S29"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_28c82467-5d20-4e2e-b78d-73b42adce16e" species="S4"/>
+          <speciesReference metaid="_9c555f48-7b69-4ad2-9731-c9a2fd367cbd" species="S24"/>
+        </listOfProducts>
+        <kineticLaw metaid="abac2dfe-2af4-4b07-b88f-e31f28aae33e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S29 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R73" metaid="e96dcf30-5c67-4268-89ca-630561d418e8" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_2e782d1b-81cf-44d1-b28f-c69c96be90a8" species="S4"/>
+          <speciesReference metaid="_7c86af32-e0d0-4f9f-a71d-6241a293720f" species="S26"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="dc5caf23-537e-4a1c-a8ea-b6dca96f9cc9" species="S30"/>
+        </listOfProducts>
+        <kineticLaw metaid="ef0214e3-b051-4ac4-add5-b3a8ed9da7e8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S26 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R74" metaid="ba29b68a-a1b8-4f48-b4a6-f29846beb20e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8b98792b-8c95-43d3-a5c5-0df32a5d8a82" species="S4"/>
+          <speciesReference metaid="_7227be6b-e20a-4a52-b176-9f2ebb4c17cc" species="S28"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="eecd2a58-0489-43c2-bf73-14a9edba7f1c" species="S32"/>
+        </listOfProducts>
+        <kineticLaw metaid="_33bf0532-84b2-4cda-8723-c014a60d5546">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S28 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R75" metaid="_94e85acd-a169-44fb-98bd-534014d33bf2" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="ce82d4ee-a4f7-45de-ab09-1a7d2cf817fe" species="S27"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_76423312-5bd2-4214-a26f-9e6ddc56e3c9" species="S4"/>
+          <speciesReference metaid="ce3ee527-1998-43a1-b6c1-470582cd0848" species="S23"/>
+        </listOfProducts>
+        <kineticLaw metaid="_1fc33702-6f2e-4c3a-aaa5-0af7b7c5d924">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S27 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R76" metaid="f9bbe48d-14fc-4a23-8153-9d3b2d24a620" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_74b59a27-5a18-4bbd-a511-6b2d2ed7d603" species="S29"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_94a5b9c3-3278-4527-a7d6-6adeb58f0c6e" species="S4"/>
+          <speciesReference metaid="a9ed49ac-f589-47fe-83b8-1335ac18f1fd" species="S21"/>
+        </listOfProducts>
+        <kineticLaw metaid="_74ebd725-e9ef-4958-887b-b3655522d576">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S29 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R77" metaid="_7c2343f3-3862-40a5-870e-37026c3f9fdd" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_9fa1bf87-c287-4a56-97bb-d4b9f13e2531" species="S30"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="f7c33178-6ee5-40dc-b7f0-f8dc9450a022" species="S2"/>
+          <speciesReference metaid="_35633d44-e918-46b1-ac86-501d80ec3f71" species="S29"/>
+        </listOfProducts>
+        <kineticLaw metaid="f8e072b0-c815-4763-a30e-5e955edd7bd2">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_off </ci>
+              <ci> S30 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R78" metaid="_5566b5db-0a5a-41fb-a31f-fc7c24744a4c" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_4a505a1e-48bc-4ab1-be9a-30463b87f49c" species="S30"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5ea8d334-5d18-4ee8-bdad-500888ff6352" species="S2"/>
+          <speciesReference metaid="cfaa8965-ca21-4b2d-8a51-c9262042650d" species="S35"/>
+        </listOfProducts>
+        <kineticLaw metaid="_7c22ba93-e621-4013-a311-38de8d941d23">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_cat </ci>
+              <ci> S30 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R79" metaid="_07d5f62d-2b80-4045-acc9-e575f365b580" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_1a991ab3-f13e-4768-9a10-ad5a3acf58c0" species="S3"/>
+          <speciesReference metaid="aae01b32-0a55-43af-97fa-ade0b97e7a15" species="S31"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8402ddba-164e-4575-8842-eb3a1eff9dce" species="S36"/>
+        </listOfProducts>
+        <kineticLaw metaid="b7a5b2b9-c329-4896-9662-5e1541458090">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_on </ci>
+              <ci> S3 </ci>
+              <ci> S31 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R80" metaid="_9011f265-a62c-4961-ae9b-8b67a1c6cc78" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="e1943092-6a56-4988-beea-6d0e72c59c0e" species="S3"/>
+          <speciesReference metaid="cb61939c-da70-4b7c-8caa-c52191c10a82" species="S32"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="d056f441-c4c8-4335-84bd-18a985f65689" species="S37"/>
+        </listOfProducts>
+        <kineticLaw metaid="_1a050fc1-72b1-4b14-8b92-dd6865d33e4c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_on </ci>
+              <ci> S3 </ci>
+              <ci> S32 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R81" metaid="d75c2c72-2b1d-4653-ab6d-b7da11067e04" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f96956f2-0d3c-4b25-a7e4-ababc6596d7e" species="S33"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="fe1bf558-6c57-44b2-8922-10e36017316d" species="S3"/>
+          <speciesReference metaid="_9496f82b-939b-4c35-b54f-0dee06cc0a0b" species="S28"/>
+        </listOfProducts>
+        <kineticLaw metaid="_1b34833f-98cc-4955-8e3c-aec613cdd346">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_off </ci>
+              <ci> S33 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R82" metaid="_9ac05886-5631-4d40-92d9-d862ee9934f7" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="af18cdcd-2876-4f91-8429-d4b991844d21" species="S33"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e3ae679a-900c-42a2-b04f-6c30696ef2e6" species="S3"/>
+          <speciesReference metaid="_7ca29055-e54b-4c8c-b057-48902801f664" species="S20"/>
+        </listOfProducts>
+        <kineticLaw metaid="_049a887d-ac92-433d-9e66-8c2bf4dd458d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_cat </ci>
+              <ci> S33 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R83" metaid="_24c7cbbb-df1b-4a6a-9e38-e391befc0957" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_85869bdb-0da0-492d-bd4b-c62b0648aeea" species="S2"/>
+          <speciesReference metaid="_8a000db9-4a5b-473e-a17f-759a396aee1d" species="S31"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_421c27e0-ac05-4be4-b4df-44d2e33d6f73" species="S38"/>
+        </listOfProducts>
+        <kineticLaw metaid="_965f35d8-4329-43db-94c2-af30f1e42462">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_on </ci>
+              <ci> S2 </ci>
+              <ci> S31 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R84" metaid="_5b276e39-e33d-433a-9b4c-4dc2d9d077a3" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_42aa0e10-2abc-4852-9c95-8df941bdcfb4" species="S2"/>
+          <speciesReference metaid="d0aa65ea-83b0-4338-abc6-644b689e55f9" species="S32"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="efcd3d30-6926-4c82-bfcb-92ed32f73e8e" species="S39"/>
+        </listOfProducts>
+        <kineticLaw metaid="_7dd1b324-a8d8-418e-91a5-49494b777116">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_on </ci>
+              <ci> S2 </ci>
+              <ci> S32 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R85" metaid="_85e23b5e-1381-4e71-b115-a78b60160b55" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_3ad45ea6-9087-4258-ac37-b84440005c63" species="S34"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="aedccf69-ce05-4707-b86d-e492e1964ef0" species="S2"/>
+          <speciesReference metaid="da6bf370-a55a-4152-a790-1c49ebc669c2" species="S28"/>
+        </listOfProducts>
+        <kineticLaw metaid="d6f17abb-72ab-4a2f-bfe3-01b39b7b2cff">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_off </ci>
+              <ci> S34 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R86" metaid="_11d32cb7-116c-4ec9-af45-0118dfa31852" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="a35779a3-cc5b-4881-b5bc-669dc156ae7d" species="S34"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_26524da9-4a4e-4511-b0f4-6c1b04cdbf1b" species="S2"/>
+          <speciesReference metaid="d50ca9f2-735d-40b1-8c03-2839a0654d62" species="S40"/>
+        </listOfProducts>
+        <kineticLaw metaid="_9715ce3e-2959-492e-8a2c-a8dc4931230f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_cat </ci>
+              <ci> S34 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R87" metaid="deae1a16-4629-4d9b-8ce2-2b5634bfb29a" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_993a3726-fa61-422b-88d1-bcdb3e50c35c" species="S4"/>
+          <speciesReference metaid="_2df2d196-65b5-4102-b0db-b5b0e32d17b4" species="S32"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_46311664-1d30-4794-b2e3-d2cedf8c73f8" species="S35"/>
+        </listOfProducts>
+        <kineticLaw metaid="fa807a02-6100-44ab-abca-93bb183913b1">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S32 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R88" metaid="_4590cc73-4a64-4ae2-a5e8-50fd3b7285f2" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="dc9ede8d-4bf9-415f-81fc-fc02189cca19" species="S4"/>
+          <speciesReference metaid="_9b25552a-a135-4641-8b89-92a864dc63df" species="S33"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5d1f8009-1fba-46ff-85be-473cb149912b" species="S36"/>
+        </listOfProducts>
+        <kineticLaw metaid="bb9477b7-3b99-4ac8-ae25-f22afc114bb6">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S33 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R89" metaid="dc4f5435-7faa-4271-a077-58464921b46d" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="ca7bb899-5766-4ee8-8589-b8ffd37109be" species="S4"/>
+          <speciesReference metaid="_727efc8a-c2b3-41bd-95ff-39e94763f7bc" species="S34"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_0a08c1c9-bd39-46bf-bd54-1e64fb7767dc" species="S38"/>
+        </listOfProducts>
+        <kineticLaw metaid="_1bce4b0a-e9bc-4fed-be7e-74c0dd3d4176">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S34 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R90" metaid="_526c59fb-a695-46c0-bded-a11337368374" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_9698835c-252a-449e-8e56-3f9df8fc5637" species="S30"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_209b06ee-c2f5-49b9-b2e6-97982debe0ff" species="S4"/>
+          <speciesReference metaid="abeea823-e597-41c5-8ce6-fa0b291c4c42" species="S27"/>
+        </listOfProducts>
+        <kineticLaw metaid="ee74c411-3835-4ef9-87e6-5d0ab8b39a9d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S30 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R91" metaid="e82e3dd0-9dd0-409a-b8d8-55ea80283f01" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8ff8bc67-d71f-4947-9662-224e3d865262" species="S31"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_3db34cd9-d632-4dd9-9d29-84d4fc0242c1" species="S4"/>
+          <speciesReference metaid="_584063eb-1ced-450a-9da3-161970caa96b" species="S28"/>
+        </listOfProducts>
+        <kineticLaw metaid="_13dc7331-a136-4e52-a52d-aac3f77e0fa8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S31 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R92" metaid="_939a2fa4-c4c2-4760-a0d9-e39cccfed02b" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_4085161a-98e4-4239-a13a-ffaad44298a3" species="S4"/>
+          <speciesReference metaid="dd45dd5c-93f2-4218-af1f-cbe0ee8382a9" species="S31"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_695f7503-c7ab-4c5a-863b-fb724a360a9a" species="S35"/>
+        </listOfProducts>
+        <kineticLaw metaid="_81517224-ea39-401e-8ccb-12815967dc49">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S31 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R93" metaid="_6c1579ef-6a8d-4ab2-93b4-7e618f5f802e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="e3b417c9-93d8-47c1-afc8-68f0919e5f48" species="S4"/>
+          <speciesReference metaid="_40bd242c-4a41-4d4b-8c1b-9cf383696fe6" species="S33"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9b6ff13e-8868-4c3a-8f29-bf98a4961f4c" species="S37"/>
+        </listOfProducts>
+        <kineticLaw metaid="_083fbce3-cb90-40d3-8b7e-023779684697">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S33 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R94" metaid="_1d8ca2af-45a7-43e1-96bc-e9d4d3f125de" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_86c10ce3-f2d9-4052-9e64-a76c2eaae602" species="S4"/>
+          <speciesReference metaid="becb5fe2-fe93-427c-a05a-d8d5b540ad54" species="S34"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_26aac1e7-28c8-4196-9bd5-0b9913c669c7" species="S39"/>
+        </listOfProducts>
+        <kineticLaw metaid="_53aad6cb-71e7-4c9b-94e8-98b472210610">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S34 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R95" metaid="d4bb034f-5805-4c83-8c8d-09314d62b3f8" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_7f89c846-a2d2-4961-a556-dbdba19aa01d" species="S30"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_2d48e2c3-24d3-4eb6-99c0-48c760f53763" species="S4"/>
+          <speciesReference metaid="aa433ee5-49c1-42de-a143-8b1a550c6b3a" species="S26"/>
+        </listOfProducts>
+        <kineticLaw metaid="_1b676c9e-6b5a-4faa-b35d-df3ea2e5b809">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S30 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R96" metaid="_398476b4-25fd-41a9-8aac-57fd02428ed9" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="b013f3d5-7c77-480a-bcd3-35ad9371ce16" species="S32"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_642ca67e-21a1-4d01-9e8c-782594c3576e" species="S4"/>
+          <speciesReference metaid="cad7ad3f-5a6c-4a6c-8b1d-276ee7896d8d" species="S28"/>
+        </listOfProducts>
+        <kineticLaw metaid="_758796b5-bead-443b-93d2-6e3253a9e288">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S32 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R97" metaid="_2e1c9bd7-987b-42d9-a653-a7ce48050d69" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_2f79b562-51cb-4551-8694-e83a803acb7d" species="S3"/>
+          <speciesReference metaid="_582a0fdb-0492-4443-a0d8-b27d57d18d0b" species="S35"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_733464b1-114d-4e4e-9ce2-3299062dedb4" species="S41"/>
+        </listOfProducts>
+        <kineticLaw metaid="_5c6f58dc-9858-40df-95d0-966b35205692">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_on </ci>
+              <ci> S3 </ci>
+              <ci> S35 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R98" metaid="_78edda82-15f8-4b88-b25c-8a55bc795f27" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_93cac1cd-1e6d-499f-85fc-e6ca88c51662" species="S36"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5b05a8fa-f1e3-4b39-ba1e-619c6a0de332" species="S3"/>
+          <speciesReference metaid="_094aa4e2-9469-4cf9-867b-1c61c53bbda5" species="S31"/>
+        </listOfProducts>
+        <kineticLaw metaid="_99e2ce0d-24d9-4b44-97d6-4d2a66796360">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_off </ci>
+              <ci> S36 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R99" metaid="_086ced28-c61f-43ee-aaf2-94eedd748845" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8dd1c170-9f1b-4ca5-a0bf-03fc83a2d18b" species="S37"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="ca2850ad-3b5f-433d-82fe-d2e56712413f" species="S3"/>
+          <speciesReference metaid="f8bf4683-d7df-42f0-b4e5-dfcbb90d1ce9" species="S32"/>
+        </listOfProducts>
+        <kineticLaw metaid="_9673896f-4b98-4c32-b858-a32fbb185fc3">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_off </ci>
+              <ci> S37 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R100" metaid="_39165f4c-1de1-43d9-8f8f-47bfc974e8ae" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="b114ab17-dfd0-4c70-af4a-01abd6ecad80" species="S36"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_05261005-cc31-45ae-bd97-4d4bc53f9ea5" species="S3"/>
+          <speciesReference metaid="_0dca9a3a-a357-45d2-be3d-1dd9ba23c35b" species="S21"/>
+        </listOfProducts>
+        <kineticLaw metaid="_979e7a77-9a21-437f-9ae0-2cd69198a3ab">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_cat </ci>
+              <ci> S36 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R101" metaid="_79333948-8d4a-4fdf-a82f-d4db69c33eeb" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="e61132e5-6eb9-4a90-9d29-be627ed1a4b5" species="S37"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_11ca9bbc-c8fd-4857-bd94-567279c22f92" species="S3"/>
+          <speciesReference metaid="_34e18cd1-643d-416f-9501-0397688f5768" species="S24"/>
+        </listOfProducts>
+        <kineticLaw metaid="_31d6c92a-29e7-4777-b7c6-d92a5161307e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_cat </ci>
+              <ci> S37 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R102" metaid="_7d8adfa6-7cff-4fbe-b670-ca00648e53fa" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="d7900302-5952-4bdb-ac7d-f9a691686b2b" species="S2"/>
+          <speciesReference metaid="_01fd0314-c7f0-4ee2-a1b9-efde0010dfcb" species="S35"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a89bc03b-0156-44f3-b0e0-dc8dc78ae346" species="S42"/>
+        </listOfProducts>
+        <kineticLaw metaid="a07cae4a-d61c-4dc7-af94-1b7aab9767d5">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_on </ci>
+              <ci> S2 </ci>
+              <ci> S35 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R103" metaid="_7103ce18-bf34-4a1e-9d48-e4c53ed33f83" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_56f1be41-a690-419e-a7ad-4c4c2dc7cefb" species="S38"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1b8d1771-2502-4ef1-981f-9ace9c0dd26b" species="S2"/>
+          <speciesReference metaid="_6e2c7116-64a1-4ee4-8f9e-7e7fa52ccc41" species="S31"/>
+        </listOfProducts>
+        <kineticLaw metaid="_8b21756b-f212-453f-abe0-472d1edbe299">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_off </ci>
+              <ci> S38 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R104" metaid="ff470e34-c9e5-4827-8126-421dbb580a52" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="c4ff9e5e-fb1b-454b-a1b5-39e7474f2778" species="S39"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_91c5b73d-7bad-4013-ac84-a35618b26407" species="S2"/>
+          <speciesReference metaid="ce2fdfb6-cc47-459e-bb4e-9faa4436e5e4" species="S32"/>
+        </listOfProducts>
+        <kineticLaw metaid="_8e97731e-3dc0-4384-a67c-979e763676f4">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_off </ci>
+              <ci> S39 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R105" metaid="_7615f428-9367-4edc-8437-f4b8ce0b0e8b" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_38ab7574-2659-4535-9c51-d8e4cc3fc84c" species="S38"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="ff1f933f-e14e-4823-ac06-b60b21a37f52" species="S2"/>
+          <speciesReference metaid="_588c8eb6-3791-4a68-8ddd-425d11df9560" species="S43"/>
+        </listOfProducts>
+        <kineticLaw metaid="ecba4738-8dd0-4c45-8d36-89bd7fd133f5">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_cat </ci>
+              <ci> S38 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R106" metaid="b04aafdd-94ab-42e4-ac9c-354bdc0bfd55" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_2149cc1c-03ff-4a87-96d5-8f5708ea6913" species="S39"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_86e3458d-76ca-4c02-9bfe-c7301b7d1166" species="S2"/>
+          <speciesReference metaid="_9e37fb01-7348-4517-b0b7-a244206f74cb" species="S44"/>
+        </listOfProducts>
+        <kineticLaw metaid="_4eef8f30-511f-46ed-b3e9-34e317f79249">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_cat </ci>
+              <ci> S39 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R107" metaid="_52e2dbe6-78e6-4e2e-ad71-9713ff1f3b32" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f39113cb-568f-450d-b6bb-ef84fc5b6f7e" species="S3"/>
+          <speciesReference metaid="f9e365af-2c50-4ff3-9b7e-2f5408754248" species="S40"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_732adff3-e3ef-4327-86a9-cefa561ac4ba" species="S45"/>
+        </listOfProducts>
+        <kineticLaw metaid="_7e30042b-2c1c-4269-9ffb-2fc383898ccc">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_on </ci>
+              <ci> S3 </ci>
+              <ci> S40 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R108" metaid="eb4efd05-babd-4216-90dd-c528c42855d8" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f6035756-f59d-45f9-919c-7115c436d25c" species="S4"/>
+          <speciesReference metaid="_7d9a7d5c-11ad-45ec-b840-00c7f3dcae78" species="S37"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_7a0afa79-34d1-429c-8411-a896b8139924" species="S41"/>
+        </listOfProducts>
+        <kineticLaw metaid="cf0048a6-bed3-43b8-97fc-2e8d1fa96135">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S37 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R109" metaid="_74625ee1-4d1e-43fe-9fc6-e2f7abb8f3e7" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_0a94caed-14b9-4a5b-ac6a-4f6649cc8acd" species="S4"/>
+          <speciesReference metaid="e9dbf519-1016-4aed-8b34-0b900fe03c8d" species="S39"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_500315ad-a641-42f8-a07b-8ac725d73102" species="S42"/>
+        </listOfProducts>
+        <kineticLaw metaid="db9eaef8-e634-4f2a-8c80-ab804dab4d07">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S39 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R110" metaid="_27246332-79c6-4482-a495-166d033d7b3b" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_5e8b1267-b0db-473f-8bf9-1c63b8bf8147" species="S4"/>
+          <speciesReference metaid="_42db87c6-b099-47e7-a503-c31562f017a7" species="S40"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_704a0a3c-d905-4bea-84c5-b28eff5af5b0" species="S43"/>
+        </listOfProducts>
+        <kineticLaw metaid="a41b9ef7-e408-4cfd-8798-6cb41201a647">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S40 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R111" metaid="db25ec72-2874-42c6-937e-1499d1021d06" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="c0f4cc24-a723-40ec-b5e7-5785f37efb8d" species="S35"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_10aca3bd-2888-4c13-a46e-0213cebdc8f1" species="S4"/>
+          <speciesReference metaid="_801c3ea1-6ce0-4fbe-8c7b-9019350539ac" species="S32"/>
+        </listOfProducts>
+        <kineticLaw metaid="_31fc52cf-0b7f-46d8-aadc-86dc0dec3d06">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S35 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R112" metaid="_90d06a50-983e-411d-9304-437d3a9936da" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="c320176d-e6dc-4608-87ca-95cf37bde985" species="S36"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_2f6a06a9-93e7-4546-8f8f-5234e2a7e765" species="S4"/>
+          <speciesReference metaid="_1e2edcba-d675-4bb7-a427-77dc519fcb7e" species="S33"/>
+        </listOfProducts>
+        <kineticLaw metaid="_0d7790e6-b59a-4dbd-b800-2d27fade5c66">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S36 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R113" metaid="_1a20b2dc-17af-47a5-a4b0-4603873fca8e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="be3f166d-d00f-42a5-924f-63e0607b0255" species="S38"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_89247622-ffee-474d-9fd1-910575ad2f98" species="S4"/>
+          <speciesReference metaid="_9aec40e4-da8c-46d6-80ce-da53d6f2665e" species="S34"/>
+        </listOfProducts>
+        <kineticLaw metaid="f61ac756-72ae-46c6-9d77-696a54847341">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S38 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R114" metaid="_63218629-0da6-4f5d-a978-c130890e36c1" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="cf74b55e-5c3a-43eb-ae5b-2da9d7cae746" species="S4"/>
+          <speciesReference metaid="_62ff7ba1-d790-41ac-ae18-90368315b854" species="S36"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a33249e5-915f-49eb-93e2-41ced1e95e4c" species="S41"/>
+        </listOfProducts>
+        <kineticLaw metaid="_03484f57-a29f-4fd7-8d45-7308038b9975">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S36 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R115" metaid="_3e8b70a1-0243-45bb-a8b7-c6e2c056ff0a" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="d9532558-1fc8-485c-9781-a0f85493486d" species="S4"/>
+          <speciesReference metaid="_6b910247-acfc-48a6-a8d2-04c0357a750e" species="S38"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_41cc77ce-655d-4b24-aa2b-aa6d87bf4c68" species="S42"/>
+        </listOfProducts>
+        <kineticLaw metaid="_73266f6c-782d-4e87-8bd8-adbc26d34246">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S38 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R116" metaid="fcbc9066-2ef7-4037-afd3-a2da453da9bb" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_817a7d7f-2f78-4f5e-9203-4bfdc6ac6102" species="S4"/>
+          <speciesReference metaid="_80469ceb-82f1-4980-a5a0-eb5c75c56d96" species="S40"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_2a3f970a-de72-409f-95cd-033c7110e696" species="S44"/>
+        </listOfProducts>
+        <kineticLaw metaid="_1d6b9016-aa3a-4243-a6d8-7c7371088f0a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S40 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R117" metaid="_04653d59-204e-4a20-9464-6319914ceb81" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="ebba5f24-6d57-42f7-a672-b6b38d4e777a" species="S35"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_79f5c4e9-a721-44bc-9653-f7d0ae293540" species="S4"/>
+          <speciesReference metaid="_5d43ba13-b850-405e-8ffa-6f14d4f67370" species="S31"/>
+        </listOfProducts>
+        <kineticLaw metaid="_45ad362a-d9b9-4e93-b9d3-095d1205364c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S35 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R118" metaid="_2c60735d-30af-49dc-a67d-10459d7afc43" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_9f121e30-ca7c-41e3-a168-d857a714343c" species="S37"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_69441a9b-46fa-4ab4-8940-c8b7fdd13699" species="S4"/>
+          <speciesReference metaid="_0dcfea26-b1b8-4eac-950e-a6a4824549f3" species="S33"/>
+        </listOfProducts>
+        <kineticLaw metaid="_27f9c15b-586c-466a-bfca-8b0f1ef3a47f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S37 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R119" metaid="_7d5dceb8-36a3-43d0-9c9b-b495b18fda13" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_3baf7d77-81a0-4bfe-b1a0-743314c71fc5" species="S39"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1555ff71-9a96-4fe5-9e9c-1ca49b6dec5e" species="S4"/>
+          <speciesReference metaid="_354eb8f4-795d-4652-9636-7deef3163b7b" species="S34"/>
+        </listOfProducts>
+        <kineticLaw metaid="a042c378-bcae-4068-862f-780f42f03a29">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S39 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R120" metaid="fe40d5ba-53fd-49c2-b406-82e2ef34c0b6" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="d271dcff-ecc3-4436-982f-b8a519d098ef" species="S4"/>
+          <speciesReference metaid="_05585bed-7c28-4d4d-b7d6-44d4d78c5ed2" species="S40"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8ebb7dfd-4b34-42e7-b2a2-81648e4e7c8a" species="S46"/>
+        </listOfProducts>
+        <kineticLaw metaid="fc29896d-f533-45e5-be83-048d1cff69b8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S40 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R121" metaid="ba42c7eb-1acf-47be-bf8a-d94128b856e8" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_623b41b6-ab69-430d-8cdb-7fa021f28c1e" species="S41"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9bc07a76-082e-4c70-8bb7-87efad6ae489" species="S3"/>
+          <speciesReference metaid="_0e8c4f1a-b583-4424-a72a-30f4986dc91a" species="S35"/>
+        </listOfProducts>
+        <kineticLaw metaid="c6772e11-330d-4cbd-b211-2655fccec721">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_off </ci>
+              <ci> S41 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R122" metaid="_4fd5a370-f90e-4d85-bda7-34e987e52c45" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_330b6274-717b-4d27-8b0b-c82f1e5e501f" species="S41"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="fd1af397-0244-49ab-a1a7-e82ea0c33aa4" species="S3"/>
+          <speciesReference metaid="_21b73fe7-477e-4ad3-b479-b8d5a33b7b9c" species="S29"/>
+        </listOfProducts>
+        <kineticLaw metaid="_1693ad20-b6e7-4e6d-b3da-114677632a15">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_cat </ci>
+              <ci> S41 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R123" metaid="_8a6252b0-45f7-4d9a-8d3d-ecda84ba6311" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_4fd5a841-02eb-41f2-b5ba-2e0fb68d195c" species="S42"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_6a728d7d-1730-4330-a5a3-7306b649ca8a" species="S2"/>
+          <speciesReference metaid="f56e63fe-d227-4cec-985d-9aa9aa6aa788" species="S35"/>
+        </listOfProducts>
+        <kineticLaw metaid="_18c88198-a9a3-4436-a937-d998b4de0a4f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_off </ci>
+              <ci> S42 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R124" metaid="_600d0ddd-df0a-431d-8fc2-e3e88e4c1eaa" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f9ee2e96-9243-4fda-9dd4-1613aa7739e4" species="S42"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5abd9c7b-2b26-4a7e-bdaa-2feb6189a644" species="S2"/>
+          <speciesReference metaid="d2ca2f68-0fd5-4de9-ab94-94b6decb796a" species="S47"/>
+        </listOfProducts>
+        <kineticLaw metaid="_5c2751df-920c-4fe0-9ae7-8f2809efdede">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ek_cat </ci>
+              <ci> S42 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R125" metaid="_4888845c-6c02-42b9-9910-6ef281541818" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="e83006b1-15b7-4b9a-a848-abb2cc7c218b" species="S3"/>
+          <speciesReference metaid="dd3e4a13-821c-4f51-9fbb-0ec62810483b" species="S43"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_0bfe4ee4-c6ef-4b43-a62d-756bde8d8c1d" species="S48"/>
+        </listOfProducts>
+        <kineticLaw metaid="b7a9dccf-adc8-469d-b7d8-a47d582ca61c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_on </ci>
+              <ci> S3 </ci>
+              <ci> S43 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R126" metaid="_297718b0-945a-4173-a83e-5fd80ce80bca" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_09540b61-5a26-48a8-9280-d36273e57f47" species="S3"/>
+          <speciesReference metaid="_5c8d4639-c86c-4796-9701-27c9c2c242ef" species="S44"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="b636c09c-b4fd-4584-ae07-c8f9c477ff6c" species="S49"/>
+        </listOfProducts>
+        <kineticLaw metaid="_2525ad73-2bfd-4b25-a838-e562c00f1357">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_on </ci>
+              <ci> S3 </ci>
+              <ci> S44 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R127" metaid="_155c782d-8fb3-4760-8cb2-b903cd7276cd" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_740ea01f-8f56-4daf-a592-cd48ac6f3250" species="S45"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_16c8f738-0c4d-42fb-8eb6-0317d68e50cb" species="S3"/>
+          <speciesReference metaid="_78527844-e670-40fc-8093-2644207cad37" species="S40"/>
+        </listOfProducts>
+        <kineticLaw metaid="_1b7d2e16-3962-4a65-a5b8-e5dea522d743">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_off </ci>
+              <ci> S45 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R128" metaid="_032e974f-127b-4b66-b3bb-3876dca923c6" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_815cab02-85ec-473b-a5fd-00980d917ff8" species="S45"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="c09ca6d1-1259-49d1-ad6b-f9cf309f38aa" species="S3"/>
+          <speciesReference metaid="_9ffac114-de9f-4973-a6a5-b42bf44242ec" species="S28"/>
+        </listOfProducts>
+        <kineticLaw metaid="_3e9c25eb-f51f-4491-a6f3-abdb3fa2844e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_cat </ci>
+              <ci> S45 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R129" metaid="_6523fc77-2526-41ae-b532-8796ecd7cb91" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_4d270af7-c62c-4a7b-b7bc-599d09d9b234" species="S4"/>
+          <speciesReference metaid="_60e8ff8b-f101-4bfd-909b-b376adc053c9" species="S44"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_68582534-7e85-426d-9cfc-c0f516266103" species="S47"/>
+        </listOfProducts>
+        <kineticLaw metaid="fefb7972-2133-4dba-a29f-66fb0c6555f0">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S44 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R130" metaid="_5a7eb577-30a7-4b46-87a8-d78c07fbe908" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_901165c8-7d10-4a3e-aa8e-c79bcff2e037" species="S4"/>
+          <speciesReference metaid="_141f33ee-4168-4aba-8d28-9f19d59acf5c" species="S45"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5154d9fd-7387-4d73-8262-5834c45c8399" species="S48"/>
+        </listOfProducts>
+        <kineticLaw metaid="e62c2af2-7abe-476e-97ca-9e316529bc80">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S45 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R131" metaid="_2013498f-1fa8-49c0-9f19-3744204c3d54" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8825bc64-6e59-4020-85c7-f9232634b056" species="S4"/>
+          <speciesReference metaid="_8f6437be-e74e-4320-a20e-081226a08ab4" species="S46"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_48173e21-3677-4ea0-82c7-b46bc9e52699" species="S50"/>
+        </listOfProducts>
+        <kineticLaw metaid="_8115a256-b0c0-40a3-8f76-782bf7b2a042">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S46 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R132" metaid="dbab680c-2b45-48a1-baa2-a045af07927f" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_30b50598-636d-4d8f-8153-23ace5ebeae9" species="S41"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_6f42946d-9131-4fe3-8ced-9f34f7dcaa8e" species="S4"/>
+          <speciesReference metaid="f8a423a5-b9f6-458b-9001-427dab780242" species="S37"/>
+        </listOfProducts>
+        <kineticLaw metaid="_309ab5d9-3fd6-4190-a8a1-c9f565fc5ca1">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S41 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R133" metaid="_6e638b14-8c88-49c3-a803-d275ec9a57a9" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_559e1b8c-b90c-4c64-9edc-be99da6e16c6" species="S42"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="af8fbc35-b75f-4479-93dd-c22e430efceb" species="S4"/>
+          <speciesReference metaid="_06fe3e03-af7a-4533-869c-56fb0de45a05" species="S39"/>
+        </listOfProducts>
+        <kineticLaw metaid="fafb4d4a-16dc-4bb7-9863-c27d76a46248">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S42 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R134" metaid="_827133d9-2c91-4475-a06e-680de7f3a72a" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_9cb54906-b878-4e3b-80f5-87dceb607948" species="S43"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="c174017a-da5f-475a-8b09-285b4172a86d" species="S4"/>
+          <speciesReference metaid="_1e2141be-a58c-4c29-9711-a7f00a934bba" species="S40"/>
+        </listOfProducts>
+        <kineticLaw metaid="_16931d5d-febd-4c49-96a9-a6ee8b8f6ab2">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S43 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R135" metaid="_0f28a025-5104-4577-bbbd-84f03303a41c" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_2cfcec5a-f788-4b5d-9455-c00e5f216abb" species="S4"/>
+          <speciesReference metaid="ac36bb67-f1b3-4da8-977f-fba7156bb8e6" species="S43"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="ce58ce58-14a6-44ac-bfbd-504320d56bf1" species="S47"/>
+        </listOfProducts>
+        <kineticLaw metaid="b579e93f-1720-49d5-a152-4931de8d8c7d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S43 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R136" metaid="_4ae0088a-ebd7-4518-b2d4-653ae33f1f8f" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="a0af41c0-8e67-42f0-b35a-86ccc5b792e5" species="S4"/>
+          <speciesReference metaid="_090cefa9-c6fa-43b4-ae32-2234e11a23ae" species="S45"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8d8a5571-6766-4eaf-bee1-f89cae1e316f" species="S49"/>
+        </listOfProducts>
+        <kineticLaw metaid="_52e24173-e70a-4213-bd97-2b6657d92663">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S45 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R137" metaid="_85732372-cabf-4dbe-9f54-363d26170353" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_26199cf8-eba5-4894-b43d-cccb61a0d564" species="S4"/>
+          <speciesReference metaid="b4499ad4-7939-4809-85a7-7d292d76b5ad" species="S46"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_6c20aa12-51fc-453e-92fc-796d1a624783" species="S51"/>
+        </listOfProducts>
+        <kineticLaw metaid="bb3166bb-b18b-4e20-883d-cba3cc846e04">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S46 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R138" metaid="_30770434-2961-4bb5-a222-18434dce4570" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f8fccc71-a9a4-40e2-b8fd-eeee7b014524" species="S41"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_05affa4f-9513-4560-8cd0-1c5d77acc30b" species="S4"/>
+          <speciesReference metaid="_7860745d-9d5a-4a6f-9f44-8a20b567a87e" species="S36"/>
+        </listOfProducts>
+        <kineticLaw metaid="_21131762-a255-404d-a45d-05523b655008">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S41 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R139" metaid="_40e03be8-f06e-45e4-ba1b-cdae44c2ea8a" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="e05d7747-d18b-4736-ae4a-6b1cdefc41cc" species="S42"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_0701bea2-6df6-4e9c-9b04-fcfb3ac47bf9" species="S4"/>
+          <speciesReference metaid="a50ba4d2-c061-4fb6-93a0-3e97f46390f8" species="S38"/>
+        </listOfProducts>
+        <kineticLaw metaid="_748b1430-d970-4874-b389-7976d911f551">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S42 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R140" metaid="b3d6f1eb-2206-4463-960d-7fc0ce47b500" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_6a397743-31b0-4006-b565-35098ef35739" species="S44"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e7356512-346d-4a39-9f39-366aafad5dd8" species="S4"/>
+          <speciesReference metaid="ef3d9e30-a937-4046-a508-e4e0e437f03a" species="S40"/>
+        </listOfProducts>
+        <kineticLaw metaid="_93492d8f-58c4-47f4-89d2-7a05a25990e6">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S44 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R141" metaid="_6e8ef3a2-2a68-42f9-a807-3660f82dc727" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_852955d4-aeff-45f9-9233-cb37618408e3" species="S4"/>
+          <speciesReference metaid="bead5655-d2ec-4b94-8902-03cc26e7c86c" species="S43"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="c03c25cf-08e7-43b2-b036-d81e364b06f4" species="S50"/>
+        </listOfProducts>
+        <kineticLaw metaid="_45d79640-adcf-4f01-9091-6e79f2459a5d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S43 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R142" metaid="af9c66d5-17e6-47e9-8d08-a7d92f022207" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_74f457dc-69d0-41dd-b5f1-a1562712a58e" species="S4"/>
+          <speciesReference metaid="d68444d8-0535-4078-9b1c-8e7322b98131" species="S44"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="b1101286-5500-487e-9fb2-d0fa4d05739d" species="S51"/>
+        </listOfProducts>
+        <kineticLaw metaid="_06641dd6-f761-4046-ba3e-e0e65b5fae8f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S44 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R143" metaid="_00db5656-232e-410d-94f3-0ee453c2352b" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_01424740-2b4e-4800-8b29-f5fa106de29c" species="S46"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5250aa0e-5f9f-46f4-aa23-89e7a581bc3c" species="S4"/>
+          <speciesReference metaid="_0240ac53-9de9-46b9-9dfe-629c06dcb0bf" species="S40"/>
+        </listOfProducts>
+        <kineticLaw metaid="cf2e111c-4025-46b8-b5b8-f5760c0d4004">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off3 </ci>
+              <ci> S46 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R144" metaid="_6cd82a4b-626f-4b9d-b93d-fdf8f810c211" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_78d28945-9516-470e-ac79-55ff8a3877c9" species="S3"/>
+          <speciesReference metaid="a564d8a3-12e6-483f-9dac-c528109b3f3e" species="S47"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_0d7e887c-69b0-4b65-85c6-e950f56360df" species="S52"/>
+        </listOfProducts>
+        <kineticLaw metaid="_7cdc0989-fa18-41b4-8fb6-ee8e13901588">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_on </ci>
+              <ci> S3 </ci>
+              <ci> S47 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R145" metaid="ba4fd7a6-5c13-43fa-a3a1-7295ccaa6fea" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="bd85de9b-dab9-4a78-9b0d-26bb1e299f50" species="S48"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9e620b19-ff26-4c99-8339-8b1e90513a11" species="S3"/>
+          <speciesReference metaid="_62c9cb7a-2343-4143-8a31-3f050e16cada" species="S43"/>
+        </listOfProducts>
+        <kineticLaw metaid="_861d6758-e476-46ac-b9cd-6d8270cdde81">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_off </ci>
+              <ci> S48 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R146" metaid="_94d42b9c-8ca8-4b6d-8f23-1d77d826274e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="e0b3a248-72b7-4651-94e6-51dbc1390ff9" species="S49"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="b79c839c-d71a-47ee-a71a-2bf1f753587b" species="S3"/>
+          <speciesReference metaid="afa9948c-e8e4-45f1-9ea6-ce02ff199869" species="S44"/>
+        </listOfProducts>
+        <kineticLaw metaid="_065d8b83-58d5-4fc8-9aea-dedc4e2a9679">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_off </ci>
+              <ci> S49 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R147" metaid="_68fa9623-8c5a-491f-b58d-264ab9cdecc9" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_3e028161-334b-400b-b623-50517f461459" species="S48"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_0c194f19-8815-44dc-bc6a-3e30ce092945" species="S3"/>
+          <speciesReference metaid="_460ef956-bb0f-44d9-be2d-5b78101d810e" species="S31"/>
+        </listOfProducts>
+        <kineticLaw metaid="_4ef03a39-0352-4cee-b48f-1ee1ef5c5fd5">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_cat </ci>
+              <ci> S48 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R148" metaid="e2d1e24c-af5e-4ac5-a6b7-c8274a21c773" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="a2529c11-fd04-4e9b-a5f2-bdf41c2423da" species="S49"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="b6829026-29bf-45e7-a8bc-fb4eeaeb5729" species="S3"/>
+          <speciesReference metaid="e442aac5-c14c-4068-b8c2-f023a67e496d" species="S32"/>
+        </listOfProducts>
+        <kineticLaw metaid="bb7e5b3b-aca8-4e3d-ac4e-31f8a9b1ca7b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_cat </ci>
+              <ci> S49 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R149" metaid="_3d4c3b43-51d8-4d7c-9f98-0dec49ba45c2" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f7d9b51c-55b7-42cb-8368-ade69abcc383" species="S4"/>
+          <speciesReference metaid="e8fc01bc-3d43-448d-9fe9-3b0f0f1fc840" species="S49"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="ee515102-7866-4eb6-a69a-1c37d2eb58cd" species="S52"/>
+        </listOfProducts>
+        <kineticLaw metaid="bacbcd7c-fc7a-4ace-869c-5bfe718373b9">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S49 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R150" metaid="_7a61ed2f-819e-485b-9a44-85f6d189f395" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="c4ff4ec5-7f69-4193-b2e3-e9a4a1c34278" species="S4"/>
+          <speciesReference metaid="ad4d0880-c2ec-49c9-a345-85d734e09fa2" species="S51"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_541af2e6-2478-42a3-80fe-da66b79b4531" species="S53"/>
+        </listOfProducts>
+        <kineticLaw metaid="_114907f4-4eff-4856-a501-12cef85c57de">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S51 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R151" metaid="f436e7a3-5901-4ddf-ad69-966c467fbbc0" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_7a8e00b2-81ac-411b-87ca-6e34770fb158" species="S47"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="afd3a6bf-84a7-4152-ac17-781d30d78730" species="S4"/>
+          <speciesReference metaid="dc6f2796-ad4c-40fc-9af1-fdc556090752" species="S44"/>
+        </listOfProducts>
+        <kineticLaw metaid="c27e856f-af04-4070-80b9-30ef85122109">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S47 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R152" metaid="_2bb8e51f-a3bc-4fee-a1e0-8df80a352788" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f8e73d2e-c59b-41bc-af0c-60a8d454eef3" species="S48"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9eec8b91-57bd-4906-9777-6d9f9b5aef44" species="S4"/>
+          <speciesReference metaid="_333e19d3-e843-441e-a476-398028c75409" species="S45"/>
+        </listOfProducts>
+        <kineticLaw metaid="_21ba3105-e9a8-4b5f-b26d-288294cda533">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S48 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R153" metaid="_34d54485-d2dc-49ce-8233-7499404137ba" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_37245e97-7113-4b1b-a3c3-9dcaa565773d" species="S50"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="c451ce83-abfe-4fc9-8743-b44377bd32be" species="S4"/>
+          <speciesReference metaid="d49ca190-53e7-47c1-8c03-4f099d622216" species="S46"/>
+        </listOfProducts>
+        <kineticLaw metaid="a2ab150e-2da7-4437-b719-23c13dd75cae">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S50 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R154" metaid="_67a4a97e-2ea8-4ccc-9c31-69afc30c1562" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="ad3a6ad9-87fc-4ac9-915c-c08eab947278" species="S4"/>
+          <speciesReference metaid="_2db6df16-a76b-4974-bfda-be9ae3b71b43" species="S48"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_074fa947-3674-49ee-9bcb-d7a746af144d" species="S52"/>
+        </listOfProducts>
+        <kineticLaw metaid="_8d76add3-d396-4a4a-98ec-4f6542b455f6">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S48 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R155" metaid="_1e82a0c5-1c5e-4932-bf2b-7cbd87680be5" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="e85ee4b9-5211-4f16-9cb7-3a8017e1ec4a" species="S4"/>
+          <speciesReference metaid="_0cffd9d3-1b76-4e76-b9d7-5fefee9b95a2" species="S50"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_0fb4b5d9-15ab-4605-9f54-5b1c4b75882f" species="S53"/>
+        </listOfProducts>
+        <kineticLaw metaid="fe3d8cde-21b0-49a3-8659-28cca549179a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S50 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R156" metaid="_1b54e7b9-09fb-4d67-ba83-7b4a4f698b3e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_84fad225-3ec3-416e-b08c-6bea3af10f84" species="S47"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="d187696e-f054-4ad1-ab1c-939370c77529" species="S4"/>
+          <speciesReference metaid="_66597eb0-816e-4603-87a6-aa39e417a17c" species="S43"/>
+        </listOfProducts>
+        <kineticLaw metaid="_9e204d2d-d724-45e3-9d49-a1d519c92035">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S47 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R157" metaid="_88023e86-96df-460c-af49-2f17cc109a52" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_4d123078-26b8-48b5-a981-5ae39fd33826" species="S49"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9b50e313-6d26-4d52-8716-1dfbf4b0236f" species="S4"/>
+          <speciesReference metaid="_798d9c8e-0c4e-4bd6-a7d5-4096adae81bd" species="S45"/>
+        </listOfProducts>
+        <kineticLaw metaid="_8d05d5a7-75ea-4b9a-8289-27ccd2a930de">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S49 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R158" metaid="_314b14da-3772-4850-bd51-ce66b6cda6bf" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="fa77ac2e-4413-4d2b-ae9c-dc94d502fdb9" species="S51"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a04ec39b-5e6e-4d98-9f64-a86ae40ba5e2" species="S4"/>
+          <speciesReference metaid="_721c9abb-0b8b-4641-816c-0e9c72157826" species="S46"/>
+        </listOfProducts>
+        <kineticLaw metaid="f531ce4f-4213-4947-825a-74026c3ef554">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S51 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R159" metaid="_4cb7a5d9-bff7-4bab-a586-051354112946" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_827f219a-7647-4aa6-9812-dfc3d97df204" species="S4"/>
+          <speciesReference metaid="_33d2b271-7cbb-4428-8138-7fdd7082fe89" species="S47"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="c8838072-2743-41eb-bc6f-ac0eb01b1408" species="S53"/>
+        </listOfProducts>
+        <kineticLaw metaid="_2e9bc75a-24ae-4e25-bbc7-a151914abf8f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_on </ci>
+              <ci> S4 </ci>
+              <ci> S47 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R160" metaid="c0ad3f6f-2da0-42b0-8f03-c6b97f846edf" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_1a254b2a-caf0-40bd-9b70-038b725669f0" species="S50"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_2381d9e7-e13e-441b-ac33-06e5eccf47a3" species="S4"/>
+          <speciesReference metaid="_5d1cb61e-1106-40fa-8ede-809a57a07be0" species="S43"/>
+        </listOfProducts>
+        <kineticLaw metaid="_499c1c5b-4de9-42de-a539-b89442b867de">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off3 </ci>
+              <ci> S50 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R161" metaid="_0edbf6a1-6be3-4cea-9731-ccfffd4f7589" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_41665cd7-728a-4c86-baec-0ce2be4c6330" species="S51"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_0f593fed-a9e4-4853-8a8f-c0c049d4411d" species="S4"/>
+          <speciesReference metaid="_1239c374-023f-4129-b047-c45848a3a01d" species="S44"/>
+        </listOfProducts>
+        <kineticLaw metaid="f91ebad1-ea0d-4b91-ab1b-080f4193b6e5">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off3 </ci>
+              <ci> S51 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R162" metaid="_338bbda2-1621-4f6e-8b57-32cc4a3d3065" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="b6ccd32f-a354-415e-8566-0e6a5b7a3d63" species="S52"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_7d6f0653-9c1d-4836-a3af-0c01aadd8b51" species="S3"/>
+          <speciesReference metaid="ad6816ec-8a5f-446c-95b1-c7f5f36504e9" species="S47"/>
+        </listOfProducts>
+        <kineticLaw metaid="_6b9133a6-2e23-4228-a572-e7d59038d53b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_off </ci>
+              <ci> S52 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R163" metaid="eaa3a55e-c4b6-4258-9e18-5474ed595474" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_45f9bc5d-e44f-402b-b1e5-08a995b2681c" species="S52"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_725e1e2c-8cbf-4f3e-915e-0fd371610537" species="S3"/>
+          <speciesReference metaid="f09d3d8a-67ee-4e36-be67-9f3bcb324ba6" species="S35"/>
+        </listOfProducts>
+        <kineticLaw metaid="e009b942-11d6-4aa5-8296-dbf807cc0738">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> fk_cat </ci>
+              <ci> S52 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R164" metaid="b2b7fe5f-d7b9-4234-8771-881ce2925d23" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="e00b62c9-7b53-487e-9440-afd31d02d9a9" species="S52"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_02029f71-41f7-4b92-8ae9-ba9080619e3e" species="S4"/>
+          <speciesReference metaid="_6d10494b-72d6-4426-a78b-aaf1fa24690f" species="S49"/>
+        </listOfProducts>
+        <kineticLaw metaid="_33cb2dc8-8136-42eb-97c6-472a3663b123">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S52 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R165" metaid="_926c374b-6cec-49d1-9582-08e7ad6282c6" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8393411d-491d-4157-b677-267d14724c67" species="S53"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_87bcf733-07ad-4cba-a5a2-b3dc4aa307d2" species="S4"/>
+          <speciesReference metaid="_03eb14ce-1dfc-4c3b-b3ae-173a2b52bb4a" species="S51"/>
+        </listOfProducts>
+        <kineticLaw metaid="_2b84555f-0a41-4634-be59-00b31228c552">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off1 </ci>
+              <ci> S53 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R166" metaid="e0adede7-ba04-4ae5-857e-0923d0dbd8c3" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="a0d240cf-d5f3-45f8-a0ee-2e5bcf700f32" species="S52"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="de06ff39-9ecf-4a53-bf33-5e11b0e60eb7" species="S4"/>
+          <speciesReference metaid="d6bae61e-b641-4247-988d-fb26dd53f0c5" species="S48"/>
+        </listOfProducts>
+        <kineticLaw metaid="b930f566-23d2-4a31-b959-a52a632c5868">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S52 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R167" metaid="_6abb7849-5740-4534-bf87-0c7b81b6d1b3" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_56528d4f-4a1c-40db-ab31-7c331e13681a" species="S53"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_07a385b5-de5c-4ce7-a948-4d123e9e3c97" species="S4"/>
+          <speciesReference metaid="_1498b591-389d-46af-a973-d9e8132058c8" species="S50"/>
+        </listOfProducts>
+        <kineticLaw metaid="a9a3dad2-b6e6-4328-a19a-e66731df9a10">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off2 </ci>
+              <ci> S53 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="R168" metaid="e976d89a-3d73-42e2-bffb-5be95cf8b5ec" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_096b5321-4c9d-42c1-9d30-4e930bf9d311" species="S53"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e353125b-9dea-4d9c-a1a0-16c25a184487" species="S4"/>
+          <speciesReference metaid="_0f7230cc-e0c8-415c-a76f-ae892637afa8" species="S47"/>
+        </listOfProducts>
+        <kineticLaw metaid="_7d0eb6f4-a850-4a0b-bb78-d15d9fd0b671">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> zap_off3 </ci>
+              <ci> S53 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

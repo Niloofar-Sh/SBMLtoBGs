@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version3" metaid="metaid_0000001" level="2" version="3">
+  <model metaid="metaid_0000002" id="model_0000001" name="mahaney2000_SERCAregulation">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This model originates from BioModels Database: A Database of Annotated Published Models. It is copyright (c) 2005-2011 The BioModels.net Team.      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+      <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not..      <br/>
+      <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+  </p>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#metaid_0000002">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL4816599063"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/pubmed/10692318"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/7108"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/go/GO:0043462"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfUnitDefinitions>
+  <unitDefinition metaid="metaid_0000003" id="persec" name="persec">
+    <listOfUnits>
+      <unit metaid="_085446" kind="second" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="metaid_0000042" id="uM" name="uM">
+    <listOfUnits>
+      <unit metaid="_085458" kind="mole" scale="-6"/>
+      <unit metaid="_085470" kind="litre" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="metaid_0000004" id="peruMpersec" name="peruMpersec">
+    <listOfUnits>
+      <unit metaid="_085482" kind="litre"/>
+      <unit metaid="_085494" kind="mole" exponent="-1" scale="-6"/>
+      <unit metaid="_085506" kind="second" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions><listOfCompartments>
+  <compartment metaid="metaid_0000021" id="cell" name="cell" size="1"/>
+</listOfCompartments><listOfSpecies>
+  <species metaid="metaid_0000022" id="E2" name="E2" compartment="cell" initialConcentration="0.0333"/>
+  <species metaid="metaid_0000023" id="E1" name="E1" compartment="cell" initialConcentration="0"/>
+  <species metaid="metaid_0000024" id="Ca2plus" name="Ca2plus" compartment="cell" initialConcentration="0.268" boundaryCondition="true" constant="true"/>
+  <species metaid="metaid_0000025" id="Ca_E1" name="Ca_E1" compartment="cell" initialConcentration="0"/>
+  <species metaid="metaid_0000026" id="Ca_E1prime" name="Ca_E1prime" compartment="cell" initialConcentration="0"/>
+  <species metaid="metaid_0000027" id="Ca2_E1prime" name="Ca2_E1prime" compartment="cell" initialConcentration="0"/>
+  <species metaid="metaid_0000028" id="ATP" name="ATP" compartment="cell" initialConcentration="1" boundaryCondition="true"/>
+  <species metaid="metaid_0000029" id="ATP_Ca2_E1prime" name="ATP_Ca2_E1prime" compartment="cell" initialConcentration="0"/>
+  <species metaid="metaid_0000030" id="ADP" name="ADP" compartment="cell" initialConcentration="0"/>
+  <species metaid="metaid_0000031" id="EP" name="EP" compartment="cell" initialConcentration="0"/>
+  <species metaid="metaid_0000032" id="EPi" name="EPi" compartment="cell" initialConcentration="0"/>
+  <species metaid="metaid_0000033" id="Pi" name="Pi" compartment="cell" initialConcentration="0"/>
+</listOfSpecies><listOfParameters>
+  <parameter metaid="metaid_0000005" id="k1" name="k1" value="0.35" units="persec"/>
+  <parameter metaid="metaid_0000006" id="k_1" name="k_1" value="0.35" units="persec"/>
+  <parameter metaid="metaid_0000007" id="k2" name="k2" value="200" units="peruMpersec"/>
+  <parameter metaid="metaid_0000008" id="k_2" name="k_2" value="120" units="persec"/>
+  <parameter metaid="metaid_0000009" id="k3" name="k3" value="0.4" units="persec"/>
+  <parameter metaid="metaid_0000010" id="k_3" name="k_3" value="0.4" units="persec"/>
+  <parameter metaid="metaid_0000011" id="k4" name="k4" value="80" units="peruMpersec"/>
+  <parameter metaid="metaid_0000012" id="k_4" name="k_4" value="3.2" units="persec"/>
+  <parameter metaid="metaid_0000013" id="k5" name="k5" value="4" units="peruMpersec"/>
+  <parameter metaid="metaid_0000014" id="k_5" name="k_5" value="0" units="persec"/>
+  <parameter metaid="metaid_0000015" id="k6" name="k6" value="35" units="persec"/>
+  <parameter metaid="metaid_0000016" id="k_6" name="k_6" value="0" units="peruMpersec"/>
+  <parameter metaid="metaid_0000017" id="k7" name="k7" value="0.3" units="persec"/>
+  <parameter metaid="metaid_0000018" id="k_7" name="k_7" value="0.7" units="persec"/>
+  <parameter metaid="metaid_0000019" id="k8" name="k8" value="0.5" units="persec"/>
+  <parameter metaid="metaid_0000020" id="k_8" name="k_8" value="0" units="peruMpersec"/>
+  <parameter metaid="metaid_0000043" id="EPratio" name="EPratio" units="dimensionless" constant="false"/>
+</listOfParameters><listOfRules>
+  <assignmentRule metaid="metaid_0000044" variable="EPratio">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> EP </ci>
+        <apply>
+          <plus/>
+          <ci> E2 </ci>
+          <ci> E1 </ci>
+          <ci> Ca_E1 </ci>
+          <ci> Ca_E1prime </ci>
+          <ci> Ca2_E1prime </ci>
+          <ci> ATP_Ca2_E1prime </ci>
+          <ci> EP </ci>
+          <ci> EPi </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+</listOfRules><listOfReactions>
+  <reaction metaid="metaid_0000034" id="r1" name="r1">
+    <listOfReactants>
+      <speciesReference metaid="_085518" species="E2"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_085531" species="E1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_085543">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cell </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> k1 </ci>
+              <ci> E2 </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k_1 </ci>
+              <ci> E1 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000035" id="r2" name="r2">
+    <listOfReactants>
+      <speciesReference metaid="_085555" species="E1"/>
+      <speciesReference metaid="_085567" species="Ca2plus"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_085579" species="Ca_E1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_085591">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cell </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> k2 </ci>
+              <ci> E1 </ci>
+              <ci> Ca2plus </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k_2 </ci>
+              <ci> Ca_E1 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000036" id="r3" name="r3">
+    <listOfReactants>
+      <speciesReference metaid="_085603" species="Ca_E1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_085615" species="Ca_E1prime"/>
+    </listOfProducts>
+    <kineticLaw metaid="_085627">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cell </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> k3 </ci>
+              <ci> Ca_E1 </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k_3 </ci>
+              <ci> Ca_E1prime </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000037" id="r4" name="r4">
+    <listOfReactants>
+      <speciesReference metaid="_085639" species="Ca_E1prime"/>
+      <speciesReference metaid="_085651" species="Ca2plus"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_085664" species="Ca2_E1prime"/>
+    </listOfProducts>
+    <kineticLaw metaid="_085676">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cell </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> k4 </ci>
+              <ci> Ca_E1prime </ci>
+              <ci> Ca2plus </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k_4 </ci>
+              <ci> Ca2_E1prime </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000038" id="r5" name="r5">
+    <listOfReactants>
+      <speciesReference metaid="_085688" species="Ca2_E1prime"/>
+      <speciesReference metaid="_085700" species="ATP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_085712" species="ATP_Ca2_E1prime"/>
+    </listOfProducts>
+    <kineticLaw metaid="_085725">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cell </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> k5 </ci>
+              <ci> Ca2_E1prime </ci>
+              <ci> ATP </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k_5 </ci>
+              <ci> ATP_Ca2_E1prime </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000039" id="r6" name="r6">
+    <listOfReactants>
+      <speciesReference metaid="_085737" species="ATP_Ca2_E1prime"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_085749" species="EP"/>
+      <speciesReference metaid="_085761" species="ADP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_085773">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cell </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> k6 </ci>
+              <ci> ATP_Ca2_E1prime </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k_6 </ci>
+              <ci> EP </ci>
+              <ci> ADP </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000040" id="r7" name="r7">
+    <listOfReactants>
+      <speciesReference metaid="_085786" species="EP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_085799" species="EPi"/>
+    </listOfProducts>
+    <kineticLaw metaid="_085811">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cell </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> k7 </ci>
+              <ci> EP </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k_7 </ci>
+              <ci> EPi </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000041" id="r8" name="r8">
+    <listOfReactants>
+      <speciesReference metaid="_085823" species="EPi"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_085836" species="E2"/>
+      <speciesReference metaid="_085848" species="Pi"/>
+    </listOfProducts>
+    <kineticLaw metaid="_085860">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cell </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> k8 </ci>
+              <ci> EPi </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k_8 </ci>
+              <ci> E2 </ci>
+              <ci> Pi </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+</model>
+</sbml>

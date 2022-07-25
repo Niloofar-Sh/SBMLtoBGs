@@ -1,0 +1,537 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model id="Konrath2020_p53_subpopulation_a" metaid="_5d401c68-1f03-446e-93d2-41ad877a0e36" name="Konrath2020_p53_signaling_model">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+     <p>The ODE model is based on Batchelor et al., Mol. Syst. Biol. 7 (2011) and was extended by introducing explicit descriptions of the transcription and translation processes of Mdm2 mRNA and Wip1 mRNA. To capture the heterogeneous single cell dynamics of p53 with an ODE model, we clustered the time courses measured by single cell time lapse microscopy into ten subpopulations and created subpopulation models (labelled "a" to "j"). By fitting the subpopulation models to the clustered time course data, we developed to our knowledge the first quantitative p53 model reproducing heterogeneous dynamics of p53.</p>
+  </body>
+    </notes>
+    <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+        <rdf:Description rdf:about="#_5d401c68-1f03-446e-93d2-41ad877a0e36">
+	<bqbiol:hasProperty>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/mamo/MAMO_0000046"/>
+	</rdf:Bag>
+	</bqbiol:hasProperty>
+	</rdf:Description>
+	
+	
+	
+	
+	
+	</rdf:RDF>
+	</annotation>
+      <listOfUnitDefinitions>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit exponent="1" kind="second" multiplier="3600" scale="0"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment constant="true" id="nucl" size="1" spatialDimensions="3"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species boundaryCondition="false" compartment="nucl" constant="false" hasOnlySubstanceUnits="false" id="p53" initialConcentration="3.76722642764687" name="p53"/>
+      <species boundaryCondition="false" compartment="nucl" constant="false" hasOnlySubstanceUnits="false" id="p53a" initialConcentration="1.13548501458491E-14" name="p53a"/>
+      <species boundaryCondition="false" compartment="nucl" constant="false" hasOnlySubstanceUnits="false" id="Mdm2_mRNA" initialConcentration="39.9377817730413" name="Mdm2_mRNA"/>
+      <species boundaryCondition="false" compartment="nucl" constant="false" hasOnlySubstanceUnits="false" id="Mdm2" initialConcentration="61.6385295284647" name="Mdm2"/>
+      <species boundaryCondition="false" compartment="nucl" constant="false" hasOnlySubstanceUnits="false" id="Wip1_mRNA" initialConcentration="2.78456676530228E-10" name="Wip1_mRNA"/>
+      <species boundaryCondition="false" compartment="nucl" constant="false" hasOnlySubstanceUnits="false" id="Wip1" initialConcentration="7.39457152375425E-11" name="Wip1"/>
+      <species boundaryCondition="false" compartment="nucl" constant="false" hasOnlySubstanceUnits="false" id="pATM" initialConcentration="0" name="ATM-P"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter constant="true" id="Ts" name="Ts" value="30.6397055741581"/>
+      <parameter constant="true" id="Tw" name="Tw" value="13.2550261118225"/>
+      <parameter constant="true" id="am" name="am" value="1.00000000000009"/>
+      <parameter constant="true" id="ampa" name="ampa" value="0.0801768335347252"/>
+      <parameter constant="true" id="ampi" name="ampi" value="0.00543586139785001"/>
+      <parameter constant="true" id="amt" name="amt" value="0.52013034096636"/>
+      <parameter constant="true" id="api" name="api" value="1.00000000000009E-10"/>
+      <parameter constant="true" id="as" name="as" value="1.00000000000009E-10"/>
+      <parameter constant="true" id="asm" name="asm" value="14.6618485550852"/>
+      <parameter constant="true" id="aw" name="aw" value="0.999999999999909"/>
+      <parameter constant="true" id="awpa" name="awpa" value="2.41774392721021"/>
+      <parameter constant="true" id="aws" name="aws" value="9998.03707255826"/>
+      <parameter constant="true" id="awt" name="awt" value="0.999999999999909"/>
+      <parameter constant="true" id="bmt" name="bmt" value="21.3098917384282"/>
+      <parameter constant="true" id="bmt_fca" name="bmt_fca" value="0.974798572744379"/>
+      <parameter constant="true" id="bmtm" name="bmtm" value="2.37082846119123"/>
+      <parameter constant="true" id="bmtm_fca" name="bmtm_fca" value="0.650980827039108"/>
+      <parameter constant="true" id="bp" name="bp" value="2.30656107352082"/>
+      <parameter constant="true" id="bp_fca" name="bp_fca" value="0.547239465635988"/>
+      <parameter constant="true" id="bpamt" name="bpamt" value="96.4590811992275"/>
+      <parameter constant="true" id="bpawt" name="bpawt" value="13.4284313064334"/>
+      <parameter constant="true" id="bs" name="bs" value="1.91228761010378"/>
+      <parameter constant="true" id="bs_fca" name="bs_fca" value="1.12134001621264"/>
+      <parameter constant="true" id="bsp" name="bsp" value="9999.57891214013"/>
+      <parameter constant="true" id="bwt" name="bwt" value="1.00000000000009E-10"/>
+      <parameter constant="true" id="bwt_fca" name="bwt_fca" value="1"/>
+      <parameter constant="true" id="bwtw" name="bwtw" value="0.0658796566497745"/>
+      <parameter constant="true" id="bwtw_fca" name="bwtw_fca" value="0.804563751309152"/>
+      <parameter constant="true" id="init_Mdm2" name="init_Mdm2" value="0"/>
+      <parameter constant="true" id="init_Mdm2_mRNA" name="init_Mdm2_mRNA" value="0"/>
+      <parameter constant="true" id="init_Wip1" name="init_Wip1" value="0"/>
+      <parameter constant="true" id="init_Wip1_mRNA" name="init_Wip1_mRNA" value="0"/>
+      <parameter constant="true" id="init_p53" name="init_p53" value="0"/>
+      <parameter constant="true" id="init_p53a" name="init_p53a" value="0"/>
+      <parameter constant="true" id="init_pATM" name="init_pATM" value="0"/>
+      <parameter constant="true" id="ns" name="ns" value="4"/>
+      <parameter constant="true" id="nw" name="nw" value="4"/>
+      <parameter constant="true" id="offset" name="offset" value="21.239764206403"/>
+      <parameter constant="true" id="scale_p53" name="scale_p53" value="149.115693749454"/>
+      <parameter constant="false" id="damage" value="1"/>
+      <parameter constant="false" id="p53_obs" name="p53_obs" value="0"/>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule variable="damage">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <cn type="integer"> 1 </cn>
+        </math>
+            </assignmentRule>
+      <assignmentRule variable="p53_obs">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <log/>
+            <logbase>
+              <cn type="integer"> 10 </cn>
+            </logbase>
+            <apply>
+              <plus/>
+              <ci> offset </ci>
+              <apply>
+                <times/>
+                <ci> scale_p53 </ci>
+                <apply>
+                  <plus/>
+                  <ci> p53 </ci>
+                  <ci> p53a </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+            </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="reaction1" name="reaction1" reversible="false">
+        <listOfProducts>
+          <speciesReference species="p53" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> bp </ci>
+              <ci> bp_fca </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction2" name="reaction2" reversible="false">
+        <listOfProducts>
+          <speciesReference species="p53" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Wip1"/>
+          <modifierSpeciesReference species="p53a"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Wip1 </ci>
+              <ci> awpa </ci>
+              <ci> p53a </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction3" name="reaction3" reversible="false">
+        <listOfReactants>
+          <speciesReference species="p53" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> api </ci>
+              <ci> p53 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction4" name="reaction4" reversible="false">
+        <listOfReactants>
+          <speciesReference species="p53" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Mdm2"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Mdm2 </ci>
+              <ci> ampi </ci>
+              <ci> p53 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction5" name="reaction5" reversible="false">
+        <listOfReactants>
+          <speciesReference species="p53" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="pATM"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> bsp </ci>
+                <ci> p53 </ci>
+                <apply>
+                  <power/>
+                  <ci> pATM </ci>
+                  <ci> ns </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <power/>
+                  <ci> Ts </ci>
+                  <ci> ns </ci>
+                </apply>
+                <apply>
+                  <power/>
+                  <ci> pATM </ci>
+                  <ci> ns </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction6" name="reaction6" reversible="false">
+        <listOfProducts>
+          <speciesReference species="p53a" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="p53"/>
+          <modifierSpeciesReference species="pATM"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> bsp </ci>
+                <ci> p53 </ci>
+                <apply>
+                  <power/>
+                  <ci> pATM </ci>
+                  <ci> ns </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <power/>
+                  <ci> Ts </ci>
+                  <ci> ns </ci>
+                </apply>
+                <apply>
+                  <power/>
+                  <ci> pATM </ci>
+                  <ci> ns </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction7" name="reaction7" reversible="false">
+        <listOfReactants>
+          <speciesReference species="p53a" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Mdm2"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Mdm2 </ci>
+              <ci> ampa </ci>
+              <ci> p53a </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction8" name="reaction8" reversible="false">
+        <listOfReactants>
+          <speciesReference species="p53a" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Wip1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Wip1 </ci>
+              <ci> awpa </ci>
+              <ci> p53a </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction9" name="reaction9" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Mdm2_mRNA" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="p53a"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> bpamt </ci>
+              <ci> p53a </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction10" name="reaction10" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Mdm2_mRNA" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> bmt </ci>
+              <ci> bmt_fca </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction11" name="reaction11" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Mdm2_mRNA" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Mdm2_mRNA </ci>
+              <ci> amt </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction12" name="reaction12" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Mdm2" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Mdm2_mRNA"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Mdm2_mRNA </ci>
+              <ci> bmtm </ci>
+              <ci> bmtm_fca </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction13" name="reaction13" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Mdm2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="pATM"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Mdm2 </ci>
+              <ci> asm </ci>
+              <ci> pATM </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction14" name="reaction14" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Mdm2" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Mdm2 </ci>
+              <ci> am </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction15" name="reaction15" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Wip1_mRNA" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="p53a"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> bpawt </ci>
+              <ci> p53a </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction16" name="reaction16" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Wip1_mRNA" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> bwt </ci>
+              <ci> bwt_fca </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction17" name="reaction17" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Wip1_mRNA" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Wip1_mRNA </ci>
+              <ci> awt </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction18" name="reaction18" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Wip1" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Wip1_mRNA"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Wip1_mRNA </ci>
+              <ci> bwtw </ci>
+              <ci> bwtw_fca </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction19" name="reaction19" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Wip1" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Wip1 </ci>
+              <ci> aw </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction20" name="reaction20" reversible="false">
+        <listOfProducts>
+          <speciesReference species="pATM" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> bs </ci>
+              <ci> bs_fca </ci>
+              <ci> damage </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction21" name="reaction21" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pATM" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Wip1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <power/>
+                  <ci> Wip1 </ci>
+                  <ci> nw </ci>
+                </apply>
+                <ci> aws </ci>
+                <ci> pATM </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <power/>
+                  <ci> Tw </ci>
+                  <ci> nw </ci>
+                </apply>
+                <apply>
+                  <power/>
+                  <ci> Wip1 </ci>
+                  <ci> nw </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="reaction22" name="reaction22" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pATM" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> as </ci>
+              <ci> pATM </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

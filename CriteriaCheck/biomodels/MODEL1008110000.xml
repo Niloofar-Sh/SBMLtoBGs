@@ -1,0 +1,1590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" metaid="_867724" level="2" version="4">
+  <model metaid="_058342" id="Model_1" name="Werner2005_IkappaB_kinase">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This is the model described in the article:      <br/>
+        <strong>Stimulus specificity of gene expression programs determined by temporal control of IKK activity.</strong>
+        <br/>
+          by Werner SL, Barken D, Hoffmann A. Science. 2005 Sep 16;309(5742):1857-61; PMID:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/16166517">16166517</a>
+          , DOI=      <a href="http://dx.doi.org/10.1126/science.1113319">10.1126/science.1113319</a>
+        <br/>
+          Abstract:      <br/>
+          A small number of mammalian signaling pathways mediate a myriad of distinct physiological responses to diverse cellular stimuli. Temporal control of the signaling module that contains IkappaB kinase (IKK), its substrate inhibitor of NF-kappaB (IkappaB), and the key inflammatory transcription factor NF-kappaB can allow for selective gene activation. We have demonstrated that different inflammatory stimuli induce distinct IKK profiles, and we examined the underlying molecular mechanisms. Although tumor necrosis factor-alpha (TNFalpha)-induced IKK activity was rapidly attenuated by negative feedback, lipopolysaccharide (LPS) signaling and LPS-specific gene expression programs were dependent on a cytokine-mediated positive feedback mechanism. Thus, the distinct biological responses to LPS and TNFalpha depend on signaling pathway-specific mechanisms that regulate the temporal profile of IKK activity.      </p>
+      <p>The model was implemented according to the description in the supplemental materials and by comparison to the matlab files provided by Prof. Hoffmann. It includes a delay for the induced transcription of IκBε mRNA. For the IKK input one of the randomly generated profiles was used. In its current form the model could not reproduce the time courses given in the article, as first the IKK activity profiles cannot easily be described by the same fitting functions in SBML and second the time delay limits simulation to tools, for which the current converters do not provide full SBML export.</p>
+      <p>Originally created by libAntimony v1.4 (using libSBML 3.4.1)</p>
+      <p>This model originates from BioModels Database: A Database of Annotated Published Models (http://www.ebi.ac.uk/biomodels/). It is copyright (c) 2005-2011 The BioModels.net Team.      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+    <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not..      <br/>
+    <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+</p>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#_058342">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1008110000"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/pubmed/16166517"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/40674"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://www.geneontology.org/GO:0008384"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfUnitDefinitions>
+  <unitDefinition metaid="_867736" id="substance" name="micromole">
+    <listOfUnits>
+      <unit metaid="_867748" kind="mole" scale="-6"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_867760" id="time" name="minutes">
+    <listOfUnits>
+      <unit metaid="_867772" kind="second" multiplier="60"/>
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions><listOfCompartments>
+  <compartment metaid="_058344" id="cytoplasm" size="1"/>
+  <compartment metaid="_058346" id="nucleus" size="1"/>
+</listOfCompartments><listOfSpecies>
+  <species metaid="_058348" id="IKK" compartment="cytoplasm" boundaryCondition="true"/>
+  <species metaid="_058349" id="NFKB" name="NF-κB" compartment="cytoplasm" initialConcentration="0"/>
+  <species metaid="_058351" id="NFKBN" name="NF-κB nucleus" compartment="nucleus" initialConcentration="0"/>
+  <species metaid="_058352" id="IKBAT" name="IκBα mRNA" compartment="cytoplasm" initialConcentration="0"/>
+  <species metaid="_058353" id="IKBA" name="IκBα" compartment="cytoplasm" initialConcentration="0"/>
+  <species metaid="_058354" id="IKBAN" name="IκBα nucleus" compartment="nucleus" initialConcentration="0"/>
+  <species metaid="_058356" id="IKBANFKB" name="IκBαNF-κB" compartment="cytoplasm" initialConcentration="0.07"/>
+  <species metaid="_058357" id="IKBANFKBN" name="IκBαNF-κB nucleus" compartment="nucleus" initialConcentration="0"/>
+  <species metaid="_058358" id="IKKIKBA" name="IKKIκBα" compartment="cytoplasm" initialConcentration="0"/>
+  <species metaid="_058359" id="IKKIKBANFKB" name="IKKIκBαNF-κB" compartment="cytoplasm" initialConcentration="0"/>
+  <species metaid="_058361" id="IKBBT" name="IκBβ mRNA" compartment="cytoplasm" initialConcentration="0"/>
+  <species metaid="_058362" id="IKBB" name="IκBβ" compartment="cytoplasm" initialConcentration="0"/>
+  <species metaid="_058363" id="IKBBN" name="IκBβ nucleus" compartment="nucleus" initialConcentration="0"/>
+  <species metaid="_058364" id="IKBBNFKB" name="IκBβNF-κB" compartment="cytoplasm" initialConcentration="0.02"/>
+  <species metaid="_058366" id="IKBBNFKBN" name="IκBβNF-κB nucleus" compartment="nucleus" initialConcentration="0"/>
+  <species metaid="_058367" id="IKKIKBB" name="IKKIκBβ" compartment="cytoplasm" initialConcentration="0"/>
+  <species metaid="_058368" id="IKKIKBBNFKB" name="IKKIκBβNF-κB" compartment="cytoplasm" initialConcentration="0"/>
+  <species metaid="_058369" id="IKBET" name="IκBε mRNA" compartment="cytoplasm" initialConcentration="0"/>
+  <species metaid="_058371" id="IKBE" name="IκBε" compartment="cytoplasm" initialConcentration="0"/>
+  <species metaid="_058372" id="IKBEN" name="IκBε nucleus" compartment="nucleus" initialConcentration="0"/>
+  <species metaid="_058373" id="IKBENFKB" name="IκBεNF-κB" compartment="cytoplasm" initialConcentration="0.01"/>
+  <species metaid="_058374" id="IKBENFKBN" name="IκBεNF-κB nucleus" compartment="nucleus" initialConcentration="0"/>
+  <species metaid="_058376" id="IKKIKBE" name="IKKIκBε" compartment="cytoplasm" initialConcentration="0"/>
+  <species metaid="_058377" id="IKKIKBENFKB" name="IKKIκBεNF-κB" compartment="cytoplasm" initialConcentration="0"/>
+</listOfSpecies><listOfParameters>
+  <parameter metaid="_058528" id="IkBe_transcription_delay" value="45"/>
+  <parameter metaid="_058529" id="dur1" value="120"/>
+  <parameter metaid="_058530" id="dur2" value="15"/>
+  <parameter metaid="_058532" id="dur3" value="60"/>
+  <parameter metaid="_058533" id="t1" constant="false"/>
+  <parameter metaid="_058534" id="t2" constant="false"/>
+  <parameter metaid="_058535" id="t3" constant="false"/>
+  <parameter metaid="_058537" id="t_end" value="240"/>
+  <parameter metaid="_058538" id="ikk_1" value="0.11"/>
+  <parameter metaid="_058539" id="ikk_2" value="0.001"/>
+  <parameter metaid="_058540" id="ikk_basal" value="0.001"/>
+  <parameter metaid="_058542" id="NFKBn_tot" constant="false"/>
+  <parameter metaid="_058543" id="a_c_ai" value="1.35"/>
+  <parameter metaid="_058544" id="a_c_an" value="30"/>
+  <parameter metaid="_058545" id="a_c_bi" value="0.36"/>
+  <parameter metaid="_058547" id="a_c_bn" value="30"/>
+  <parameter metaid="_058548" id="a_c_ei" value="0.54"/>
+  <parameter metaid="_058549" id="a_c_en" value="30"/>
+  <parameter metaid="_058550" id="a_c_2ain" value="30"/>
+  <parameter metaid="_058552" id="a_c_2ani" value="11.1"/>
+  <parameter metaid="_058553" id="a_c_2bin" value="30"/>
+  <parameter metaid="_058554" id="a_c_2bni" value="2.88"/>
+  <parameter metaid="_058555" id="a_c_2ein" value="30"/>
+  <parameter metaid="_058557" id="a_c_2eni" value="4.2"/>
+  <parameter metaid="_058558" id="a_n_an" value="30"/>
+  <parameter metaid="_058559" id="a_n_bn" value="30"/>
+  <parameter metaid="_058560" id="a_n_en" value="30"/>
+  <parameter metaid="_058562" id="d_c_ai" value="0.075"/>
+  <parameter metaid="_058563" id="d_c_an" value="6e-05"/>
+  <parameter metaid="_058564" id="d_c_bi" value="0.105"/>
+  <parameter metaid="_058565" id="d_c_bn" value="6e-05"/>
+  <parameter metaid="_058567" id="d_c_ei" value="0.105"/>
+  <parameter metaid="_058568" id="d_c_en" value="6e-05"/>
+  <parameter metaid="_058569" id="d_c_2ain" value="6e-05"/>
+  <parameter metaid="_058570" id="d_c_2ani" value="0.075"/>
+  <parameter metaid="_058572" id="d_c_2bin" value="6e-05"/>
+  <parameter metaid="_058573" id="d_c_2bni" value="0.105"/>
+  <parameter metaid="_058574" id="d_c_2ein" value="6e-05"/>
+  <parameter metaid="_058575" id="d_c_2eni" value="0.105"/>
+  <parameter metaid="_058577" id="d_n_an" value="6e-05"/>
+  <parameter metaid="_058578" id="d_n_bn" value="6e-05"/>
+  <parameter metaid="_058579" id="d_n_en" value="6e-05"/>
+  <parameter metaid="_058580" id="ex_a" value="0.012"/>
+  <parameter metaid="_058582" id="ex_b" value="0.012"/>
+  <parameter metaid="_058583" id="ex_e" value="0.012"/>
+  <parameter metaid="_058584" id="ex_n" value="0.0048"/>
+  <parameter metaid="_058585" id="ex_2an" value="0.828"/>
+  <parameter metaid="_058587" id="ex_2bn" value="0.424"/>
+  <parameter metaid="_058588" id="ex_2en" value="0.424"/>
+  <parameter metaid="_058589" id="in_a" value="0.018"/>
+  <parameter metaid="_058590" id="in_b" value="0.018"/>
+  <parameter metaid="_058592" id="in_e" value="0.018"/>
+  <parameter metaid="_058593" id="in_n" value="5.4"/>
+  <parameter metaid="_058594" id="pd_c_a" value="0.12"/>
+  <parameter metaid="_058595" id="pd_c_b" value="0.18"/>
+  <parameter metaid="_058598" id="pd_c_e" value="0.18"/>
+  <parameter metaid="_058599" id="pd_c_2ai" value="0.0018"/>
+  <parameter metaid="_058600" id="pd_c_2an" value="6e-05"/>
+  <parameter metaid="_058601" id="pd_c_2bi" value="0.0006"/>
+  <parameter metaid="_058603" id="pd_c_2bn" value="6e-05"/>
+  <parameter metaid="_058604" id="pd_c_2ei" value="0.0012"/>
+  <parameter metaid="_058605" id="pd_c_2en" value="6e-05"/>
+  <parameter metaid="_058606" id="pd_c_3ain" value="0.36"/>
+  <parameter metaid="_058608" id="pd_c_3bin" value="0.12"/>
+  <parameter metaid="_058609" id="pd_c_3ein" value="0.18"/>
+  <parameter metaid="_058610" id="pd_n_2an" value="6e-05"/>
+  <parameter metaid="_058611" id="pd_n_2bn" value="6e-05"/>
+  <parameter metaid="_058613" id="pd_n_2en" value="6e-05"/>
+  <parameter metaid="_058614" id="pd_n_a" value="0.12"/>
+  <parameter metaid="_058615" id="pd_n_b" value="0.18"/>
+  <parameter metaid="_058616" id="pd_n_e" value="0.18"/>
+  <parameter metaid="_058618" id="ps_c_a" value="0.2448"/>
+  <parameter metaid="_058619" id="ps_c_b" value="0.2448"/>
+  <parameter metaid="_058620" id="ps_c_e" value="0.2448"/>
+  <parameter metaid="_058621" id="rd_a" value="0.0168"/>
+  <parameter metaid="_058624" id="rd_b" value="0.0168"/>
+  <parameter metaid="_058625" id="rd_e" value="0.0168"/>
+  <parameter metaid="_058626" id="rs_an" value="7.92"/>
+  <parameter metaid="_058627" id="rs_en" value="0.8"/>
+  <parameter metaid="_058629" id="rs_a" value="0.0001848"/>
+  <parameter metaid="_058630" id="rs_b" value="4.272e-05"/>
+  <parameter metaid="_058631" id="rs_e" value="3.048e-05"/>
+</listOfParameters><listOfRules>
+  <assignmentRule metaid="_058521" variable="IKK">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <ci> ikk_basal </ci>
+          <apply>
+            <gt/>
+            <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+            <ci> t_end </ci>
+          </apply>
+        </piece>
+        <otherwise>
+          <piecewise>
+            <piece>
+              <ci> ikk_2 </ci>
+              <apply>
+                <and/>
+                <apply>
+                  <geq/>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                  <ci> t3 </ci>
+                </apply>
+                <apply>
+                  <leq/>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                  <ci> t_end </ci>
+                </apply>
+              </apply>
+            </piece>
+            <otherwise>
+              <piecewise>
+                <piece>
+                  <apply>
+                    <plus/>
+                    <ci> ikk_1 </ci>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <apply>
+                          <minus/>
+                          <ci> ikk_2 </ci>
+                          <ci> ikk_1 </ci>
+                        </apply>
+                        <apply>
+                          <minus/>
+                          <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                          <ci> t2 </ci>
+                        </apply>
+                      </apply>
+                      <ci> dur3 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <and/>
+                    <apply>
+                      <lt/>
+                      <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                      <ci> t3 </ci>
+                    </apply>
+                    <apply>
+                      <gt/>
+                      <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                      <ci> t2 </ci>
+                    </apply>
+                  </apply>
+                </piece>
+                <otherwise>
+                  <piecewise>
+                    <piece>
+                      <ci> ikk_1 </ci>
+                      <apply>
+                        <and/>
+                        <apply>
+                          <leq/>
+                          <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                          <ci> t2 </ci>
+                        </apply>
+                        <apply>
+                          <geq/>
+                          <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                          <ci> t1 </ci>
+                        </apply>
+                      </apply>
+                    </piece>
+                    <otherwise>
+                      <apply>
+                        <plus/>
+                        <ci> ikk_basal </ci>
+                        <apply>
+                          <divide/>
+                          <apply>
+                            <times/>
+                            <apply>
+                              <minus/>
+                              <ci> ikk_1 </ci>
+                              <ci> ikk_basal </ci>
+                            </apply>
+                            <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                          </apply>
+                          <ci> dur1 </ci>
+                        </apply>
+                      </apply>
+                    </otherwise>
+                  </piecewise>
+                </otherwise>
+              </piecewise>
+            </otherwise>
+          </piecewise>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_058522" variable="t1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <ci> dur1 </ci>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_058524" variable="t2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> dur1 </ci>
+        <ci> dur2 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_058525" variable="t3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> dur1 </ci>
+        <ci> dur2 </ci>
+        <ci> dur3 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_058526" variable="NFKBn_tot">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> NFKBN </ci>
+        <ci> IKBBNFKBN </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+</listOfRules><listOfReactions>
+  <reaction metaid="_058379" id="re1" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_867785" species="IKBA"/>
+      <speciesReference metaid="_867797" species="IKK"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_867809" species="IKKIKBA"/>
+    </listOfProducts>
+    <kineticLaw metaid="_867821">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> a_c_ai </ci>
+          <ci> IKBA </ci>
+          <ci> IKK </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058381" id="re2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_867833" species="IKBA"/>
+      <speciesReference metaid="_867845" species="NFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_867857" species="IKBANFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_867869">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> a_c_an </ci>
+          <ci> IKBA </ci>
+          <ci> NFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058382" id="re3" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_867881" species="IKBB"/>
+      <speciesReference metaid="_867893" species="IKK"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_867905" species="IKKIKBB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_867917">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> a_c_bi </ci>
+          <ci> IKBB </ci>
+          <ci> IKK </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058383" id="re4" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_867929" species="IKBB"/>
+      <speciesReference metaid="_867941" species="NFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_867953" species="IKBBNFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_867965">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> a_c_bn </ci>
+          <ci> IKBB </ci>
+          <ci> NFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058384" id="re5" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_867978" species="IKBE"/>
+      <speciesReference metaid="_867990" species="IKK"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868002" species="IKKIKBE"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868014">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> a_c_ei </ci>
+          <ci> IKBE </ci>
+          <ci> IKK </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058386" id="re6" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868026" species="IKBE"/>
+      <speciesReference metaid="_868038" species="NFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868051" species="IKBENFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868064">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> a_c_en </ci>
+          <ci> IKBE </ci>
+          <ci> NFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058387" id="re7" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868077" species="IKKIKBA"/>
+      <speciesReference metaid="_868090" species="NFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868102" species="IKKIKBANFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868115">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> a_c_2ain </ci>
+          <ci> IKKIKBA </ci>
+          <ci> NFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058388" id="re8" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868127" species="IKBANFKB"/>
+      <speciesReference metaid="_868140" species="IKK"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868152" species="IKKIKBANFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868164">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> a_c_2ani </ci>
+          <ci> IKBANFKB </ci>
+          <ci> IKK </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058389" id="re9" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868177" species="IKKIKBB"/>
+      <speciesReference metaid="_868189" species="NFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868202" species="IKKIKBBNFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868214">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> a_c_2bin </ci>
+          <ci> IKKIKBB </ci>
+          <ci> NFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058391" id="re10" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868227" species="IKBBNFKB"/>
+      <speciesReference metaid="_868240" species="IKK"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868253" species="IKKIKBBNFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868266">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> a_c_2bni </ci>
+          <ci> IKBBNFKB </ci>
+          <ci> IKK </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058392" id="re11" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868279" species="IKKIKBE"/>
+      <speciesReference metaid="_868292" species="NFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868305" species="IKKIKBENFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868318">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> a_c_2ein </ci>
+          <ci> IKKIKBE </ci>
+          <ci> NFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058393" id="re12" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868331" species="IKBENFKB"/>
+      <speciesReference metaid="_868343" species="IKK"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868355" species="IKKIKBENFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868367">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> a_c_2eni </ci>
+          <ci> IKBENFKB </ci>
+          <ci> IKK </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058394" id="re13" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868379" species="IKBAN"/>
+      <speciesReference metaid="_868391" species="NFKBN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868403" species="IKBANFKBN"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868415">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> a_n_an </ci>
+          <ci> IKBAN </ci>
+          <ci> NFKBN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058396" id="re14" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868427" species="IKBBN"/>
+      <speciesReference metaid="_868439" species="NFKBN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868451" species="IKBBNFKBN"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868463">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> a_n_bn </ci>
+          <ci> IKBBN </ci>
+          <ci> NFKBN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058397" id="re15" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868475" species="IKBEN"/>
+      <speciesReference metaid="_868487" species="NFKBN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868500" species="IKBENFKBN"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868512">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> a_n_en </ci>
+          <ci> IKBEN </ci>
+          <ci> NFKBN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058398" id="re16" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868524" species="IKKIKBA"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868536" species="IKK"/>
+      <speciesReference metaid="_868548" species="IKBA"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868560">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> d_c_ai </ci>
+          <ci> IKKIKBA </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058399" id="re17" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868572" species="IKBANFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868584" species="IKBA"/>
+      <speciesReference metaid="_868596" species="NFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868608">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> d_c_an </ci>
+          <ci> IKBANFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058401" id="re18" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868620" species="IKKIKBB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868632" species="IKK"/>
+      <speciesReference metaid="_868644" species="IKBB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868656">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> d_c_bi </ci>
+          <ci> IKKIKBB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058402" id="re19" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868668" species="IKBBNFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868680" species="IKBB"/>
+      <speciesReference metaid="_868692" species="NFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868704">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> d_c_bn </ci>
+          <ci> IKBBNFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058403" id="re20" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868716" species="IKKIKBE"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868728" species="IKK"/>
+      <speciesReference metaid="_868740" species="IKBE"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868753">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> d_c_ei </ci>
+          <ci> IKKIKBE </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058404" id="re21" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868766" species="IKBENFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868778" species="IKBE"/>
+      <speciesReference metaid="_868791" species="NFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868804">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> d_c_en </ci>
+          <ci> IKBENFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058406" id="re22" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868816" species="IKKIKBANFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868828" species="IKKIKBA"/>
+      <speciesReference metaid="_868841" species="NFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868853">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> d_c_2ain </ci>
+          <ci> IKKIKBANFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058407" id="re23" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868865" species="IKKIKBANFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868877" species="IKK"/>
+      <speciesReference metaid="_868889" species="IKBANFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868901">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> d_c_2ani </ci>
+          <ci> IKKIKBANFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058408" id="re24" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868913" species="IKKIKBBNFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868925" species="IKKIKBB"/>
+      <speciesReference metaid="_868937" species="NFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868949">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> d_c_2bin </ci>
+          <ci> IKKIKBBNFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058409" id="re25" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_868962" species="IKKIKBBNFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_868974" species="IKK"/>
+      <speciesReference metaid="_868987" species="IKBBNFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_868999">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> d_c_2bni </ci>
+          <ci> IKKIKBBNFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058411" id="re26" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869011" species="IKKIKBENFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869023" species="IKKIKBE"/>
+      <speciesReference metaid="_869035" species="NFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869047">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> d_c_2ein </ci>
+          <ci> IKKIKBENFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058412" id="re27" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869059" species="IKKIKBENFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869071" species="IKK"/>
+      <speciesReference metaid="_869083" species="IKBENFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869095">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> d_c_2eni </ci>
+          <ci> IKKIKBENFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058413" id="re28" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869107" species="IKBANFKBN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869119" species="IKBAN"/>
+      <speciesReference metaid="_869131" species="NFKBN"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869144">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> d_n_an </ci>
+          <ci> IKBANFKBN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058414" id="re29" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869156" species="IKBBNFKBN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869168" species="IKBBN"/>
+      <speciesReference metaid="_869180" species="NFKBN"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869192">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> d_n_bn </ci>
+          <ci> IKBBNFKBN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058415" id="re30" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869204" species="IKBENFKBN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869216" species="IKBEN"/>
+      <speciesReference metaid="_869228" species="NFKBN"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869240">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> d_n_en </ci>
+          <ci> IKBENFKBN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058418" id="re31" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869253" species="IKBAN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869265" species="IKBA"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869277">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> ex_a </ci>
+          <ci> IKBAN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058419" id="re32" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869289" species="IKBBN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869301" species="IKBB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869313">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> ex_b </ci>
+          <ci> IKBBN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058420" id="re33" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869325" species="IKBEN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869337" species="IKBE"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869350">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> ex_e </ci>
+          <ci> IKBEN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058421" id="re34" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869362" species="NFKBN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869374" species="NFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869386">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> ex_n </ci>
+          <ci> NFKBN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058423" id="re35" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869398" species="IKBANFKBN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869410" species="IKBANFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869422">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> ex_2an </ci>
+          <ci> IKBANFKBN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058424" id="re36" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869434" species="IKBBNFKBN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869447" species="IKBBNFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869460">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> ex_2bn </ci>
+          <ci> IKBBNFKBN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058425" id="re37" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869472" species="IKBENFKBN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869484" species="IKBENFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869496">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> ex_2en </ci>
+          <ci> IKBENFKBN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058426" id="re38" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869508" species="IKBA"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869520" species="IKBAN"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869532">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> in_a </ci>
+          <ci> IKBA </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058429" id="re39" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869544" species="IKBB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869557" species="IKBBN"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869569">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> in_b </ci>
+          <ci> IKBB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058430" id="re40" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869581" species="IKBE"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869594" species="IKBEN"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869606">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> in_e </ci>
+          <ci> IKBE </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058431" id="re41" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869618" species="NFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869630" species="NFKBN"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869642">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> in_n </ci>
+          <ci> NFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058432" id="re42" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869654" species="IKBA"/>
+    </listOfReactants>
+    <kineticLaw metaid="_869666">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> pd_c_a </ci>
+          <ci> IKBA </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058434" id="re43" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869678" species="IKBB"/>
+    </listOfReactants>
+    <kineticLaw metaid="_869690">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> pd_c_b </ci>
+          <ci> IKBB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058435" id="re44" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869702" species="IKBE"/>
+    </listOfReactants>
+    <kineticLaw metaid="_869714">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> pd_c_e </ci>
+          <ci> IKBE </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058436" id="re45" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869726" species="IKKIKBA"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869738" species="IKK"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869750">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> pd_c_2ai </ci>
+          <ci> IKKIKBA </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058437" id="re46" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869762" species="IKBANFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869775" species="NFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869787">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> pd_c_2an </ci>
+          <ci> IKBANFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058439" id="re47" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869799" species="IKKIKBB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869811" species="IKK"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869823">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> pd_c_2bi </ci>
+          <ci> IKKIKBB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058440" id="re48" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869835" species="IKBBNFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869847" species="NFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869859">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> pd_c_2bn </ci>
+          <ci> IKBBNFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058441" id="re49" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869871" species="IKKIKBE"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869883" species="IKK"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869895">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> pd_c_2ei </ci>
+          <ci> IKKIKBE </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058442" id="re50" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869907" species="IKBENFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869919" species="NFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869931">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> pd_c_2en </ci>
+          <ci> IKBENFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058444" id="re51" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869943" species="IKKIKBANFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869955" species="IKK"/>
+      <speciesReference metaid="_869967" species="NFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_869979">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> pd_c_3ain </ci>
+          <ci> IKKIKBANFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058445" id="re52" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_869991" species="IKKIKBBNFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_870003" species="IKK"/>
+      <speciesReference metaid="_870015" species="NFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_870027">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> pd_c_3bin </ci>
+          <ci> IKKIKBBNFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058446" id="re53" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_870039" species="IKKIKBENFKB"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_870051" species="IKK"/>
+      <speciesReference metaid="_870063" species="NFKB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_870075">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> pd_c_3ein </ci>
+          <ci> IKKIKBENFKB </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058447" id="re54" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_870087" species="IKBANFKBN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_870099" species="NFKBN"/>
+    </listOfProducts>
+    <kineticLaw metaid="_870112">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> pd_n_2an </ci>
+          <ci> IKBANFKBN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058449" id="re55" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_870125" species="IKBBNFKBN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_870137" species="NFKBN"/>
+    </listOfProducts>
+    <kineticLaw metaid="_870149">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> pd_n_2bn </ci>
+          <ci> IKBBNFKBN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058450" id="re56" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_870161" species="IKBENFKBN"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_870173" species="NFKBN"/>
+    </listOfProducts>
+    <kineticLaw metaid="_870185">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> pd_n_2en </ci>
+          <ci> IKBENFKBN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058451" id="re57" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_870197" species="IKBAN"/>
+    </listOfReactants>
+    <kineticLaw metaid="_870209">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> pd_n_a </ci>
+          <ci> IKBAN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058452" id="re58" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_870221" species="IKBBN"/>
+    </listOfReactants>
+    <kineticLaw metaid="_870234">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> pd_n_b </ci>
+          <ci> IKBBN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058454" id="re59" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_870246" species="IKBEN"/>
+    </listOfReactants>
+    <kineticLaw metaid="_870258">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> pd_n_e </ci>
+          <ci> IKBEN </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058455" id="re60" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_870270" species="IKBA"/>
+    </listOfProducts>
+    <kineticLaw metaid="_870282">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> ps_c_a </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058456" id="re61" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_870294" species="IKBB"/>
+    </listOfProducts>
+    <kineticLaw metaid="_870306">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> ps_c_b </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058457" id="re62" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_870318" species="IKBE"/>
+    </listOfProducts>
+    <kineticLaw metaid="_870331">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> ps_c_e </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058460" id="re63" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_870343" species="IKBAT"/>
+    </listOfReactants>
+    <kineticLaw metaid="_870355">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> rd_a </ci>
+          <ci> IKBAT </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058461" id="re64" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_870367" species="IKBBT"/>
+    </listOfReactants>
+    <kineticLaw metaid="_870379">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> rd_b </ci>
+          <ci> IKBBT </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058462" id="re65" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_870391" species="IKBET"/>
+    </listOfReactants>
+    <kineticLaw metaid="_870403">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytoplasm </ci>
+          <ci> rd_e </ci>
+          <ci> IKBET </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058463" id="re66" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_870415" species="IKBAT"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_870427" species="NFKBN"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_870440">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> rs_an </ci>
+          <apply>
+            <power/>
+            <ci> NFKBN </ci>
+            <cn type="integer"> 3 </cn>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058465" id="re67" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_870452" species="IKBET"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_870464" species="NFKBN"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_870476">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> rs_en </ci>
+          <apply>
+            <power/>
+            <apply>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/delay"> delay </csymbol>
+              <ci> NFKBN </ci>
+              <ci> IkBe_transcription_delay </ci>
+            </apply>
+            <cn type="integer"> 3 </cn>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058466" id="re68" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_870488" species="IKBAT"/>
+    </listOfProducts>
+    <kineticLaw metaid="_870500">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> rs_a </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058467" id="re69" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_870512" species="IKBBT"/>
+    </listOfProducts>
+    <kineticLaw metaid="_870524">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> rs_b </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_058468" id="re70" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_870536" species="IKBET"/>
+    </listOfProducts>
+    <kineticLaw metaid="_870548">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> nucleus </ci>
+          <ci> rs_e </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+</model>
+</sbml>

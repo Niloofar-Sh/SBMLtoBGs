@@ -1,0 +1,3291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version3" metaid="_709091" level="2" version="3">
+  <model metaid="metaid_0000002" id="Courtemanche1998_AtrialActionPotential" name="Courtemanche1998_AtrialActionPotential">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This a model from the article:      <br/>
+        <strong>Ionic mechanisms underlying human atrial action potential properties: insights
+from a mathematical model.</strong>
+        <br/>
+          Courtemanche M, Ramirez RJ, Nattel S.      <em>Am J Physiol</em>
+          1998 Jul;275(1 Pt 2):H301-21      <a href="http://www.ncbi.nlm.nih.gov/pubmed/9688927">9688927</a>
+          ,      <br/>
+        <strong>Abstract:</strong>
+        <br/>
+          The mechanisms underlying many important properties of the human atrial action
+potential (AP) are poorly understood. Using specific formulations of the K+,
+Na+, and Ca2+ currents based on data recorded from human atrial myocytes, along
+with representations of pump, exchange, and background currents, we developed a
+mathematical model of the AP. The model AP resembles APs recorded from human
+atrial samples and responds to rate changes, L-type Ca2+ current blockade,
+Na+/Ca2+ exchanger inhibition, and variations in transient outward current
+amplitude in a fashion similar to experimental recordings. Rate-dependent
+adaptation of AP duration, an important determinant of susceptibility to atrial
+fibrillation, was attributable to incomplete L-type Ca2+ current recovery from
+inactivation and incomplete delayed rectifier current deactivation at rapid
+rates. Experimental observations of variable AP morphology could be accounted
+for by changes in transient outward current density, as suggested
+experimentally. We conclude that this mathematical model of the human atrial AP
+reproduces a variety of observed AP behaviors and provides insights into the
+mechanisms of clinically important AP properties.      </p>
+      <p>This model was taken from the      <a href="http://www.cellml.org/models">CellML repository</a>
+          and automatically converted to SBML.      <br/>
+          The original model was:      <a href="http://www.cellml.org/models/courtemanche_ramirez_nattel_1998_version03">
+        <strong>Courtemanche M, Ramirez RJ, Nattel S. (1998) - version03</strong>
+      </a>
+      <br/>
+          The original CellML model was created by:      <br/>
+      <strong>Noble, Penny, J</strong>
+      <br/>
+          penny.noble@dpag.ox.ac.uk      <br/>
+          Oxford University      <br/>
+          Department of Physiology, Anatomy &amp; Genetics      <br/></p>
+    <p>This model originates from BioModels Database: A Database of Annotated Published Models (http://www.ebi.ac.uk/biomodels/). It is copyright (c) 2005-2011 The BioModels.net Team.      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+  <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not..      <br/>
+  <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+</p>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#metaid_0000002">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL0913049417"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/pubmed/9688927"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:occursIn>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/bto/BTO:0000903"/>
+        </rdf:Bag>
+      </bqbiol:occursIn>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/go/GO:0086001"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfUnitDefinitions>
+  <unitDefinition metaid="_709103" id="millisecond" name="millisecond">
+    <listOfUnits>
+      <unit metaid="_709115" kind="second" scale="-3"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709127" id="per_millisecond" name="per_millisecond">
+    <listOfUnits>
+      <unit metaid="_709139" kind="second" exponent="-1" scale="-3"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709151" id="millivolt" name="millivolt">
+    <listOfUnits>
+      <unit metaid="_709164" kind="volt" scale="-3"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709177" id="per_millivolt" name="per_millivolt">
+    <listOfUnits>
+      <unit metaid="_709189" kind="volt" exponent="-1" scale="-3"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709201" id="per_millivolt_millisecond" name="per_millivolt_millisecond">
+    <listOfUnits>
+      <unit metaid="_709213" kind="volt" exponent="-1" scale="-3"/>
+      <unit metaid="_709225" kind="second" exponent="-1" scale="-3"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709237" id="millimolar" name="millimolar">
+    <listOfUnits>
+      <unit metaid="_709249" kind="mole" scale="-3"/>
+      <unit metaid="_709261" kind="litre" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709273" id="millimolar_per_millisecond" name="millimolar_per_millisecond">
+    <listOfUnits>
+      <unit metaid="_709285" kind="mole" scale="-3"/>
+      <unit metaid="_709297" kind="litre" exponent="-1"/>
+      <unit metaid="_709309" kind="second" exponent="-1" scale="-3"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709321" id="millisecond_per_millimolar" name="millisecond_per_millimolar">
+    <listOfUnits>
+      <unit metaid="_709333" kind="second" scale="-3"/>
+      <unit metaid="_709345" kind="mole" exponent="-1" scale="-3"/>
+      <unit metaid="_709357" kind="litre"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709369" id="picoA" name="picoA">
+    <listOfUnits>
+      <unit metaid="_709381" kind="ampere" scale="-12"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709393" id="picoA_per_picoF" name="picoA_per_picoF">
+    <listOfUnits>
+      <unit metaid="_709405" kind="ampere" scale="-12"/>
+      <unit metaid="_709417" kind="farad" exponent="-1" scale="-12"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709429" id="nanoS_per_picoF" name="nanoS_per_picoF">
+    <listOfUnits>
+      <unit metaid="_709441" kind="siemens" scale="-9"/>
+      <unit metaid="_709453" kind="farad" exponent="-1" scale="-12"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709465" id="picoF" name="picoF">
+    <listOfUnits>
+      <unit metaid="_709477" kind="farad" scale="-12"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709489" id="micrometre_3" name="micrometre_3">
+    <listOfUnits>
+      <unit metaid="_709501" kind="metre" exponent="3" scale="-6"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709514" id="per_micrometre_3" name="per_micrometre_3">
+    <listOfUnits>
+      <unit metaid="_709526" kind="metre" exponent="-3" scale="-6"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709538" id="mm2" name="mm2">
+    <listOfUnits>
+      <unit metaid="_709550" kind="metre" exponent="2" scale="-3"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709562" id="joule_per_mole_kelvin" name="joule_per_mole_kelvin">
+    <listOfUnits>
+      <unit metaid="_709574" kind="joule"/>
+      <unit metaid="_709586" kind="mole" exponent="-1"/>
+      <unit metaid="_709598" kind="kelvin" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709610" id="coulomb_per_millimole" name="coulomb_per_millimole">
+    <listOfUnits>
+      <unit metaid="_709622" kind="coulomb"/>
+      <unit metaid="_709634" kind="mole" exponent="-1" scale="-3"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_709647" id="time" name="time">
+    <listOfUnits>
+      <unit metaid="_709659" kind="second" scale="-3"/>
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions><listOfCompartments>
+  <compartment metaid="_006485" id="Compartment" size="1" units="litre"/>
+</listOfCompartments><listOfParameters>
+  <parameter metaid="_006694" id="V_membrane" name="V" value="-81.18" units="millivolt" constant="false"/>
+  <parameter metaid="_006697" id="R" name="R" value="8.3143" units="joule_per_mole_kelvin"/>
+  <parameter metaid="_006698" id="T" name="T" value="310" units="kelvin"/>
+  <parameter metaid="_006701" id="F" name="F" value="96.4867" units="coulomb_per_millimole"/>
+  <parameter metaid="_006702" id="Cm" name="Cm" value="100" units="picoF"/>
+  <parameter metaid="_006705" id="i_st" name="i_st" units="picoA" constant="false"/>
+  <parameter metaid="_006706" id="stim_start" name="stim_start" value="50" units="millisecond"/>
+  <parameter metaid="_006709" id="stim_end" name="stim_end" value="50000" units="millisecond"/>
+  <parameter metaid="_006710" id="stim_period" name="stim_period" value="1000" units="millisecond"/>
+  <parameter metaid="_006713" id="stim_duration" name="stim_duration" value="2" units="millisecond"/>
+  <parameter metaid="_006714" id="stim_amplitude" name="stim_amplitude" value="-2000" units="picoA"/>
+  <parameter metaid="_006717" id="i_Na" name="i_Na" units="picoA" constant="false"/>
+  <parameter metaid="_006718" id="E_Na" name="E_Na" units="millivolt" constant="false"/>
+  <parameter metaid="_006721" id="g_Na" name="g_Na" value="7.8" units="nanoS_per_picoF"/>
+  <parameter metaid="_006722" id="m" name="m" value="0.002908" units="dimensionless" constant="false"/>
+  <parameter metaid="_006725" id="alpha_m" name="alpha_m" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006726" id="beta_m" name="beta_m" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006729" id="m_inf" name="m_inf" units="dimensionless" constant="false"/>
+  <parameter metaid="_006730" id="tau_m" name="tau_m" units="millisecond" constant="false"/>
+  <parameter metaid="_006733" id="h" name="h" value="0.9649" units="dimensionless" constant="false"/>
+  <parameter metaid="_006734" id="alpha_h" name="alpha_h" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006737" id="beta_h" name="beta_h" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006738" id="h_inf" name="h_inf" units="dimensionless" constant="false"/>
+  <parameter metaid="_006741" id="tau_h" name="tau_h" units="millisecond" constant="false"/>
+  <parameter metaid="_006742" id="j" name="j" value="0.9775" units="dimensionless" constant="false"/>
+  <parameter metaid="_006745" id="alpha_j" name="alpha_j" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006746" id="beta_j" name="beta_j" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006749" id="j_inf" name="j_inf" units="dimensionless" constant="false"/>
+  <parameter metaid="_006750" id="tau_j" name="tau_j" units="millisecond" constant="false"/>
+  <parameter metaid="_006753" id="i_K1" name="i_K1" units="picoA" constant="false"/>
+  <parameter metaid="_006754" id="E_K" name="E_K" units="millivolt" constant="false"/>
+  <parameter metaid="_006757" id="g_K1" name="g_K1" value="0.09" units="nanoS_per_picoF"/>
+  <parameter metaid="_006758" id="i_to" name="i_to" units="picoA" constant="false"/>
+  <parameter metaid="_006761" id="K_Q10" name="K_Q10" value="3" units="dimensionless"/>
+  <parameter metaid="_006762" id="g_to" name="g_to" value="0.1652" units="nanoS_per_picoF"/>
+  <parameter metaid="_006765" id="oa" name="oa" value="0.03043" units="dimensionless" constant="false"/>
+  <parameter metaid="_006766" id="alpha_oa" name="alpha_oa" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006769" id="beta_oa" name="beta_oa" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006770" id="tau_oa" name="tau_oa" units="millisecond" constant="false"/>
+  <parameter metaid="_006773" id="oa_infinity" name="oa_infinity" units="dimensionless" constant="false"/>
+  <parameter metaid="_006774" id="oi" name="oi" value="0.9992" units="dimensionless" constant="false"/>
+  <parameter metaid="_006777" id="alpha_oi" name="alpha_oi" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006778" id="beta_oi" name="beta_oi" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006781" id="tau_oi" name="tau_oi" units="millisecond" constant="false"/>
+  <parameter metaid="_006782" id="oi_infinity" name="oi_infinity" units="dimensionless" constant="false"/>
+  <parameter metaid="_006785" id="i_Kur" name="i_Kur" units="picoA" constant="false"/>
+  <parameter metaid="_006786" id="g_Kur" name="g_Kur" units="nanoS_per_picoF" constant="false"/>
+  <parameter metaid="_006789" id="ua" name="ua" value="0.004966" units="dimensionless" constant="false"/>
+  <parameter metaid="_006790" id="alpha_ua" name="alpha_ua" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006793" id="beta_ua" name="beta_ua" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006794" id="tau_ua" name="tau_ua" units="millisecond" constant="false"/>
+  <parameter metaid="_006797" id="ua_infinity" name="ua_infinity" units="dimensionless" constant="false"/>
+  <parameter metaid="_006798" id="ui" name="ui" value="0.9986" units="dimensionless" constant="false"/>
+  <parameter metaid="_006801" id="alpha_ui" name="alpha_ui" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006802" id="beta_ui" name="beta_ui" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006805" id="tau_ui" name="tau_ui" units="millisecond" constant="false"/>
+  <parameter metaid="_006806" id="ui_infinity" name="ui_infinity" units="dimensionless" constant="false"/>
+  <parameter metaid="_006809" id="K_Q10_ultrarapid_delayed_rectifier_K_current_ui_gate" name="K_Q10" units="dimensionless"/>
+  <parameter metaid="_006810" id="i_Kr" name="i_Kr" units="picoA" constant="false"/>
+  <parameter metaid="_006813" id="g_Kr" name="g_Kr" value="0.029411765" units="nanoS_per_picoF"/>
+  <parameter metaid="_006814" id="xr" name="xr" value="3.296e-05" units="dimensionless" constant="false"/>
+  <parameter metaid="_006817" id="alpha_xr" name="alpha_xr" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006818" id="beta_xr" name="beta_xr" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006821" id="tau_xr" name="tau_xr" units="millisecond" constant="false"/>
+  <parameter metaid="_006822" id="xr_infinity" name="xr_infinity" units="dimensionless" constant="false"/>
+  <parameter metaid="_006825" id="i_Ks" name="i_Ks" units="picoA" constant="false"/>
+  <parameter metaid="_006826" id="g_Ks" name="g_Ks" value="0.12941176" units="nanoS_per_picoF"/>
+  <parameter metaid="_006829" id="xs" name="xs" value="0.01869" units="dimensionless" constant="false"/>
+  <parameter metaid="_006830" id="alpha_xs" name="alpha_xs" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006833" id="beta_xs" name="beta_xs" units="per_millisecond" constant="false"/>
+  <parameter metaid="_006834" id="tau_xs" name="tau_xs" units="millisecond" constant="false"/>
+  <parameter metaid="_006837" id="xs_infinity" name="xs_infinity" units="dimensionless" constant="false"/>
+  <parameter metaid="_006838" id="i_Ca_L" name="i_Ca_L" units="picoA" constant="false"/>
+  <parameter metaid="_006841" id="g_Ca_L" name="g_Ca_L" value="0.12375" units="nanoS_per_picoF"/>
+  <parameter metaid="_006842" id="d" name="d" value="0.0001367" units="dimensionless" constant="false"/>
+  <parameter metaid="_006845" id="d_infinity" name="d_infinity" units="dimensionless" constant="false"/>
+  <parameter metaid="_006846" id="tau_d" name="tau_d" units="millisecond" constant="false"/>
+  <parameter metaid="_006849" id="f" name="f" value="0.9996" units="dimensionless" constant="false"/>
+  <parameter metaid="_006850" id="f_infinity" name="f_infinity" units="dimensionless" constant="false"/>
+  <parameter metaid="_006853" id="tau_f" name="tau_f" units="millisecond" constant="false"/>
+  <parameter metaid="_006854" id="f_Ca" name="f_Ca" value="0.7755" units="dimensionless" constant="false"/>
+  <parameter metaid="_006857" id="f_Ca_infinity" name="f_Ca_infinity" units="dimensionless" constant="false"/>
+  <parameter metaid="_006858" id="tau_f_Ca" name="tau_f_Ca" units="millisecond" constant="false"/>
+  <parameter metaid="_006861" id="i_NaK" name="i_NaK" units="picoA" constant="false"/>
+  <parameter metaid="_006862" id="Km_Na_i" name="Km_Na_i" value="10" units="millimolar"/>
+  <parameter metaid="_006865" id="Km_K_o" name="Km_K_o" value="1.5" units="millimolar"/>
+  <parameter metaid="_006866" id="i_NaK_max" name="i_NaK_max" value="0.59933874" units="picoA_per_picoF"/>
+  <parameter metaid="_006869" id="f_NaK" name="f_NaK" units="dimensionless" constant="false"/>
+  <parameter metaid="_006870" id="sigma" name="sigma" units="dimensionless" constant="false"/>
+  <parameter metaid="_006873" id="i_B_Na" name="i_B_Na" units="picoA" constant="false"/>
+  <parameter metaid="_006874" id="i_B_Ca" name="i_B_Ca" units="picoA" constant="false"/>
+  <parameter metaid="_006877" id="i_B_K" name="i_B_K" units="picoA" constant="false"/>
+  <parameter metaid="_006878" id="g_B_Na" name="g_B_Na" value="0.0006744375" units="nanoS_per_picoF"/>
+  <parameter metaid="_006881" id="g_B_Ca" name="g_B_Ca" value="0.001131" units="nanoS_per_picoF"/>
+  <parameter metaid="_006882" id="g_B_K" name="g_B_K" value="0" units="nanoS_per_picoF"/>
+  <parameter metaid="_006885" id="E_Ca" name="E_Ca" units="millivolt" constant="false"/>
+  <parameter metaid="_006886" id="i_NaCa" name="i_NaCa" units="picoA" constant="false"/>
+  <parameter metaid="_006889" id="I_NaCa_max" name="I_NaCa_max" value="1600" units="picoA_per_picoF"/>
+  <parameter metaid="_006890" id="K_mNa" name="K_mNa" value="87.5" units="millimolar"/>
+  <parameter metaid="_006893" id="K_mCa" name="K_mCa" value="1.38" units="millimolar"/>
+  <parameter metaid="_006894" id="K_sat" name="K_sat" value="0.1" units="dimensionless"/>
+  <parameter metaid="_006897" id="gamma" name="gamma" value="0.35" units="dimensionless"/>
+  <parameter metaid="_006898" id="i_CaP" name="i_CaP" units="picoA" constant="false"/>
+  <parameter metaid="_006901" id="i_CaP_max" name="i_CaP_max" value="0.275" units="picoA_per_picoF"/>
+  <parameter metaid="_006902" id="i_rel" name="i_rel" units="millimolar_per_millisecond" constant="false"/>
+  <parameter metaid="_006905" id="Fn" name="Fn" units="dimensionless" constant="false"/>
+  <parameter metaid="_006906" id="K_rel" name="K_rel" value="30" units="per_millisecond"/>
+  <parameter metaid="_006909" id="u" name="u" value="2.35e-112" units="dimensionless" constant="false"/>
+  <parameter metaid="_006910" id="tau_u" name="tau_u" units="millisecond" constant="false"/>
+  <parameter metaid="_006913" id="u_infinity" name="u_infinity" units="dimensionless" constant="false"/>
+  <parameter metaid="_006914" id="v" name="v" value="1" units="dimensionless" constant="false"/>
+  <parameter metaid="_006917" id="tau_v" name="tau_v" units="millisecond" constant="false"/>
+  <parameter metaid="_006918" id="v_infinity" name="v_infinity" units="dimensionless" constant="false"/>
+  <parameter metaid="_006921" id="w" name="w" value="0.9992" units="dimensionless" constant="false"/>
+  <parameter metaid="_006922" id="tau_w" name="tau_w" units="millisecond" constant="false"/>
+  <parameter metaid="_006925" id="w_infinity" name="w_infinity" units="dimensionless" constant="false"/>
+  <parameter metaid="_006926" id="i_tr" name="i_tr" units="millimolar_per_millisecond" constant="false"/>
+  <parameter metaid="_006929" id="tau_tr" name="tau_tr" value="180" units="millisecond"/>
+  <parameter metaid="_006930" id="I_up_max" name="I_up_max" value="0.005" units="millimolar_per_millisecond"/>
+  <parameter metaid="_006933" id="i_up" name="i_up" units="millimolar_per_millisecond" constant="false"/>
+  <parameter metaid="_006934" id="K_up" name="K_up" value="0.00092" units="millimolar"/>
+  <parameter metaid="_006937" id="i_up_leak" name="i_up_leak" units="millimolar_per_millisecond" constant="false"/>
+  <parameter metaid="_006938" id="Ca_up_max" name="Ca_up_max" value="15" units="millimolar"/>
+  <parameter metaid="_006941" id="CMDN_max" name="CMDN_max" value="0.05" units="millimolar"/>
+  <parameter metaid="_006942" id="TRPN_max" name="TRPN_max" value="0.07" units="millimolar"/>
+  <parameter metaid="_006943" id="CSQN_max" name="CSQN_max" value="10" units="millimolar"/>
+  <parameter metaid="_006946" id="Km_CMDN" name="Km_CMDN" value="0.00238" units="millimolar"/>
+  <parameter metaid="_006947" id="Km_TRPN" name="Km_TRPN" value="0.0005" units="millimolar"/>
+  <parameter metaid="_006950" id="Km_CSQN" name="Km_CSQN" value="0.8" units="millimolar"/>
+  <parameter metaid="_006951" id="Ca_CMDN" name="Ca_CMDN" units="millimolar" constant="false"/>
+  <parameter metaid="_006954" id="Ca_TRPN" name="Ca_TRPN" units="millimolar" constant="false"/>
+  <parameter metaid="_006955" id="Ca_CSQN" name="Ca_CSQN" units="millimolar" constant="false"/>
+  <parameter metaid="_006958" id="Na_i" name="Na_i" value="11.17" units="millimolar" constant="false"/>
+  <parameter metaid="_006959" id="Ca_i" name="Ca_i" value="0.0001013" units="millimolar" constant="false"/>
+  <parameter metaid="_006962" id="K_i" name="K_i" value="139" units="millimolar" constant="false"/>
+  <parameter metaid="_006963" id="Ca_rel" name="Ca_rel" value="1.488" units="millimolar" constant="false"/>
+  <parameter metaid="_006966" id="Ca_up" name="Ca_up" value="1.488" units="millimolar" constant="false"/>
+  <parameter metaid="_006967" id="V_cell" name="V_cell" value="20100" units="micrometre_3"/>
+  <parameter metaid="_006970" id="V_i" name="V_i" units="micrometre_3" constant="false"/>
+  <parameter metaid="_006971" id="V_rel" name="V_rel" units="micrometre_3" constant="false"/>
+  <parameter metaid="_006974" id="V_up" name="V_up" units="micrometre_3" constant="false"/>
+  <parameter metaid="_006975" id="B1" name="B1" units="millimolar_per_millisecond" constant="false"/>
+  <parameter metaid="_006978" id="B2" name="B2" units="dimensionless" constant="false"/>
+  <parameter metaid="_006979" id="Na_o" name="Na_o" value="140" units="millimolar"/>
+  <parameter metaid="_006982" id="Ca_o" name="Ca_o" value="1.8" units="millimolar"/>
+  <parameter metaid="_006983" id="K_o" name="K_o" value="5.4" units="millimolar"/>
+</listOfParameters><listOfRules>
+  <rateRule metaid="_006491" variable="V_membrane">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <apply>
+            <plus/>
+            <ci> i_Na </ci>
+            <ci> i_K1 </ci>
+            <ci> i_to </ci>
+            <ci> i_Kur </ci>
+            <ci> i_Kr </ci>
+            <ci> i_Ks </ci>
+            <ci> i_B_Na </ci>
+            <ci> i_B_Ca </ci>
+            <ci> i_NaK </ci>
+            <ci> i_CaP </ci>
+            <ci> i_NaCa </ci>
+            <ci> i_Ca_L </ci>
+            <ci> i_st </ci>
+          </apply>
+        </apply>
+        <ci> Cm </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006492" variable="m">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> m_inf </ci>
+          <ci> m </ci>
+        </apply>
+        <ci> tau_m </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006495" variable="h">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> h_inf </ci>
+          <ci> h </ci>
+        </apply>
+        <ci> tau_h </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006496" variable="j">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> j_inf </ci>
+          <ci> j </ci>
+        </apply>
+        <ci> tau_j </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006499" variable="oa">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> oa_infinity </ci>
+          <ci> oa </ci>
+        </apply>
+        <ci> tau_oa </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006500" variable="oi">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> oi_infinity </ci>
+          <ci> oi </ci>
+        </apply>
+        <ci> tau_oi </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006503" variable="ua">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> ua_infinity </ci>
+          <ci> ua </ci>
+        </apply>
+        <ci> tau_ua </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006504" variable="ui">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> ui_infinity </ci>
+          <ci> ui </ci>
+        </apply>
+        <ci> tau_ui </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006507" variable="xr">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> xr_infinity </ci>
+          <ci> xr </ci>
+        </apply>
+        <ci> tau_xr </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006508" variable="xs">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> xs_infinity </ci>
+          <ci> xs </ci>
+        </apply>
+        <ci> tau_xs </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006511" variable="d">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> d_infinity </ci>
+          <ci> d </ci>
+        </apply>
+        <ci> tau_d </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006512" variable="f">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> f_infinity </ci>
+          <ci> f </ci>
+        </apply>
+        <ci> tau_f </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006515" variable="f_Ca">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> f_Ca_infinity </ci>
+          <ci> f_Ca </ci>
+        </apply>
+        <ci> tau_f_Ca </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006516" variable="u">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> u_infinity </ci>
+          <ci> u </ci>
+        </apply>
+        <ci> tau_u </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006519" variable="v">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> v_infinity </ci>
+          <ci> v </ci>
+        </apply>
+        <ci> tau_v </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006520" variable="w">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> w_infinity </ci>
+          <ci> w </ci>
+        </apply>
+        <ci> tau_w </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006523" variable="Na_i">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <cn> 3 </cn>
+            </apply>
+            <ci> i_NaK </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <cn> 3 </cn>
+              <ci> i_NaCa </ci>
+            </apply>
+            <ci> i_B_Na </ci>
+            <ci> i_Na </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <ci> V_i </ci>
+          <ci> F </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006524" variable="K_i">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <cn> 2 </cn>
+            <ci> i_NaK </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> i_K1 </ci>
+            <ci> i_to </ci>
+            <ci> i_Kur </ci>
+            <ci> i_Kr </ci>
+            <ci> i_Ks </ci>
+            <ci> i_B_K </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <ci> V_i </ci>
+          <ci> F </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006527" variable="Ca_i">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> B1 </ci>
+        <ci> B2 </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006528" variable="Ca_up">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> i_up </ci>
+        <apply>
+          <plus/>
+          <ci> i_up_leak </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> i_tr </ci>
+              <ci> V_rel </ci>
+            </apply>
+            <ci> V_up </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_006531" variable="Ca_rel">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <minus/>
+          <ci> i_tr </ci>
+          <ci> i_rel </ci>
+        </apply>
+        <apply>
+          <power/>
+          <apply>
+            <plus/>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> CSQN_max </ci>
+                <ci> Km_CSQN </ci>
+              </apply>
+              <apply>
+                <power/>
+                <apply>
+                  <plus/>
+                  <ci> Ca_rel </ci>
+                  <ci> Km_CSQN </ci>
+                </apply>
+                <cn> 2 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <minus/>
+            <cn> 1 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <assignmentRule metaid="_006532" variable="i_st">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <ci> stim_amplitude </ci>
+          <apply>
+            <and/>
+            <apply>
+              <geq/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <ci> stim_start </ci>
+            </apply>
+            <apply>
+              <leq/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <ci> stim_end </ci>
+            </apply>
+            <apply>
+              <leq/>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                  <ci> stim_start </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <floor/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <minus/>
+                        <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                        <ci> stim_start </ci>
+                      </apply>
+                      <ci> stim_period </ci>
+                    </apply>
+                  </apply>
+                  <ci> stim_period </ci>
+                </apply>
+              </apply>
+              <ci> stim_duration </ci>
+            </apply>
+          </apply>
+        </piece>
+        <otherwise>
+          <cn> 0 </cn>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006533" variable="i_Na">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> Cm </ci>
+        <ci> g_Na </ci>
+        <apply>
+          <power/>
+          <ci> m </ci>
+          <cn> 3 </cn>
+        </apply>
+        <ci> h </ci>
+        <ci> j </ci>
+        <apply>
+          <minus/>
+          <ci> V_membrane </ci>
+          <ci> E_Na </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006534" variable="E_Na">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> R </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> F </ci>
+        </apply>
+        <apply>
+          <ln/>
+          <apply>
+            <divide/>
+            <ci> Na_o </ci>
+            <ci> Na_i </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006537" variable="alpha_m">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <cn> 3.2 </cn>
+          <apply>
+            <eq/>
+            <apply>
+              <plus/>
+              <cn> 47.13 </cn>
+              <ci> V_membrane </ci>
+            </apply>
+            <cn> 0 </cn>
+          </apply>
+        </piece>
+        <otherwise>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <cn> 0.32 </cn>
+              <apply>
+                <plus/>
+                <ci> V_membrane </ci>
+                <cn> 47.13 </cn>
+              </apply>
+            </apply>
+            <apply>
+              <minus/>
+              <cn> 1 </cn>
+              <apply>
+                <exp/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <minus/>
+                    <cn> 0.1 </cn>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> V_membrane </ci>
+                    <cn> 47.13 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006538" variable="beta_m">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 0.08 </cn>
+        <apply>
+          <exp/>
+          <apply>
+            <divide/>
+            <apply>
+              <minus/>
+              <ci> V_membrane </ci>
+            </apply>
+            <cn> 11 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006541" variable="m_inf">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> alpha_m </ci>
+        <apply>
+          <plus/>
+          <ci> alpha_m </ci>
+          <ci> beta_m </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006542" variable="tau_m">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <cn> 1 </cn>
+        <apply>
+          <plus/>
+          <ci> alpha_m </ci>
+          <ci> beta_m </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006545" variable="alpha_h">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <apply>
+            <times/>
+            <cn> 0.135 </cn>
+            <apply>
+              <exp/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> V_membrane </ci>
+                  <cn> 80 </cn>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn> 6.8 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <lt/>
+            <apply>
+              <plus/>
+              <cn> 40 </cn>
+              <ci> V_membrane </ci>
+            </apply>
+            <cn> 0 </cn>
+          </apply>
+        </piece>
+        <otherwise>
+          <cn> 0 </cn>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006546" variable="beta_h">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <cn> 3.56 </cn>
+              <apply>
+                <exp/>
+                <apply>
+                  <times/>
+                  <cn> 0.079 </cn>
+                  <ci> V_membrane </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 310000 </cn>
+              <apply>
+                <exp/>
+                <apply>
+                  <times/>
+                  <cn> 0.35 </cn>
+                  <ci> V_membrane </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <lt/>
+            <apply>
+              <plus/>
+              <cn> 40 </cn>
+              <ci> V_membrane </ci>
+            </apply>
+            <cn> 0 </cn>
+          </apply>
+        </piece>
+        <otherwise>
+          <apply>
+            <divide/>
+            <cn> 1 </cn>
+            <apply>
+              <times/>
+              <cn> 0.13 </cn>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <plus/>
+                      <ci> V_membrane </ci>
+                      <cn> 10.66 </cn>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <cn> 11.1 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006549" variable="h_inf">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> alpha_h </ci>
+        <apply>
+          <plus/>
+          <ci> alpha_h </ci>
+          <ci> beta_h </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006550" variable="tau_h">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <cn> 1 </cn>
+        <apply>
+          <plus/>
+          <ci> alpha_h </ci>
+          <ci> beta_h </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006553" variable="alpha_j">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <minus/>
+                    <cn> 127140 </cn>
+                  </apply>
+                  <apply>
+                    <exp/>
+                    <apply>
+                      <times/>
+                      <cn> 0.2444 </cn>
+                      <ci> V_membrane </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <cn type="e-notation"> 3.474 <sep/> -5 </cn>
+                  <apply>
+                    <exp/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <minus/>
+                        <cn> 0.04391 </cn>
+                      </apply>
+                      <ci> V_membrane </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> V_membrane </ci>
+                <cn> 37.78 </cn>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <cn> 1 </cn>
+              <apply>
+                <exp/>
+                <apply>
+                  <times/>
+                  <cn> 0.311 </cn>
+                  <apply>
+                    <plus/>
+                    <ci> V_membrane </ci>
+                    <cn> 79.23 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <lt/>
+            <apply>
+              <plus/>
+              <cn> 40 </cn>
+              <ci> V_membrane </ci>
+            </apply>
+            <cn> 0 </cn>
+          </apply>
+        </piece>
+        <otherwise>
+          <cn> 0 </cn>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006554" variable="beta_j">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <cn> 0.1212 </cn>
+              <apply>
+                <exp/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <minus/>
+                    <cn> 0.01052 </cn>
+                  </apply>
+                  <ci> V_membrane </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <cn> 1 </cn>
+              <apply>
+                <exp/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <minus/>
+                    <cn> 0.1378 </cn>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> V_membrane </ci>
+                    <cn> 40.14 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <lt/>
+            <apply>
+              <plus/>
+              <cn> 40 </cn>
+              <ci> V_membrane </ci>
+            </apply>
+            <cn> 0 </cn>
+          </apply>
+        </piece>
+        <otherwise>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <cn> 0.3 </cn>
+              <apply>
+                <exp/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <minus/>
+                    <cn type="e-notation"> 2.535 <sep/> -7 </cn>
+                  </apply>
+                  <ci> V_membrane </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <cn> 1 </cn>
+              <apply>
+                <exp/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <minus/>
+                    <cn> 0.1 </cn>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> V_membrane </ci>
+                    <cn> 32 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006557" variable="j_inf">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> alpha_j </ci>
+        <apply>
+          <plus/>
+          <ci> alpha_j </ci>
+          <ci> beta_j </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006558" variable="tau_j">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <cn> 1 </cn>
+        <apply>
+          <plus/>
+          <ci> alpha_j </ci>
+          <ci> beta_j </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006561" variable="E_K">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> R </ci>
+            <ci> T </ci>
+          </apply>
+          <ci> F </ci>
+        </apply>
+        <apply>
+          <ln/>
+          <apply>
+            <divide/>
+            <ci> K_o </ci>
+            <ci> K_i </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006562" variable="i_K1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <ci> Cm </ci>
+          <ci> g_K1 </ci>
+          <apply>
+            <minus/>
+            <ci> V_membrane </ci>
+            <ci> E_K </ci>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <exp/>
+            <apply>
+              <times/>
+              <cn> 0.07 </cn>
+              <apply>
+                <plus/>
+                <ci> V_membrane </ci>
+                <cn> 80 </cn>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006565" variable="i_to">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> Cm </ci>
+        <ci> g_to </ci>
+        <apply>
+          <power/>
+          <ci> oa </ci>
+          <cn> 3 </cn>
+        </apply>
+        <ci> oi </ci>
+        <apply>
+          <minus/>
+          <ci> V_membrane </ci>
+          <ci> E_K </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006566" variable="alpha_oa">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 0.65 </cn>
+        <apply>
+          <power/>
+          <apply>
+            <plus/>
+            <apply>
+              <exp/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> V_membrane </ci>
+                  <cn> 10 </cn>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn> 8.5 </cn>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <exp/>
+              <apply>
+                <divide/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <minus/>
+                    <ci> V_membrane </ci>
+                    <cn> 10 </cn>
+                  </apply>
+                  <cn> 40 </cn>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn> 59 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <minus/>
+            <cn> 1 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006569" variable="beta_oa">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 0.65 </cn>
+        <apply>
+          <power/>
+          <apply>
+            <plus/>
+            <cn> 2.5 </cn>
+            <apply>
+              <exp/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> V_membrane </ci>
+                  <cn> 10 </cn>
+                  <cn> 72 </cn>
+                </apply>
+                <cn> 17 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <minus/>
+            <cn> 1 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006570" variable="tau_oa">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <cn> 1 </cn>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <ci> alpha_oa </ci>
+            <ci> beta_oa </ci>
+          </apply>
+          <ci> K_Q10 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006573" variable="oa_infinity">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <power/>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <exp/>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <ci> V_membrane </ci>
+                <cn> 10 </cn>
+                <cn> 10.47 </cn>
+              </apply>
+              <apply>
+                <minus/>
+                <cn> 17.54 </cn>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <cn> 1 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006574" variable="alpha_oi">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <power/>
+        <apply>
+          <plus/>
+          <cn> 18.53 </cn>
+          <apply>
+            <times/>
+            <cn> 1 </cn>
+            <apply>
+              <exp/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> V_membrane </ci>
+                  <cn> 10 </cn>
+                  <cn> 103.7 </cn>
+                </apply>
+                <cn> 10.95 </cn>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <cn> 1 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006577" variable="beta_oi">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <power/>
+        <apply>
+          <plus/>
+          <cn> 35.56 </cn>
+          <apply>
+            <times/>
+            <cn> 1 </cn>
+            <apply>
+              <exp/>
+              <apply>
+                <divide/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <plus/>
+                    <ci> V_membrane </ci>
+                    <cn> 10 </cn>
+                  </apply>
+                  <cn> 8.74 </cn>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn> 7.44 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <cn> 1 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006578" variable="tau_oi">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <cn> 1 </cn>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <ci> alpha_oi </ci>
+            <ci> beta_oi </ci>
+          </apply>
+          <ci> K_Q10 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006581" variable="oi_infinity">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <power/>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <exp/>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <ci> V_membrane </ci>
+                <cn> 10 </cn>
+                <cn> 33.1 </cn>
+              </apply>
+              <cn> 5.3 </cn>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <cn> 1 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006582" variable="g_Kur">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <cn> 0.005 </cn>
+        <apply>
+          <divide/>
+          <cn> 0.05 </cn>
+          <apply>
+            <plus/>
+            <cn> 1 </cn>
+            <apply>
+              <exp/>
+              <apply>
+                <divide/>
+                <apply>
+                  <minus/>
+                  <ci> V_membrane </ci>
+                  <cn> 15 </cn>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn> 13 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006585" variable="i_Kur">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> Cm </ci>
+        <ci> g_Kur </ci>
+        <apply>
+          <power/>
+          <ci> ua </ci>
+          <cn> 3 </cn>
+        </apply>
+        <ci> ui </ci>
+        <apply>
+          <minus/>
+          <ci> V_membrane </ci>
+          <ci> E_K </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006586" variable="alpha_ua">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 0.65 </cn>
+        <apply>
+          <power/>
+          <apply>
+            <plus/>
+            <apply>
+              <exp/>
+              <apply>
+                <divide/>
+                <apply>
+                  <minus/>
+                  <ci> V_membrane </ci>
+                  <cn> 10 </cn>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn> 8.5 </cn>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <exp/>
+              <apply>
+                <divide/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <plus/>
+                    <ci> V_membrane </ci>
+                    <cn> 10 </cn>
+                  </apply>
+                  <cn> 40 </cn>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn> 59 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <minus/>
+            <cn> 1 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006589" variable="beta_ua">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 0.65 </cn>
+        <apply>
+          <power/>
+          <apply>
+            <plus/>
+            <cn> 2.5 </cn>
+            <apply>
+              <exp/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> V_membrane </ci>
+                  <cn> 10 </cn>
+                  <cn> 72 </cn>
+                </apply>
+                <cn> 17 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <minus/>
+            <cn> 1 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006590" variable="tau_ua">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <cn> 1 </cn>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <ci> alpha_ua </ci>
+            <ci> beta_ua </ci>
+          </apply>
+          <ci> K_Q10 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006593" variable="ua_infinity">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <power/>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <exp/>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <ci> V_membrane </ci>
+                <cn> 10 </cn>
+                <cn> 20.3 </cn>
+              </apply>
+              <apply>
+                <minus/>
+                <cn> 9.6 </cn>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <cn> 1 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006594" variable="alpha_ui">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <power/>
+        <apply>
+          <plus/>
+          <cn> 21 </cn>
+          <apply>
+            <times/>
+            <cn> 1 </cn>
+            <apply>
+              <exp/>
+              <apply>
+                <divide/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <plus/>
+                    <ci> V_membrane </ci>
+                    <cn> 10 </cn>
+                  </apply>
+                  <cn> 195 </cn>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn> 28 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <cn> 1 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006597" variable="beta_ui">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <cn> 1 </cn>
+        <apply>
+          <exp/>
+          <apply>
+            <divide/>
+            <apply>
+              <minus/>
+              <apply>
+                <plus/>
+                <ci> V_membrane </ci>
+                <cn> 10 </cn>
+              </apply>
+              <cn> 168 </cn>
+            </apply>
+            <apply>
+              <minus/>
+              <cn> 16 </cn>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006598" variable="tau_ui">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <cn> 1 </cn>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <ci> alpha_ui </ci>
+            <ci> beta_ui </ci>
+          </apply>
+          <ci> K_Q10 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006601" variable="ui_infinity">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <power/>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <exp/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <ci> V_membrane </ci>
+                  <cn> 10 </cn>
+                </apply>
+                <cn> 109.45 </cn>
+              </apply>
+              <cn> 27.48 </cn>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <cn> 1 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006602" variable="i_Kr">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <ci> Cm </ci>
+          <ci> g_Kr </ci>
+          <ci> xr </ci>
+          <apply>
+            <minus/>
+            <ci> V_membrane </ci>
+            <ci> E_K </ci>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <exp/>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <ci> V_membrane </ci>
+                <cn> 15 </cn>
+              </apply>
+              <cn> 22.4 </cn>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006605" variable="alpha_xr">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <cn> 0.0015 </cn>
+          <apply>
+            <lt/>
+            <apply>
+              <abs/>
+              <apply>
+                <plus/>
+                <ci> V_membrane </ci>
+                <cn> 14.1 </cn>
+              </apply>
+            </apply>
+            <cn type="e-notation"> 1 <sep/> -10 </cn>
+          </apply>
+        </piece>
+        <otherwise>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <cn> 0.0003 </cn>
+              <apply>
+                <plus/>
+                <ci> V_membrane </ci>
+                <cn> 14.1 </cn>
+              </apply>
+            </apply>
+            <apply>
+              <minus/>
+              <cn> 1 </cn>
+              <apply>
+                <exp/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <plus/>
+                    <ci> V_membrane </ci>
+                    <cn> 14.1 </cn>
+                  </apply>
+                  <apply>
+                    <minus/>
+                    <cn> 5 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006606" variable="beta_xr">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <cn> 0.00037836118 </cn>
+          <apply>
+            <lt/>
+            <apply>
+              <abs/>
+              <apply>
+                <minus/>
+                <ci> V_membrane </ci>
+                <cn> 3.3328 </cn>
+              </apply>
+            </apply>
+            <cn type="e-notation"> 1 <sep/> -10 </cn>
+          </apply>
+        </piece>
+        <otherwise>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <cn type="e-notation"> 7.3898 <sep/> -5 </cn>
+              <apply>
+                <minus/>
+                <ci> V_membrane </ci>
+                <cn> 3.3328 </cn>
+              </apply>
+            </apply>
+            <apply>
+              <minus/>
+              <apply>
+                <exp/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <minus/>
+                    <ci> V_membrane </ci>
+                    <cn> 3.3328 </cn>
+                  </apply>
+                  <cn> 5.1237 </cn>
+                </apply>
+              </apply>
+              <cn> 1 </cn>
+            </apply>
+          </apply>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006609" variable="tau_xr">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <cn> 1 </cn>
+        <apply>
+          <plus/>
+          <ci> alpha_xr </ci>
+          <ci> beta_xr </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006610" variable="xr_infinity">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <power/>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <exp/>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <ci> V_membrane </ci>
+                <cn> 14.1 </cn>
+              </apply>
+              <apply>
+                <minus/>
+                <cn> 6.5 </cn>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <cn> 1 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006613" variable="i_Ks">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> Cm </ci>
+        <ci> g_Ks </ci>
+        <apply>
+          <power/>
+          <ci> xs </ci>
+          <cn> 2 </cn>
+        </apply>
+        <apply>
+          <minus/>
+          <ci> V_membrane </ci>
+          <ci> E_K </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006614" variable="alpha_xs">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <cn> 0.00068 </cn>
+          <apply>
+            <lt/>
+            <apply>
+              <abs/>
+              <apply>
+                <minus/>
+                <ci> V_membrane </ci>
+                <cn> 19.9 </cn>
+              </apply>
+            </apply>
+            <cn type="e-notation"> 1 <sep/> -10 </cn>
+          </apply>
+        </piece>
+        <otherwise>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <cn type="e-notation"> 4 <sep/> -5 </cn>
+              <apply>
+                <minus/>
+                <ci> V_membrane </ci>
+                <cn> 19.9 </cn>
+              </apply>
+            </apply>
+            <apply>
+              <minus/>
+              <cn> 1 </cn>
+              <apply>
+                <exp/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <minus/>
+                    <ci> V_membrane </ci>
+                    <cn> 19.9 </cn>
+                  </apply>
+                  <apply>
+                    <minus/>
+                    <cn> 17 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006617" variable="beta_xs">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <cn> 0.000315 </cn>
+          <apply>
+            <lt/>
+            <apply>
+              <abs/>
+              <apply>
+                <minus/>
+                <ci> V_membrane </ci>
+                <cn> 19.9 </cn>
+              </apply>
+            </apply>
+            <cn type="e-notation"> 1 <sep/> -10 </cn>
+          </apply>
+        </piece>
+        <otherwise>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <cn type="e-notation"> 3.5 <sep/> -5 </cn>
+              <apply>
+                <minus/>
+                <ci> V_membrane </ci>
+                <cn> 19.9 </cn>
+              </apply>
+            </apply>
+            <apply>
+              <minus/>
+              <apply>
+                <exp/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <minus/>
+                    <ci> V_membrane </ci>
+                    <cn> 19.9 </cn>
+                  </apply>
+                  <cn> 9 </cn>
+                </apply>
+              </apply>
+              <cn> 1 </cn>
+            </apply>
+          </apply>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006618" variable="tau_xs">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 0.5 </cn>
+        <apply>
+          <power/>
+          <apply>
+            <plus/>
+            <ci> alpha_xs </ci>
+            <ci> beta_xs </ci>
+          </apply>
+          <apply>
+            <minus/>
+            <cn> 1 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006619" variable="xs_infinity">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <power/>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <exp/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <ci> V_membrane </ci>
+                <cn> 19.9 </cn>
+              </apply>
+              <apply>
+                <minus/>
+                <cn> 12.7 </cn>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <cn> 0.5 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006622" variable="i_Ca_L">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> Cm </ci>
+        <ci> g_Ca_L </ci>
+        <ci> d </ci>
+        <ci> f </ci>
+        <ci> f_Ca </ci>
+        <apply>
+          <minus/>
+          <ci> V_membrane </ci>
+          <cn> 65 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006623" variable="d_infinity">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <power/>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <exp/>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <ci> V_membrane </ci>
+                <cn> 10 </cn>
+              </apply>
+              <apply>
+                <minus/>
+                <cn> 8 </cn>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <cn> 1 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006626" variable="tau_d">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <apply>
+            <divide/>
+            <cn> 4.579 </cn>
+            <apply>
+              <plus/>
+              <cn> 1 </cn>
+              <apply>
+                <exp/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <plus/>
+                    <ci> V_membrane </ci>
+                    <cn> 10 </cn>
+                  </apply>
+                  <apply>
+                    <minus/>
+                    <cn> 6.24 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <lt/>
+            <apply>
+              <abs/>
+              <apply>
+                <plus/>
+                <ci> V_membrane </ci>
+                <cn> 10 </cn>
+              </apply>
+            </apply>
+            <cn type="e-notation"> 1 <sep/> -10 </cn>
+          </apply>
+        </piece>
+        <otherwise>
+          <apply>
+            <divide/>
+            <apply>
+              <minus/>
+              <cn> 1 </cn>
+              <apply>
+                <exp/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <plus/>
+                    <ci> V_membrane </ci>
+                    <cn> 10 </cn>
+                  </apply>
+                  <apply>
+                    <minus/>
+                    <cn> 6.24 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 0.035 </cn>
+              <apply>
+                <plus/>
+                <ci> V_membrane </ci>
+                <cn> 10 </cn>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <plus/>
+                      <ci> V_membrane </ci>
+                      <cn> 10 </cn>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <cn> 6.24 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006627" variable="f_infinity">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <exp/>
+          <apply>
+            <divide/>
+            <apply>
+              <minus/>
+              <apply>
+                <plus/>
+                <ci> V_membrane </ci>
+                <cn> 28 </cn>
+              </apply>
+            </apply>
+            <cn> 6.9 </cn>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <exp/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <ci> V_membrane </ci>
+                  <cn> 28 </cn>
+                </apply>
+              </apply>
+              <cn> 6.9 </cn>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006630" variable="tau_f">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 9 </cn>
+        <apply>
+          <power/>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <cn> 0.0197 </cn>
+              <apply>
+                <exp/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.0337 </cn>
+                      <cn> 2 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <apply>
+                      <plus/>
+                      <ci> V_membrane </ci>
+                      <cn> 10 </cn>
+                    </apply>
+                    <cn> 2 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <cn> 0.02 </cn>
+          </apply>
+          <apply>
+            <minus/>
+            <cn> 1 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006631" variable="f_Ca_infinity">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <power/>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <divide/>
+            <ci> Ca_i </ci>
+            <cn> 0.00035 </cn>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <cn> 1 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006634" variable="tau_f_Ca">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <cn> 2 </cn>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006635" variable="sigma">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <cn> 1 </cn>
+          <cn> 7 </cn>
+        </apply>
+        <apply>
+          <minus/>
+          <apply>
+            <exp/>
+            <apply>
+              <divide/>
+              <ci> Na_o </ci>
+              <cn> 67.3 </cn>
+            </apply>
+          </apply>
+          <cn> 1 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006638" variable="f_NaK">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <power/>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <times/>
+            <cn> 0.1245 </cn>
+            <apply>
+              <exp/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <minus/>
+                    <cn> 0.1 </cn>
+                  </apply>
+                  <ci> F </ci>
+                  <ci> V_membrane </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> R </ci>
+                  <ci> T </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <cn> 0.0365 </cn>
+            <ci> sigma </ci>
+            <apply>
+              <exp/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <minus/>
+                    <ci> F </ci>
+                  </apply>
+                  <ci> V_membrane </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> R </ci>
+                  <ci> T </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <cn> 1 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006639" variable="i_NaK">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> Cm </ci>
+              <ci> i_NaK_max </ci>
+              <ci> f_NaK </ci>
+              <cn> 1 </cn>
+            </apply>
+            <apply>
+              <plus/>
+              <cn> 1 </cn>
+              <apply>
+                <power/>
+                <apply>
+                  <divide/>
+                  <ci> Km_Na_i </ci>
+                  <ci> Na_i </ci>
+                </apply>
+                <cn> 1.5 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <ci> K_o </ci>
+        </apply>
+        <apply>
+          <plus/>
+          <ci> K_o </ci>
+          <ci> Km_K_o </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006642" variable="E_Ca">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> R </ci>
+            <ci> T </ci>
+          </apply>
+          <apply>
+            <times/>
+            <cn> 2 </cn>
+            <ci> F </ci>
+          </apply>
+        </apply>
+        <apply>
+          <ln/>
+          <apply>
+            <divide/>
+            <ci> Ca_o </ci>
+            <ci> Ca_i </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006643" variable="i_B_Na">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> Cm </ci>
+        <ci> g_B_Na </ci>
+        <apply>
+          <minus/>
+          <ci> V_membrane </ci>
+          <ci> E_Na </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006646" variable="i_B_Ca">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> Cm </ci>
+        <ci> g_B_Ca </ci>
+        <apply>
+          <minus/>
+          <ci> V_membrane </ci>
+          <ci> E_Ca </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006647" variable="i_B_K">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> Cm </ci>
+        <ci> g_B_K </ci>
+        <apply>
+          <minus/>
+          <ci> V_membrane </ci>
+          <ci> E_K </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006650" variable="i_NaCa">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <ci> Cm </ci>
+          <ci> I_NaCa_max </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <exp/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> gamma </ci>
+                    <ci> F </ci>
+                    <ci> V_membrane </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> R </ci>
+                    <ci> T </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <power/>
+                <ci> Na_i </ci>
+                <cn> 3 </cn>
+              </apply>
+              <ci> Ca_o </ci>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <exp/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <minus/>
+                      <ci> gamma </ci>
+                      <cn> 1 </cn>
+                    </apply>
+                    <ci> F </ci>
+                    <ci> V_membrane </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> R </ci>
+                    <ci> T </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <power/>
+                <ci> Na_o </ci>
+                <cn> 3 </cn>
+              </apply>
+              <ci> Ca_i </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <apply>
+              <power/>
+              <ci> K_mNa </ci>
+              <cn> 3 </cn>
+            </apply>
+            <apply>
+              <power/>
+              <ci> Na_o </ci>
+              <cn> 3 </cn>
+            </apply>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> K_mCa </ci>
+            <ci> Ca_o </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <cn> 1 </cn>
+            <apply>
+              <times/>
+              <ci> K_sat </ci>
+              <apply>
+                <exp/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <minus/>
+                      <ci> gamma </ci>
+                      <cn> 1 </cn>
+                    </apply>
+                    <ci> V_membrane </ci>
+                    <ci> F </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> R </ci>
+                    <ci> T </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006651" variable="i_CaP">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <ci> Cm </ci>
+          <ci> i_CaP_max </ci>
+          <ci> Ca_i </ci>
+        </apply>
+        <apply>
+          <plus/>
+          <cn> 0.0005 </cn>
+          <ci> Ca_i </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006654" variable="Fn">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 1000 </cn>
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <cn type="e-notation"> 1 <sep/> -15 </cn>
+            <ci> V_rel </ci>
+            <ci> i_rel </ci>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <cn type="e-notation"> 1 <sep/> -15 </cn>
+              <apply>
+                <times/>
+                <cn> 2 </cn>
+                <ci> F </ci>
+              </apply>
+            </apply>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <cn> 0.5 </cn>
+                <ci> i_Ca_L </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn> 0.2 </cn>
+                <ci> i_NaCa </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006655" variable="i_rel">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> K_rel </ci>
+        <apply>
+          <power/>
+          <ci> u </ci>
+          <cn> 2 </cn>
+        </apply>
+        <ci> v </ci>
+        <ci> w </ci>
+        <apply>
+          <minus/>
+          <ci> Ca_rel </ci>
+          <ci> Ca_i </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006658" variable="tau_u">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <cn> 8 </cn>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006659" variable="u_infinity">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <power/>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <exp/>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <ci> Fn </ci>
+                  <cn type="e-notation"> 3.4175 <sep/> -13 </cn>
+                </apply>
+              </apply>
+              <cn type="e-notation"> 1.367 <sep/> -15 </cn>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <cn> 1 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006662" variable="tau_v">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <cn> 1.91 </cn>
+        <apply>
+          <times/>
+          <cn> 2.09 </cn>
+          <apply>
+            <power/>
+            <apply>
+              <plus/>
+              <cn> 1 </cn>
+              <apply>
+                <exp/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <minus/>
+                      <ci> Fn </ci>
+                      <cn type="e-notation"> 3.4175 <sep/> -13 </cn>
+                    </apply>
+                  </apply>
+                  <cn type="e-notation"> 1.367 <sep/> -15 </cn>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <minus/>
+              <cn> 1 </cn>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006663" variable="v_infinity">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <cn> 1 </cn>
+        <apply>
+          <power/>
+          <apply>
+            <plus/>
+            <cn> 1 </cn>
+            <apply>
+              <exp/>
+              <apply>
+                <divide/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <minus/>
+                    <ci> Fn </ci>
+                    <cn type="e-notation"> 6.835 <sep/> -14 </cn>
+                  </apply>
+                </apply>
+                <cn type="e-notation"> 1.367 <sep/> -15 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <minus/>
+            <cn> 1 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006666" variable="tau_w">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <cn> 6 </cn>
+              <cn> 0.2 </cn>
+            </apply>
+            <cn> 1.3 </cn>
+          </apply>
+          <apply>
+            <lt/>
+            <apply>
+              <abs/>
+              <apply>
+                <minus/>
+                <ci> V_membrane </ci>
+                <cn> 7.9 </cn>
+              </apply>
+            </apply>
+            <cn type="e-notation"> 1 <sep/> -10 </cn>
+          </apply>
+        </piece>
+        <otherwise>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <cn> 6 </cn>
+              <apply>
+                <minus/>
+                <cn> 1 </cn>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <minus/>
+                      <apply>
+                        <minus/>
+                        <ci> V_membrane </ci>
+                        <cn> 7.9 </cn>
+                      </apply>
+                    </apply>
+                    <cn> 5 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <times/>
+                  <cn> 0.3 </cn>
+                  <apply>
+                    <exp/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <minus/>
+                        <apply>
+                          <minus/>
+                          <ci> V_membrane </ci>
+                          <cn> 7.9 </cn>
+                        </apply>
+                      </apply>
+                      <cn> 5 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <cn> 1 </cn>
+              <apply>
+                <minus/>
+                <ci> V_membrane </ci>
+                <cn> 7.9 </cn>
+              </apply>
+            </apply>
+          </apply>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006667" variable="w_infinity">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <cn> 1 </cn>
+        <apply>
+          <power/>
+          <apply>
+            <plus/>
+            <cn> 1 </cn>
+            <apply>
+              <exp/>
+              <apply>
+                <divide/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <minus/>
+                    <ci> V_membrane </ci>
+                    <cn> 40 </cn>
+                  </apply>
+                </apply>
+                <cn> 17 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <minus/>
+            <cn> 1 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006670" variable="i_tr">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> Ca_up </ci>
+          <ci> Ca_rel </ci>
+        </apply>
+        <ci> tau_tr </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006671" variable="i_up">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> I_up_max </ci>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <divide/>
+            <ci> K_up </ci>
+            <ci> Ca_i </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006674" variable="i_up_leak">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <ci> I_up_max </ci>
+          <ci> Ca_up </ci>
+        </apply>
+        <ci> Ca_up_max </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006675" variable="Ca_CMDN">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <ci> CMDN_max </ci>
+          <ci> Ca_i </ci>
+        </apply>
+        <apply>
+          <plus/>
+          <ci> Ca_i </ci>
+          <ci> Km_CMDN </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006678" variable="Ca_TRPN">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <ci> TRPN_max </ci>
+          <ci> Ca_i </ci>
+        </apply>
+        <apply>
+          <plus/>
+          <ci> Ca_i </ci>
+          <ci> Km_TRPN </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006679" variable="Ca_CSQN">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <ci> CSQN_max </ci>
+          <ci> Ca_rel </ci>
+        </apply>
+        <apply>
+          <plus/>
+          <ci> Ca_rel </ci>
+          <ci> Km_CSQN </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006682" variable="V_i">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> V_cell </ci>
+        <cn> 0.68 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006683" variable="V_rel">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 0.0048 </cn>
+        <ci> V_cell </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006686" variable="V_up">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 0.0552 </cn>
+        <ci> V_cell </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006687" variable="B1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <divide/>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <cn> 2 </cn>
+              <ci> i_NaCa </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> i_CaP </ci>
+              <ci> i_Ca_L </ci>
+              <ci> i_B_Ca </ci>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <cn> 2 </cn>
+            <ci> V_i </ci>
+            <ci> F </ci>
+          </apply>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <ci> V_up </ci>
+              <apply>
+                <minus/>
+                <ci> i_up_leak </ci>
+                <ci> i_up </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> i_rel </ci>
+              <ci> V_rel </ci>
+            </apply>
+          </apply>
+          <ci> V_i </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_006690" variable="B2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <cn> 1 </cn>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> TRPN_max </ci>
+            <ci> Km_TRPN </ci>
+          </apply>
+          <apply>
+            <power/>
+            <apply>
+              <plus/>
+              <ci> Ca_i </ci>
+              <ci> Km_TRPN </ci>
+            </apply>
+            <cn> 2 </cn>
+          </apply>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> CMDN_max </ci>
+            <ci> Km_CMDN </ci>
+          </apply>
+          <apply>
+            <power/>
+            <apply>
+              <plus/>
+              <ci> Ca_i </ci>
+              <ci> Km_CMDN </ci>
+            </apply>
+            <cn> 2 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+</listOfRules>
+</model>
+</sbml>

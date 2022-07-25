@@ -1,0 +1,579 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" metaid="_4fce5338-582a-4bb8-ac8c-01d9b2ed49ef" version="4">
+  <model id="MODEL1705170004" metaid="e06506da-3c8c-4656-ad9c-c9c6fabad0bd" name="Proctor2017- Role of microRNAs in osteoarthritis (Mir140-IGFBP5 incoherent feed forward)">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <div class="dc:title">Proctor2017- Role of microRNAs in osteoarthritis (Mir140-IGFBP5 incoherent feed forward)</div>
+<div class="dc:bibliographicCitation">
+  <p>This model is described in the article:</p>
+  <div class="bibo:title">
+    <a href="http://identifiers.org/pubmed/29095952" title="Access to this publication">Computer simulation models
+    as a tool to investigate the role of microRNAs in
+    osteoarthritis.</a>
+  </div>
+  <div class="bibo:authorList">Proctor CJ, Smith GR.</div>
+  <div class="bibo:Journal">PLoS ONE 2017; 12(11): e0187568</div>
+  <p>Abstract:</p>
+  <div class="bibo:abstract">
+    <p>The aim of this study was to show how computational models
+    can be used to increase our understanding of the role of
+    microRNAs in osteoarthritis (OA) using miR-140 as an example.
+    Bioinformatics analysis and experimental results from the
+    literature were used to create and calibrate models of gene
+    regulatory networks in OA involving miR-140 along with key
+    regulators such as NF-?B, SMAD3, and RUNX2. The individual
+    models were created with the modelling standard, Systems
+    Biology Markup Language, and integrated to examine the overall
+    effect of miR-140 on cartilage homeostasis. Down-regulation of
+    miR-140 may have either detrimental or protective effects for
+    cartilage, indicating that the role of miR-140 is complex.
+    Studies of individual networks in isolation may therefore lead
+    to different conclusions. This indicated the need to combine
+    the five chosen individual networks involving miR-140 into an
+    integrated model. This model suggests that the overall effect
+    of miR-140 is to change the response to an IL-1 stimulus from a
+    prolonged increase in matrix degrading enzymes to a pulse-like
+    response so that cartilage degradation is temporary. Our
+    current model can easily be modified and extended as more
+    experimental data become available about the role of miR-140 in
+    OA. In addition, networks of other microRNAs that are important
+    in OA could be incorporated. A fully integrated model could not
+    only aid our understanding of the mechanisms of microRNAs in
+    ageing cartilage but could also provide a useful tool to
+    investigate the effect of potential interventions to prevent
+    cartilage loss.</p>
+  </div>
+</div>
+<div class="dc:publisher">
+  <p>This model is hosted on 
+  <a href="http://www.ebi.ac.uk/biomodels/">BioModels Database</a>
+  and identified by: 
+  <a href="http://identifiers.org/biomodels.db/MODEL1705170004">MODEL1705170004</a>.</p>
+  <p>To cite BioModels Database, please use: 
+  <a href="http://identifiers.org/pubmed/25414348" target="_blank">Chelliah V et al. BioModels: ten-year
+  anniversary. Nucl. Acids Res. 2015, 43(Database
+  issue):D542-8</a>.</p>
+</div>
+<div class="dc:license">
+  <p>To the extent possible under law, all copyright and related or
+  neighbouring rights to this encoded model have been dedicated to
+  the public domain worldwide. Please refer to 
+  <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Access to: CC0 1.0 Universal (CC0 1.0), Public Domain Dedication">CC0
+  Public Domain Dedication</a> for more information.</p>
+</div>
+</body>
+    </notes>
+    <listOfUnitDefinitions>
+      <unitDefinition id="substance" metaid="d719c8ea-b823-4bb7-8dc6-48a18221b168">
+        <listOfUnits>
+          <unit kind="item" metaid="c53e60aa-b6df-4e92-a16e-a7b7fb7852e8"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="cell" metaid="fb11d47e-a3e4-40dd-8d50-471fac082919" size="1"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="ACAN" initialAmount="0" metaid="_097b1e60-e1ac-4c7b-b2d3-43a6964fb28c"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="AKT" initialAmount="100" metaid="_198d3d81-3054-4a1b-a0fc-1892acafc385"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="AKT_P" initialAmount="0" metaid="ccc6b5fe-f40e-48a0-866e-4405377a38dc"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="IGF1" initialAmount="500" metaid="e2bb14d7-87b2-400b-8f0a-bffa857b7801"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="IGF1_IGFBP5" initialAmount="0" metaid="_25bc4c99-4c7c-4498-a783-fe3533c071ac"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="IGFBP5" initialAmount="100" metaid="f39272ca-22b9-44fe-a18c-30568d93ad93"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="IGFBP5_mRNA" initialAmount="20" metaid="b366a562-09c3-4edf-a591-392cc8feaa8a"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="IGFBP5_mRNA_miR140" initialAmount="0" metaid="ecde11f6-13f0-4b6b-83c2-f2cfbc7546a3"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="IkB" initialAmount="0" metaid="f9378e6d-c76d-4e85-b868-d72262131e56"/>
+      <species compartment="cell" id="IkB_NFkB" initialAmount="500" metaid="_33456b9e-5f53-4912-a047-0935b1aa0227"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="JNK" initialAmount="100" metaid="_3cd44559-0b68-43f3-a97e-7bf6cb0b101b"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="JNK_P" initialAmount="0" metaid="_21ea968c-a9cd-42ba-9784-f9d5772c4057"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR140" initialAmount="200" metaid="_02b195bb-086b-4cf8-841f-63828efdb30d"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR140_gene" initialAmount="2" metaid="f83b9dd5-abce-4070-9ddb-9eb286e3e197"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR140_gene_NFkB" initialAmount="0" metaid="_331b062e-d456-4728-ad09-09fe2215fc44"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="NFkB" initialAmount="0" metaid="_1be8febc-074a-42f1-8dbf-29f44382c139"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="TNFa" initialAmount="500" metaid="_0db8edd3-8bf6-4746-bb2c-806526801f04"/>
+      <species boundaryCondition="true" compartment="cell" constant="true" hasOnlySubstanceUnits="true" id="Sink" initialAmount="0" metaid="_60fef9e6-f219-4dd6-a810-0d6ab526b223"/>
+      <species boundaryCondition="true" compartment="cell" constant="true" hasOnlySubstanceUnits="true" id="Source" initialAmount="1" metaid="_074e24db-1706-4c49-89fb-c43b15ed896d"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="kactNFkB" metaid="_90d06f96-554f-4b55-8aa6-afeac7ac4f21" value="0.0001"/>
+      <parameter id="kbinIGF1IGFBP5" metaid="_24677a26-6b2f-4209-9806-a5cdcf8a2c4a" value="5E-6"/>
+      <parameter id="kbinIkBNFkB" metaid="d471a38b-6a23-4031-a26e-29a764ef5ebe" value="0.001"/>
+      <parameter id="kbinmiR140geneNFkB" metaid="_8f323c1e-6af4-40c2-b698-517c89e004fd" value="5E-5"/>
+      <parameter id="kbinmiR140IGFBP5mRNA" metaid="c52000ad-e6d7-4737-babb-bd05d66e0ecd" value="5E-5"/>
+      <parameter id="kdegIGFBP5" metaid="d563182a-e8b5-4ccd-84a7-59d0847efd60" value="5E-5"/>
+      <parameter id="kdegIGFBP5mRNA" metaid="f86b9abc-050d-4d12-8142-27c723381e38" value="1E-5"/>
+      <parameter id="kdegIGFBP5mRNAmiR140" metaid="_756edc1f-88f7-41da-af80-6576cd2c2468" value="0.0005"/>
+      <parameter id="kdegmiR140" metaid="_3de60043-e1c9-4a05-9256-216a1d32db21" value="5E-6"/>
+      <parameter id="kdegTNFa" metaid="fcedd075-edad-4b43-a431-69031b7ec637" value="0.002"/>
+      <parameter id="kdephosAKT" metaid="fa8ed576-60df-458f-a6fd-ecff86ab0bc2" value="0.01"/>
+      <parameter id="kdephosJNK" metaid="_067b4e44-092e-4450-ac94-122f2134ba5a" value="0.05"/>
+      <parameter id="kphosAKT" metaid="_42ed3c73-52aa-43dc-9f2f-6a971287efaa" value="0.0005"/>
+      <parameter id="kphosJNK" metaid="afb16de2-2256-42cd-a5f2-c35930c0dfc3" value="0.05"/>
+      <parameter id="krelIGF1IGFBP5" metaid="_26ccd2f5-b8c0-4a98-8cf2-6d6487a83890" value="0.001"/>
+      <parameter id="krelmiR140geneNFkB" metaid="_70493f51-344c-48ea-9de6-f14d352f2f06" value="0.001"/>
+      <parameter id="krelmiR140IGFBP5mRNA" metaid="_3c6d0e8e-65a2-4086-87f9-a2ec5d0e69a2" value="0.001"/>
+      <parameter id="ksynACAN" metaid="_9f3c14b8-d80f-4bfb-a63b-2277adf01bd1" value="1E-7"/>
+      <parameter id="ksynIGFBP5" metaid="dfd92a7f-f9c5-49f5-b25e-1e168d004c8d" value="8E-5"/>
+      <parameter id="ksynIGFBP5mRNA" metaid="e689009f-28d0-4e67-8f9b-0764636b5e39" value="0.02"/>
+      <parameter id="ksynIGFBP5mRNAJNK" metaid="_92f16466-9f2b-490b-bb03-fb69865de8f5" value="0.0006"/>
+      <parameter id="ksynIkB" metaid="_1dcd72e5-50d1-44ad-9906-55aa1134b99f" value="0.005"/>
+      <parameter id="ksynmiR140" metaid="ca0dfd48-5bd1-41b1-af9e-a6e45d900366" value="0.0001"/>
+      <parameter id="ksynmiR140NFkB" metaid="_3f575138-31a8-4a57-9293-2d24d8e7261f" value="0.0015"/>
+      <parameter id="ksynTNFa" metaid="_30037810-7dcd-45f3-b7f6-2626c439bd5b" value="0.001"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="miR140_synthesis" metaid="_3a41801f-a189-4ae2-b33b-096202bcf7bf" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f02d60ab-b776-46aa-b31a-a41064a86c0f" species="miR140_gene"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8a68d02d-bcab-4123-a6f3-a533caf49456" species="miR140_gene"/>
+          <speciesReference metaid="_3754b89b-0fed-4c21-9d02-1ad5611a2a86" species="miR140"/>
+        </listOfProducts>
+        <kineticLaw metaid="_2787a0d3-4edd-4568-9c65-6b8448986a2a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynmiR140 </ci>
+              <ci> miR140_gene </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="NFkB_activation" metaid="bf0ed235-fc00-4043-84a1-dbc0638f0fdc" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8eb55993-7dd5-41bf-97d2-aa1be7a4b80c" species="TNFa"/>
+          <speciesReference metaid="e2c4f093-65cc-48b6-9e49-7fcf62c0887b" species="IkB_NFkB"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_128b7730-38dc-4fae-b21e-906812b71c31" species="TNFa"/>
+          <speciesReference metaid="_7c49a41a-ae83-485b-a63e-953fd1354ca1" species="NFkB"/>
+        </listOfProducts>
+        <kineticLaw metaid="_0734b5c6-4dd3-4268-9719-86cd67abbb6b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kactNFkB </ci>
+              <ci> TNFa </ci>
+              <ci> IkB_NFkB </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="NFkB_miR140_gene_binding" metaid="_88110e14-1701-49e6-81ca-f6d09fae8c77" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_29c74af3-8af0-4d5e-a553-9227443909a9" species="NFkB"/>
+          <speciesReference metaid="fa1f87e6-047b-4dfb-b8d7-56165dd08b31" species="miR140_gene"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a0f46f6d-a168-4d5f-b044-d0e90623dd64" species="miR140_gene_NFkB"/>
+        </listOfProducts>
+        <kineticLaw metaid="_062eb651-a0cf-4acf-a624-dbfb68984e49">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinmiR140geneNFkB </ci>
+              <ci> NFkB </ci>
+              <ci> miR140_gene </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="NFkB_miR140_gene_release" metaid="_18241452-4f51-4c11-9520-c220580a2524" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="e3c72abf-45bd-4969-94fe-319b194d87ea" species="miR140_gene_NFkB"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e4920b33-2f7e-4e82-8ba2-df07a7217e5f" species="miR140_gene"/>
+          <speciesReference metaid="ac34154e-8f6b-4b43-b13a-cbc422c0997c" species="NFkB"/>
+        </listOfProducts>
+        <kineticLaw metaid="_5aaa5482-3995-469d-a1f6-50ebc00a7d84">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelmiR140geneNFkB </ci>
+              <ci> miR140_gene_NFkB </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR140_synthesis_via_NFkB" metaid="_5066f66d-4d37-4c84-89c8-933c62a71873" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_3b445588-bd7d-40b7-ab3d-c60e6e27f4fe" species="miR140_gene_NFkB"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8b705d45-24c5-454a-97a6-a8644454c3f7" species="miR140_gene_NFkB"/>
+          <speciesReference metaid="e72689ee-95a2-435d-8c3a-64379f16d251" species="miR140"/>
+        </listOfProducts>
+        <kineticLaw metaid="_57cbee98-9ee6-4b66-910b-7ba5953076b6">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynmiR140NFkB </ci>
+              <ci> miR140_gene_NFkB </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR140_degradation" metaid="_78eb5ef1-6c8a-4e3c-8241-2e9551873a6f" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_65e6b6f1-3a13-478d-919b-ac88592f5224" species="miR140"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a90741c5-fbef-41f9-bf96-7ba0a4f6f78f" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_93d12232-f8de-4ac8-a0a8-b1b4c7d1ee2c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegmiR140 </ci>
+              <ci> miR140 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IGFBP5_transcription" metaid="_57f7bc49-39b8-455f-abef-4f982a8074a9" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="a6b65afc-16cd-48b3-b829-80d16951023a" species="Source"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="edf4aa48-512a-4894-88f8-6a6a6dd774ab" species="IGFBP5_mRNA"/>
+        </listOfProducts>
+        <kineticLaw metaid="_0b75242f-cda4-4315-9077-59ce0f8f4f46">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynIGFBP5mRNA </ci>
+              <ci> Source </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IGFBP5_transcription_via_JNK" metaid="_66b95a02-d78b-4946-b217-6097dd752ff2" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_41c31e66-8f0d-454f-b110-9e980bfc622b" species="JNK_P"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_858749d9-e4e7-44f7-997d-010f91320108" species="IGFBP5_mRNA"/>
+          <speciesReference metaid="_424c1832-5f39-406d-8483-51f908738a1f" species="JNK_P"/>
+        </listOfProducts>
+        <kineticLaw metaid="_181273e0-4e76-47d6-8982-fcd0ea6f4d06">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynIGFBP5mRNAJNK </ci>
+              <ci> JNK_P </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IGFBP5_mRNA_degradation" metaid="_9bbf8fdf-38f0-4673-8cf4-0f7783589b10" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_51aee0b0-57ce-4bbf-b59a-0b972088a8fd" species="IGFBP5_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_7c7026b5-dd5e-4fe3-b39c-aaf5de59728a" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="bd527743-d502-4fb4-b24d-9896b1126d6e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegIGFBP5mRNA </ci>
+              <ci> IGFBP5_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IGFBP5_mRNA_miR140_binding" metaid="f19819b4-bbed-40c9-bd3b-bf00281a26ff" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_290d3946-bd7e-4550-9106-e45dc26f586c" species="IGFBP5_mRNA"/>
+          <speciesReference metaid="d4323247-1eb9-47f5-aa52-78abaf4d68ec" species="miR140"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="f61d24f0-5fa2-4a9a-aa88-b8aced6be43b" species="IGFBP5_mRNA_miR140"/>
+        </listOfProducts>
+        <kineticLaw metaid="f9fe6509-0159-4b27-9e6b-19a19f50af31">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinmiR140IGFBP5mRNA </ci>
+              <ci> IGFBP5_mRNA </ci>
+              <ci> miR140 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IGFBP5_mRNA_miR140_release" metaid="_82448838-7d53-4e9b-ad47-2b6c8690996d" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f83af4f2-c617-47f7-bc3f-f392e9a7f05f" species="IGFBP5_mRNA_miR140"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_0c80b593-9764-4c46-b049-2e3f53e468aa" species="IGFBP5_mRNA"/>
+          <speciesReference metaid="_274bfc0b-07ae-48cb-b406-dfe0e3504c40" species="miR140"/>
+        </listOfProducts>
+        <kineticLaw metaid="efc7894a-7841-480f-a397-3fb50a4d15ce">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelmiR140IGFBP5mRNA </ci>
+              <ci> IGFBP5_mRNA_miR140 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IGFBP5_mRNA_degradation_by_miR140" metaid="_9c1b2c8a-d426-4886-85e9-d2d0ba9acf6e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f7d48b9f-a6b0-4581-beb1-9feb14b77966" species="IGFBP5_mRNA_miR140"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_0007e6bf-d209-467c-ac69-24462e57a070" species="miR140"/>
+        </listOfProducts>
+        <kineticLaw metaid="_5ecd74d3-d141-4d7b-9f58-a43ab677257f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegIGFBP5mRNAmiR140 </ci>
+              <ci> IGFBP5_mRNA_miR140 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IGFBP5_translation" metaid="c98a3b27-5859-400a-a125-9a41ef7c1e95" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="ee923002-5256-44c1-af37-2e40eaa8ef76" species="IGFBP5_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1c2deb95-cebd-4a8b-8738-4b1917b58dc4" species="IGFBP5_mRNA"/>
+          <speciesReference metaid="_457ef595-490c-452f-b89b-780d42a8cf53" species="IGFBP5"/>
+        </listOfProducts>
+        <kineticLaw metaid="_4421cd64-65df-44a0-a3a8-5ec5e8f00fd2">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynIGFBP5 </ci>
+              <ci> IGFBP5_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IGFBP5_degradation" metaid="_8e707c97-58fb-463f-a9c0-1cbcad78b442" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_9bfa94fe-0786-4356-9d61-3ea9811b30c2" species="IGFBP5"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9eeda5d1-3853-49dc-9252-fe8de7ab5028" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="bcc490e4-ad58-4a35-a342-f00e0c229c98">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegIGFBP5 </ci>
+              <ci> IGFBP5 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IGF1_IGFBP5_binding" metaid="_54431f0c-a502-4ecd-bd42-375c220236bf" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_4923f946-4813-4f00-883e-d3053fd3c84a" species="IGF1"/>
+          <speciesReference metaid="_6e110420-499e-4d07-81d5-b0aabccefc75" species="IGFBP5"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_6a490ded-bc32-4086-a1fb-f681890a1833" species="IGF1_IGFBP5"/>
+        </listOfProducts>
+        <kineticLaw metaid="cca9609a-041b-4653-a757-9f0e8a249062">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinIGF1IGFBP5 </ci>
+              <ci> IGF1 </ci>
+              <ci> IGFBP5 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IGF1_IGFBP5_release" metaid="_71d79f70-8f34-4873-a32b-639cef01434a" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_1d2b2364-5bfc-43a0-8353-a50c1fe6a388" species="IGF1_IGFBP5"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1fe9c7e9-6673-4400-9b01-063b583a380c" species="IGF1"/>
+          <speciesReference metaid="_09bb3b4f-4eaf-49fd-9584-6ee56015492d" species="IGFBP5"/>
+        </listOfProducts>
+        <kineticLaw metaid="b2984c85-fa8d-47da-b2bf-8e77e46b24ac">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelIGF1IGFBP5 </ci>
+              <ci> IGF1_IGFBP5 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="AKT_phosphorylation" metaid="_915aaaf5-952c-49b8-bb1f-1143a93eafc4" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="d9fed6b9-4c16-47a0-aa84-d30f106e8204" species="IGF1_IGFBP5"/>
+          <speciesReference metaid="b6cbb638-0f3a-4eb6-bfbd-477767d3b010" species="AKT"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_632f3cfd-e6f9-41ba-b22c-c594b9c8d776" species="IGF1_IGFBP5"/>
+          <speciesReference metaid="_3b00a036-b074-45ac-924c-0066a49b32da" species="AKT_P"/>
+        </listOfProducts>
+        <kineticLaw metaid="aa2a914e-d824-477a-8846-79ba5f31f026">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kphosAKT </ci>
+              <ci> IGF1_IGFBP5 </ci>
+              <ci> AKT </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="AKT_dephosphorylation" metaid="_735ed130-c860-44a3-844e-b2e2f0391504" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_6ee2b7e6-b55d-4fc3-a590-73157fdbbb90" species="AKT_P"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_41d693ee-c184-4543-9dde-408f009e6acd" species="AKT"/>
+        </listOfProducts>
+        <kineticLaw metaid="_5ef931dd-f418-4dcf-baca-122eb43c6088">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdephosAKT </ci>
+              <ci> AKT_P </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="ACAN_transcription" metaid="_6741d853-ffb2-4af6-9ed2-de2fc9fab61d" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_3938e4c3-02af-451d-9103-fa08412c837d" species="AKT_P"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_6e105c04-89b1-4d60-b5e4-139cfc33baec" species="AKT_P"/>
+          <speciesReference metaid="ea8fb07d-360f-4e92-b1cf-d0ecd2085c33" species="ACAN"/>
+        </listOfProducts>
+        <kineticLaw metaid="_6d71de41-db03-4253-b57d-267133c4358f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynACAN </ci>
+              <ci> AKT_P </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="JNK_phosphorylation" metaid="bfa75234-1642-4e27-aac9-71365f564d70" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8d4e5be2-de3d-4ed8-8512-502908b49d6e" species="TNFa"/>
+          <speciesReference metaid="c201a5de-8b70-4b44-8dad-b2c88f063546" species="JNK"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9ada91dc-3ef4-4406-a069-9b59fdeecc7d" species="TNFa"/>
+          <speciesReference metaid="_123a3821-3ace-45a5-865a-796ec1d3fa12" species="JNK_P"/>
+        </listOfProducts>
+        <kineticLaw metaid="daeeb55a-c8a0-46d0-be1a-7c1accfaa7a1">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kphosJNK </ci>
+              <ci> TNFa </ci>
+              <ci> JNK </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="JNK_dephosphorylation" metaid="_55880887-09a1-424e-87ed-555751ea1e82" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_536cf6de-cd8e-427b-a006-7841859969bc" species="JNK_P"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="b2b69ca3-5040-423e-b2b0-9f3c8b7098ca" species="JNK"/>
+        </listOfProducts>
+        <kineticLaw metaid="_84bf071e-04fd-4988-af7a-ecc9664e1f66">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdephosJNK </ci>
+              <ci> JNK_P </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TNFa_degradation" metaid="_5822a273-ce2f-4ca0-bb3a-919bf526e3e5" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_71e9cbba-0712-445a-9220-7662e7547c81" species="TNFa"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_4cac9e23-bd60-488f-9c79-8d4532113802" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_7049ff5a-462d-4f3f-930d-b323eac8a26d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegTNFa </ci>
+              <ci> TNFa </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TNFa_synthesis" metaid="e8d62f65-ac9d-4be1-b575-6136a921c60e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_7840a25e-b6d0-402d-bfec-d7fbec55cafc" species="NFkB"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1a9a74cd-ffc0-448a-9fba-88a13b978012" species="NFkB"/>
+          <speciesReference metaid="_106cf8e5-84fa-4e46-8108-51f5c430440d" species="TNFa"/>
+        </listOfProducts>
+        <kineticLaw metaid="_39bba42d-873c-404a-8cc5-418a8806d93e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynTNFa </ci>
+              <ci> NFkB </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IkB_synthesis" metaid="dc7671d9-379e-4a88-b5c4-229476dfd2c9" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_30563534-2526-4967-a83f-f4c5973de859" species="NFkB"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_523b05c0-e0fa-4b64-9804-3fadd92bea0c" species="NFkB"/>
+          <speciesReference metaid="a9387a46-2d28-407d-9bad-3eee583b103d" species="IkB"/>
+        </listOfProducts>
+        <kineticLaw metaid="_8aebb567-8908-4705-93ee-52f438712ad4">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynIkB </ci>
+              <ci> NFkB </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IkB_NFkB_binding" metaid="_4a57bee2-c3b3-4129-8019-788a3fa3bcba" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="ddfd1a4d-d581-47a0-b7e5-ff857d2c9da7" species="NFkB"/>
+          <speciesReference metaid="_28b83eb3-5e20-4a2f-a13f-c57ff5474f66" species="IkB"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="f790a693-9573-4689-abf3-764b9fa8e1f9" species="IkB_NFkB"/>
+        </listOfProducts>
+        <kineticLaw metaid="_236eef3a-83f1-425d-9e3c-f094ee4da122">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinIkBNFkB </ci>
+              <ci> IkB </ci>
+              <ci> NFkB </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

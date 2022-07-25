@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version3" xmlns:celldesigner="http://www.sbml.org/2001/ns/celldesigner" xmlns:jd2="http://www.sys-bio.org/sbml" metaid="_501401" level="2" version="3">
+  <model metaid="_756555" id="cell" name="Qiao2007_MAPK_Signaling_Bistable">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This model originates from BioModels Database: A Database of Annotated Published Models (http://www.ebi.ac.uk/biomodels/). It is copyright (c) 2005-2011 The BioModels.net Team.      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+      <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not..      <br/>
+      <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+  </p>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#_756555">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL6185511733"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/pubmed/17907797"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/2759"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://www.geneontology.org/GO:0000165"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfCompartments>
+  <compartment metaid="_756556" id="compartment" size="1"/>
+</listOfCompartments><listOfSpecies>
+  <species metaid="_756557" id="K" compartment="compartment" initialConcentration="0"/>
+  <species metaid="_756559" id="KKPP" compartment="compartment" initialConcentration="0.39984600804"/>
+  <species metaid="_756560" id="KKKPP" compartment="compartment" initialConcentration="0"/>
+  <species metaid="_756562" id="KP" compartment="compartment" initialConcentration="0"/>
+  <species metaid="_756563" id="KPase" compartment="compartment" initialConcentration="0.2774315895"/>
+  <species metaid="_756565" id="KPKPase" compartment="compartment" initialConcentration="0"/>
+  <species metaid="_756566" id="KPKKPP" compartment="compartment" initialConcentration="0"/>
+  <species metaid="_756568" id="KPP" compartment="compartment" initialConcentration="0.96691587903"/>
+  <species metaid="_756569" id="KPPKPase" compartment="compartment" initialConcentration="0"/>
+</listOfSpecies><listOfParameters>
+  <parameter metaid="_756593" id="a1" value="1870.65340919611"/>
+  <parameter metaid="_756594" id="d1" value="502.75441575205"/>
+  <parameter metaid="_756595" id="k1" value="36.95569535329"/>
+  <parameter metaid="_756596" id="a2" value="1477.69323569819"/>
+  <parameter metaid="_756598" id="d2" value="321.98140758674"/>
+  <parameter metaid="_756599" id="k2" value="722.36086088928"/>
+  <parameter metaid="_756601" id="a3" value="2583.10573366983"/>
+  <parameter metaid="_756602" id="d3" value="46.55499308299"/>
+  <parameter metaid="_756604" id="k3" value="195.80738302832"/>
+  <parameter metaid="_756605" id="a4" value="4351.50747893472"/>
+  <parameter metaid="_756607" id="d4" value="31.15705481377"/>
+  <parameter metaid="_756608" id="k4" value="117.25830598353"/>
+</listOfParameters><listOfReactions>
+  <reaction metaid="_756570" id="J0" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_501413" species="K"/>
+      <speciesReference metaid="_501425" species="KKPP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_501437" species="KKKPP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_501449">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> a1 </ci>
+          <ci> K </ci>
+          <ci> KKPP </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_756572" id="J1" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_501461" species="KKKPP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_501474" species="K"/>
+      <speciesReference metaid="_501486" species="KKPP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_501498">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> d1 </ci>
+          <ci> KKKPP </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_756573" id="J2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_501510" species="KKKPP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_501522" species="KP"/>
+      <speciesReference metaid="_501534" species="KKPP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_501546">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> KKKPP </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_756575" id="J3" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_501558" species="KP"/>
+      <speciesReference metaid="_501570" species="KPase"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_501582" species="KPKPase"/>
+    </listOfProducts>
+    <kineticLaw metaid="_501594">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> a2 </ci>
+          <ci> KP </ci>
+          <ci> KPase </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_756576" id="J4" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_501606" species="KPKPase"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_501619" species="KP"/>
+      <speciesReference metaid="_501631" species="KPase"/>
+    </listOfProducts>
+    <kineticLaw metaid="_501643">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> d2 </ci>
+          <ci> KPKPase </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_756578" id="J5" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_501655" species="KPKPase"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_501667" species="K"/>
+      <speciesReference metaid="_501680" species="KPase"/>
+    </listOfProducts>
+    <kineticLaw metaid="_501692">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k2 </ci>
+          <ci> KPKPase </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_756579" id="J6" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_501704" species="KP"/>
+      <speciesReference metaid="_501716" species="KKPP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_501729" species="KPKKPP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_501741">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> a3 </ci>
+          <ci> KP </ci>
+          <ci> KKPP </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_756581" id="J7" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_501753" species="KPKKPP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_501765" species="KP"/>
+      <speciesReference metaid="_501777" species="KKPP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_501790">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> d3 </ci>
+          <ci> KPKKPP </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_756582" id="J8" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_501802" species="KPKKPP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_501814" species="KPP"/>
+      <speciesReference metaid="_501826" species="KKPP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_501838">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> KPKKPP </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_756584" id="J9" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_501850" species="KPP"/>
+      <speciesReference metaid="_501863" species="KPase"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_501875" species="KPPKPase"/>
+    </listOfProducts>
+    <kineticLaw metaid="_501887">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> a4 </ci>
+          <ci> KPP </ci>
+          <ci> KPase </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_756585" id="J10" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_501899" species="KPPKPase"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_501911" species="KPP"/>
+      <speciesReference metaid="_501923" species="KPase"/>
+    </listOfProducts>
+    <kineticLaw metaid="_501935">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> d4 </ci>
+          <ci> KPPKPase </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_756587" id="J11" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_501947" species="KPPKPase"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_501959" species="KP"/>
+      <speciesReference metaid="_501971" species="KPase"/>
+    </listOfProducts>
+    <kineticLaw metaid="_501983">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k4 </ci>
+          <ci> KPPKPase </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+</model>
+</sbml>

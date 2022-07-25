@@ -1,0 +1,2862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2" metaid="_479573" level="2" version="1">
+  <model metaid="_573836" id="testid" name="Ajay_Bhalla_2007_Bistable">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    This is a model of ERKII signaling which is bistable due to feedback. The feedback occurs through ERKII phosphorylation of phospholipase A2 (PLA2), leading to increased production of arachidonic acid (AA), which activates protein kinase C (PKC) which activates c-Raf which is upstream of ERKII.&lt;br&quot;&quot;&gt; The model is a highly simplified variant of more detailed bistable models of MAPK signaling (&lt;a href = &quot;http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&amp;cmd=Retrieve&amp;dopt=AbstractPlus&amp;list_uids=9888852&amp;query_hl=4&amp;itool=pubmed_docsum&gt;Bhalla US, Iyengar R. Science. 1999 Jan 15;283(5400):381-7&lt;/a&gt;, &lt;a href = &quot;http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&amp;cmd=Retrieve&amp;dopt=AbstractPlus&amp;list_uids=15548210&amp;query_hl=2&amp;itool=pubmed_docsum&gt;Ajay SM, Bhalla US. Eur J Neurosci. 2004 Nov;20(10):2671-80&lt;/a&gt;)    <p>This model originates from BioModels Database: A Database of Annotated Published Models. It is copyright (c) 2005-2011 The BioModels.net Team.      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+    <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not..      <br/>
+    <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+</p>
+</body>
+</notes><annotation xmlns:doqcs="http://www.doqcs.ncbs.res.in">
+  <doqcs:timestamp>Thu Jul 26 15:29:43 2007</doqcs:timestamp>
+  <doqcs:accesstype>network</doqcs:accesstype>
+  <doqcs:transcriber>Upinder S. Bhalla, NCBS</doqcs:transcriber>
+  <doqcs:developer>Upinder S. Bhalla, NCBS</doqcs:developer>
+  <doqcs:species>Rat</doqcs:species>
+  <doqcs:tissue>Hippocampal CA1</doqcs:tissue>
+  <doqcs:cellcompartment>Dendrite</doqcs:cellcompartment>
+  <doqcs:methodology>Semi-Quantitative match to experiments</doqcs:methodology>
+  <doqcs:model_implementation>Exact GENESIS implementation</doqcs:model_implementation>
+  <doqcs:model_validation>Replicates original data </doqcs:model_validation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#_573836">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL9147091146"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/pubmed/19404460"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/10114"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/go/GO:0070371"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+      <bqbiol:occursIn>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/bto/BTO:0000601"/>
+        </rdf:Bag>
+      </bqbiol:occursIn>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfUnitDefinitions>
+  <unitDefinition metaid="_479585" id="vol_secINV">
+    <listOfUnits>
+      <unit metaid="_479597" kind="litre"/>
+      <unit metaid="_479609" kind="second" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_479622" id="vol_uMINV2secINV">
+    <listOfUnits>
+      <unit metaid="_479635" kind="litre" exponent="3"/>
+      <unit metaid="_479648" kind="mole" exponent="-2" scale="-6"/>
+      <unit metaid="_479660" kind="second" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_479672" id="vol_uMINVsecINV">
+    <listOfUnits>
+      <unit metaid="_479685" kind="litre" exponent="2"/>
+      <unit metaid="_479697" kind="mole" exponent="-1" scale="-6"/>
+      <unit metaid="_479709" kind="second" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_479721" id="substance">
+    <listOfUnits>
+      <unit metaid="_479733" kind="mole" scale="-6"/>
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions><listOfCompartments>
+  <compartment metaid="_573839" id="default_compartment" size="1e-18"/>
+  <compartment metaid="_573851" id="dendgeom" size="1.257e-13"/>
+</listOfCompartments><listOfSpecies>
+  <species metaid="_573871" id="PKC_slash_PKC_minus_Ca" compartment="dendgeom" initialConcentration="3.72076372315036e-17"/>
+  <species metaid="_573891" id="PKC_slash_PKC_minus_DAG_minus_AA_star_" compartment="dendgeom" initialConcentration="4.91368337311058e-18"/>
+  <species metaid="_573911" id="PKC_slash_PKC_minus_Ca_minus_AA_star_" compartment="dendgeom" initialConcentration="1.75006629541236e-16"/>
+  <species metaid="_573931" id="PKC_slash_PKC_minus_Ca_minus_memb_star_" compartment="dendgeom" initialConcentration="1.38955184301246e-17"/>
+  <species metaid="_573951" id="PKC_slash_PKC_minus_DAG_minus_memb_star_" compartment="dendgeom" initialConcentration="9.4351630867144e-21"/>
+  <species metaid="_573971" id="PKC_slash_PKC_minus_basal_star_" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_573991" id="PKC_slash_PKC_minus_AA_star_" compartment="dendgeom" initialConcentration="1.81331211880138e-17"/>
+  <species metaid="_574011" id="PKC_slash_PKC_minus_Ca_minus_DAG" compartment="dendgeom" initialConcentration="8.46313975072925e-23"/>
+  <species metaid="_574031" id="PKC_slash_PKC_minus_DAG" compartment="dendgeom" initialConcentration="1.16100503845134e-16"/>
+  <species metaid="_574051" id="PKC_slash_PKC_minus_DAG_minus_AA" compartment="dendgeom" initialConcentration="2.51882789710952e-19"/>
+  <species metaid="_574071" id="PKC_slash_PKC_minus_cytosolic" compartment="dendgeom" initialConcentration="1"/>
+  <species metaid="_574091" id="AA" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574111" id="PLA2_slash_PLA2_minus_cytosolic" compartment="dendgeom" initialConcentration="0.4"/>
+  <species metaid="_574131" id="PLA2_slash_PLA2_minus_Ca_star_" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574151" id="PLA2_slash_PLA2_minus_Ca_star__slash_kenz_slash_kenz_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574171" id="PLA2_slash_PIP2_minus_PLA2_star_" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574191" id="PLA2_slash_PIP2_minus_PLA2_star__slash_kenz_slash_kenz_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574211" id="PLA2_slash_PIP2_minus_Ca_minus_PLA2_star_" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574231" id="PLA2_slash_PIP2_minus_Ca_minus_PLA2_star__slash_kenz_slash_kenz_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574251" id="PLA2_slash_DAG_minus_Ca_minus_PLA2_star_" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574271" id="PLA2_slash_DAG_minus_Ca_minus_PLA2_star__slash_kenz_slash_kenz_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574291" id="PLA2_slash_PLA2_star__minus_Ca" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574311" id="PLA2_slash_PLA2_star__minus_Ca_slash_kenz_slash_kenz_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574331" id="PLA2_slash_PLA2_star_" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574351" id="MAPK_slash_craf_minus_1" compartment="dendgeom" initialConcentration="0.5"/>
+  <species metaid="_574371" id="MAPK_slash_craf_minus_1_star_" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574391" id="MAPK_slash_MAPKK" compartment="dendgeom" initialConcentration="0.5"/>
+  <species metaid="_574411" id="MAPK_slash_MAPK" compartment="dendgeom" initialConcentration="3.59997348183506"/>
+  <species metaid="_574431" id="MAPK_slash_craf_minus_1_star__star_" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574451" id="MAPK_slash_MAPK_minus_tyr" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574471" id="MAPK_slash_MAPKK_star_" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574491" id="MAPK_slash_MAPKK_star__slash_MAPKKtyr_slash_MAPKKtyr_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574511" id="MAPK_slash_MAPKK_star__slash_MAPKKthr_slash_MAPKKthr_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574531" id="MAPK_slash_MAPKK_minus_ser" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574551" id="MAPK_slash_Raf_minus_GTP_minus_Ras" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574552" id="MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_1_slash_Raf_minus_GTP_minus_Ras_dot_1_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574571" id="MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_2_slash_Raf_minus_GTP_minus_Ras_dot_2_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574591" id="MAPK_slash_Raf_star__minus_GTP_minus_Ras" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574611" id="MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_1_slash_Raf_star__minus_GTP_minus_Ras_dot_1_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574631" id="MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_2_slash_Raf_star__minus_GTP_minus_Ras_dot_2_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574651" id="Ras_slash_inact_minus_GEF" compartment="dendgeom" initialConcentration="0.1"/>
+  <species metaid="_574671" id="Ras_slash_inact_minus_GEF_slash_basal_GEF_activity_slash_basal_GEF_activity_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574691" id="Ras_slash_GEF_star_" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574711" id="Ras_slash_GEF_star__slash_GEF_star__minus_act_minus_ras_slash_GEF_star__minus_act_minus_ras_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574731" id="Ras_slash_GTP_minus_Ras" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574751" id="Ras_slash_GDP_minus_Ras" compartment="dendgeom" initialConcentration="0.5"/>
+  <species metaid="_574771" id="Ras_slash_GAP_star_" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574791" id="Ras_slash_GAP" compartment="dendgeom" initialConcentration="0.01"/>
+  <species metaid="_574811" id="Ras_slash_GAP_slash_GAP_minus_inact_minus_ras_slash_GAP_minus_inact_minus_ras_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574831" id="Ras_slash_CaM_minus_GEF" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574851" id="Ras_slash_CaM_minus_GEF_slash_CaM_minus_GEF_minus_act_minus_ras_slash_CaM_minus_GEF_minus_act_minus_ras_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574852" id="Ca" compartment="dendgeom" initialConcentration="0.08"/>
+  <species metaid="_574871" id="PKC_minus_active_slash_PKC_minus_act_minus_raf_slash_PKC_minus_act_minus_raf_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574891" id="PKC_minus_active_slash_PKC_minus_inact_minus_GAP_slash_PKC_minus_inact_minus_GAP_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574911" id="PKC_minus_active_slash_PKC_minus_act_minus_GEF_slash_PKC_minus_act_minus_GEF_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574931" id="PKC_minus_active_slash_phosph_minus_AC2_slash_phosph_minus_AC2_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574951" id="MAPK_star_" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574971" id="MAPK_star__slash_MAPK_star__slash_MAPK_star__cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_574991" id="MAPK_star__slash_MAPK_star__minus_feedback_slash_MAPK_star__minus_feedback_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_575011" id="MKP_minus_1" compartment="dendgeom" initialConcentration="0.0240002651816494"/>
+  <species metaid="_575031" id="MKP_minus_1_slash_MKP1_minus_tyr_minus_deph_slash_MKP1_minus_tyr_minus_deph_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_575051" id="MKP_minus_1_slash_MKP1_minus_thr_minus_deph_slash_MKP1_minus_thr_minus_deph_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_575071" id="PPhosphatase2A" compartment="dendgeom" initialConcentration="1"/>
+  <species metaid="_575091" id="PPhosphatase2A_slash_craf_minus_deph_slash_craf_minus_deph_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_575111" id="PPhosphatase2A_slash_MAPKK_minus_deph_slash_MAPKK_minus_deph_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_575131" id="PPhosphatase2A_slash_MAPKK_minus_deph_minus_ser_slash_MAPKK_minus_deph_minus_ser_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_575151" id="PPhosphatase2A_slash_craf_star__star__minus_deph_slash_craf_star__star__minus_deph_cplx" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_575171" id="CaM_slash_CaM" compartment="dendgeom" initialConcentration="20"/>
+  <species metaid="_575191" id="CaM_slash_CaM_minus_Ca3" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_575211" id="CaM_slash_CaM_minus_TR2_minus_Ca2" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_575231" id="CaM_slash_CaM_minus_Ca4" compartment="dendgeom" initialConcentration="0"/>
+  <species metaid="_575251" id="PLA2_slash_APC" compartment="dendgeom" initialConcentration="30" boundaryCondition="true" constant="true">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        arachodonylphosphatidylcholine is the favoured substrate from Wijkander and Sundler, JBC 202 pp 873-880, 1991. Their assay used 30 uM substrate, which is what the kinetics in this model are based on. For the later model we should locate a more realistic value for APC.</body>
+    </notes>
+  </species>
+  <species metaid="_575271" id="temp_minus_PIP2" compartment="dendgeom" initialConcentration="2.5" boundaryCondition="true" constant="true">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        This isn\&apos;t explicitly present in the M&amp;L model, but is obviously needed. I assume its conc is fixed at 1uM for now, which is a bit high. PLA2 is stim 7x by PIP2 @ 0.5 uM (Leslie and Channon BBA 1045:261(1990) Leslie and Channon say PIP2 is present at 0.1 - 0.2mol% range in membs, which comes to 50 nM. Ref is Majerus et al Cell 37 pp 701-703 1984 Lets use a lower level of 30 nM, same ref....</body>
+    </notes>
+  </species>
+  <species metaid="_575291" id="DAG" compartment="dendgeom" initialConcentration="12.1999469636701" boundaryCondition="true" constant="true"/>
+  <species metaid="_575311" id="IP3" compartment="dendgeom" initialConcentration="0.730005303632989" boundaryCondition="true" constant="true">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Peak IP3 is perhaps 15 uM, basal &lt;= 0.2 uM.</body>
+    </notes>
+  </species>
+  <species metaid="_575331" id="Ca_input" compartment="dendgeom" initialConcentration="0.08" boundaryCondition="true" constant="true"/>
+  <species metaid="_575351" id="PKC_minus_active" compartment="dendgeom" initialConcentration="0.3" boundaryCondition="true"/>
+</listOfSpecies><listOfRules>
+  <assignmentRule metaid="_575371" variable="PKC_minus_active">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> PKC_slash_PKC_minus_DAG_minus_AA_star_ </ci>
+        <ci> PKC_slash_PKC_minus_Ca_minus_memb_star_ </ci>
+        <ci> PKC_slash_PKC_minus_Ca_minus_AA_star_ </ci>
+        <ci> PKC_slash_PKC_minus_DAG_minus_memb_star_ </ci>
+        <ci> PKC_slash_PKC_minus_basal_star_ </ci>
+        <ci> PKC_slash_PKC_minus_AA_star_ </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+</listOfRules><listOfReactions>
+  <reaction metaid="_575391" id="PKC_slash_PKC_minus_act_minus_by_minus_Ca">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Need est of rate of assoc of Ca and PKC. Assume it is fast The original parameter-searched kf of 439.4 has been scaled by 1/6e8 to account for change of units to n. Kf now 8.16e-7, kb=.6085 Raised kf to 1e-6 to match Ca curve, kb to .5</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_479745" species="PKC_slash_PKC_minus_cytosolic"/>
+      <speciesReference metaid="_479757" species="Ca"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_479769" species="PKC_slash_PKC_minus_Ca"/>
+    </listOfProducts>
+    <kineticLaw metaid="_479782">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*PKC_slash_PKC_minus_cytosolic*Ca-kb*PKC_slash_PKC_minus_Ca</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> PKC_slash_PKC_minus_cytosolic </ci>
+            <ci> Ca </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PKC_slash_PKC_minus_Ca </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274441" id="kf" value="7.5420478917e-14" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274442" id="kb" value="6.285e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575411" id="PKC_slash_PKC_minus_act_minus_by_minus_DAG">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Need est of rate. Assume it is fast Obtained from param search kf raised 10 X : see Shinomura et al PNAS 88 5149-5153 1991. kf changed from 3.865e-7 to 2.0e-7 in line with closer analysis of Shinomura data. 26 June 1996: Corrected DAG data: reduce kf 15x from 2e-7 to 1.333e-8</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_479794" species="DAG"/>
+      <speciesReference metaid="_479806" species="PKC_slash_PKC_minus_Ca"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_479818" species="PKC_slash_PKC_minus_Ca_minus_DAG"/>
+    </listOfProducts>
+    <kineticLaw metaid="_479830">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*DAG*PKC_slash_PKC_minus_Ca-kb*PKC_slash_PKC_minus_Ca_minus_DAG</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> DAG </ci>
+            <ci> PKC_slash_PKC_minus_Ca </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PKC_slash_PKC_minus_Ca_minus_DAG </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274443" id="kf" value="1.00557478458e-15" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274445" id="kb" value="1.08539436e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575431" id="PKC_slash_PKC_minus_Ca_minus_to_minus_memb">
+    <listOfReactants>
+      <speciesReference metaid="_479842" species="PKC_slash_PKC_minus_Ca"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_479854" species="PKC_slash_PKC_minus_Ca_minus_memb_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_479866">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*PKC_slash_PKC_minus_Ca-kb*PKC_slash_PKC_minus_Ca_minus_memb_star_</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> PKC_slash_PKC_minus_Ca </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PKC_slash_PKC_minus_Ca_minus_memb_star_ </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274446" id="kf" value="1.5970185e-13" units="vol_secINV"/>
+        <parameter metaid="_274447" id="kb" value="4.4027682e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575451" id="PKC_slash_PKC_minus_DAG_minus_to_minus_memb">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Raise kb from .087 to 0.1 to match data from Shinomura et al. Lower kf from 1.155 to 1.0 to match data from Shinomura et al.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_479878" species="PKC_slash_PKC_minus_Ca_minus_DAG"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_479890" species="PKC_slash_PKC_minus_DAG_minus_memb_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_479903">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*PKC_slash_PKC_minus_Ca_minus_DAG-kb*PKC_slash_PKC_minus_DAG_minus_memb_star_</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> PKC_slash_PKC_minus_Ca_minus_DAG </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PKC_slash_PKC_minus_DAG_minus_memb_star_ </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274448" id="kf" value="1.257e-13" units="vol_secINV"/>
+        <parameter metaid="_274449" id="kb" value="1.257e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575471" id="PKC_slash_PKC_minus_act_minus_by_minus_Ca_minus_AA">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Schaechter and Benowitz We have to increase Kf for conc scaling Changed kf to 2e-9 on Sept 19, 94. This gives better match.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_479915" species="PKC_slash_PKC_minus_Ca"/>
+      <speciesReference metaid="_479927" species="AA"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_479939" species="PKC_slash_PKC_minus_Ca_minus_AA_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_479951">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*PKC_slash_PKC_minus_Ca*AA-kb*PKC_slash_PKC_minus_Ca_minus_AA_star_</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> PKC_slash_PKC_minus_Ca </ci>
+            <ci> AA </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PKC_slash_PKC_minus_Ca_minus_AA_star_ </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274450" id="kf" value="1.50840957834e-16" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274451" id="kb" value="1.257e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575491" id="PKC_slash_PKC_minus_act_minus_by_minus_DAG_minus_AA">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Assume slowish too. Schaechter and Benowitz</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_479963" species="PKC_slash_PKC_minus_DAG_minus_AA"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_479975" species="PKC_slash_PKC_minus_DAG_minus_AA_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_479988">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*PKC_slash_PKC_minus_DAG_minus_AA-kb*PKC_slash_PKC_minus_DAG_minus_AA_star_</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> PKC_slash_PKC_minus_DAG_minus_AA </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PKC_slash_PKC_minus_DAG_minus_AA_star_ </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274452" id="kf" value="2.514e-13" units="vol_secINV"/>
+        <parameter metaid="_274453" id="kb" value="2.514e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575511" id="PKC_slash_PKC_minus_basal_minus_act">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Initial basal levels were set by kf = 1, kb = 20. In model, though, the basal levels of PKC activity are higher.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480001" species="PKC_slash_PKC_minus_cytosolic"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480013" species="PKC_slash_PKC_minus_basal_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480025">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*PKC_slash_PKC_minus_cytosolic-kb*PKC_slash_PKC_minus_basal_star_</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> PKC_slash_PKC_minus_cytosolic </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PKC_slash_PKC_minus_basal_star_ </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274454" id="kf" value="1.257e-13" units="vol_secINV"/>
+        <parameter metaid="_274455" id="kb" value="6.285e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575531" id="PKC_slash_PKC_minus_act_minus_by_minus_AA">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Raise kf from 1.667e-10 to 2e-10 to get better match to data.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480038" species="AA"/>
+      <speciesReference metaid="_480050" species="PKC_slash_PKC_minus_cytosolic"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480062" species="PKC_slash_PKC_minus_AA_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480074">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*AA*PKC_slash_PKC_minus_cytosolic-kb*PKC_slash_PKC_minus_AA_star_</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> AA </ci>
+            <ci> PKC_slash_PKC_minus_cytosolic </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PKC_slash_PKC_minus_AA_star_ </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274456" id="kf" value="1.50840957834e-17" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274457" id="kb" value="1.257e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575551" id="PKC_slash_PKC_minus_n_minus_DAG">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        kf raised 10 X based on Shinomura et al PNAS 88 5149-5153 1991 closer analysis of Shinomura et al: kf now 1e-8 (was 1.66e-8). Further tweak. To get sufficient AA synergy, increase kf to 1.5e-8 26 June 1996: Corrected DAG levels: reduce kf by 15x from 1.5e-8 to 1e-9</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480086" species="PKC_slash_PKC_minus_cytosolic"/>
+      <speciesReference metaid="_480099" species="DAG"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480111" species="PKC_slash_PKC_minus_DAG"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480123">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*PKC_slash_PKC_minus_cytosolic*DAG-kb*PKC_slash_PKC_minus_DAG</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> PKC_slash_PKC_minus_cytosolic </ci>
+            <ci> DAG </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PKC_slash_PKC_minus_DAG </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274458" id="kf" value="7.5420478917e-17" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274459" id="kb" value="1.257e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575571" id="PKC_slash_PKC_minus_n_minus_DAG_minus_AA">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Reduced kf to 0.66X to match Shinomura et al data. Initial: kf = 3.3333e-9 New: 2e-9 Newer: 2e-8 kb was 0.2 now 2.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480135" species="PKC_slash_PKC_minus_DAG"/>
+      <speciesReference metaid="_480147" species="AA"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480160" species="PKC_slash_PKC_minus_DAG_minus_AA"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480172">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*PKC_slash_PKC_minus_DAG*AA-kb*PKC_slash_PKC_minus_DAG_minus_AA</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> PKC_slash_PKC_minus_DAG </ci>
+            <ci> AA </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PKC_slash_PKC_minus_DAG_minus_AA </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274460" id="kf" value="2.26256696604e-15" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274461" id="kb" value="2.514e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575591" id="PLA2_slash_PLA2_minus_Ca_minus_act">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Leslie and Channon BBA 1045 (1990) 261-270 fig6 pp267.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480184" species="PLA2_slash_PLA2_minus_cytosolic"/>
+      <speciesReference metaid="_480197" species="Ca"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480209" species="PLA2_slash_PLA2_minus_Ca_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480221">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*PLA2_slash_PLA2_minus_cytosolic*Ca-kb*PLA2_slash_PLA2_minus_Ca_star_</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> PLA2_slash_PLA2_minus_cytosolic </ci>
+            <ci> Ca </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PLA2_slash_PLA2_minus_Ca_star_ </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274462" id="kf" value="1.25699218146e-13" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274463" id="kb" value="1.257e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575611" id="PLA2_slash_PIP2_minus_PLA2_minus_act">
+    <listOfReactants>
+      <speciesReference metaid="_480233" species="temp_minus_PIP2"/>
+      <speciesReference metaid="_480245" species="PLA2_slash_PLA2_minus_cytosolic"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480257" species="PLA2_slash_PIP2_minus_PLA2_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480269">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*temp_minus_PIP2*PLA2_slash_PLA2_minus_cytosolic-kb*PLA2_slash_PIP2_minus_PLA2_star_</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> temp_minus_PIP2 </ci>
+            <ci> PLA2_slash_PLA2_minus_cytosolic </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PLA2_slash_PIP2_minus_PLA2_star_ </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274464" id="kf" value="1.50840957834e-16" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274465" id="kb" value="6.285e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575631" id="PLA2_slash_PIP2_minus_Ca_minus_PLA2_minus_act">
+    <listOfReactants>
+      <speciesReference metaid="_480281" species="temp_minus_PIP2"/>
+      <speciesReference metaid="_480293" species="PLA2_slash_PLA2_minus_Ca_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480305" species="PLA2_slash_PIP2_minus_Ca_minus_PLA2_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480317">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*temp_minus_PIP2*PLA2_slash_PLA2_minus_Ca_star_-kb*PLA2_slash_PIP2_minus_Ca_minus_PLA2_star_</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> temp_minus_PIP2 </ci>
+            <ci> PLA2_slash_PLA2_minus_Ca_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PLA2_slash_PIP2_minus_Ca_minus_PLA2_star_ </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274466" id="kf" value="1.50840957834e-15" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274468" id="kb" value="1.257e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575651" id="PLA2_slash_DAG_minus_Ca_minus_PLA2_minus_act">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        27 June 1996 Scaled kf down by 0.015 from 3.33e-7 to 5e-9 to fit with revised DAG estimates and use of mole-fraction to calculate eff on PLA2.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480330" species="DAG"/>
+      <speciesReference metaid="_480342" species="PLA2_slash_PLA2_minus_Ca_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480355" species="PLA2_slash_DAG_minus_Ca_minus_PLA2_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480367">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*DAG*PLA2_slash_PLA2_minus_Ca_star_-kb*PLA2_slash_DAG_minus_Ca_minus_PLA2_star_</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> DAG </ci>
+            <ci> PLA2_slash_PLA2_minus_Ca_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PLA2_slash_DAG_minus_Ca_minus_PLA2_star_ </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274469" id="kf" value="3.77097654438e-16" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274470" id="kb" value="5.028e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575671" id="PLA2_slash_Degrade_minus_AA">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        I need to check if the AA degradation pathway really leads back to APC. Anyway, it is a convenient buffered pool to dump it back into. For the purposes of the full model we use a rate of degradation of 0.2/sec Raised decay to 0.4 : see PLA35.g notes for Feb17</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480379" species="AA"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480391" species="PLA2_slash_APC"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480403">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*AA-kb*PLA2_slash_APC</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> AA </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PLA2_slash_APC </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274471" id="kf" value="5.028e-14" units="vol_secINV"/>
+        <parameter metaid="_274472" id="kb" value="0" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575691" id="PLA2_slash_PLA2_star__minus_Ca_minus_act">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        To start off, same kinetics as the PLA2-Ca-act direct pathway. Oops ! Missed out the Ca input to this pathway first time round. Let\&apos;s raise the forward rate about 3x to 5e-6. This will let us reduce the rather high rates we have used for the kenz on PLA2*-Ca. In fact, it may be that the rates are not that different, just that this pathway for getting the PLA2 to the memb is more efficien....</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480415" species="PLA2_slash_PLA2_star_"/>
+      <speciesReference metaid="_480427" species="Ca"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480439" species="PLA2_slash_PLA2_star__minus_Ca"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480451">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*PLA2_slash_PLA2_star_*Ca-kb*PLA2_slash_PLA2_star__minus_Ca</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> PLA2_slash_PLA2_star_ </ci>
+            <ci> Ca </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PLA2_slash_PLA2_star__minus_Ca </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274473" id="kf" value="7.5420478917e-13" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274474" id="kb" value="1.257e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575711" id="PLA2_slash_dephosphorylate_minus_PLA2_star_">
+    <listOfReactants>
+      <speciesReference metaid="_480463" species="PLA2_slash_PLA2_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480475" species="PLA2_slash_PLA2_minus_cytosolic"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480487">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*PLA2_slash_PLA2_star_-kb*PLA2_slash_PLA2_minus_cytosolic</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> PLA2_slash_PLA2_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> PLA2_slash_PLA2_minus_cytosolic </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274475" id="kf" value="2.1369e-14" units="vol_secINV"/>
+        <parameter metaid="_274476" id="kb" value="0" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575731" id="Ras_minus_act_minus_craf">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Assume the binding is fast and limited only by the amount of Ras* available. So kf=kb/[craf-1] If kb is 1/sec, then kf = 1/0.2 uM = 1/(0.2 * 6e5) = 8.3e-6 Later: Raise it by 10 X to 4e-5 From Hallberg et al JBC 269:6 3913-3916 1994, 3% of cellular Raf is complexed with Ras. So we raise kb 4x to 4 This step needed to memb-anchor and activate Raf: Leevers et al Nature 369 411-414 May 16, 2003 Changed Ras and Raf to synaptic levels, an increase of about 2x for each. To maintain the percentage of complexed Raf, reduced the kf by 2.4 fold to 10.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480499" species="MAPK_slash_craf_minus_1_star_"/>
+      <speciesReference metaid="_480511" species="Ras_slash_GTP_minus_Ras"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480523" species="MAPK_slash_Raf_star__minus_GTP_minus_Ras"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480535">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*MAPK_slash_craf_minus_1_star_*Ras_slash_GTP_minus_Ras-kb*MAPK_slash_Raf_star__minus_GTP_minus_Ras</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> MAPK_slash_craf_minus_1_star_ </ci>
+            <ci> Ras_slash_GTP_minus_Ras </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> MAPK_slash_Raf_star__minus_GTP_minus_Ras </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274477" id="kf" value="1.25699218146e-12" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274478" id="kb" value="6.285e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575751" id="Ras_slash_dephosph_minus_GEF">
+    <listOfReactants>
+      <speciesReference metaid="_480547" species="Ras_slash_GEF_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480559" species="Ras_slash_inact_minus_GEF"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480572">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*Ras_slash_GEF_star_-kb*Ras_slash_inact_minus_GEF</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> Ras_slash_GEF_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> Ras_slash_inact_minus_GEF </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274479" id="kf" value="1.257e-13" units="vol_secINV"/>
+        <parameter metaid="_274480" id="kb" value="0" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575771" id="Ras_slash_Ras_minus_intrinsic_minus_GTPase">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        This is extremely slow (1e-4), but it is significant as so little GAP actually gets complexed with it that the total GTP turnover rises only by 2-3 X (see Gibbs et al, JBC 265(33) 20437-20422) and Eccleston et al JBC 268(36) 27012-27019 kf = 1e-4</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480584" species="Ras_slash_GTP_minus_Ras"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480596" species="Ras_slash_GDP_minus_Ras"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480608">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*Ras_slash_GTP_minus_Ras-kb*Ras_slash_GDP_minus_Ras</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> Ras_slash_GTP_minus_Ras </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> Ras_slash_GDP_minus_Ras </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274481" id="kf" value="1.257e-17" units="vol_secINV"/>
+        <parameter metaid="_274482" id="kb" value="0" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575791" id="Ras_slash_dephosph_minus_GAP">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Assume a reasonably good rate for dephosphorylating it, 1/sec</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480620" species="Ras_slash_GAP_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480633" species="Ras_slash_GAP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480645">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*Ras_slash_GAP_star_-kb*Ras_slash_GAP</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> Ras_slash_GAP_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> Ras_slash_GAP </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274483" id="kf" value="1.257e-14" units="vol_secINV"/>
+        <parameter metaid="_274484" id="kb" value="0" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575811" id="Ras_slash_CaM_minus_bind_minus_GEF">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        We have no numbers for this. It is probably between the two extremes represented by the CaMKII phosph states, and I have used guesses based on this. kf=1e-4 kb=1 The reaction is based on Farnsworth et al Nature 376 524-527 1995 28 Feb 2006: Increased affinity 36-fold to account for Ca input to MAPK cascade, possibly folding in other pathway inputs. 21 April 2006: Altered affinity to same level as pkm_mapk21.g model to prevent spontaneous turnon. Kf = 200, Kb = 1.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480657" species="Ras_slash_inact_minus_GEF"/>
+      <speciesReference metaid="_480669" species="CaM_slash_CaM_minus_Ca4"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480681" species="Ras_slash_CaM_minus_GEF"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480693">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*Ras_slash_inact_minus_GEF*CaM_slash_CaM_minus_Ca4-kb*Ras_slash_CaM_minus_GEF</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> Ras_slash_inact_minus_GEF </ci>
+            <ci> CaM_slash_CaM_minus_Ca4 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> Ras_slash_CaM_minus_GEF </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274485" id="kf" value="2.51398436292e-11" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274486" id="kb" value="1.257e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575831" id="CaM_slash_CaM_minus_TR2_minus_bind_minus_Ca">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Lets use the fast rate consts here. Since the rates are so different, I am not sure whether the order is relevant. These correspond to the TR2C fragment. We use the Martin et al rates here, plus the Drabicowski binding consts. All are scaled by 3X to cell temp. kf = 2e-10 kb = 72 Stemmer &amp; Klee: K1=.9, K2=1.1. Assume 1.0uM for both. kb/kf=3.6e11. If kb=72, kf = 2e-10 (Exactly the same !)....</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480705" species="CaM_slash_CaM"/>
+      <speciesReference metaid="_480718" species="Ca" stoichiometry="2"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480730" species="CaM_slash_CaM_minus_TR2_minus_Ca2"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480743">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*CaM_slash_CaM*Ca^2-kb*CaM_slash_CaM_minus_TR2_minus_Ca2</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> CaM_slash_CaM </ci>
+            <apply>
+              <power/>
+              <ci> Ca </ci>
+              <cn type="integer"> 2 </cn>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> CaM_slash_CaM_minus_TR2_minus_Ca2 </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274487" id="kf" value="9.05051776470984e-12" units="vol_uMINV2secINV"/>
+        <parameter metaid="_274488" id="kb" value="9.0504e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575851" id="CaM_slash_CaM_minus_TR2_minus_Ca2_minus_bind_minus_Ca">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        K3 = 21.5, K4 = 2.8. Assuming that the K4 step happens first, we get kb/kf = 2.8 uM = 1.68e6 so kf =6e-6 assuming kb = 10</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480755" species="CaM_slash_CaM_minus_TR2_minus_Ca2"/>
+      <speciesReference metaid="_480767" species="Ca"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480779" species="CaM_slash_CaM_minus_Ca3"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480791">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*CaM_slash_CaM_minus_TR2_minus_Ca2*Ca-kb*CaM_slash_CaM_minus_Ca3</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> CaM_slash_CaM_minus_TR2_minus_Ca2 </ci>
+            <ci> Ca </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> CaM_slash_CaM_minus_Ca3 </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274489" id="kf" value="4.52522873502e-13" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274491" id="kb" value="1.257e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575871" id="CaM_slash_CaM_minus_Ca3_minus_bind_minus_Ca">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Use K3 = 21.5 uM here from Stemmer and Klee table 3. kb/kf =21.5 * 6e5 so kf = 7.75e-7, kb = 10</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480803" species="CaM_slash_CaM_minus_Ca3"/>
+      <speciesReference metaid="_480815" species="Ca"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480827" species="CaM_slash_CaM_minus_Ca4"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480840">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*CaM_slash_CaM_minus_Ca3*Ca-kb*CaM_slash_CaM_minus_Ca4</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> CaM_slash_CaM_minus_Ca3 </ci>
+            <ci> Ca </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> CaM_slash_CaM_minus_Ca4 </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274492" id="kf" value="5.8450752657e-14" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274493" id="kb" value="1.257e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575891" id="Ras_minus_act_minus_unphosph_minus_raf">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        18 May 2003. This reaction is here to provide basal activity for MAPK as well as the potential for direct EGF stimulus without PKC activation. Based on model from FB/fb28c.g: the model used for MKP-1 turnover. The rates there were constrained by basal activity values.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480853" species="MAPK_slash_craf_minus_1"/>
+      <speciesReference metaid="_480865" species="Ras_slash_GTP_minus_Ras"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480878" species="MAPK_slash_Raf_minus_GTP_minus_Ras"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480890">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*MAPK_slash_craf_minus_1*Ras_slash_GTP_minus_Ras-kb*MAPK_slash_Raf_minus_GTP_minus_Ras</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> MAPK_slash_craf_minus_1 </ci>
+            <ci> Ras_slash_GTP_minus_Ras </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> MAPK_slash_Raf_minus_GTP_minus_Ras </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274494" id="kf" value="7.5420478917e-13" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274495" id="kb" value="1.257e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575911" id="Ca_diff">
+    <listOfReactants>
+      <speciesReference metaid="_480902" species="Ca_input"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480914" species="Ca"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480926">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*Ca_input-kb*Ca</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> Ca_input </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> Ca </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274496" id="kf" value="2.514e-13" units="vol_secINV"/>
+        <parameter metaid="_274497" id="kb" value="2.514e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575931" id="PLA2_slash_PLA2_minus_Ca_star__slash_kenz_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        10 x raise oct22 12 x oct 24, set k2 = 4 * k3</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_480938" species="PLA2_slash_APC"/>
+      <speciesReference metaid="_480950" species="PLA2_slash_PLA2_minus_Ca_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480962" species="PLA2_slash_PLA2_minus_Ca_star__slash_kenz_slash_kenz_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_480974">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*PLA2_slash_APC*PLA2_slash_PLA2_minus_Ca_star_-k2*PLA2_slash_PLA2_minus_Ca_star__slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> PLA2_slash_APC </ci>
+            <ci> PLA2_slash_PLA2_minus_Ca_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PLA2_slash_PLA2_minus_Ca_star__slash_kenz_slash_kenz_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274498" id="k1" value="1.696972626e-13" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274499" id="k2" value="2.71512e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575951" id="PLA2_slash_PLA2_minus_Ca_star__slash_kenz_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_480986" species="PLA2_slash_PLA2_minus_Ca_star__slash_kenz_slash_kenz_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_480998" species="AA"/>
+      <speciesReference metaid="_481010" species="PLA2_slash_PLA2_minus_Ca_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481022">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PLA2_slash_PLA2_minus_Ca_star__slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PLA2_slash_PLA2_minus_Ca_star__slash_kenz_slash_kenz_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274500" id="k3" value="6.7878e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575971" id="PLA2_slash_PIP2_minus_PLA2_star__slash_kenz_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        10 X raise oct 22 12 X further raise oct 24 to allow for correct conc of enzyme</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_481034" species="PLA2_slash_APC"/>
+      <speciesReference metaid="_481046" species="PLA2_slash_PIP2_minus_PLA2_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481059" species="PLA2_slash_PIP2_minus_PLA2_star__slash_kenz_slash_kenz_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481071">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*PLA2_slash_APC*PLA2_slash_PIP2_minus_PLA2_star_-k2*PLA2_slash_PIP2_minus_PLA2_star__slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> PLA2_slash_APC </ci>
+            <ci> PLA2_slash_PIP2_minus_PLA2_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PLA2_slash_PIP2_minus_PLA2_star__slash_kenz_slash_kenz_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274501" id="k1" value="3.4693135893e-13" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274502" id="k2" value="5.550912e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_575991" id="PLA2_slash_PIP2_minus_PLA2_star__slash_kenz_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_481083" species="PLA2_slash_PIP2_minus_PLA2_star__slash_kenz_slash_kenz_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481096" species="AA"/>
+      <speciesReference metaid="_481108" species="PLA2_slash_PIP2_minus_PLA2_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481120">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PLA2_slash_PIP2_minus_PLA2_star__slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PLA2_slash_PIP2_minus_PLA2_star__slash_kenz_slash_kenz_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274503" id="k3" value="1.387728e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576011" id="PLA2_slash_PIP2_minus_Ca_minus_PLA2_star__slash_kenz_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        10 x raise oct 22 12 x and rescale for k2 = 4 * k3 convention oct 24 Increase further to get the match to expt, which was spoilt due to large accumulation of PLA2 in the enzyme complexed forms. Lets raise k3, leaving the others at k1 = 1.5e-5 and k2 = 144 since they are large already.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_481132" species="PLA2_slash_APC"/>
+      <speciesReference metaid="_481144" species="PLA2_slash_PIP2_minus_Ca_minus_PLA2_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481156" species="PLA2_slash_PIP2_minus_Ca_minus_PLA2_star__slash_kenz_slash_kenz_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481168">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*PLA2_slash_APC*PLA2_slash_PIP2_minus_Ca_minus_PLA2_star_-k2*PLA2_slash_PIP2_minus_Ca_minus_PLA2_star__slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> PLA2_slash_APC </ci>
+            <ci> PLA2_slash_PIP2_minus_Ca_minus_PLA2_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PLA2_slash_PIP2_minus_Ca_minus_PLA2_star__slash_kenz_slash_kenz_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274505" id="k1" value="1.13128348302e-12" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274507" id="k2" value="1.81008e-11" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576031" id="PLA2_slash_PIP2_minus_Ca_minus_PLA2_star__slash_kenz_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_481180" species="PLA2_slash_PIP2_minus_Ca_minus_PLA2_star__slash_kenz_slash_kenz_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481192" species="AA"/>
+      <speciesReference metaid="_481204" species="PLA2_slash_PIP2_minus_Ca_minus_PLA2_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481216">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PLA2_slash_PIP2_minus_Ca_minus_PLA2_star__slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PLA2_slash_PIP2_minus_Ca_minus_PLA2_star__slash_kenz_slash_kenz_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274508" id="k3" value="4.5252e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576051" id="PLA2_slash_DAG_minus_Ca_minus_PLA2_star__slash_kenz_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        10 X raise oct 22 12 X raise oct 24 + conversion to k2 =4 * k3</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_481229" species="PLA2_slash_APC"/>
+      <speciesReference metaid="_481241" species="PLA2_slash_DAG_minus_Ca_minus_PLA2_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481253" species="PLA2_slash_DAG_minus_Ca_minus_PLA2_star__slash_kenz_slash_kenz_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481265">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*PLA2_slash_APC*PLA2_slash_DAG_minus_Ca_minus_PLA2_star_-k2*PLA2_slash_DAG_minus_Ca_minus_PLA2_star__slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> PLA2_slash_APC </ci>
+            <ci> PLA2_slash_DAG_minus_Ca_minus_PLA2_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PLA2_slash_DAG_minus_Ca_minus_PLA2_star__slash_kenz_slash_kenz_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274510" id="k1" value="1.88553567366e-12" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274512" id="k2" value="3.0168e-11" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576071" id="PLA2_slash_DAG_minus_Ca_minus_PLA2_star__slash_kenz_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_481277" species="PLA2_slash_DAG_minus_Ca_minus_PLA2_star__slash_kenz_slash_kenz_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481289" species="AA"/>
+      <speciesReference metaid="_481301" species="PLA2_slash_DAG_minus_Ca_minus_PLA2_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481313">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PLA2_slash_DAG_minus_Ca_minus_PLA2_star__slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PLA2_slash_DAG_minus_Ca_minus_PLA2_star__slash_kenz_slash_kenz_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274513" id="k3" value="7.542e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576091" id="PLA2_slash_PLA2_star__minus_Ca_slash_kenz_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        This form should be 3 to 6 times as fast as the Ca-only form. I have scaled by 4x which seems to give a 5x rise. 10x raise Oct 22 12 x oct 24, changed k2 = 4 * k3</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_481325" species="PLA2_slash_APC"/>
+      <speciesReference metaid="_481337" species="PLA2_slash_PLA2_star__minus_Ca"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481349" species="PLA2_slash_PLA2_star__minus_Ca_slash_kenz_slash_kenz_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481361">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*PLA2_slash_APC*PLA2_slash_PLA2_star__minus_Ca-k2*PLA2_slash_PLA2_star__minus_Ca_slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> PLA2_slash_APC </ci>
+            <ci> PLA2_slash_PLA2_star__minus_Ca </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PLA2_slash_PLA2_star__minus_Ca_slash_kenz_slash_kenz_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274515" id="k1" value="3.77097654438e-12" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274517" id="k2" value="6.0336e-11" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576111" id="PLA2_slash_PLA2_star__minus_Ca_slash_kenz_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_481373" species="PLA2_slash_PLA2_star__minus_Ca_slash_kenz_slash_kenz_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481385" species="AA"/>
+      <speciesReference metaid="_481397" species="PLA2_slash_PLA2_star__minus_Ca"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481409">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PLA2_slash_PLA2_star__minus_Ca_slash_kenz_slash_kenz_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PLA2_slash_PLA2_star__minus_Ca_slash_kenz_slash_kenz_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274518" id="k3" value="1.5084e-11" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576131" id="MAPK_slash_MAPKK_star__slash_MAPKKtyr_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        The actual MAPKK is 2 forms from Seger et al JBC 267:20 14373(1992) Vmax = 150nmol/min/mg From Haystead et al FEBS 306(1):17-22 we get Km=46.6nM for at least one of the phosphs. Putting these together: k3=0.15/sec, scale to get k2=0.6. k1=0.75/46.6nM=2.7e-5</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_481421" species="MAPK_slash_MAPK"/>
+      <speciesReference metaid="_481433" species="MAPK_slash_MAPKK_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481445" species="MAPK_slash_MAPKK_star__slash_MAPKKtyr_slash_MAPKKtyr_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481457">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*MAPK_slash_MAPK*MAPK_slash_MAPKK_star_-k2*MAPK_slash_MAPKK_star__slash_MAPKKtyr_slash_MAPKKtyr_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> MAPK_slash_MAPK </ci>
+            <ci> MAPK_slash_MAPKK_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> MAPK_slash_MAPKK_star__slash_MAPKKtyr_slash_MAPKKtyr_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274520" id="k1" value="4.07263949946e-12" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274522" id="k2" value="1.5084e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576151" id="MAPK_slash_MAPKK_star__slash_MAPKKtyr_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_481469" species="MAPK_slash_MAPKK_star__slash_MAPKKtyr_slash_MAPKKtyr_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481481" species="MAPK_slash_MAPK_minus_tyr"/>
+      <speciesReference metaid="_481493" species="MAPK_slash_MAPKK_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481506">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*MAPK_slash_MAPKK_star__slash_MAPKKtyr_slash_MAPKKtyr_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> MAPK_slash_MAPKK_star__slash_MAPKKtyr_slash_MAPKKtyr_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274523" id="k3" value="3.771e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576171" id="MAPK_slash_MAPKK_star__slash_MAPKKthr_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Rate consts same as for MAPKKtyr.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_481519" species="MAPK_slash_MAPK_minus_tyr"/>
+      <speciesReference metaid="_481531" species="MAPK_slash_MAPKK_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481543" species="MAPK_slash_MAPKK_star__slash_MAPKKthr_slash_MAPKKthr_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481556">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*MAPK_slash_MAPK_minus_tyr*MAPK_slash_MAPKK_star_-k2*MAPK_slash_MAPKK_star__slash_MAPKKthr_slash_MAPKKthr_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> MAPK_slash_MAPK_minus_tyr </ci>
+            <ci> MAPK_slash_MAPKK_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> MAPK_slash_MAPKK_star__slash_MAPKKthr_slash_MAPKKthr_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274525" id="k1" value="4.07263949946e-12" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274527" id="k2" value="1.5084e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576191" id="MAPK_slash_MAPKK_star__slash_MAPKKthr_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_481568" species="MAPK_slash_MAPKK_star__slash_MAPKKthr_slash_MAPKKthr_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481580" species="MAPK_star_"/>
+      <speciesReference metaid="_481592" species="MAPK_slash_MAPKK_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481604">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*MAPK_slash_MAPKK_star__slash_MAPKKthr_slash_MAPKKthr_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> MAPK_slash_MAPKK_star__slash_MAPKKthr_slash_MAPKKthr_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274528" id="k3" value="3.771e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576211" id="MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_1_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Kinetics are the same as for the craf_1* activity, ie., k1=5.5e-6, k2=0.42, k3 = 0.105 These are basedo n Force et al PNAS USA 91 1270-1274, 1994., but k1 is scaled up 5x (ie., Km is scaled down 5x to the value used here and for craf_1* activity: Km = 0.1591).</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_481616" species="MAPK_slash_MAPKK"/>
+      <speciesReference metaid="_481628" species="MAPK_slash_Raf_minus_GTP_minus_Ras"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481640" species="MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_1_slash_Raf_minus_GTP_minus_Ras_dot_1_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481653">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*MAPK_slash_MAPKK*MAPK_slash_Raf_minus_GTP_minus_Ras-k2*MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_1_slash_Raf_minus_GTP_minus_Ras_dot_1_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> MAPK_slash_MAPKK </ci>
+            <ci> MAPK_slash_Raf_minus_GTP_minus_Ras </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_1_slash_Raf_minus_GTP_minus_Ras_dot_1_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274530" id="k1" value="1.18513155294e-12" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274532" id="k2" value="1.5084e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576231" id="MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_1_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_481665" species="MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_1_slash_Raf_minus_GTP_minus_Ras_dot_1_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481677" species="MAPK_slash_MAPKK_minus_ser"/>
+      <speciesReference metaid="_481689" species="MAPK_slash_Raf_minus_GTP_minus_Ras"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481701">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_1_slash_Raf_minus_GTP_minus_Ras_dot_1_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_1_slash_Raf_minus_GTP_minus_Ras_dot_1_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274533" id="k3" value="3.771e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576251" id="MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_2_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Kinetics are the same as for the craf_1* activity, ie., k1=5.5e-6, k2=0.42, k3 = 0.105 These are basedo n Force et al PNAS USA 91 1270-1274, 1994., but k1 is scaled up 5x (ie., Km is scaled down 5x to the value used here and for craf_1* activity: Km = 0.1591).</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_481714" species="MAPK_slash_MAPKK_minus_ser"/>
+      <speciesReference metaid="_481726" species="MAPK_slash_Raf_minus_GTP_minus_Ras"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481738" species="MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_2_slash_Raf_minus_GTP_minus_Ras_dot_2_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481750">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*MAPK_slash_MAPKK_minus_ser*MAPK_slash_Raf_minus_GTP_minus_Ras-k2*MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_2_slash_Raf_minus_GTP_minus_Ras_dot_2_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> MAPK_slash_MAPKK_minus_ser </ci>
+            <ci> MAPK_slash_Raf_minus_GTP_minus_Ras </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_2_slash_Raf_minus_GTP_minus_Ras_dot_2_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274535" id="k1" value="1.18513155294e-12" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274537" id="k2" value="1.5084e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576271" id="MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_2_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_481762" species="MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_2_slash_Raf_minus_GTP_minus_Ras_dot_2_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481774" species="MAPK_slash_MAPKK_star_"/>
+      <speciesReference metaid="_481786" species="MAPK_slash_Raf_minus_GTP_minus_Ras"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481799">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_2_slash_Raf_minus_GTP_minus_Ras_dot_2_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> MAPK_slash_Raf_minus_GTP_minus_Ras_slash_Raf_minus_GTP_minus_Ras_dot_2_slash_Raf_minus_GTP_minus_Ras_dot_2_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274538" id="k3" value="3.771e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576291" id="MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_1_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Kinetics are the same as for the craf-1* activity, ie., k1=1.1e-6, k2=.42, k3 =0.105 These are based on Force et al PNAS USA 91 1270-1274 1994. These parms cannot reach the observed 4X stim of MAPK. So lets increase the affinity, ie, raise k1 10X to 1.1e-5 Lets take it back down to where it was. Back up to 5X: 5.5e-6</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_481811" species="MAPK_slash_MAPKK"/>
+      <speciesReference metaid="_481823" species="MAPK_slash_Raf_star__minus_GTP_minus_Ras"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481835" species="MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_1_slash_Raf_star__minus_GTP_minus_Ras_dot_1_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481848">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*MAPK_slash_MAPKK*MAPK_slash_Raf_star__minus_GTP_minus_Ras-k2*MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_1_slash_Raf_star__minus_GTP_minus_Ras_dot_1_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> MAPK_slash_MAPKK </ci>
+            <ci> MAPK_slash_Raf_star__minus_GTP_minus_Ras </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_1_slash_Raf_star__minus_GTP_minus_Ras_dot_1_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274540" id="k1" value="1.18513155294e-12" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274542" id="k2" value="1.5084e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576311" id="MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_1_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_481860" species="MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_1_slash_Raf_star__minus_GTP_minus_Ras_dot_1_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481872" species="MAPK_slash_MAPKK_minus_ser"/>
+      <speciesReference metaid="_481884" species="MAPK_slash_Raf_star__minus_GTP_minus_Ras"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481896">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_1_slash_Raf_star__minus_GTP_minus_Ras_dot_1_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_1_slash_Raf_star__minus_GTP_minus_Ras_dot_1_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274543" id="k3" value="3.771e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576331" id="MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_2_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Same kinetics as other c-raf activated forms. See Force et al PNAS 91 1270-1274 1994. k1 = 1.1e-6, k2 = .42, k3 = 1.05 raise k1 to 5.5e-6</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_481908" species="MAPK_slash_MAPKK_minus_ser"/>
+      <speciesReference metaid="_481920" species="MAPK_slash_Raf_star__minus_GTP_minus_Ras"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481932" species="MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_2_slash_Raf_star__minus_GTP_minus_Ras_dot_2_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481944">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*MAPK_slash_MAPKK_minus_ser*MAPK_slash_Raf_star__minus_GTP_minus_Ras-k2*MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_2_slash_Raf_star__minus_GTP_minus_Ras_dot_2_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> MAPK_slash_MAPKK_minus_ser </ci>
+            <ci> MAPK_slash_Raf_star__minus_GTP_minus_Ras </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_2_slash_Raf_star__minus_GTP_minus_Ras_dot_2_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274545" id="k1" value="1.18513155294e-12" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274547" id="k2" value="1.5084e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576351" id="MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_2_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_481956" species="MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_2_slash_Raf_star__minus_GTP_minus_Ras_dot_2_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_481968" species="MAPK_slash_MAPKK_star_"/>
+      <speciesReference metaid="_481980" species="MAPK_slash_Raf_star__minus_GTP_minus_Ras"/>
+    </listOfProducts>
+    <kineticLaw metaid="_481993">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_2_slash_Raf_star__minus_GTP_minus_Ras_dot_2_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> MAPK_slash_Raf_star__minus_GTP_minus_Ras_slash_Raf_star__minus_GTP_minus_Ras_dot_2_slash_Raf_star__minus_GTP_minus_Ras_dot_2_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274548" id="k3" value="3.771e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576371" id="Ras_slash_inact_minus_GEF_slash_basal_GEF_activity_1">
+    <listOfReactants>
+      <speciesReference metaid="_482006" species="Ras_slash_GDP_minus_Ras"/>
+      <speciesReference metaid="_482018" species="Ras_slash_inact_minus_GEF"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482030" species="Ras_slash_inact_minus_GEF_slash_basal_GEF_activity_slash_basal_GEF_activity_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482042">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*Ras_slash_GDP_minus_Ras*Ras_slash_inact_minus_GEF-k2*Ras_slash_inact_minus_GEF_slash_basal_GEF_activity_slash_basal_GEF_activity_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> Ras_slash_GDP_minus_Ras </ci>
+            <ci> Ras_slash_inact_minus_GEF </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> Ras_slash_inact_minus_GEF_slash_basal_GEF_activity_slash_basal_GEF_activity_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274550" id="k1" value="1.24438339044e-15" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274552" id="k2" value="1.0056e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576391" id="Ras_slash_inact_minus_GEF_slash_basal_GEF_activity_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_482055" species="Ras_slash_inact_minus_GEF_slash_basal_GEF_activity_slash_basal_GEF_activity_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482067" species="Ras_slash_GTP_minus_Ras"/>
+      <speciesReference metaid="_482079" species="Ras_slash_inact_minus_GEF"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482091">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*Ras_slash_inact_minus_GEF_slash_basal_GEF_activity_slash_basal_GEF_activity_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> Ras_slash_inact_minus_GEF_slash_basal_GEF_activity_slash_basal_GEF_activity_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274553" id="k3" value="2.514e-15" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576411" id="Ras_slash_GEF_star__slash_GEF_star__minus_act_minus_ras_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Kinetics same as GEF-bg-act-ras</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_482103" species="Ras_slash_GDP_minus_Ras"/>
+      <speciesReference metaid="_482115" species="Ras_slash_GEF_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482127" species="Ras_slash_GEF_star__slash_GEF_star__minus_act_minus_ras_slash_GEF_star__minus_act_minus_ras_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482139">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*Ras_slash_GDP_minus_Ras*Ras_slash_GEF_star_-k2*Ras_slash_GEF_star__slash_GEF_star__minus_act_minus_ras_slash_GEF_star__minus_act_minus_ras_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> Ras_slash_GDP_minus_Ras </ci>
+            <ci> Ras_slash_GEF_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> Ras_slash_GEF_star__slash_GEF_star__minus_act_minus_ras_slash_GEF_star__minus_act_minus_ras_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274555" id="k1" value="2.48886158382e-14" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274557" id="k2" value="1.0056e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576431" id="Ras_slash_GEF_star__slash_GEF_star__minus_act_minus_ras_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_482151" species="Ras_slash_GEF_star__slash_GEF_star__minus_act_minus_ras_slash_GEF_star__minus_act_minus_ras_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482163" species="Ras_slash_GTP_minus_Ras"/>
+      <speciesReference metaid="_482175" species="Ras_slash_GEF_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482187">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*Ras_slash_GEF_star__slash_GEF_star__minus_act_minus_ras_slash_GEF_star__minus_act_minus_ras_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> Ras_slash_GEF_star__slash_GEF_star__minus_act_minus_ras_slash_GEF_star__minus_act_minus_ras_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274558" id="k3" value="2.514e-15" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576451" id="Ras_slash_GAP_slash_GAP_minus_inact_minus_ras_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        From Eccleston et al JBC 268(36)pp27012-19 get Kd &lt; 2uM, kcat - 10/sec From Martin et al Cell 63 843-849 1990 get Kd ~ 250 nM, kcat = 20/min I will go with the Eccleston figures as there are good error bars (10%). In general the values are reasonably close. k1 = 1.666e-3/sec, k2 = 1000/sec, k3 = 10/sec (note k3 is rate-limiting) 5 Nov 2002: Changed ratio term to 4 from 100. Now we have k1=8.25e-5; k2=40, k3=10. k3 is still rate-limiting.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_482199" species="Ras_slash_GTP_minus_Ras"/>
+      <speciesReference metaid="_482211" species="Ras_slash_GAP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482223" species="Ras_slash_GAP_slash_GAP_minus_inact_minus_ras_slash_GAP_minus_inact_minus_ras_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482235">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*Ras_slash_GTP_minus_Ras*Ras_slash_GAP-k2*Ras_slash_GAP_slash_GAP_minus_inact_minus_ras_slash_GAP_minus_inact_minus_ras_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> Ras_slash_GTP_minus_Ras </ci>
+            <ci> Ras_slash_GAP </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> Ras_slash_GAP_slash_GAP_minus_inact_minus_ras_slash_GAP_minus_inact_minus_ras_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274560" id="k1" value="6.22030530222e-12" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274562" id="k2" value="5.028e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576471" id="Ras_slash_GAP_slash_GAP_minus_inact_minus_ras_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_482247" species="Ras_slash_GAP_slash_GAP_minus_inact_minus_ras_slash_GAP_minus_inact_minus_ras_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482259" species="Ras_slash_GDP_minus_Ras"/>
+      <speciesReference metaid="_482271" species="Ras_slash_GAP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482283">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*Ras_slash_GAP_slash_GAP_minus_inact_minus_ras_slash_GAP_minus_inact_minus_ras_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> Ras_slash_GAP_slash_GAP_minus_inact_minus_ras_slash_GAP_minus_inact_minus_ras_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274563" id="k3" value="1.257e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576491" id="Ras_slash_CaM_minus_GEF_slash_CaM_minus_GEF_minus_act_minus_ras_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Kinetics same as GEF-bg_act-ras</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_482295" species="Ras_slash_GDP_minus_Ras"/>
+      <speciesReference metaid="_482307" species="Ras_slash_CaM_minus_GEF"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482319" species="Ras_slash_CaM_minus_GEF_slash_CaM_minus_GEF_minus_act_minus_ras_slash_CaM_minus_GEF_minus_act_minus_ras_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482331">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*Ras_slash_GDP_minus_Ras*Ras_slash_CaM_minus_GEF-k2*Ras_slash_CaM_minus_GEF_slash_CaM_minus_GEF_minus_act_minus_ras_slash_CaM_minus_GEF_minus_act_minus_ras_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> Ras_slash_GDP_minus_Ras </ci>
+            <ci> Ras_slash_CaM_minus_GEF </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> Ras_slash_CaM_minus_GEF_slash_CaM_minus_GEF_minus_act_minus_ras_slash_CaM_minus_GEF_minus_act_minus_ras_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274565" id="k1" value="1.24447819338e-13" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274567" id="k2" value="5.028e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576511" id="Ras_slash_CaM_minus_GEF_slash_CaM_minus_GEF_minus_act_minus_ras_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_482343" species="Ras_slash_CaM_minus_GEF_slash_CaM_minus_GEF_minus_act_minus_ras_slash_CaM_minus_GEF_minus_act_minus_ras_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482355" species="Ras_slash_GTP_minus_Ras"/>
+      <speciesReference metaid="_482367" species="Ras_slash_CaM_minus_GEF"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482379">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*Ras_slash_CaM_minus_GEF_slash_CaM_minus_GEF_minus_act_minus_ras_slash_CaM_minus_GEF_minus_act_minus_ras_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> Ras_slash_CaM_minus_GEF_slash_CaM_minus_GEF_minus_act_minus_ras_slash_CaM_minus_GEF_minus_act_minus_ras_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274568" id="k3" value="1.257e-14" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576531" id="PKC_minus_active_slash_PKC_minus_act_minus_raf_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Rate consts from Chen et al Biochem 32, 1032 (1993) k3 = k2 = 4 k1 = 9e-5 recalculated gives 1.666e-5, which is not very different. Looks like k3 is rate-limiting in this case: there is a huge amount of craf locked up in the enz complex. Let us assume a 10x higher Km, ie, lower affinity. k1 drops by 10x. Also changed k2 to 4x k3. Lowerd k1 to 1e-6 to balance 10X DAG sensitivity of PKC</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_482391" species="MAPK_slash_craf_minus_1"/>
+      <speciesReference metaid="_482403" species="PKC_minus_active"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482415" species="PKC_minus_active_slash_PKC_minus_act_minus_raf_slash_PKC_minus_act_minus_raf_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482427">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*MAPK_slash_craf_minus_1*PKC_minus_active-k2*PKC_minus_active_slash_PKC_minus_act_minus_raf_slash_PKC_minus_act_minus_raf_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> MAPK_slash_craf_minus_1 </ci>
+            <ci> PKC_minus_active </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PKC_minus_active_slash_PKC_minus_act_minus_raf_slash_PKC_minus_act_minus_raf_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274570" id="k1" value="3.77097654438e-14" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274572" id="k2" value="2.0112e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576551" id="PKC_minus_active_slash_PKC_minus_act_minus_raf_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_482439" species="PKC_minus_active_slash_PKC_minus_act_minus_raf_slash_PKC_minus_act_minus_raf_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482451" species="MAPK_slash_craf_minus_1_star_"/>
+      <speciesReference metaid="_482463" species="PKC_minus_active"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482475">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PKC_minus_active_slash_PKC_minus_act_minus_raf_slash_PKC_minus_act_minus_raf_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PKC_minus_active_slash_PKC_minus_act_minus_raf_slash_PKC_minus_act_minus_raf_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274573" id="k3" value="5.028e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576571" id="PKC_minus_active_slash_PKC_minus_inact_minus_GAP_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Rate consts copied from PCK-act-raf This reaction inactivates GAP. The idea is from the Boguski and McCormick review.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_482487" species="Ras_slash_GAP"/>
+      <speciesReference metaid="_482500" species="PKC_minus_active"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482512" species="PKC_minus_active_slash_PKC_minus_inact_minus_GAP_slash_PKC_minus_inact_minus_GAP_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482524">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*Ras_slash_GAP*PKC_minus_active-k2*PKC_minus_active_slash_PKC_minus_inact_minus_GAP_slash_PKC_minus_inact_minus_GAP_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> Ras_slash_GAP </ci>
+            <ci> PKC_minus_active </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PKC_minus_active_slash_PKC_minus_inact_minus_GAP_slash_PKC_minus_inact_minus_GAP_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274575" id="k1" value="7.5420478917e-13" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274577" id="k2" value="2.0112e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576591" id="PKC_minus_active_slash_PKC_minus_inact_minus_GAP_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_482536" species="PKC_minus_active_slash_PKC_minus_inact_minus_GAP_slash_PKC_minus_inact_minus_GAP_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482548" species="Ras_slash_GAP_star_"/>
+      <speciesReference metaid="_482560" species="PKC_minus_active"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482572">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PKC_minus_active_slash_PKC_minus_inact_minus_GAP_slash_PKC_minus_inact_minus_GAP_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PKC_minus_active_slash_PKC_minus_inact_minus_GAP_slash_PKC_minus_inact_minus_GAP_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274578" id="k3" value="5.028e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576611" id="PKC_minus_active_slash_PKC_minus_act_minus_GEF_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Rate consts from PKC-act-raf. This reaction activates GEF. It can lead to at least 2X stim of ras, and a 2X stim of MAPK over and above that obtained via direct phosph of c-raf. Note that it is a push-pull reaction, and there is also a contribution through the phosphorylation and inactivation of GAPs. The original PKC-act-raf rate consts are too fast. We lower K1 by 10 X</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_482584" species="Ras_slash_inact_minus_GEF"/>
+      <speciesReference metaid="_482597" species="PKC_minus_active"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482609" species="PKC_minus_active_slash_PKC_minus_act_minus_GEF_slash_PKC_minus_act_minus_GEF_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482621">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*Ras_slash_inact_minus_GEF*PKC_minus_active-k2*PKC_minus_active_slash_PKC_minus_act_minus_GEF_slash_PKC_minus_act_minus_GEF_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> Ras_slash_inact_minus_GEF </ci>
+            <ci> PKC_minus_active </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PKC_minus_active_slash_PKC_minus_act_minus_GEF_slash_PKC_minus_act_minus_GEF_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274580" id="k1" value="7.5420478917e-13" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274582" id="k2" value="2.0112e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576631" id="PKC_minus_active_slash_PKC_minus_act_minus_GEF_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_482633" species="PKC_minus_active_slash_PKC_minus_act_minus_GEF_slash_PKC_minus_act_minus_GEF_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482646" species="Ras_slash_GEF_star_"/>
+      <speciesReference metaid="_482658" species="PKC_minus_active"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482670">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PKC_minus_active_slash_PKC_minus_act_minus_GEF_slash_PKC_minus_act_minus_GEF_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PKC_minus_active_slash_PKC_minus_act_minus_GEF_slash_PKC_minus_act_minus_GEF_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274583" id="k3" value="5.028e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576651" id="MAPK_star__slash_MAPK_star__1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Km = 25uM @ 50 uM ATP and 1mg/ml MBP (huge XS of substrate) Vmax = 4124 pmol/min/ml at a conc of 125 pmol/ml of enz, so: k3 = .5/sec (rate limiting) k1 = (k2 + k3)/Km = (.5 + 0)/(25*6e5) = 2e-8 (#/cell)^-1 #s from Sanghera et al JBC 265 pp 52 , 1990. From Nemenoff et al JBC 268(3):1960-1964 - using Sanghera\&apos;s 1e-4 ratio of MAPK to protein, we get k3 = 7/sec from 1000 pmol/min/mg fig 5</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_482682" species="PLA2_slash_PLA2_minus_cytosolic"/>
+      <speciesReference metaid="_482694" species="MAPK_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482706" species="MAPK_star__slash_MAPK_star__slash_MAPK_star__cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482718">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*PLA2_slash_PLA2_minus_cytosolic*MAPK_star_-k2*MAPK_star__slash_MAPK_star__slash_MAPK_star__cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> PLA2_slash_PLA2_minus_cytosolic </ci>
+            <ci> MAPK_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> MAPK_star__slash_MAPK_star__slash_MAPK_star__cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274585" id="k1" value="2.45122481664e-13" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274587" id="k2" value="5.028e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576671" id="MAPK_star__slash_MAPK_star__2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_482730" species="MAPK_star__slash_MAPK_star__slash_MAPK_star__cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482742" species="PLA2_slash_PLA2_star_"/>
+      <speciesReference metaid="_482754" species="MAPK_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482766">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*MAPK_star__slash_MAPK_star__slash_MAPK_star__cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> MAPK_star__slash_MAPK_star__slash_MAPK_star__cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274588" id="k3" value="1.257e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576691" id="MAPK_star__slash_MAPK_star__minus_feedback_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Ueki et al JBC 269(22):15756-15761 show the presence of this step, but not the rate consts, which are derived from Sanghera et al JBC 265(1):52-57, 1990, see the deriv in the MAPK* notes.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_482778" species="MAPK_slash_craf_minus_1_star_"/>
+      <speciesReference metaid="_482790" species="MAPK_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482802" species="MAPK_star__slash_MAPK_star__minus_feedback_slash_MAPK_star__minus_feedback_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482814">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*MAPK_slash_craf_minus_1_star_*MAPK_star_-k2*MAPK_star__slash_MAPK_star__minus_feedback_slash_MAPK_star__minus_feedback_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> MAPK_slash_craf_minus_1_star_ </ci>
+            <ci> MAPK_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> MAPK_star__slash_MAPK_star__minus_feedback_slash_MAPK_star__minus_feedback_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274590" id="k1" value="2.45122481664e-13" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274592" id="k2" value="5.028e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576711" id="MAPK_star__slash_MAPK_star__minus_feedback_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_482826" species="MAPK_star__slash_MAPK_star__minus_feedback_slash_MAPK_star__minus_feedback_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482838" species="MAPK_slash_craf_minus_1_star__star_"/>
+      <speciesReference metaid="_482850" species="MAPK_star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482862">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*MAPK_star__slash_MAPK_star__minus_feedback_slash_MAPK_star__minus_feedback_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> MAPK_star__slash_MAPK_star__minus_feedback_slash_MAPK_star__minus_feedback_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274593" id="k3" value="1.257e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576731" id="MKP_minus_1_slash_MKP1_minus_tyr_minus_deph_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        The original kinetics have been modified to obey the k2 = 4 * k3 rule, while keeping kcat and Km fixed. As noted in the NOTES, the only constraining data point is the time course of MAPK dephosphorylation, which this model satisfies. It would be nice to have more accurate estimates of rate consts and MKP-1 levels from the literature. Effective Km : 67 nM kcat = 1.43 umol/min/mg</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_482874" species="MAPK_slash_MAPK_minus_tyr"/>
+      <speciesReference metaid="_482886" species="MKP_minus_1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482898" species="MKP_minus_1_slash_MKP1_minus_tyr_minus_deph_slash_MKP1_minus_tyr_minus_deph_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482910">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*MAPK_slash_MAPK_minus_tyr*MKP_minus_1-k2*MKP_minus_1_slash_MKP1_minus_tyr_minus_deph_slash_MKP1_minus_tyr_minus_deph_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> MAPK_slash_MAPK_minus_tyr </ci>
+            <ci> MKP_minus_1 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> MKP_minus_1_slash_MKP1_minus_tyr_minus_deph_slash_MKP1_minus_tyr_minus_deph_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274595" id="k1" value="1.88553567366e-11" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274597" id="k2" value="2.0112e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576751" id="MKP_minus_1_slash_MKP1_minus_tyr_minus_deph_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_482922" species="MKP_minus_1_slash_MKP1_minus_tyr_minus_deph_slash_MKP1_minus_tyr_minus_deph_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482934" species="MAPK_slash_MAPK"/>
+      <speciesReference metaid="_482946" species="MKP_minus_1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_482958">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*MKP_minus_1_slash_MKP1_minus_tyr_minus_deph_slash_MKP1_minus_tyr_minus_deph_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> MKP_minus_1_slash_MKP1_minus_tyr_minus_deph_slash_MKP1_minus_tyr_minus_deph_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274598" id="k3" value="5.028e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576771" id="MKP_minus_1_slash_MKP1_minus_thr_minus_deph_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        See MKP1-tyr-deph</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_482970" species="MAPK_star_"/>
+      <speciesReference metaid="_482982" species="MKP_minus_1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_482994" species="MKP_minus_1_slash_MKP1_minus_thr_minus_deph_slash_MKP1_minus_thr_minus_deph_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_483006">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*MAPK_star_*MKP_minus_1-k2*MKP_minus_1_slash_MKP1_minus_thr_minus_deph_slash_MKP1_minus_thr_minus_deph_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> MAPK_star_ </ci>
+            <ci> MKP_minus_1 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> MKP_minus_1_slash_MKP1_minus_thr_minus_deph_slash_MKP1_minus_thr_minus_deph_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274600" id="k1" value="1.88553567366e-11" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274602" id="k2" value="2.0112e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576791" id="MKP_minus_1_slash_MKP1_minus_thr_minus_deph_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_483018" species="MKP_minus_1_slash_MKP1_minus_thr_minus_deph_slash_MKP1_minus_thr_minus_deph_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_483030" species="MAPK_slash_MAPK_minus_tyr"/>
+      <speciesReference metaid="_483042" species="MKP_minus_1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_483055">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*MKP_minus_1_slash_MKP1_minus_thr_minus_deph_slash_MKP1_minus_thr_minus_deph_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> MKP_minus_1_slash_MKP1_minus_thr_minus_deph_slash_MKP1_minus_thr_minus_deph_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274603" id="k3" value="5.028e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576811" id="PPhosphatase2A_slash_craf_minus_deph_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        See parent PPhosphatase2A for parms</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_483068" species="MAPK_slash_craf_minus_1_star_"/>
+      <speciesReference metaid="_483080" species="PPhosphatase2A"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_483092" species="PPhosphatase2A_slash_craf_minus_deph_slash_craf_minus_deph_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_483104">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*MAPK_slash_craf_minus_1_star_*PPhosphatase2A-k2*PPhosphatase2A_slash_craf_minus_deph_slash_craf_minus_deph_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> MAPK_slash_craf_minus_1_star_ </ci>
+            <ci> PPhosphatase2A </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PPhosphatase2A_slash_craf_minus_deph_slash_craf_minus_deph_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274605" id="k1" value="2.40856349364e-13" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274607" id="k2" value="3.0168e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576831" id="PPhosphatase2A_slash_craf_minus_deph_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_483116" species="PPhosphatase2A_slash_craf_minus_deph_slash_craf_minus_deph_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_483128" species="MAPK_slash_craf_minus_1"/>
+      <speciesReference metaid="_483140" species="PPhosphatase2A"/>
+    </listOfProducts>
+    <kineticLaw metaid="_483152">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PPhosphatase2A_slash_craf_minus_deph_slash_craf_minus_deph_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PPhosphatase2A_slash_craf_minus_deph_slash_craf_minus_deph_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274608" id="k3" value="7.542e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576851" id="PPhosphatase2A_slash_MAPKK_minus_deph_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        See: Kyriakis et al Nature 358 pp 417-421 1992 Ahn et al Curr Op Cell Biol 4:992-999 1992 for this pathway. See parent PPhosphatase2A for parms.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_483164" species="MAPK_slash_MAPKK_star_"/>
+      <speciesReference metaid="_483176" species="PPhosphatase2A"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_483188" species="PPhosphatase2A_slash_MAPKK_minus_deph_slash_MAPKK_minus_deph_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_483200">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*MAPK_slash_MAPKK_star_*PPhosphatase2A-k2*PPhosphatase2A_slash_MAPKK_minus_deph_slash_MAPKK_minus_deph_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> MAPK_slash_MAPKK_star_ </ci>
+            <ci> PPhosphatase2A </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PPhosphatase2A_slash_MAPKK_minus_deph_slash_MAPKK_minus_deph_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274610" id="k1" value="2.40856349364e-13" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274612" id="k2" value="3.0168e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576871" id="PPhosphatase2A_slash_MAPKK_minus_deph_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_483213" species="PPhosphatase2A_slash_MAPKK_minus_deph_slash_MAPKK_minus_deph_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_483225" species="MAPK_slash_MAPKK_minus_ser"/>
+      <speciesReference metaid="_483237" species="PPhosphatase2A"/>
+    </listOfProducts>
+    <kineticLaw metaid="_483249">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PPhosphatase2A_slash_MAPKK_minus_deph_slash_MAPKK_minus_deph_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PPhosphatase2A_slash_MAPKK_minus_deph_slash_MAPKK_minus_deph_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274613" id="k3" value="7.542e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576891" id="PPhosphatase2A_slash_MAPKK_minus_deph_minus_ser_1">
+    <listOfReactants>
+      <speciesReference metaid="_483261" species="MAPK_slash_MAPKK_minus_ser"/>
+      <speciesReference metaid="_483273" species="PPhosphatase2A"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_483285" species="PPhosphatase2A_slash_MAPKK_minus_deph_minus_ser_slash_MAPKK_minus_deph_minus_ser_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_483297">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*MAPK_slash_MAPKK_minus_ser*PPhosphatase2A-k2*PPhosphatase2A_slash_MAPKK_minus_deph_minus_ser_slash_MAPKK_minus_deph_minus_ser_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> MAPK_slash_MAPKK_minus_ser </ci>
+            <ci> PPhosphatase2A </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PPhosphatase2A_slash_MAPKK_minus_deph_minus_ser_slash_MAPKK_minus_deph_minus_ser_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274615" id="k1" value="2.40856349364e-13" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274617" id="k2" value="3.0168e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576911" id="PPhosphatase2A_slash_MAPKK_minus_deph_minus_ser_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_483309" species="PPhosphatase2A_slash_MAPKK_minus_deph_minus_ser_slash_MAPKK_minus_deph_minus_ser_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_483321" species="MAPK_slash_MAPKK"/>
+      <speciesReference metaid="_483333" species="PPhosphatase2A"/>
+    </listOfProducts>
+    <kineticLaw metaid="_483345">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PPhosphatase2A_slash_MAPKK_minus_deph_minus_ser_slash_MAPKK_minus_deph_minus_ser_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PPhosphatase2A_slash_MAPKK_minus_deph_minus_ser_slash_MAPKK_minus_deph_minus_ser_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274618" id="k3" value="7.542e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576931" id="PPhosphatase2A_slash_craf_star__star__minus_deph_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Ueki et al JBC 269(22) pp 15756-15761 1994 show hyperphosphorylation of craf, so this is there to dephosphorylate it. Identity of phosphatase is not known to me, but it may be PP2A like the rest, so I have made it so.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_483357" species="MAPK_slash_craf_minus_1_star__star_"/>
+      <speciesReference metaid="_483369" species="PPhosphatase2A"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_483382" species="PPhosphatase2A_slash_craf_star__star__minus_deph_slash_craf_star__star__minus_deph_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_483394">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*MAPK_slash_craf_minus_1_star__star_*PPhosphatase2A-k2*PPhosphatase2A_slash_craf_star__star__minus_deph_slash_craf_star__star__minus_deph_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> MAPK_slash_craf_minus_1_star__star_ </ci>
+            <ci> PPhosphatase2A </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PPhosphatase2A_slash_craf_star__star__minus_deph_slash_craf_star__star__minus_deph_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274620" id="k1" value="2.40856349364e-13" units="vol_uMINVsecINV"/>
+        <parameter metaid="_274625" id="k2" value="3.0168e-12" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_576951" id="PPhosphatase2A_slash_craf_star__star__minus_deph_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_483406" species="PPhosphatase2A_slash_craf_star__star__minus_deph_slash_craf_star__star__minus_deph_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_483418" species="MAPK_slash_craf_minus_1_star_"/>
+      <speciesReference metaid="_483430" species="PPhosphatase2A"/>
+    </listOfProducts>
+    <kineticLaw metaid="_483442">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PPhosphatase2A_slash_craf_star__star__minus_deph_slash_craf_star__star__minus_deph_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PPhosphatase2A_slash_craf_star__star__minus_deph_slash_craf_star__star__minus_deph_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_274627" id="k3" value="7.542e-13" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+</model>
+</sbml>

@@ -1,0 +1,1565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" metaid="_825915" level="2" version="4">
+  <model metaid="_760914" id="Nijhout2006_Folate_Metab" name="Nijhout2006_Hepatic_Folate_Metab">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This is the model described in the article:      <br/>
+        <strong>In silico experimentation with a model of hepatic mitochondrial folate metabolism.</strong>
+        <br/>
+          H. Frederik Nijhout, Michael C Reed, Shi-Ling Lam, Barry Shane, Jesse F Gregory and Cornelia M Ulrich,      <em>Theor Biol Med Model</em>
+          2006,3:40; PubmedID:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/17150100">17150100</a>
+          ; DOI:      <a href="http://dx.doi.org/10.1186/1742-4682-3-40">10.1186/1742-4682-3-40</a>
+          ;      <br/>
+          Abstract:      <br/>
+          BACKGROUND: In eukaryotes, folate metabolism is compartmentalized and occurs in both the cytosol and the mitochondria. The function of this compartmentalization and the great changes that occur in the mitochondrial compartment during embryonic development and in rapidly growing cancer cells are gradually becoming understood, though many aspects remain puzzling and controversial.      <br/>
+          APPROACH: We explore the properties of cytosolic and mitochondrial folate metabolism by experimenting with a mathematical model of hepatic one-carbon metabolism. The model is based on known biochemical properties of mitochondrial and cytosolic enzymes. We use the model to study questions about the relative roles of the cytosolic and mitochondrial folate cycles posed in the experimental literature. We investigate: the control of the direction of the mitochondrial and cytosolic serine hydroxymethyltransferase (SHMT) reactions, the role of the mitochondrial bifunctional enzyme, the role of the glycine cleavage system, the effects of variations in serine and glycine inputs, and the effects of methionine and protein loading.      <br/>
+          CONCLUSION: The model reproduces many experimental findings and gives new insights into the underlying properties of mitochondrial folate metabolism. Particularly interesting is the remarkable stability of formate production in the mitochondria in the face of large changes in serine and glycine input. The model shows that in the presence of the bifunctional enzyme (as in embryonic tissues and cancer cells), the mitochondria primarily support cytosolic purine and pyrimidine synthesis via the export of formate, while in adult tissues the mitochondria produce serine for gluconeogenesis.      </p>
+      <p>This model does not reproduce the results in the article completely, but most steady state concentrations are in a range of 10% around the published values. Also parameterscans give nearly identical results as shown in the article.</p>
+      <p>In the SBML version model the volumes of the mitochondrion, the cytoplasm and the cell were all set to one to obtain the same equations as described in the supplemental materials of the article. The total folate is equally split between the cytosol and the mitochondrion and divided by 3/4 for the cytosol and 1/4 for the mitochondrion, respectively. To obtain an SBML model in which the volumes of the compartments,      <em>cytosol</em>
+          and      <em>mito</em>
+          , are used, the model needs to be altered as follows:      <br/>
+          for the initial distribution of folate the terms 3/4 and 1/4 have to be replaced by volumes of cytosol and mitochondria respectively      <br/>
+          in the transport reactions between mitochondrion and cytosol the stoichiometry of the mitochondrial reactants has to be set from 3 to 1 and in the first part of the according rate laws the factor      <em>mito/3</em>
+          should simply be replaced with      <em>mito</em>
+          .      <br/>
+          the stoichiometries of      <em>src</em>
+          and      <em>dmg</em>
+          have to be changed to      <em>cell/mito</em>
+          for mitchondrial and      <em>cell/cytosol</em>
+          for cytosolic reactions involving these two species.      <br/>
+          While the concentrations stay the same after these alteration, the reaction fluxes change by a factor of      <em>cytosol</em>
+          and      <em>mito</em>
+          for cytosolic and mitchondrial reactions, respectively.      </p>
+    <p>Originally created by libAntimony v1.3 (using libSBML 3.4.1)</p>
+    <p>This model originates from BioModels Database: A Database of Annotated Published Models (http://www.ebi.ac.uk/biomodels/). It is copyright (c) 2005-2011 The BioModels.net Team.      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+  <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not..      <br/>
+  <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+</p>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#_760914">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1007200000"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/pubmed/17150100"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://www.geneontology.org/GO:0046655"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfFunctionDefinitions>
+  <functionDefinition metaid="_761078" id="MM">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar>
+          <ci> Vmax </ci>
+        </bvar>
+        <bvar>
+          <ci> Km </ci>
+        </bvar>
+        <bvar>
+          <ci> S </ci>
+        </bvar>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> Vmax </ci>
+            <ci> S </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> Km </ci>
+            <ci> S </ci>
+          </apply>
+        </apply>
+      </lambda>
+    </math>
+  </functionDefinition>
+  <functionDefinition metaid="_761081" id="MM_twosubst">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar>
+          <ci> Vmax </ci>
+        </bvar>
+        <bvar>
+          <ci> Km1 </ci>
+        </bvar>
+        <bvar>
+          <ci> Km2 </ci>
+        </bvar>
+        <bvar>
+          <ci> S1 </ci>
+        </bvar>
+        <bvar>
+          <ci> S2 </ci>
+        </bvar>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> Vmax </ci>
+            <ci> S1 </ci>
+            <ci> S2 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <ci> Km1 </ci>
+              <ci> S1 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Km2 </ci>
+              <ci> S2 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </lambda>
+    </math>
+  </functionDefinition>
+</listOfFunctionDefinitions><listOfUnitDefinitions>
+  <unitDefinition metaid="_825927" id="substance" name="micromole">
+    <listOfUnits>
+      <unit metaid="_825939" kind="mole" scale="-6"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_825951" id="uM" name="uM">
+    <listOfUnits>
+      <unit metaid="_825963" kind="mole" scale="-6"/>
+      <unit metaid="_825975" kind="litre" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_825987" id="uM_per_h" name="uM/h">
+    <listOfUnits>
+      <unit metaid="_825999" kind="mole" scale="-6"/>
+      <unit metaid="_826011" kind="litre" exponent="-1"/>
+      <unit metaid="_826023" kind="second" exponent="-1" multiplier="3600"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_826035" id="per_h" name="1/h">
+    <listOfUnits>
+      <unit metaid="_826047" kind="second" exponent="-1" multiplier="3600"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_826059" id="per_uM_per_h" name="1/(uM*h)">
+    <listOfUnits>
+      <unit metaid="_826071" kind="mole" exponent="-1" scale="-6"/>
+      <unit metaid="_826083" kind="litre"/>
+      <unit metaid="_826095" kind="second" exponent="-1" multiplier="3600"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_826108" id="per_uM" name="1/uM">
+    <listOfUnits>
+      <unit metaid="_826120" kind="mole" exponent="-1" scale="-6"/>
+      <unit metaid="_826132" kind="litre"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_826144" id="time" name="hours">
+    <listOfUnits>
+      <unit metaid="_826157" kind="second" multiplier="3600"/>
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions><listOfCompartments>
+  <compartment metaid="_760916" id="blood" name="blood" size="1"/>
+  <compartment metaid="_760917" id="cytosol" name="cytosol" size="1"/>
+  <compartment metaid="_760920" id="mito" name="mitochondrion" size="1"/>
+  <compartment metaid="_760921" id="cell" name="whole cell" size="1"/>
+</listOfCompartments><listOfSpecies>
+  <species metaid="_760922" id="b_met" compartment="blood" initialConcentration="30" boundaryCondition="true"/>
+  <species metaid="_760923" id="b_gly" compartment="blood" initialConcentration="300" boundaryCondition="true"/>
+  <species metaid="_760927" id="b_ser" compartment="blood" initialConcentration="150" boundaryCondition="true"/>
+  <species metaid="_760928" id="GAR" compartment="cytosol" initialConcentration="10" boundaryCondition="true"/>
+  <species metaid="_760929" id="NADPH" compartment="cytosol" initialConcentration="50" boundaryCondition="true"/>
+  <species metaid="_760930" id="BET" name="Betaine" compartment="cytosol" initialConcentration="50" boundaryCondition="true"/>
+  <species metaid="_760931" id="DUMP" name="dUMP" compartment="cytosol" initialConcentration="20" boundaryCondition="true"/>
+  <species metaid="_760934" id="Fol" name="Folate" compartment="cell" initialConcentration="20" boundaryCondition="true"/>
+  <species metaid="_760935" id="CO" name="CO2" compartment="mito" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="_760938" id="HCHO" name="Formaldehyde" compartment="cell" initialConcentration="500" boundaryCondition="true"/>
+  <species metaid="_760939" id="c_thf" compartment="cytosol"/>
+  <species metaid="_760942" id="m_thf" compartment="mito"/>
+  <species metaid="_760943" id="c_5mf" name="c_5-methyl-THF" compartment="cytosol" initialConcentration="0"/>
+  <species metaid="_760946" id="c_2cf" name="c_5-10-methylene-THF" compartment="cytosol" initialConcentration="0"/>
+  <species metaid="_760947" id="c_1cf" name="c_5-10-methenyl-THF" compartment="cytosol" initialConcentration="0"/>
+  <species metaid="_760950" id="c_10f" name="c_10-formyl-THF" compartment="cytosol" initialConcentration="0"/>
+  <species metaid="_760951" id="dhf" compartment="cytosol" initialConcentration="0"/>
+  <species metaid="_760954" id="m_2cf" name="m_5-10-methylene-THF" compartment="mito" initialConcentration="0"/>
+  <species metaid="_760955" id="m_1cf" name="m_5-10-methenyl-THF" compartment="mito" initialConcentration="0"/>
+  <species metaid="_760958" id="m_10f" name="m_10-formyl-THF" compartment="mito" initialConcentration="0"/>
+  <species metaid="_760959" id="aic" name="AICAR" compartment="cytosol" initialConcentration="0"/>
+  <species metaid="_760962" id="c_gly" name="c_Glycine" compartment="cytosol" initialConcentration="0"/>
+  <species metaid="_760963" id="hcy" name="Homocysteine" compartment="cytosol" initialConcentration="0"/>
+  <species metaid="_760966" id="c_ser" compartment="cytosol" initialConcentration="0"/>
+  <species metaid="_760967" id="sah" name="S-adenosylhomocysteine" compartment="cytosol" initialConcentration="0"/>
+  <species metaid="_760970" id="sam" name="S-adenosylmethionine" compartment="cytosol" initialConcentration="0"/>
+  <species metaid="_760971" id="met" name="methionine" compartment="cytosol" initialConcentration="0"/>
+  <species metaid="_760974" id="c_coo" name="c_formate" compartment="cytosol" initialConcentration="0"/>
+  <species metaid="_760975" id="m_ser" name="m_Serine" compartment="mito" initialConcentration="0"/>
+  <species metaid="_760978" id="m_gly" name="mit_Glycine" compartment="mito" initialConcentration="0"/>
+  <species metaid="_760979" id="m_coo" name="m_formate" compartment="mito" initialConcentration="0"/>
+  <species metaid="_760982" id="src" name="Sarcosine" compartment="cell" initialConcentration="0"/>
+  <species metaid="_760983" id="dmg" name="Dimethylglycine" compartment="cell" initialConcentration="0"/>
+</listOfSpecies><listOfParameters>
+  <parameter metaid="_761082" id="tot_cfol" constant="false"/>
+  <parameter metaid="_761083" id="tot_mfol" constant="false"/>
+  <parameter metaid="_761084" id="c_cys" value="0"/>
+  <parameter metaid="_761087" id="c_gsg" value="0"/>
+  <parameter metaid="_761088" id="e" value="2.71828"/>
+  <parameter metaid="_761091" id="V_bglyc" value="2000"/>
+  <parameter metaid="_761092" id="K_bglyc" value="150"/>
+  <parameter metaid="_761095" id="k_out_gly" value="1"/>
+  <parameter metaid="_761096" id="V_bserc" value="2700"/>
+  <parameter metaid="_761099" id="K_bserc" value="150"/>
+  <parameter metaid="_761100" id="k_out_ser" value="1"/>
+  <parameter metaid="_761104" id="V_bmetc" value="910"/>
+  <parameter metaid="_761105" id="K_bmetc" value="150"/>
+  <parameter metaid="_761108" id="k_out_met" value="1"/>
+  <parameter metaid="_761109" id="Vm_mFTD" value="1050"/>
+  <parameter metaid="_761112" id="K_10f_FTD" value="20"/>
+  <parameter metaid="_761113" id="Vf_mSHMT" value="11440"/>
+  <parameter metaid="_761116" id="K_thf_SHMT" value="50"/>
+  <parameter metaid="_761117" id="K_ser_SHMT" value="600"/>
+  <parameter metaid="_761120" id="Vr_mSHMT" value="30000000"/>
+  <parameter metaid="_761121" id="K_gly_SHMT" value="10000"/>
+  <parameter metaid="_761124" id="K_2cf_SHMT" value="3200"/>
+  <parameter metaid="_761125" id="Vf_mFTS" value="2000"/>
+  <parameter metaid="_761128" id="K_thf_mFTS" value="3"/>
+  <parameter metaid="_761129" id="K_coo_mFTS" value="43"/>
+  <parameter metaid="_761132" id="Vr_mFTS" value="6300"/>
+  <parameter metaid="_761133" id="K_10f_mFTS" value="22"/>
+  <parameter metaid="_761136" id="k1_mNE" value="0.03"/>
+  <parameter metaid="_761137" id="k2_mNE" value="20"/>
+  <parameter metaid="_761140" id="Vm_GDC" value="15000"/>
+  <parameter metaid="_761141" id="K_thf_GDC" value="50"/>
+  <parameter metaid="_761144" id="K_gly_GDC" value="3400"/>
+  <parameter metaid="_761145" id="Vm_SDH" value="15000"/>
+  <parameter metaid="_761148" id="K_thf_SDH" value="50"/>
+  <parameter metaid="_761149" id="K_src_SDH" value="320"/>
+  <parameter metaid="_761152" id="Vm_DMGD" value="15000"/>
+  <parameter metaid="_761153" id="K_thf_DMGD" value="50"/>
+  <parameter metaid="_761156" id="K_dmg_DMGD" value="50"/>
+  <parameter metaid="_761157" id="Vf_mMTD" value="180000"/>
+  <parameter metaid="_761160" id="K_2cf_MTD" value="2"/>
+  <parameter metaid="_761161" id="Vr_MTD" value="600000"/>
+  <parameter metaid="_761165" id="K_1cf_MTD" value="10"/>
+  <parameter metaid="_761166" id="Vf_mMTCH" value="790000"/>
+  <parameter metaid="_761167" id="K_1cf_MTCH" value="250"/>
+  <parameter metaid="_761170" id="Vr_MTCH" value="20000"/>
+  <parameter metaid="_761171" id="K_10f_MTCH" value="100"/>
+  <parameter metaid="_761172" id="V_mser" value="10000"/>
+  <parameter metaid="_761175" id="K_mser" value="5700"/>
+  <parameter metaid="_761176" id="V_cser" value="10000"/>
+  <parameter metaid="_761179" id="K_cser" value="5700"/>
+  <parameter metaid="_761180" id="k_in_coo" value="100"/>
+  <parameter metaid="_761183" id="k_out_coo" value="100"/>
+  <parameter metaid="_761184" id="V_mgly" value="10000"/>
+  <parameter metaid="_761187" id="K_mgly" value="5700"/>
+  <parameter metaid="_761188" id="V_cgly" value="10000"/>
+  <parameter metaid="_761191" id="K_cgly" value="5700"/>
+  <parameter metaid="_761192" id="Vm_MS" value="500"/>
+  <parameter metaid="_761195" id="K_5mf_MS" value="25"/>
+  <parameter metaid="_761196" id="K_hcy_MS" value="1"/>
+  <parameter metaid="_761199" id="Ki_MS" value="0.01"/>
+  <parameter metaid="_761200" id="Vm_DHFR" value="2000"/>
+  <parameter metaid="_761203" id="K_dhf_DHFR" value="0.5"/>
+  <parameter metaid="_761204" id="K_NADPH_DHFR" value="4"/>
+  <parameter metaid="_761207" id="Vm_cFTD" value="500"/>
+  <parameter metaid="_761208" id="Vm_PGT" value="24300"/>
+  <parameter metaid="_761211" id="K_10f_PGT" value="4.9"/>
+  <parameter metaid="_761212" id="K_GAR_PGT" value="520"/>
+  <parameter metaid="_761215" id="Vm_cFTS" value="3900"/>
+  <parameter metaid="_761216" id="K_thf_cFTS" value="3"/>
+  <parameter metaid="_761219" id="K_coo_cFTS" value="43"/>
+  <parameter metaid="_761220" id="Vf_cSHMT" value="5200"/>
+  <parameter metaid="_761223" id="Vr_cSHMT" value="15000000"/>
+  <parameter metaid="_761224" id="k1_cNE" value="0.03"/>
+  <parameter metaid="_761227" id="k2_cNE" value="22"/>
+  <parameter metaid="_761228" id="Vm_TS" value="5000"/>
+  <parameter metaid="_761231" id="K_DUMP_TS" value="6.3"/>
+  <parameter metaid="_761232" id="K_2cf_TS" value="14"/>
+  <parameter metaid="_761235" id="Vm_MTHFR" value="5300"/>
+  <parameter metaid="_761236" id="K_2cf_MTHFR" value="50"/>
+  <parameter metaid="_761240" id="K_NADPH_MTHFR" value="16"/>
+  <parameter metaid="_761241" id="Vf_cMTD" value="80000"/>
+  <parameter metaid="_761244" id="Vf_cMTCH" value="500000"/>
+  <parameter metaid="_761245" id="Vm_ART" value="55000"/>
+  <parameter metaid="_761246" id="K_10f_ART" value="5.9"/>
+  <parameter metaid="_761247" id="K_aic_ART" value="100"/>
+  <parameter metaid="_761248" id="Vm_BHMT" value="2160"/>
+  <parameter metaid="_761251" id="K_hcy_BHMT" value="12"/>
+  <parameter metaid="_761252" id="K_bet_BHMT" value="100"/>
+  <parameter metaid="_761256" id="Ki_BHMT" value="0.01"/>
+  <parameter metaid="_761257" id="Vm_MAT1" value="260"/>
+  <parameter metaid="_761258" id="Km_MAT1" value="41"/>
+  <parameter metaid="_761261" id="Vm_MAT3" value="220"/>
+  <parameter metaid="_761262" id="Km_MAT3" value="300"/>
+  <parameter metaid="_761263" id="Ka_MAT3" value="360"/>
+  <parameter metaid="_761266" id="Vm_GNMT" value="245"/>
+  <parameter metaid="_761267" id="K_sam_GNMT" value="32"/>
+  <parameter metaid="_761270" id="K_gly_GNMT" value="130"/>
+  <parameter metaid="_761271" id="Ki_GNMT" value="18"/>
+  <parameter metaid="_761275" id="Vm_DNMT" value="180"/>
+  <parameter metaid="_761276" id="Km_DNMT" value="1.4"/>
+  <parameter metaid="_761281" id="Ki_DNMT" value="1.4"/>
+  <parameter metaid="_761282" id="Vf_SAHH" value="5000"/>
+  <parameter metaid="_761283" id="K_sah_SAHH" value="10"/>
+  <parameter metaid="_761284" id="Vr_SAHH" value="5000"/>
+  <parameter metaid="_761287" id="K_hcy_SAHH" value="1"/>
+  <parameter metaid="_761288" id="Vm_CBS" value="402000"/>
+  <parameter metaid="_761291" id="K_hcy_CBS" value="1000"/>
+  <parameter metaid="_761292" id="K_ser_CBS" value="2000"/>
+</listOfParameters><listOfInitialAssignments>
+  <initialAssignment metaid="_826169" symbol="c_thf">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <divide/>
+          <ci> Fol </ci>
+          <apply>
+            <times/>
+            <cn type="integer"> 2 </cn>
+            <cn> 0.75 </cn>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <ci> c_5mf </ci>
+          <ci> c_2cf </ci>
+          <ci> c_1cf </ci>
+          <ci> c_10f </ci>
+          <ci> dhf </ci>
+        </apply>
+      </apply>
+    </math>
+  </initialAssignment>
+  <initialAssignment metaid="_826182" symbol="m_thf">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <divide/>
+          <ci> Fol </ci>
+          <apply>
+            <times/>
+            <cn type="integer"> 2 </cn>
+            <cn> 0.25 </cn>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <ci> m_2cf </ci>
+          <ci> m_1cf </ci>
+          <ci> m_10f </ci>
+        </apply>
+      </apply>
+    </math>
+  </initialAssignment>
+</listOfInitialAssignments><listOfRules>
+  <assignmentRule metaid="_761075" variable="tot_cfol">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> c_5mf </ci>
+        <ci> c_2cf </ci>
+        <ci> c_1cf </ci>
+        <ci> c_10f </ci>
+        <ci> dhf </ci>
+        <ci> c_thf </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_761076" variable="tot_mfol">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> m_thf </ci>
+        <ci> m_2cf </ci>
+        <ci> m_1cf </ci>
+        <ci> m_10f </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+</listOfRules><listOfReactions>
+  <reaction metaid="_760985" id="V_b_GLY_c">
+    <listOfReactants>
+      <speciesReference metaid="_826194" species="b_gly"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826206" species="c_gly"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826218">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <ci> MM </ci>
+              <ci> V_bglyc </ci>
+              <ci> K_bglyc </ci>
+              <ci> b_gly </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k_out_gly </ci>
+              <ci> c_gly </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_760988" id="V_b_SER_c">
+    <listOfReactants>
+      <speciesReference metaid="_826230" species="b_ser"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826243" species="c_ser"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826255">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <ci> MM </ci>
+              <ci> V_bserc </ci>
+              <ci> K_bserc </ci>
+              <ci> b_ser </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k_out_ser </ci>
+              <ci> c_ser </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_760989" id="V_b_MET_c">
+    <listOfReactants>
+      <speciesReference metaid="_826267" species="b_met"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826280" species="met"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826291">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <ci> MM </ci>
+              <ci> V_bmetc </ci>
+              <ci> K_bmetc </ci>
+              <ci> b_met </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k_out_met </ci>
+              <ci> met </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_760990" id="VmFTD">
+    <listOfReactants>
+      <speciesReference metaid="_826304" species="m_10f"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826316" species="m_thf"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826328">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> mito </ci>
+          <apply>
+            <ci> MM </ci>
+            <ci> Vm_mFTD </ci>
+            <ci> K_10f_FTD </ci>
+            <ci> m_10f </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_760993" id="VmSHMT">
+    <listOfReactants>
+      <speciesReference metaid="_826340" species="m_thf"/>
+      <speciesReference metaid="_826353" species="m_ser"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826365" species="m_gly"/>
+      <speciesReference metaid="_826377" species="m_2cf"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826389">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> mito </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <ci> MM_twosubst </ci>
+              <ci> Vf_mSHMT </ci>
+              <ci> K_thf_SHMT </ci>
+              <ci> K_ser_SHMT </ci>
+              <ci> m_thf </ci>
+              <ci> m_ser </ci>
+            </apply>
+            <apply>
+              <ci> MM_twosubst </ci>
+              <ci> Vr_mSHMT </ci>
+              <ci> K_gly_SHMT </ci>
+              <ci> K_2cf_SHMT </ci>
+              <ci> m_gly </ci>
+              <ci> m_2cf </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_760994" id="VmFTS">
+    <listOfReactants>
+      <speciesReference metaid="_826401" species="m_thf"/>
+      <speciesReference metaid="_826413" species="m_coo"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826425" species="m_10f"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826437">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> mito </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <ci> MM_twosubst </ci>
+              <ci> Vf_mFTS </ci>
+              <ci> K_thf_mFTS </ci>
+              <ci> K_coo_mFTS </ci>
+              <ci> m_thf </ci>
+              <ci> m_coo </ci>
+            </apply>
+            <apply>
+              <ci> MM </ci>
+              <ci> Vr_mFTS </ci>
+              <ci> K_10f_mFTS </ci>
+              <ci> m_10f </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_760997" id="VmNE">
+    <listOfReactants>
+      <speciesReference metaid="_826450" species="m_thf"/>
+      <speciesReference metaid="_826462" species="HCHO"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826474" species="m_2cf"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826486">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> mito </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> k1_mNE </ci>
+              <ci> m_thf </ci>
+              <ci> HCHO </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k2_mNE </ci>
+              <ci> m_2cf </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_760998" id="V_GDC">
+    <listOfReactants>
+      <speciesReference metaid="_826498" species="m_thf"/>
+      <speciesReference metaid="_826510" species="m_gly"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826523" species="m_2cf"/>
+      <speciesReference metaid="_826535" species="CO"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826547">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> mito </ci>
+          <apply>
+            <ci> MM_twosubst </ci>
+            <ci> Vm_GDC </ci>
+            <ci> K_thf_GDC </ci>
+            <ci> K_gly_GDC </ci>
+            <ci> m_thf </ci>
+            <ci> m_gly </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761001" id="V_SDH">
+    <listOfReactants>
+      <speciesReference metaid="_826559" species="m_thf"/>
+      <speciesReference metaid="_826571" species="src"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826583" species="m_2cf"/>
+      <speciesReference metaid="_826595" species="m_gly"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826608">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> mito </ci>
+          <apply>
+            <ci> MM_twosubst </ci>
+            <ci> Vm_SDH </ci>
+            <ci> K_thf_SDH </ci>
+            <ci> K_src_SDH </ci>
+            <ci> m_thf </ci>
+            <ci> src </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761002" id="V_DMGD">
+    <listOfReactants>
+      <speciesReference metaid="_826620" species="m_thf"/>
+      <speciesReference metaid="_826632" species="dmg"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826644" species="m_2cf"/>
+      <speciesReference metaid="_826656" species="src"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826668">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> mito </ci>
+          <apply>
+            <ci> MM_twosubst </ci>
+            <ci> Vm_DMGD </ci>
+            <ci> K_thf_DMGD </ci>
+            <ci> K_dmg_DMGD </ci>
+            <ci> m_thf </ci>
+            <ci> dmg </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761005" id="VmMTD">
+    <listOfReactants>
+      <speciesReference metaid="_826680" species="m_2cf"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826692" species="m_1cf"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826704">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> mito </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <ci> MM </ci>
+              <ci> Vf_mMTD </ci>
+              <ci> K_2cf_MTD </ci>
+              <ci> m_2cf </ci>
+            </apply>
+            <apply>
+              <ci> MM </ci>
+              <ci> Vr_MTD </ci>
+              <ci> K_1cf_MTD </ci>
+              <ci> m_1cf </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761006" id="VmMTCH">
+    <listOfReactants>
+      <speciesReference metaid="_826716" species="m_1cf"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826728" species="m_10f"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826740">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> mito </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <ci> MM </ci>
+              <ci> Vf_mMTCH </ci>
+              <ci> K_1cf_MTCH </ci>
+              <ci> m_1cf </ci>
+            </apply>
+            <apply>
+              <ci> MM </ci>
+              <ci> Vr_MTCH </ci>
+              <ci> K_10f_MTCH </ci>
+              <ci> m_10f </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761009" id="VmSERc">
+    <listOfReactants>
+      <speciesReference metaid="_826752" species="m_ser" stoichiometry="3"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826764" species="c_ser"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826776">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <apply>
+                <ci> MM </ci>
+                <ci> V_mser </ci>
+                <ci> K_mser </ci>
+                <ci> m_ser </ci>
+              </apply>
+              <ci> mito </ci>
+            </apply>
+            <cn type="integer"> 3 </cn>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <ci> MM </ci>
+              <ci> V_cser </ci>
+              <ci> K_cser </ci>
+              <ci> c_ser </ci>
+            </apply>
+            <ci> cytosol </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761010" id="VmHCOOHc">
+    <listOfReactants>
+      <speciesReference metaid="_826788" species="m_coo" stoichiometry="3"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826800" species="c_coo"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826812">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> k_in_coo </ci>
+              <ci> m_coo </ci>
+              <ci> mito </ci>
+            </apply>
+            <cn type="integer"> 3 </cn>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k_out_coo </ci>
+            <ci> c_coo </ci>
+            <ci> cytosol </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761011" id="VmGLYc">
+    <listOfReactants>
+      <speciesReference metaid="_826824" species="m_gly" stoichiometry="3"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826837" species="c_gly"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826849">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <apply>
+                <ci> MM </ci>
+                <ci> V_mgly </ci>
+                <ci> K_mgly </ci>
+                <ci> m_gly </ci>
+              </apply>
+              <ci> mito </ci>
+            </apply>
+            <cn type="integer"> 3 </cn>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <ci> MM </ci>
+              <ci> V_cgly </ci>
+              <ci> K_cgly </ci>
+              <ci> c_gly </ci>
+            </apply>
+            <ci> cytosol </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761014" id="V_MS">
+    <listOfReactants>
+      <speciesReference metaid="_826861" species="c_5mf"/>
+      <speciesReference metaid="_826873" species="hcy"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826885" species="c_thf"/>
+      <speciesReference metaid="_826897" species="met"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826910">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <ci> MM_twosubst </ci>
+            <ci> Vm_MS </ci>
+            <ci> K_5mf_MS </ci>
+            <ci> K_hcy_MS </ci>
+            <ci> c_5mf </ci>
+            <ci> hcy </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761015" id="V_DHFR">
+    <listOfReactants>
+      <speciesReference metaid="_826922" species="dhf"/>
+      <speciesReference metaid="_826934" species="NADPH"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826947" species="c_thf"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826959">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <ci> MM_twosubst </ci>
+            <ci> Vm_DHFR </ci>
+            <ci> K_dhf_DHFR </ci>
+            <ci> K_NADPH_DHFR </ci>
+            <ci> dhf </ci>
+            <ci> NADPH </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761016" id="VcFTD">
+    <listOfReactants>
+      <speciesReference metaid="_826971" species="c_10f"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_826983" species="c_thf"/>
+    </listOfProducts>
+    <kineticLaw metaid="_826995">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <ci> MM </ci>
+            <ci> Vm_cFTD </ci>
+            <ci> K_10f_FTD </ci>
+            <ci> c_10f </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761019" id="V_PGT">
+    <listOfReactants>
+      <speciesReference metaid="_827007" species="c_10f"/>
+      <speciesReference metaid="_827019" species="GAR"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_827031" species="aic"/>
+      <speciesReference metaid="_827043" species="c_thf"/>
+    </listOfProducts>
+    <kineticLaw metaid="_827055">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <ci> MM_twosubst </ci>
+            <ci> Vm_PGT </ci>
+            <ci> K_10f_PGT </ci>
+            <ci> K_GAR_PGT </ci>
+            <ci> c_10f </ci>
+            <ci> GAR </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761020" id="VcFTS">
+    <listOfReactants>
+      <speciesReference metaid="_827067" species="c_thf"/>
+      <speciesReference metaid="_827080" species="c_coo"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_827092" species="c_10f"/>
+    </listOfProducts>
+    <kineticLaw metaid="_827104">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <ci> MM_twosubst </ci>
+            <ci> Vm_cFTS </ci>
+            <ci> K_thf_cFTS </ci>
+            <ci> K_coo_cFTS </ci>
+            <ci> c_thf </ci>
+            <ci> c_coo </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761021" id="VcSHMT">
+    <listOfReactants>
+      <speciesReference metaid="_827116" species="c_ser"/>
+      <speciesReference metaid="_827128" species="c_thf"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_827140" species="c_gly"/>
+      <speciesReference metaid="_827152" species="c_2cf"/>
+    </listOfProducts>
+    <kineticLaw metaid="_827164">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <ci> MM_twosubst </ci>
+              <ci> Vf_cSHMT </ci>
+              <ci> K_thf_SHMT </ci>
+              <ci> K_ser_SHMT </ci>
+              <ci> c_thf </ci>
+              <ci> c_ser </ci>
+            </apply>
+            <apply>
+              <ci> MM_twosubst </ci>
+              <ci> Vr_cSHMT </ci>
+              <ci> K_gly_SHMT </ci>
+              <ci> K_2cf_SHMT </ci>
+              <ci> c_gly </ci>
+              <ci> c_2cf </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761024" id="VcNE">
+    <listOfReactants>
+      <speciesReference metaid="_827176" species="c_thf"/>
+      <speciesReference metaid="_827188" species="HCHO"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_827200" species="c_2cf"/>
+    </listOfProducts>
+    <kineticLaw metaid="_827212">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> k1_cNE </ci>
+              <ci> c_thf </ci>
+              <ci> HCHO </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k2_cNE </ci>
+              <ci> c_2cf </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761025" id="V_TS">
+    <listOfReactants>
+      <speciesReference metaid="_827224" species="DUMP"/>
+      <speciesReference metaid="_827236" species="c_2cf"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_827248" species="dhf"/>
+    </listOfProducts>
+    <kineticLaw metaid="_827260">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <ci> MM_twosubst </ci>
+            <ci> Vm_TS </ci>
+            <ci> K_DUMP_TS </ci>
+            <ci> K_2cf_TS </ci>
+            <ci> DUMP </ci>
+            <ci> c_2cf </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761028" id="V_MTHFR">
+    <listOfReactants>
+      <speciesReference metaid="_827272" species="c_2cf"/>
+      <speciesReference metaid="_827284" species="NADPH"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_827296" species="c_5mf"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_827308" species="sam"/>
+      <modifierSpeciesReference metaid="_827320" species="sah"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_827332">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> cytosol </ci>
+            <apply>
+              <ci> MM_twosubst </ci>
+              <ci> Vm_MTHFR </ci>
+              <ci> K_2cf_MTHFR </ci>
+              <ci> K_NADPH_MTHFR </ci>
+              <ci> c_2cf </ci>
+              <ci> NADPH </ci>
+            </apply>
+            <cn type="integer"> 60 </cn>
+          </apply>
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <cn type="integer"> 10 </cn>
+              <ci> sam </ci>
+            </apply>
+            <ci> sah </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761029" id="VcMTD">
+    <listOfReactants>
+      <speciesReference metaid="_827344" species="c_2cf"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_827356" species="c_1cf"/>
+      <speciesReference metaid="_827368" species="NADPH"/>
+    </listOfProducts>
+    <kineticLaw metaid="_827380">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <ci> MM </ci>
+              <ci> Vf_cMTD </ci>
+              <ci> K_2cf_MTD </ci>
+              <ci> c_2cf </ci>
+            </apply>
+            <apply>
+              <ci> MM </ci>
+              <ci> Vr_MTD </ci>
+              <ci> K_1cf_MTD </ci>
+              <ci> c_1cf </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761032" id="VcMTCH">
+    <listOfReactants>
+      <speciesReference metaid="_827392" species="c_1cf"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_827404" species="c_10f"/>
+    </listOfProducts>
+    <kineticLaw metaid="_827416">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <ci> MM </ci>
+              <ci> Vf_cMTCH </ci>
+              <ci> K_1cf_MTCH </ci>
+              <ci> c_1cf </ci>
+            </apply>
+            <apply>
+              <ci> MM </ci>
+              <ci> Vr_MTCH </ci>
+              <ci> K_10f_MTCH </ci>
+              <ci> c_10f </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761033" id="V_ART">
+    <listOfReactants>
+      <speciesReference metaid="_827428" species="c_10f"/>
+      <speciesReference metaid="_827440" species="aic"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_827452" species="c_thf"/>
+    </listOfProducts>
+    <kineticLaw metaid="_827465">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <ci> MM_twosubst </ci>
+            <ci> Vm_ART </ci>
+            <ci> K_10f_ART </ci>
+            <ci> K_aic_ART </ci>
+            <ci> c_10f </ci>
+            <ci> aic </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761036" id="V_BHMT">
+    <listOfReactants>
+      <speciesReference metaid="_827477" species="hcy"/>
+      <speciesReference metaid="_827489" species="BET"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_827501" species="met"/>
+      <speciesReference metaid="_827513" species="dmg"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_827525" species="sam"/>
+      <modifierSpeciesReference metaid="_827538" species="sah"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_827551">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <exp/>
+            <apply>
+              <times/>
+              <cn> -0.0021 </cn>
+              <apply>
+                <plus/>
+                <ci> sam </ci>
+                <ci> sah </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <times/>
+              <cn> 0.0021 </cn>
+              <cn> 76.7 </cn>
+            </apply>
+          </apply>
+          <apply>
+            <ci> MM_twosubst </ci>
+            <ci> Vm_BHMT </ci>
+            <ci> K_hcy_BHMT </ci>
+            <ci> K_bet_BHMT </ci>
+            <ci> hcy </ci>
+            <ci> BET </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761037" id="V_MATI">
+    <listOfReactants>
+      <speciesReference metaid="_827563" species="met"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_827575" species="sam"/>
+    </listOfProducts>
+    <kineticLaw metaid="_827587">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <ci> Vm_MAT1 </ci>
+          <apply>
+            <divide/>
+            <ci> met </ci>
+            <apply>
+              <plus/>
+              <ci> Km_MAT1 </ci>
+              <ci> met </ci>
+            </apply>
+          </apply>
+          <apply>
+            <plus/>
+            <cn> 0.23 </cn>
+            <apply>
+              <times/>
+              <cn> 0.8 </cn>
+              <apply>
+                <exp/>
+                <apply>
+                  <times/>
+                  <cn> -0.0026 </cn>
+                  <ci> sam </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761040" id="V_MATIII">
+    <listOfReactants>
+      <speciesReference metaid="_827599" species="met"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_827611" species="sam"/>
+    </listOfProducts>
+    <kineticLaw metaid="_827623">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <ci> Vm_MAT3 </ci>
+          <apply>
+            <divide/>
+            <apply>
+              <power/>
+              <ci> met </ci>
+              <cn> 1.21 </cn>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Km_MAT3 </ci>
+              <apply>
+                <power/>
+                <ci> met </ci>
+                <cn> 1.21 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <plus/>
+            <cn type="integer"> 1 </cn>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn> 7.2 </cn>
+                <apply>
+                  <power/>
+                  <ci> sam </ci>
+                  <cn type="integer"> 2 </cn>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <power/>
+                  <ci> Ka_MAT3 </ci>
+                  <cn type="integer"> 2 </cn>
+                </apply>
+                <apply>
+                  <power/>
+                  <ci> sam </ci>
+                  <cn type="integer"> 2 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761041" id="V_GNMT">
+    <listOfReactants>
+      <speciesReference metaid="_827635" species="sam"/>
+      <speciesReference metaid="_827647" species="c_gly"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_827659" species="sah"/>
+      <speciesReference metaid="_827671" species="src"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_827683" species="c_5mf"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_827696">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <ci> MM_twosubst </ci>
+            <ci> Vm_GNMT </ci>
+            <ci> K_sam_GNMT </ci>
+            <ci> K_gly_GNMT </ci>
+            <ci> sam </ci>
+            <ci> c_gly </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <cn type="integer"> 1 </cn>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> sah </ci>
+                <ci> Ki_GNMT </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <cn> 5.88 </cn>
+            <apply>
+              <plus/>
+              <cn> 0.35 </cn>
+              <ci> c_5mf </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761044" id="V_DNMT">
+    <listOfReactants>
+      <speciesReference metaid="_827708" species="sam"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_827720" species="sah"/>
+    </listOfProducts>
+    <kineticLaw metaid="_827732">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <ci> Vm_DNMT </ci>
+          <apply>
+            <divide/>
+            <ci> sam </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> Km_DNMT </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> sah </ci>
+                    <ci> Ki_DNMT </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> sam </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761045" id="V_SAHH">
+    <listOfReactants>
+      <speciesReference metaid="_827745" species="sah"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_827757" species="hcy"/>
+    </listOfProducts>
+    <kineticLaw metaid="_827769">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <ci> MM </ci>
+              <ci> Vf_SAHH </ci>
+              <ci> K_sah_SAHH </ci>
+              <ci> sah </ci>
+            </apply>
+            <apply>
+              <ci> MM </ci>
+              <ci> Vr_SAHH </ci>
+              <ci> K_hcy_SAHH </ci>
+              <ci> hcy </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761048" id="gluconeogenesis_ser">
+    <listOfReactants>
+      <speciesReference metaid="_827781" species="c_ser"/>
+    </listOfReactants>
+    <kineticLaw metaid="_827793">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <cn> 1.2 </cn>
+          <ci> c_ser </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_761049" id="V_CBS">
+    <listOfReactants>
+      <speciesReference metaid="_827805" species="hcy"/>
+      <speciesReference metaid="_827817" species="c_ser"/>
+    </listOfReactants>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_827829" species="sam"/>
+      <modifierSpeciesReference metaid="_827841" species="sah"/>
+      <modifierSpeciesReference metaid="_827853" species="sam"/>
+      <modifierSpeciesReference metaid="_827865" species="sah"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_827878">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> cytosol </ci>
+          <apply>
+            <ci> MM_twosubst </ci>
+            <ci> Vm_CBS </ci>
+            <ci> K_hcy_CBS </ci>
+            <ci> K_ser_CBS </ci>
+            <ci> hcy </ci>
+            <ci> c_ser </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <cn> 1.2 </cn>
+              <apply>
+                <power/>
+                <apply>
+                  <plus/>
+                  <ci> sam </ci>
+                  <ci> sah </ci>
+                </apply>
+                <cn type="integer"> 2 </cn>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <power/>
+                <cn type="integer"> 30 </cn>
+                <cn type="integer"> 2 </cn>
+              </apply>
+              <apply>
+                <power/>
+                <apply>
+                  <plus/>
+                  <ci> sam </ci>
+                  <ci> sah </ci>
+                </apply>
+                <cn type="integer"> 2 </cn>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+</model>
+</sbml>

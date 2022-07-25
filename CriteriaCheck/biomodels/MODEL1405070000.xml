@@ -1,0 +1,2772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2" metaid="_116d2de5-ba62-4ea9-9b85-98849abedb3e" level="2" version="1">
+  <model metaid="f6ebd5a2-1648-4a7e-93f6-57fae8ac6b9d" id="MODEL1405070000" name="Dolan2014 - calcium homeostasis (SOCE)">
+    <annotation>
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+        <rdf:Description rdf:about="#f6ebd5a2-1648-4a7e-93f6-57fae8ac6b9d">
+          <bqmodel:is>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1405070000"/>
+            </rdf:Bag>
+          </bqmodel:is>
+          <bqbiol:hasTaxon>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+            </rdf:Bag>
+          </bqbiol:hasTaxon>
+          <bqbiol:isVersionOf>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/go/GO:0055074"/>
+            </rdf:Bag>
+          </bqbiol:isVersionOf>
+          <bqbiol:occursIn>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/bto/BTO:0000132"/>
+            </rdf:Bag>
+          </bqbiol:occursIn>
+        </rdf:Description>
+      </rdf:RDF>
+    </annotation>
+    <listOfCompartments>
+      <compartment metaid="_9d5d1575-2d27-4351-80f5-f010d8bd738d" id="cytosol" name="cytosol" size="6e-15" outside="PM"/>
+      <compartment metaid="ae57dbf0-2482-49a7-961f-8b08c905b46c" id="DTS" name="DTS" size="2.4e-16" outside="IM"/>
+      <compartment metaid="af1c6ca3-8249-4f83-895b-f3d9550aae14" id="IM" name="IM" size="1.5e-11" outside="cytosol"/>
+      <compartment metaid="aaffa2ef-39b5-4c03-8449-8fd042729cff" id="PM" name="PM" size="2.10112699954522e-10" outside="PRP"/>
+      <compartment metaid="ed40621e-a95e-4a34-811e-0cf5543b752f" id="PRP" name="PRP" size="0.01" outside="dummy"/>
+      <compartment metaid="b271ad51-8d4a-474b-bb64-b28988d77d06" id="dummy" name="dummy" size="1">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+dummy compartment to contain membrane potentials for SBML export</body>
+          </html>
+        </notes>
+      </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species metaid="_89e9ff74-ae85-4e10-9bc7-0907ad1554ee" id="Ins145P3_dummy" name="Ins145P3_dummy" compartment="cytosol" initialConcentration="2.74832456968156e-08" boundaryCondition="true">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+(-IP3R_rxn_03+IP3R_rxn_04)/cytosol</body>
+          </html>
+        </notes>
+      </species>
+      <species metaid="_3de874ae-df76-4a2d-991a-9ae2cd04f915" id="Orai_puncta" name="Orai_puncta" compartment="PM" initialConcentration="7.32070602622993e-12" boundaryCondition="true"/>
+      <species metaid="f58832ba-fe99-4b97-aab6-52feadddd7f8" id="Ca_cyt" name="Ca_cyt" compartment="cytosol" initialConcentration="2.61577566275985e-08"/>
+      <species metaid="a8892016-34c1-4916-9733-2fe9ec0c60e2" id="IP3Rn" name="IP3Rn" compartment="IM" initialConcentration="1.26579861523048e-10"/>
+      <species metaid="b79b5864-dff4-42a1-b2d1-ceb3197b2098" id="IP3Ri1" name="IP3Ri1" compartment="IM" initialConcentration="2.57763546200277e-11"/>
+      <species metaid="_651763b4-2de4-400f-b1d6-87197e5d2da9" id="IP3Ri2" name="IP3Ri2" compartment="IM" initialConcentration="3.76049281125437e-12"/>
+      <species metaid="_7b1bae7f-1976-499f-8ee6-191fa55ab21f" id="IP3Ro" name="IP3Ro" compartment="IM" initialConcentration="4.13571741777505e-11"/>
+      <species metaid="_1913c6ed-b8de-4074-ba75-91f88669907b" id="IP3Ra" name="IP3Ra" compartment="IM" initialConcentration="9.93280457125776e-12"/>
+      <species metaid="_7c99ab32-affe-4ad1-a9a8-ece877672983" id="IP3Rs" name="IP3Rs" compartment="IM" initialConcentration="1.52587608290286e-13"/>
+      <species metaid="_3e210cc9-24d0-44e2-b2b7-ee9e76439271" id="SERCA_E1" name="SERCA_E1" compartment="IM" initialConcentration="1.26278555446025e-09"/>
+      <species metaid="b2589317-0c81-4361-a3cb-74e1973138df" id="SERCA_E2" name="SERCA_E2" compartment="IM" initialConcentration="1.26420514854785e-09"/>
+      <species metaid="_4d255e6e-0cb1-40fa-942e-14e573cf2760" id="SERCA_E2P" name="SERCA_E2P" compartment="IM" initialConcentration="5.74897007449712e-12"/>
+      <species metaid="_11a729bb-7043-465c-82df-0f3f2685e0a3" id="SERCA_E1Ca2" name="SERCA_E1Ca2" compartment="IM" initialConcentration="1.22775540963769e-12"/>
+      <species metaid="_3ec6b0f8-5dd8-4954-859d-4be5d318268b" id="SERCA_E1PCa2" name="SERCA_E1PCa2" compartment="IM" initialConcentration="1.53453979371447e-12"/>
+      <species metaid="ee79c30b-1bf8-40b6-9cf4-f6ccfd510eb5" id="SERCA_E2PCa2" name="SERCA_E2PCa2" compartment="IM" initialConcentration="1.3793524693894e-12"/>
+      <species metaid="a0ffca40-45ce-4ac2-b706-1773e60c0b9a" id="Ca_dts" name="Ca_dts" compartment="DTS" initialConcentration="0.000338696460991905"/>
+      <species metaid="_03baa6f7-7338-47a5-b55b-37d3e74a8956" id="Ca_ex" name="Ca_ex" compartment="PRP" initialConcentration="0.0012"/>
+      <species metaid="_221bbb91-1186-4be1-a90a-d71faf74f03b" id="STIM1" name="STIM1" compartment="IM" initialConcentration="2.26025029166145e-10"/>
+      <species metaid="_3ed9b36d-e6c7-4f02-9d2d-6b14317cd01a" id="STIM1_Ca_dts" name="STIM1_Ca_dts" compartment="IM" initialConcentration="3.82769393497595e-10"/>
+      <species metaid="f34f0a47-a335-4416-8b24-29bbd2714676" id="STIM1_2" name="STIM1_2" compartment="IM" initialConcentration="1.31364786111242e-12"/>
+      <species metaid="_0735bf39-4535-476f-94ee-9dd7f369b7e1" id="STIM_puncta" name="STIM_puncta" compartment="IM" initialConcentration="1.31364780440681e-12"/>
+      <species metaid="_609fe555-3e2c-4dc2-8316-9be04807638f" id="PMCA" name="PMCA" compartment="PM" initialConcentration="7.24967957904016e-12"/>
+      <species metaid="_0694d870-c95b-40f0-9634-ad0b77470704" id="CaM" name="CaM" compartment="cytosol" initialConcentration="6.61877198164792e-06"/>
+      <species metaid="c94e949e-2abf-436d-b4af-66097b7abef9" id="Ca_PMCA" name="Ca_PMCA" compartment="PM" initialConcentration="3.41685617388641e-14"/>
+      <species metaid="_7c559fe5-5737-40db-ae11-3bb28a60a500" id="Ca2_CaM" name="Ca2_CaM" compartment="cytosol" initialConcentration="4.50077673821723e-09"/>
+      <species metaid="baa9edeb-8516-4257-a882-e2d3e1668718" id="Ca4_CaM" name="Ca4_CaM" compartment="cytosol" initialConcentration="3.27648698975779e-10"/>
+      <species metaid="_48366210-235d-4aec-9593-b828d376dc9b" id="PMCA_Ca4_CaM" name="PMCA_Ca4_CaM" compartment="PM" initialConcentration="4.75044220232624e-17"/>
+      <species metaid="_4c891373-16d7-4506-b26c-a4f60d06f3db" id="PMCA_Ca4_CaM_Ca" name="PMCA_Ca4_CaM_Ca" compartment="PM" initialConcentration="1.55327052296481e-17"/>
+      <species metaid="_0e0eb8db-30b5-47ae-be7c-4238eaa616ac" id="PMCA_CaM" name="PMCA_CaM" compartment="PM" initialConcentration="1.41276941981514e-14"/>
+      <species metaid="_1d903daa-9ed5-4ef6-b4c4-80005efeddee" id="TG" name="TG" compartment="cytosol" initialConcentration="1">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+TG acts to inhibit SERCA_E2; not used in publication</body>
+          </html>
+        </notes>
+      </species>
+      <species metaid="aff3246b-2d31-4fb2-b605-61928c6bc6fc" id="E2_TG" name="E2_TG" compartment="cytosol" initialConcentration="1"/>
+      <species metaid="_20fcc67e-6298-48ef-8e6e-77a34f5ce65d" id="E2i_TG" name="E2i_TG" compartment="cytosol" initialConcentration="1"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter metaid="c6d6d35d-0286-497d-b0cf-99aca1fc6b55" id="k_IP3R_k1" name="k_IP3R_k1" value="640000"/>
+      <parameter metaid="bb5e377e-6853-4a7d-baba-635242173597" id="k_IP3R_k1b" name="k_IP3R_k1b" value="0.04"/>
+      <parameter metaid="_0544405f-a19d-4f61-b5bc-8030a3fcddd2" id="k_IP3R_k2" name="k_IP3R_k2" value="37400000"/>
+      <parameter metaid="_619dc1a9-8601-4e10-9233-cee2140b213c" id="k_IP3R_k2b" name="k_IP3R_k2b" value="1.4"/>
+      <parameter metaid="_41df46db-a662-4583-baa9-9dd8cfa3face" id="k_IP3R_k3" name="k_IP3R_k3" value="0.11"/>
+      <parameter metaid="b87df03d-9937-498e-87f7-0fa9434bd5c2" id="k_IP3R_k3b" name="k_IP3R_k3b" value="29.8"/>
+      <parameter metaid="_2f315966-771c-445e-95f7-2d33a8b6cec2" id="k_IP3R_k4" name="k_IP3R_k4" value="4000000"/>
+      <parameter metaid="_5ab77efa-170c-4e11-9b1e-6356e3bfb100" id="k_IP3R_k4b" name="k_IP3R_k4b" value="0.54"/>
+      <parameter metaid="_79200276-cdba-4bb5-870d-efe21dceb376" id="k_IP3R_L1" name="k_IP3R_L1" value="1.2e-07"/>
+      <parameter metaid="f133b2e9-dfcb-4b20-983b-ebd0b71b3875" id="k_IP3R_L3" name="k_IP3R_L3" value="2.5e-08"/>
+      <parameter metaid="_79329842-abc6-47a7-976a-0578e5687ea7" id="k_IP3R_L5" name="k_IP3R_L5" value="5.47e-05"/>
+      <parameter metaid="_09f6f125-cc09-4e0b-8165-0551d567d574" id="k_IP3R_l2" name="k_IP3R_l2" value="1.7"/>
+      <parameter metaid="_6b6a8e26-303b-4bf2-8957-00c5c4864cee" id="k_IP3R_l4" name="k_IP3R_l4" value="1700000"/>
+      <parameter metaid="_49979881-3d5a-4e61-be6b-0e7114b3a1d8" id="k_IP3R_l6" name="k_IP3R_l6" value="4707"/>
+      <parameter metaid="_9317acea-8ea1-42e1-978a-b694848db351" id="k_IP3R_l2b" name="k_IP3R_l2b" value="0.8"/>
+      <parameter metaid="_90745153-f654-4a03-a7a6-044c7add8f62" id="k_IP3R_l4b" name="k_IP3R_l4b" value="2500000"/>
+      <parameter metaid="_5d3f42b8-dfc9-4950-8a98-b6974c63bde1" id="k_IP3R_l6b" name="k_IP3R_l6b" value="11.4"/>
+      <parameter metaid="_69c0adfc-3904-4077-bcd3-a6a92896a9f9" id="k_SERCA_1f" name="k_SERCA_1f" value="600"/>
+      <parameter metaid="aa027148-cff4-4e95-ac87-55090b0f0743" id="k_SERCA_1r" name="k_SERCA_1r" value="600"/>
+      <parameter metaid="_6c810dae-f40e-437d-b728-dde46cd607e3" id="k_SERCA_2f" name="k_SERCA_2f" value="1e+15"/>
+      <parameter metaid="_818a315b-ea89-4fbb-a5f2-3a479842df1f" id="k_SERCA_2r" name="k_SERCA_2r" value="10"/>
+      <parameter metaid="e3fec3f8-ab7c-43d9-8e0d-f97478956ddb" id="k_SERCA_3f" name="k_SERCA_3f" value="700"/>
+      <parameter metaid="b16bfdbf-73cd-4129-83b4-7f5c48526a2e" id="k_SERCA_3r" name="k_SERCA_3r" value="5"/>
+      <parameter metaid="_9f687dd3-143a-4f5e-93a3-e94bba446121" id="k_SERCA_4f" name="k_SERCA_4f" value="600"/>
+      <parameter metaid="_248f6b23-686c-4b81-b35b-a815d289cfc8" id="k_SERCA_4r" name="k_SERCA_4r" value="50"/>
+      <parameter metaid="dc2dc54b-ea4c-4a0c-9afa-d8bff856bc19" id="k_SERCA_5f" name="k_SERCA_5f" value="1000"/>
+      <parameter metaid="_09359221-7ff1-40ae-be20-7afba647259c" id="k_SERCA_5r" name="k_SERCA_5r" value="800000000"/>
+      <parameter metaid="_2bbcc014-5904-4d7c-b38a-3f4084770491" id="k_SERCA_6f" name="k_SERCA_6f" value="500"/>
+      <parameter metaid="_02b555bf-8f1f-4e16-bc12-2ff7b2da5981" id="k_SERCA_6r" name="k_SERCA_6r" value="1.6"/>
+      <parameter metaid="d615a994-b9f8-4547-b261-ba283488a23e" id="G_IP3R" name="G_IP3R" value="1e-11">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+S/channel</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_0ab887b6-8153-4853-9001-c0da42161df3" id="G_PM" name="G_PM" value="7e-11">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+S/m2</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="ce1feb65-da5f-4e77-a392-6ae682b3db1e" id="F" name="F" value="96485.3415">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+Faraday constant</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="a32e9ed7-f02a-4ff5-b1ae-f4e28c15a665" id="e_charge" name="e_charge" value="1.602e-19">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+elementary charge</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="e8e2865b-2e36-4603-88e6-344d160afba2" id="Ampere" name="Ampere" value="6.24e+18">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+Avogadro/F (Faraday&apos;s constant)</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="ad345226-65db-4dbe-aa40-dbae7f25a7ae" id="Avogadro" name="Avogadro" value="6.02e+23"/>
+      <parameter metaid="c6f696a7-a655-4763-80cc-39b68d3f23fd" id="k_off_STIM1_Ca_dts" name="k_off_STIM1_Ca_dts" value="6666"/>
+      <parameter metaid="b1ef2ff4-58cc-4b07-a147-b2b41cbdbfd8" id="k_on_STIM1_STIM1" name="k_on_STIM1_STIM1" value="900000000">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+mol/(m2*s)</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="baf364ff-3e22-4264-aad9-e3ea82b36b5e" id="k_off_STIM1_STIM1" name="k_off_STIM1_STIM1" value="35"/>
+      <parameter metaid="_42aa3b2d-852a-4338-97c8-7c6dc9ae607c" id="k_on_STIM1_2_Orai1" name="k_on_STIM1_2_Orai1" value="845800.10000002">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+mol/(m2*s)</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_718d6a47-cf24-4eaf-9c98-acd05b8a0c15" id="k_off_STIM1_2_Orai1" name="k_off_STIM1_2_Orai1" value="15.259"/>
+      <parameter metaid="d818d4d9-b246-4b47-9526-696a48e9d26d" id="k_in" name="k_in" value="8000"/>
+      <parameter metaid="_13150745-dc2c-45e9-8740-13b31fe9fd39" id="k_out" name="k_out" value="8000"/>
+      <parameter metaid="bab0ed95-89d5-4473-9163-31cc4aec36d6" id="P_crac" name="P_crac" value="0.8"/>
+      <parameter metaid="e301793f-ffb0-496f-908d-76886a4ec251" id="k_leak_im" name="k_leak_im" value="0.000208">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+rate const for leak FROM DTS into cytosol; lumped parameter which contains permeability and conc scaling</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="f28020d4-d520-4708-b053-f5f0a7f11482" id="K_d" name="K_d" value="0.0002">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+dissoc const for STIM1_binding_Ca_dts</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_4a4791f7-447f-46a9-a96c-575bce2c189a" id="k_PMCA_4f" name="k_PMCA_4f" value="10000000"/>
+      <parameter metaid="_887189d9-528e-4f25-97dc-49d0db897839" id="k_PMCA_4r" name="k_PMCA_4r" value="50"/>
+      <parameter metaid="d21810af-33e6-40f8-a729-574736012bce" id="k_PMCA_5f" name="k_PMCA_5f" value="5.5"/>
+      <parameter metaid="f81e13a4-1c22-4283-8f65-08dbcb9f70f9" id="k_PMCA_6f" name="k_PMCA_6f" value="2669000000000"/>
+      <parameter metaid="_3827a8bf-2e53-4ea0-98da-beb00b1c41e2" id="k_PMCA_6r" name="k_PMCA_6r" value="2.682"/>
+      <parameter metaid="d51e2748-9424-4b36-b04f-bff103e8172c" id="k_PMCA_7f" name="k_PMCA_7f" value="170400000000000"/>
+      <parameter metaid="f49ef24e-ed83-4bb5-9a22-b9324b259ffd" id="k_PMCA_7r" name="k_PMCA_7r" value="1.551"/>
+      <parameter metaid="_31fbf187-a23d-41a9-858e-8eb644e6172a" id="k_PMCA_8f" name="k_PMCA_8f" value="200000">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+200000</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="bc1e24e7-8d5a-4fdd-bd11-ae2ac08c8414" id="k_PMCA_8r" name="k_PMCA_8r" value="0.0008"/>
+      <parameter metaid="_63146c69-520c-40fd-8001-b9d49ba6bb58" id="k_PMCA_9f" name="k_PMCA_9f" value="500000000"/>
+      <parameter metaid="bcc4ee83-f39b-4b18-9ba6-517c302307d5" id="k_PMCA_9r" name="k_PMCA_9r" value="10"/>
+      <parameter metaid="a54104cf-4138-4beb-a709-a52651d9f466" id="k_PMCA_10f" name="k_PMCA_10f" value="30"/>
+      <parameter metaid="_635f278f-e5a7-4acb-ad59-efee28035c87" id="k_PMCA_11f" name="k_PMCA_11f" value="10"/>
+      <parameter metaid="_5fffa830-26b1-4397-a77b-0313f10e24c0" id="k_PMCA_11r" name="k_PMCA_11r" value="7.332e+20"/>
+      <parameter metaid="_363890bf-981d-4bdf-9710-6cc949625c59" id="k_PMCA_12f" name="k_PMCA_12f" value="0.033">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+0.33</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_6d408ef6-9e2e-4b87-9ad0-189113a0d44a" id="C" name="C" value="0.02">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+Farad/m2</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_01faf262-5e02-41f8-b9b2-49affa669be3" id="k_TG_1f" name="k_TG_1f" value="5000000000"/>
+      <parameter metaid="a3a116e6-0e99-4efc-9cc7-61839438547f" id="k_TG_1r" name="k_TG_1r" value="55"/>
+      <parameter metaid="ba34052b-a8f9-4940-96a4-a260ea99476c" id="k_TG_2f" name="k_TG_2f" value="25"/>
+      <parameter metaid="_449cbaef-eeac-40b9-86fb-358cd0bd8c03" id="k_TG_2r" name="k_TG_2r" value="0.005"/>
+      <parameter metaid="a453727f-4d9c-4813-88b1-941cfb9307a6" id="f" name="f" value="1420"/>
+      <parameter metaid="f5ba176c-6053-45a5-89ce-63c56d91d17a" id="L" name="L" value="0.0001"/>
+      <parameter metaid="a027e1b0-f3bb-4eb8-8e64-52bea285511b" id="K_a" name="K_a" value="100"/>
+      <parameter metaid="_78255b55-6186-4af1-bdcf-0bc7ef1b4fef" id="a" name="a" value="0.5"/>
+      <parameter metaid="_8f347386-fbef-43cf-a77a-14ddf34d6feb" id="KM_p" name="KM_p" value="1.96962393847919e-07"/>
+      <parameter metaid="_172a1647-126c-4399-b84f-048808f26e00" id="alpha" name="alpha" value="0.2"/>
+      <parameter metaid="_936e2817-5d47-45b3-b075-b1bcf820a5a8" id="beta" name="beta" value="0.01"/>
+      <parameter metaid="_988caa9e-ea10-4c37-ab68-c2f5459d4218" id="n_p" name="n_p" value="1.90336936005379"/>
+      <parameter metaid="_588431bf-b1f2-4d31-bf9c-1745518a71fb" id="switchPMCA" name="switchPMCA" value="1">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+use these to turn respective functionality on or off</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_095041ac-fc91-444b-aa53-d634a6ff9c58" id="switchSOCE" name="switchSOCE" value="1"/>
+      <parameter metaid="a6c162a6-6da3-4453-b5e8-966e564a183c" id="switchIMleak" name="switchIMleak" value="1"/>
+      <parameter metaid="c1b01fb5-3bfd-4254-baf1-bfd8ed92405b" id="switchPMleak" name="switchPMleak" value="1"/>
+      <parameter metaid="_45ffcfb9-4c60-47a3-98af-ddc06b6f461c" id="switchIP3R" name="switchIP3R" value="1"/>
+      <parameter metaid="_82352b06-40f0-4ffd-8b29-98ac227d3a68" id="switchSERCA" name="switchSERCA" value="1"/>
+      <parameter metaid="c67eadda-6ce8-4d84-8266-19c28959bcb6" id="switchTG" name="switchTG" value="0"/>
+      <parameter metaid="d901fae9-63fc-43a3-8976-942346c6bd4d" id="IP30" name="IP30" value="2.74832456968156e-08">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+starting IP3 level for forcing function</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="cf3202b8-3016-4354-9cf6-7c4f13f46b56" id="Fa" name="Fa" value="1.75">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+forcing fcn parameter &quot;a&quot; - initial linear growth rate constant</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_069f8293-caae-440f-9bd5-f35bcd001e99" id="Fb" name="Fb" value="0.08">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+forcing fcn parameter &quot;b&quot;- exp decay time constant</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_4b1ba982-ac6b-4508-9021-7acfa30a3689" id="Fc" name="Fc" value="0.4">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+forcing fcn parameter &quot;c&quot;- establishes offset from IP30 at long times</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_0501d792-b578-4f58-9c5f-61dcf9f02f4a" id="start" name="start" value="10">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+start time for IP3 stimulus (seconds)</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_4dda73f6-5f36-47e5-9a89-9ab6e960e2d6" id="V_PM" name="V_PM" value="-0.0600000000001678" constant="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+currents and rates are in mol/s, the factor &quot;charge&quot; converts to amps</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_8b441925-b88f-4e7b-8c2c-4ec177f9e8b2" id="V_IM" name="V_IM" value="-0.0607599864426016" constant="false"/>
+      <parameter metaid="e90a3496-aa07-4df6-9ba7-118ad48e5a51" id="switchDeg" name="switchDeg" value="0" constant="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+switch to activate forcing fcn</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_93826a79-0daf-4a45-bc4f-2e8ad380c37b" id="Ins145P3" name="Ins145P3" value="0" constant="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+IP3 forcing function definition</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_62de4306-6f0a-42d7-82cf-e02e9ce38639" id="Ca_total" name="Ca_total" value="0" constant="false"/>
+      <parameter metaid="a357c284-bffd-4c88-b138-cbec411cc34a" id="IP3_total" name="IP3_total" value="0" constant="false"/>
+      <parameter metaid="_124cbf39-c960-4739-b0d7-7ac03f4416a5" id="IP3R_total" name="IP3R_total" value="0" constant="false"/>
+      <parameter metaid="_84d531a3-569a-4c4f-be24-717eef46d0fd" id="SERCA_total" name="SERCA_total" value="0" constant="false"/>
+      <parameter metaid="f79405be-07d6-44a8-b5aa-a20a587074af" id="Orai_total" name="Orai_total" value="0" constant="false"/>
+      <parameter metaid="cf760095-0d65-4585-bbb8-c533537b654b" id="STIM1_total" name="STIM1_total" value="0" constant="false"/>
+      <parameter metaid="_58592399-670c-457b-bde8-23420146e117" id="CaM_total" name="CaM_total" value="0" constant="false"/>
+      <parameter metaid="_6503dff3-a257-4ee4-949b-075b8f8e547a" id="PMCA_total" name="PMCA_total" value="0" constant="false"/>
+      <parameter metaid="cde6d5ed-a945-4414-9977-da91d271fe37" id="TG_total" name="TG_total" value="0" constant="false"/>
+      <parameter metaid="be0a7e68-10f8-4f6e-9b27-cacba07a9d2b" id="total_mass" name="total_mass" value="0" constant="false"/>
+      <parameter metaid="_40866205-6d8b-4c87-a67d-191f160c0d2f" id="theta_puncta" name="theta_puncta" value="0" constant="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+instantaneous puncta entry</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_2ada9c56-3034-4f21-8b90-c8f5a2436eb2" id="Orai_puncta_total" name="Orai_puncta_total" value="0" constant="false"/>
+      <parameter metaid="e16c627b-f81f-4597-82b8-176ce56b8689" id="STIM2au" name="STIM2au" value="0" constant="false"/>
+      <parameter metaid="_2044f1e8-08ad-4a48-a60f-e58ba7a38d50" id="Sfree" name="Sfree" value="0" constant="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+(MWC(Orai_puncta_total/4,STIM2au))  %look up free stim value using function generated from griddedInterpolant, LUT disabled for SBML export</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_5112b4fb-dad9-4b72-9f01-c844c98c9c93" id="R" name="R" value="0" constant="false"/>
+      <parameter metaid="_38aac6ef-b7b8-4157-ad6b-7082e141c74e" id="Denom" name="Denom" value="0" constant="false"/>
+      <parameter metaid="ac80566e-e362-4b70-884d-7dfdcb822c88" id="o" name="o" value="0" constant="false"/>
+      <parameter metaid="fe369834-20f1-488e-b7fd-e38cade3b137" id="os" name="os" value="0" constant="false"/>
+      <parameter metaid="_2fa5e374-3094-43b5-a1a6-45057865545c" id="os2" name="os2" value="0" constant="false"/>
+      <parameter metaid="_094947f6-e295-4fb7-8473-53bf882b9ab9" id="os3" name="os3" value="0" constant="false"/>
+      <parameter metaid="_6f930c07-2390-472b-8b5b-8dfe0b9dbcbf" id="os4" name="os4" value="0" constant="false"/>
+      <parameter metaid="_6ebb0c49-df52-4fb7-9629-5dadab18aa36" id="Orai_free" name="Orai_free" value="0" constant="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+o + c, ie Orai in the puncta that is not bound to STIM; Orai_free can escape the puncta</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_6ef631b2-87fc-4099-9fe9-a4fcff6bb40f" id="pIP3Ro" name="pIP3Ro" value="0" constant="false"/>
+      <parameter metaid="ec0aa9ef-1877-4f17-afba-8e8598c0f2b3" id="pIP3Ra" name="pIP3Ra" value="0" constant="false"/>
+      <parameter metaid="efbe5d8a-5c24-422d-bccf-eb93995d96aa" id="P_IP3R" name="P_IP3R" value="0" constant="false"/>
+      <parameter metaid="c44893e7-5245-4278-b5f3-32472605c2ec" id="IP3R_open" name="IP3R_open" value="0" constant="false"/>
+      <parameter metaid="_1902315a-87e2-49cd-b423-5df0238668b3" id="psi_IM" name="psi_IM" value="0" constant="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+Volts, 0.01348 is RT/2F</body>
+          </html>
+        </notes>
+      </parameter>
+      <parameter metaid="_9e6ec6d2-699f-4d0f-9c37-7fd96dc732d4" id="psi_PM" name="psi_PM" value="0" constant="false"/>
+      <parameter metaid="_81251442-fd77-4a4d-9379-6837edbe630f" id="k_on_STIM1_Ca_dts" name="k_on_STIM1_Ca_dts" value="0" constant="false"/>
+      <parameter metaid="_1c183782-ba0e-4a2e-b1e0-d9819b13545d" id="CRAC_open" name="CRAC_open" value="0" constant="false"/>
+      <parameter metaid="a6c841b0-ab39-440b-aa37-6b49fa61b456" id="G_CRAC" name="G_CRAC" value="0" constant="false"/>
+    </listOfParameters>
+    <listOfRules>
+      <rateRule metaid="_68f87963-c239-4c6c-8a3b-00f92f8b1ac1" variable="V_PM">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+currents and rates are in mol/s, the factor &quot;charge&quot; converts to amps</body>
+          </html>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <cn type="integer"> 1 </cn>
+              <ci> C </ci>
+            </apply>
+            <ci> e_charge </ci>
+            <ci> Avogadro </ci>
+            <cn type="integer"> -2 </cn>
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <ci> Calcium_Entry </ci>
+                </apply>
+                <ci> PM_leak </ci>
+              </apply>
+              <ci> PMCA_rxn10 </ci>
+              <ci> PMCA_rxn5 </ci>
+            </apply>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule metaid="_859088bc-b462-46f8-8244-6a880ed92db6" variable="V_IM">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <cn type="integer"> 1 </cn>
+              <ci> C </ci>
+            </apply>
+            <ci> e_charge </ci>
+            <ci> Avogadro </ci>
+            <cn type="integer"> 2 </cn>
+            <apply>
+              <minus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <minus/>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <minus/>
+                          <ci> Calcium_Release </ci>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 2 </cn>
+                          <ci> SERCA_Rxn2 </ci>
+                        </apply>
+                      </apply>
+                      <ci> IM_leak </ci>
+                    </apply>
+                    <ci> IP3R_rxn_07 </ci>
+                  </apply>
+                  <ci> IP3R_rxn_08 </ci>
+                </apply>
+                <ci> IP3R_rxn_01 </ci>
+              </apply>
+              <ci> IP3R_rxn_02 </ci>
+            </apply>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule metaid="_1d821b77-ec1c-4a68-8265-21dfd26d6137" variable="Ins145P3_dummy">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+(-IP3R_rxn_03+IP3R_rxn_04)/cytosol</body>
+          </html>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </rateRule>
+      <rateRule metaid="b4d8ccb2-cb55-4052-9e21-ab735053ede0" variable="Orai_puncta">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </rateRule>
+      <assignmentRule metaid="_7bdbef7d-9c56-452d-bbd9-76e30cc41a04" variable="switchDeg">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+switch to activate forcing fcn</body>
+          </html>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <piecewise>
+            <piece>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <geq/>
+                <ci> time </ci>
+                <ci> start </ci>
+              </apply>
+            </piece>
+            <otherwise>
+              <cn type="integer"> 0 </cn>
+            </otherwise>
+          </piecewise>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="ff064d90-9cd2-4622-9944-ba6dd96231e3" variable="Ins145P3">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+IP3 forcing function definition</body>
+          </html>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <ci> switchDeg </ci>
+              <ci> IP30 </ci>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <cn> 2.5 </cn>
+                  <ci> Fa </ci>
+                  <apply>
+                    <power/>
+                    <apply>
+                      <minus/>
+                      <ci> time </ci>
+                      <ci> start </ci>
+                    </apply>
+                    <cn> 0.6 </cn>
+                  </apply>
+                  <apply>
+                    <exp/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <minus/>
+                        <ci> Fb </ci>
+                      </apply>
+                      <apply>
+                        <minus/>
+                        <ci> time </ci>
+                        <ci> start </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 2.5 </cn>
+                    <ci> Fc </ci>
+                    <apply>
+                      <minus/>
+                      <ci> time </ci>
+                      <ci> start </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <minus/>
+                      <ci> time </ci>
+                      <ci> start </ci>
+                    </apply>
+                    <cn type="integer"> 1 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> IP30 </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="_978b89d8-792f-4e2c-98d0-a59c9504474e" variable="Ca_total">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> Avogadro </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> cytosol </ci>
+                <apply>
+                  <plus/>
+                  <ci> Ca_cyt </ci>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> Ca2_CaM </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 4 </cn>
+                    <ci> Ca4_CaM </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> IM </ci>
+                <apply>
+                  <plus/>
+                  <ci> IP3Ri1 </ci>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> IP3Ri2 </ci>
+                  </apply>
+                  <ci> IP3Ra </ci>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> SERCA_E1Ca2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> SERCA_E1PCa2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> SERCA_E2PCa2 </ci>
+                  </apply>
+                  <ci> STIM1_Ca_dts </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> PM </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 4 </cn>
+                    <ci> PMCA_Ca4_CaM </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 5 </cn>
+                    <ci> PMCA_Ca4_CaM_Ca </ci>
+                  </apply>
+                  <ci> Ca_PMCA </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> DTS </ci>
+                <ci> Ca_dts </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> PRP </ci>
+                <ci> Ca_ex </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="d5082399-1829-489f-bc91-fba0ce1448e1" variable="IP3_total">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> Avogadro </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> cytosol </ci>
+                <ci> Ins145P3 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> IM </ci>
+                <apply>
+                  <plus/>
+                  <ci> IP3Ro </ci>
+                  <ci> IP3Ra </ci>
+                  <ci> IP3Ri2 </ci>
+                  <ci> IP3Rs </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="c94f4ff7-6f74-4dc8-bf7d-0768c6cae740" variable="IP3R_total">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> Avogadro </ci>
+            <ci> IM </ci>
+            <apply>
+              <plus/>
+              <ci> IP3Rn </ci>
+              <ci> IP3Ri1 </ci>
+              <ci> IP3Ro </ci>
+              <ci> IP3Ra </ci>
+              <ci> IP3Ri2 </ci>
+              <ci> IP3Rs </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="_171de0e0-b700-4751-b5cf-ff18d67355c4" variable="SERCA_total">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> Avogadro </ci>
+            <ci> IM </ci>
+            <apply>
+              <plus/>
+              <ci> SERCA_E1 </ci>
+              <ci> SERCA_E1Ca2 </ci>
+              <ci> SERCA_E1PCa2 </ci>
+              <ci> SERCA_E2PCa2 </ci>
+              <ci> SERCA_E2P </ci>
+              <ci> SERCA_E2 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="_644f0e44-3b3a-421b-8813-2be8afcd53e7" variable="Orai_total">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> Avogadro </ci>
+            <ci> PM </ci>
+            <ci> Orai_puncta </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="ebcd40f7-3851-4ed0-b76d-7776be8fe007" variable="STIM1_total">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> Avogadro </ci>
+            <ci> IM </ci>
+            <apply>
+              <plus/>
+              <ci> STIM1 </ci>
+              <ci> STIM1_Ca_dts </ci>
+              <apply>
+                <times/>
+                <cn type="integer"> 2 </cn>
+                <ci> STIM1_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn type="integer"> 2 </cn>
+                <ci> STIM_puncta </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="da38f81c-d0dd-42e8-ac15-dfc7e060a212" variable="CaM_total">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> Avogadro </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> cytosol </ci>
+                <apply>
+                  <plus/>
+                  <ci> CaM </ci>
+                  <ci> Ca2_CaM </ci>
+                  <ci> Ca4_CaM </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> PM </ci>
+                <apply>
+                  <plus/>
+                  <ci> PMCA_Ca4_CaM </ci>
+                  <ci> PMCA_Ca4_CaM_Ca </ci>
+                  <ci> PMCA_CaM </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="e3a36791-f28e-4836-a6e5-564e6058d15e" variable="PMCA_total">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> Avogadro </ci>
+            <ci> PM </ci>
+            <apply>
+              <plus/>
+              <ci> PMCA </ci>
+              <ci> PMCA_Ca4_CaM </ci>
+              <ci> PMCA_Ca4_CaM_Ca </ci>
+              <ci> PMCA_CaM </ci>
+              <ci> Ca_PMCA </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="d402d042-9201-4d51-8072-a2c8eec1b16c" variable="TG_total">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> Avogadro </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> cytosol </ci>
+                <ci> TG </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> IM </ci>
+                <apply>
+                  <plus/>
+                  <ci> E2_TG </ci>
+                  <ci> E2i_TG </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="e69c22ad-c690-42fd-a53c-3cda57ab133e" variable="total_mass">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <ci> Ca_total </ci>
+            <ci> IP3_total </ci>
+            <ci> IP3R_total </ci>
+            <ci> SERCA_total </ci>
+            <ci> STIM1_total </ci>
+            <ci> Orai_total </ci>
+            <ci> CaM_total </ci>
+            <ci> PMCA_total </ci>
+            <ci> TG_total </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="_83e1d6db-8e8c-41fe-b5c9-8dc992810295" variable="theta_puncta">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+instantaneous puncta entry</body>
+          </html>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <ci> alpha </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <power/>
+                  <ci> Ca_cyt </ci>
+                  <ci> n_p </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <ci> KM_p </ci>
+                    <ci> n_p </ci>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> Ca_cyt </ci>
+                    <ci> n_p </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> beta </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="_230dd215-0488-418a-8591-c9a51fd35dea" variable="Orai_puncta_total">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> Orai_total </ci>
+            <cn> 0.01 </cn>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="_818fdc5e-db47-4b32-8103-0082bf9a9a20" variable="STIM2au">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> STIM_puncta </ci>
+            <ci> Avogadro </ci>
+            <ci> IM </ci>
+            <cn type="integer"> 2 </cn>
+            <ci> theta_puncta </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="_6a8dd718-9a57-448c-af6d-e985d6c62832" variable="Sfree">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+(MWC(Orai_puncta_total/4,STIM2au))  %look up free stim value using function generated from griddedInterpolant, LUT disabled for SBML export</body>
+          </html>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn> 0.001 </cn>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="f0746924-ece2-48d0-befe-0e0cd89d86dd" variable="R">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <ci> STIM2au </ci>
+            <apply>
+              <divide/>
+              <ci> Orai_puncta_total </ci>
+              <cn type="integer"> 4 </cn>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="ca3945f0-1311-4f29-842a-f015302ce526" variable="Denom">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <cn type="integer"> 1 </cn>
+            <ci> L </ci>
+            <apply>
+              <times/>
+              <cn type="integer"> 4 </cn>
+              <ci> K_a </ci>
+              <ci> Sfree </ci>
+            </apply>
+            <apply>
+              <times/>
+              <cn type="integer"> 4 </cn>
+              <ci> L </ci>
+              <ci> f </ci>
+              <ci> Sfree </ci>
+            </apply>
+            <apply>
+              <times/>
+              <cn type="integer"> 6 </cn>
+              <ci> a </ci>
+              <apply>
+                <power/>
+                <ci> K_a </ci>
+                <cn type="integer"> 2 </cn>
+              </apply>
+              <apply>
+                <power/>
+                <ci> Sfree </ci>
+                <cn type="integer"> 2 </cn>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <cn type="integer"> 6 </cn>
+              <ci> a </ci>
+              <ci> L </ci>
+              <apply>
+                <power/>
+                <ci> f </ci>
+                <cn type="integer"> 2 </cn>
+              </apply>
+              <apply>
+                <power/>
+                <ci> Sfree </ci>
+                <cn type="integer"> 2 </cn>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <cn type="integer"> 4 </cn>
+              <apply>
+                <power/>
+                <ci> a </ci>
+                <cn type="integer"> 3 </cn>
+              </apply>
+              <apply>
+                <power/>
+                <ci> K_a </ci>
+                <cn type="integer"> 3 </cn>
+              </apply>
+              <apply>
+                <power/>
+                <ci> Sfree </ci>
+                <cn type="integer"> 3 </cn>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <cn type="integer"> 4 </cn>
+              <apply>
+                <power/>
+                <ci> a </ci>
+                <cn type="integer"> 3 </cn>
+              </apply>
+              <ci> L </ci>
+              <apply>
+                <power/>
+                <ci> f </ci>
+                <cn type="integer"> 3 </cn>
+              </apply>
+              <apply>
+                <power/>
+                <ci> Sfree </ci>
+                <cn type="integer"> 3 </cn>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <power/>
+                <ci> a </ci>
+                <cn type="integer"> 6 </cn>
+              </apply>
+              <apply>
+                <power/>
+                <ci> K_a </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+              <apply>
+                <power/>
+                <ci> Sfree </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <power/>
+                <ci> a </ci>
+                <cn type="integer"> 6 </cn>
+              </apply>
+              <ci> L </ci>
+              <apply>
+                <power/>
+                <ci> f </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+              <apply>
+                <power/>
+                <ci> Sfree </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="c560b51d-e82a-491e-ac15-d52c189c6513" variable="o">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> L </ci>
+                <ci> Orai_puncta_total </ci>
+              </apply>
+              <ci> Denom </ci>
+            </apply>
+            <cn type="integer"> 4 </cn>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="ec7eb156-a96d-41f0-8bb9-6f8548d5ce05" variable="os">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn type="integer"> 4 </cn>
+                <ci> L </ci>
+                <ci> f </ci>
+                <ci> Sfree </ci>
+                <ci> Orai_puncta_total </ci>
+              </apply>
+              <ci> Denom </ci>
+            </apply>
+            <cn type="integer"> 4 </cn>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="e9b68237-7baf-4f80-a47b-aa673eee274e" variable="os2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn type="integer"> 6 </cn>
+                <ci> a </ci>
+                <ci> L </ci>
+                <apply>
+                  <power/>
+                  <ci> f </ci>
+                  <cn type="integer"> 2 </cn>
+                </apply>
+                <apply>
+                  <power/>
+                  <ci> Sfree </ci>
+                  <cn type="integer"> 2 </cn>
+                </apply>
+                <ci> Orai_puncta_total </ci>
+              </apply>
+              <ci> Denom </ci>
+            </apply>
+            <cn type="integer"> 4 </cn>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="c9213d1d-6e66-4d2e-af92-c93e55bd3efa" variable="os3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn type="integer"> 4 </cn>
+                <apply>
+                  <power/>
+                  <ci> a </ci>
+                  <cn type="integer"> 3 </cn>
+                </apply>
+                <ci> L </ci>
+                <apply>
+                  <power/>
+                  <ci> f </ci>
+                  <cn type="integer"> 3 </cn>
+                </apply>
+                <apply>
+                  <power/>
+                  <ci> Sfree </ci>
+                  <cn type="integer"> 3 </cn>
+                </apply>
+                <ci> Orai_puncta_total </ci>
+              </apply>
+              <ci> Denom </ci>
+            </apply>
+            <cn type="integer"> 4 </cn>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="fd29b46a-cc6d-4499-9fcb-9edc41a09ded" variable="os4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <power/>
+                  <ci> a </ci>
+                  <cn type="integer"> 6 </cn>
+                </apply>
+                <ci> L </ci>
+                <apply>
+                  <power/>
+                  <ci> f </ci>
+                  <cn type="integer"> 4 </cn>
+                </apply>
+                <apply>
+                  <power/>
+                  <ci> Sfree </ci>
+                  <cn type="integer"> 4 </cn>
+                </apply>
+                <ci> Orai_puncta_total </ci>
+              </apply>
+              <ci> Denom </ci>
+            </apply>
+            <cn type="integer"> 4 </cn>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="_18554aeb-bac4-47bd-b0fe-83609f9d9e87" variable="Orai_free">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+o + c, ie Orai in the puncta that is not bound to STIM; Orai_free can escape the puncta</body>
+          </html>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <ci> o </ci>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <ci> Orai_puncta_total </ci>
+                <ci> Denom </ci>
+              </apply>
+              <cn type="integer"> 4 </cn>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="f860738b-7ede-411e-bf0e-6d0c2bf81015" variable="pIP3Ro">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> IM </ci>
+              <ci> Avogadro </ci>
+              <ci> IP3Ro </ci>
+            </apply>
+            <ci> IP3R_total </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="_71ea6b65-d8e9-4c7f-b85d-b1c4b4e661d0" variable="pIP3Ra">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> IM </ci>
+              <ci> Avogadro </ci>
+              <ci> IP3Ra </ci>
+            </apply>
+            <ci> IP3R_total </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="_2fe9057e-2ad6-48cd-b5a6-93acaa9c98c9" variable="P_IP3R">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <cn> 0.9 </cn>
+                <ci> pIP3Ra </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn> 0.1 </cn>
+                <ci> pIP3Ro </ci>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <cn> 0.9 </cn>
+                <ci> pIP3Ra </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn> 0.1 </cn>
+                <ci> pIP3Ro </ci>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <cn> 0.9 </cn>
+                <ci> pIP3Ra </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn> 0.1 </cn>
+                <ci> pIP3Ro </ci>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <cn> 0.9 </cn>
+                <ci> pIP3Ra </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn> 0.1 </cn>
+                <ci> pIP3Ro </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="_92990828-f907-4f37-a057-dc781cfa3cc6" variable="IP3R_open">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> P_IP3R </ci>
+                <ci> IP3R_total </ci>
+              </apply>
+              <ci> Avogadro </ci>
+            </apply>
+            <cn type="integer"> 4 </cn>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="_1c1e2183-281d-46da-9a79-24cb41c81345" variable="psi_IM">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+Volts, 0.01348 is RT/2F</body>
+          </html>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn> 0.01348 </cn>
+            <apply>
+              <ln/>
+              <apply>
+                <divide/>
+                <ci> Ca_cyt </ci>
+                <ci> Ca_dts </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="e0c080b4-fe88-4615-bf63-06abcabd9ebd" variable="psi_PM">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn> 0.01348 </cn>
+            <apply>
+              <ln/>
+              <apply>
+                <divide/>
+                <ci> Ca_ex </ci>
+                <ci> Ca_cyt </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="_70087e61-857d-4389-9456-a92e0c848b32" variable="k_on_STIM1_Ca_dts">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <ci> k_off_STIM1_Ca_dts </ci>
+            <ci> K_d </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="f5d8ada0-7faf-4b72-b7c5-95a0f7c42191" variable="CRAC_open">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <ci> os </ci>
+            <ci> os2 </ci>
+            <ci> os3 </ci>
+            <ci> os4 </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule metaid="_1c63e22a-ae59-4529-bca3-cfb283d939ef" variable="G_CRAC">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <piecewise>
+            <piece>
+              <cn type="integer"> 0 </cn>
+              <apply>
+                <geq/>
+                <ci> V_PM </ci>
+                <ci> psi_PM </ci>
+              </apply>
+            </piece>
+            <otherwise>
+              <cn type="e-notation"> 2 <sep/> -14 </cn>
+            </otherwise>
+          </piecewise>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction metaid="_677cbbe5-6210-4891-8235-df7cbd10a6a8" id="SERCA_Rxn1" name="SERCA_Rxn1" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="ab4da2ee-8db3-40a3-9b98-07cd60c2c0f6" species="SERCA_E2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_78402763-977f-478c-97f0-8c28bd97ff55" species="SERCA_E1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="SERCA_E2"/>
+          <modifierSpeciesReference species="SERCA_E1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_4dd124e2-90de-495c-8720-681bbc4cd851">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> switchSERCA </ci>
+                <ci> IM </ci>
+                <ci> k_SERCA_1f </ci>
+                <ci> SERCA_E2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> switchSERCA </ci>
+                <ci> IM </ci>
+                <ci> k_SERCA_1r </ci>
+                <ci> SERCA_E1 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="a16b39cc-8c26-45c3-a48d-e015cdef9101" id="SERCA_Rxn2" name="SERCA_Rxn2" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="b459581f-ecbe-4740-adf2-277bafcea81e" species="Ca_cyt" stoichiometry="2"/>
+          <speciesReference metaid="_3af2b387-4d88-4858-a202-6971335bbd32" species="SERCA_E1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8bbd3670-085b-40f8-b8da-2216cb3652bd" species="SERCA_E1Ca2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="SERCA_E1"/>
+          <modifierSpeciesReference species="Ca_cyt"/>
+          <modifierSpeciesReference species="SERCA_E1Ca2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_67d4b0fe-df69-4a8a-be77-4b5ad7756ebc">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> switchSERCA </ci>
+                <ci> cytosol </ci>
+                <ci> k_SERCA_2f </ci>
+                <apply>
+                  <divide/>
+                  <ci> IM </ci>
+                  <ci> cytosol </ci>
+                </apply>
+                <ci> SERCA_E1 </ci>
+                <ci> Ca_cyt </ci>
+                <ci> Ca_cyt </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> switchSERCA </ci>
+                <ci> IM </ci>
+                <ci> k_SERCA_2r </ci>
+                <ci> SERCA_E1Ca2 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_75947db9-b033-43b9-a535-62ecb6e88faf" id="SERCA_Rxn3" name="SERCA_Rxn3" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_626484bf-1520-4996-839c-db038122e17b" species="SERCA_E1Ca2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1c0411e6-5735-40a2-a2a0-2d1cf266477f" species="SERCA_E1PCa2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="SERCA_E1Ca2"/>
+          <modifierSpeciesReference species="SERCA_E1PCa2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_28dd06af-68f7-4d59-a34d-93f73783d63a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> switchSERCA </ci>
+                <ci> IM </ci>
+                <ci> k_SERCA_3f </ci>
+                <ci> SERCA_E1Ca2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> switchSERCA </ci>
+                <ci> IM </ci>
+                <ci> k_SERCA_3r </ci>
+                <ci> SERCA_E1PCa2 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="d485c826-5bf9-4ff3-bb1f-9c50068296d8" id="SERCA_Rxn4" name="SERCA_Rxn4" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="ec6747c3-3ab6-4533-87ef-8cd8a13bcabe" species="SERCA_E1PCa2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8ffc60a9-2999-4fba-9a9c-683bcc5a4ce0" species="SERCA_E2PCa2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="SERCA_E1PCa2"/>
+          <modifierSpeciesReference species="SERCA_E2PCa2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_03e15f98-f495-4307-9c4d-1bf39aa2187f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> switchSERCA </ci>
+                <ci> IM </ci>
+                <ci> k_SERCA_4f </ci>
+                <ci> SERCA_E1PCa2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> switchSERCA </ci>
+                <ci> IM </ci>
+                <ci> k_SERCA_4r </ci>
+                <ci> SERCA_E2PCa2 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_97dadeb1-b692-45b3-bb28-fa76c1701416" id="SERCA_Rxn5" name="SERCA_Rxn5" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8dd69fe1-8622-4016-a194-6ae553f2e438" species="SERCA_E2PCa2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_44775bb5-b861-46e7-9346-5be797bb250a" species="SERCA_E2P"/>
+          <speciesReference metaid="_0a9fc7c4-2892-407b-81cf-ef6a078613a4" species="Ca_dts" stoichiometry="2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="SERCA_E2PCa2"/>
+          <modifierSpeciesReference species="SERCA_E2P"/>
+          <modifierSpeciesReference species="Ca_dts"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_3ef899a5-ac7a-4cc1-8435-ee293c6ad887">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> switchSERCA </ci>
+                <ci> IM </ci>
+                <ci> k_SERCA_5f </ci>
+                <ci> SERCA_E2PCa2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> switchSERCA </ci>
+                <ci> DTS </ci>
+                <ci> k_SERCA_5r </ci>
+                <apply>
+                  <divide/>
+                  <ci> IM </ci>
+                  <ci> DTS </ci>
+                </apply>
+                <ci> SERCA_E2P </ci>
+                <ci> Ca_dts </ci>
+                <ci> Ca_dts </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_52cc3a0b-4139-41a0-8766-fb23e7310ac4" id="SERCA_Rxn6" name="SERCA_Rxn6" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_377a51c0-8ce4-40ce-9c33-aebf28bc5577" species="SERCA_E2P"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1dcf3bc6-0b1f-4f25-9fc2-ee1872a96b5f" species="SERCA_E2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="SERCA_E2P"/>
+          <modifierSpeciesReference species="SERCA_E2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_4532b5aa-25ff-4e79-86db-595cb34c334b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> switchSERCA </ci>
+                <ci> IM </ci>
+                <ci> k_SERCA_6f </ci>
+                <ci> SERCA_E2P </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> switchSERCA </ci>
+                <ci> IM </ci>
+                <ci> k_SERCA_6r </ci>
+                <ci> SERCA_E2 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="fe709566-2bbb-480c-a3a5-10a9db5f3012" id="TG_binding" name="TG_binding">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+TG inhibition rxns</body>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference metaid="_3d3b6622-fbcf-4d26-aa8e-70d7549f03f3" species="SERCA_E2"/>
+          <speciesReference metaid="e8c0e537-1818-459e-8ce0-3d247f4fc22b" species="TG"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_675f4a1d-4c46-48cb-b7e3-f1aec933d690" species="E2_TG"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="TG"/>
+          <modifierSpeciesReference species="SERCA_E2"/>
+          <modifierSpeciesReference species="E2_TG"/>
+        </listOfModifiers>
+        <kineticLaw metaid="fa4160ca-59fa-4a0b-923a-022477838439">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchTG </ci>
+              <ci> cytosol </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_TG_1f </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IM </ci>
+                    <ci> cytosol </ci>
+                  </apply>
+                  <ci> TG </ci>
+                  <ci> SERCA_E2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_TG_1r </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IM </ci>
+                    <ci> cytosol </ci>
+                  </apply>
+                  <ci> E2_TG </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_9e7b665c-d940-4767-a751-7fc62eb3bcb3" id="SERCA_inhibition" name="SERCA_inhibition">
+        <listOfReactants>
+          <speciesReference metaid="_36650dc3-4ca8-4493-a3a5-319618001325" species="E2_TG"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_3be595ab-8da8-466c-ac9b-03b2d45c22c9" species="E2i_TG"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="E2_TG"/>
+          <modifierSpeciesReference species="E2i_TG"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d9237afb-4bcb-4e48-adac-24f285e00082">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchTG </ci>
+              <ci> cytosol </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_TG_2f </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IM </ci>
+                    <ci> cytosol </ci>
+                  </apply>
+                  <ci> E2_TG </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_TG_2r </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IM </ci>
+                    <ci> cytosol </ci>
+                  </apply>
+                  <ci> E2i_TG </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_7953b00f-4229-4a92-970e-8a97127fef30" id="IP3R_rxn_01" name="IP3R_rxn_01" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_906dbebb-6335-4ddf-8ddc-31679be31644" species="Ca_cyt"/>
+          <speciesReference metaid="_4cccb42b-7735-45f6-8e22-7f960249e459" species="IP3Rn"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_04a8766f-30bf-4f15-99d5-dd79357dd911" species="IP3Ri1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="IP3Rn"/>
+          <modifierSpeciesReference species="Ca_cyt"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_75146c14-2a6a-4c45-a45d-e0d468c2d534">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchIP3R </ci>
+              <ci> cytosol </ci>
+              <apply>
+                <divide/>
+                <ci> IM </ci>
+                <ci> cytosol </ci>
+              </apply>
+              <ci> IP3Rn </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <times/>
+                      <ci> k_IP3R_k1 </ci>
+                      <ci> k_IP3R_L1 </ci>
+                    </apply>
+                    <ci> k_IP3R_l2 </ci>
+                  </apply>
+                  <ci> Ca_cyt </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> k_IP3R_L1 </ci>
+                  <apply>
+                    <times/>
+                    <ci> Ca_cyt </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <divide/>
+                        <ci> k_IP3R_L1 </ci>
+                        <ci> k_IP3R_L3 </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="e3017e27-a4a1-441e-9457-27bdb80df7b5" id="IP3R_rxn_02" name="IP3R_rxn_02" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_05651cfc-8995-4614-a881-3c400e853066" species="IP3Ri1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a9b82afe-b875-4a52-995f-61d2bbd86546" species="Ca_cyt"/>
+          <speciesReference metaid="_38a8adf3-b9af-49f8-a4f6-52dc452e3ecc" species="IP3Rn"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="IP3Ri1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="efb60da8-668a-4111-a1d9-1889f3554051">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchIP3R </ci>
+              <ci> IM </ci>
+              <ci> IP3Ri1 </ci>
+              <apply>
+                <plus/>
+                <ci> k_IP3R_k1b </ci>
+                <ci> k_IP3R_l2b </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_63cc2d1b-ba66-4394-ae65-327b5d206b91" id="IP3R_rxn_03" name="IP3R_rxn_03" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_917d6250-dd94-4d02-9328-aa97c3edccb4" species="IP3Rn"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8e8c81ad-b890-40e1-abe0-b3a817475946" species="IP3Ro"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="f58f5f67-e333-4eb2-8b8b-5178fa1c6205" species="Ca_cyt"/>
+          <modifierSpeciesReference species="IP3Rn"/>
+          <modifierSpeciesReference species="Ca_cyt"/>
+        </listOfModifiers>
+        <kineticLaw metaid="c60202af-fad8-47f5-81bd-d49b3a2c69a0">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchIP3R </ci>
+              <ci> cytosol </ci>
+              <apply>
+                <divide/>
+                <ci> IM </ci>
+                <ci> cytosol </ci>
+              </apply>
+              <ci> IP3Rn </ci>
+              <ci> Ins145P3 </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> k_IP3R_k2 </ci>
+                    <ci> k_IP3R_L3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> k_IP3R_l4 </ci>
+                    <ci> Ca_cyt </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> k_IP3R_L3 </ci>
+                  <apply>
+                    <times/>
+                    <ci> Ca_cyt </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <divide/>
+                        <ci> k_IP3R_L3 </ci>
+                        <ci> k_IP3R_L1 </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_669c02d6-cd65-4c1e-bd7e-302542525f81" id="IP3R_rxn_04" name="IP3R_rxn_04" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="fc0ca6d2-544f-4397-b5c4-57a2a0b888ec" species="IP3Ro"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="ef2a0813-0038-4ec5-aed3-9f055a5741dd" species="IP3Rn"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="b89d1e42-9823-4864-8f6a-26ac08a85835" species="Ca_cyt"/>
+          <modifierSpeciesReference species="IP3Ro"/>
+          <modifierSpeciesReference species="Ca_cyt"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_568860a0-589c-4893-a132-82ca6167e7a2">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchIP3R </ci>
+              <ci> cytosol </ci>
+              <apply>
+                <divide/>
+                <ci> IM </ci>
+                <ci> cytosol </ci>
+              </apply>
+              <ci> IP3Ro </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> k_IP3R_k2b </ci>
+                  <apply>
+                    <times/>
+                    <ci> k_IP3R_l4b </ci>
+                    <ci> Ca_cyt </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> Ca_cyt </ci>
+                    <ci> k_IP3R_L5 </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_0c8e778f-b25e-4821-b15c-8cff98ea130a" id="IP3R_rxn_05" name="IP3R_rxn_05" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="aac6c8ea-2cfe-49d9-85cb-02072800bac1" species="Ca_cyt"/>
+          <speciesReference metaid="_8e2755eb-d868-4513-854e-c4dbd8917ee4" species="IP3Ro"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_60f90ba5-c998-47c6-a53c-a82e24f631e3" species="IP3Ra"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="IP3Ro"/>
+          <modifierSpeciesReference species="Ca_cyt"/>
+        </listOfModifiers>
+        <kineticLaw metaid="ff9e43f7-16cf-4201-93dc-9fb0715585ea">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchIP3R </ci>
+              <ci> cytosol </ci>
+              <apply>
+                <divide/>
+                <ci> IM </ci>
+                <ci> cytosol </ci>
+              </apply>
+              <ci> IP3Ro </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <times/>
+                      <ci> k_IP3R_k4 </ci>
+                      <ci> k_IP3R_L5 </ci>
+                    </apply>
+                    <ci> k_IP3R_l6 </ci>
+                  </apply>
+                  <ci> Ca_cyt </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> k_IP3R_L5 </ci>
+                  <ci> Ca_cyt </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_096e94f2-b044-4d9d-b0d2-beba0a73ecd0" id="IP3R_rxn_06" name="IP3R_rxn_06" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_5282c432-137a-4a17-8a67-b90d4da8146a" species="IP3Ra"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_378881ea-f742-4978-90e5-0fd9931f295b" species="Ca_cyt"/>
+          <speciesReference metaid="c80d1c80-37fc-4c27-8b5e-7c00d06ae9da" species="IP3Ro"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="IP3Ra"/>
+          <modifierSpeciesReference species="Ca_cyt"/>
+        </listOfModifiers>
+        <kineticLaw metaid="f4d32b16-2f29-4936-9e5f-41500921d5c0">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchIP3R </ci>
+              <ci> cytosol </ci>
+              <apply>
+                <divide/>
+                <ci> IM </ci>
+                <ci> cytosol </ci>
+              </apply>
+              <ci> IP3Ra </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> k_IP3R_L1 </ci>
+                  <apply>
+                    <plus/>
+                    <ci> k_IP3R_k4b </ci>
+                    <ci> k_IP3R_l6b </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> k_IP3R_L1 </ci>
+                  <ci> Ca_cyt </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="a12ae049-9121-44d1-8429-108f61eaddd6" id="IP3R_rxn_07" name="IP3R_rxn_07" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="af4a5810-e3d8-44c0-9822-61c5c06cc029" species="Ca_cyt"/>
+          <speciesReference metaid="f0571a76-c638-4a1b-8337-0111c13b56d8" species="IP3Ra"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="cdfd4de4-2e35-4e43-a7bd-f1bfdf565900" species="IP3Ri2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="IP3Ra"/>
+          <modifierSpeciesReference species="Ca_cyt"/>
+        </listOfModifiers>
+        <kineticLaw metaid="cc4cad39-99f2-40e3-98a0-86939a00e89d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchIP3R </ci>
+              <ci> cytosol </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <divide/>
+                    <ci> IM </ci>
+                    <ci> cytosol </ci>
+                  </apply>
+                  <ci> IP3Ra </ci>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <times/>
+                      <ci> k_IP3R_k1 </ci>
+                      <ci> k_IP3R_L1 </ci>
+                    </apply>
+                    <ci> k_IP3R_l2 </ci>
+                  </apply>
+                  <ci> Ca_cyt </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> k_IP3R_L1 </ci>
+                  <ci> Ca_cyt </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_13a5335f-1027-4798-bffd-34e2b369757b" id="IP3R_rxn_08" name="IP3R_rxn_08" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="e774c9eb-10b2-4309-8863-72d751873afb" species="IP3Ri2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_71c3628a-a867-4eb6-a32c-62a3515ef0d4" species="Ca_cyt"/>
+          <speciesReference metaid="_0f659b86-80d5-4668-b136-c71aa73fbbcd" species="IP3Ra"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="IP3Ri2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_250fcc8d-211d-46c8-87a8-74315651ce06">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchIP3R </ci>
+              <ci> IM </ci>
+              <ci> IP3Ri2 </ci>
+              <apply>
+                <plus/>
+                <ci> k_IP3R_k1b </ci>
+                <ci> k_IP3R_l2b </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_3da295c7-33cc-4760-8f4b-ae790b989594" id="IP3R_rxn_09" name="IP3R_rxn_09" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+possible error in Sneyd paper, units don&apos;t work out</body>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference metaid="_60ce4a98-2c56-46d3-add2-50b8820a7236" species="IP3Ro"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_046b03f4-d06f-4f1d-8813-2528a986ef48" species="IP3Rs"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_46b36e13-752d-4302-adee-0f792785cfa7" species="Ca_cyt"/>
+          <modifierSpeciesReference species="IP3Ro"/>
+          <modifierSpeciesReference species="Ca_cyt"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_33273a3a-94f3-4903-833c-7aec445420d8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchIP3R </ci>
+              <ci> cytosol </ci>
+              <apply>
+                <divide/>
+                <ci> IM </ci>
+                <ci> cytosol </ci>
+              </apply>
+              <ci> IP3Ro </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> k_IP3R_k3 </ci>
+                  <ci> k_IP3R_L5 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> k_IP3R_L5 </ci>
+                  <ci> Ca_cyt </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_352d1d90-6bbb-4277-b14c-82d0434ca685" id="IP3R_rxn_10" name="IP3R_rxn_10" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="eca78b4a-ab2c-4c7a-bcff-32105e326b9e" species="IP3Rs"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="f3de42ad-094c-4237-b516-bdd685691c61" species="IP3Ro"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="IP3Rs"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_169abc7b-897c-43b6-b9b3-89538b206568">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchIP3R </ci>
+              <ci> IM </ci>
+              <ci> k_IP3R_k3b </ci>
+              <ci> IP3Rs </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_18f54868-455c-44f8-8ae7-3c30e5eeadfe" id="STIM1_binding_Ca_dts" name="STIM1_binding_Ca_dts">
+        <listOfReactants>
+          <speciesReference metaid="abc8b59a-a4bc-458c-8954-1d069b3485ea" species="Ca_dts" stoichiometry="2"/>
+          <speciesReference metaid="_20afe40d-de1c-4078-a14a-cb2bea30a15e" species="STIM1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_55a280ba-ec18-4933-b70e-f77b2acb7608" species="STIM1_Ca_dts"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="STIM1"/>
+          <modifierSpeciesReference species="Ca_dts"/>
+          <modifierSpeciesReference species="STIM1_Ca_dts"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d47a373d-2598-492b-b33c-bd483df13cfa">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchSOCE </ci>
+              <ci> DTS </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_on_STIM1_Ca_dts </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IM </ci>
+                    <ci> DTS </ci>
+                  </apply>
+                  <ci> STIM1 </ci>
+                  <ci> Ca_dts </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_off_STIM1_Ca_dts </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IM </ci>
+                    <ci> DTS </ci>
+                  </apply>
+                  <ci> STIM1_Ca_dts </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="f16ddaaf-d46e-4663-b993-da8d721f0fc2" id="STIM1_dimerization" name="STIM1_dimerization">
+        <listOfReactants>
+          <speciesReference metaid="da66aa65-b593-4e4f-8b9d-a5eaa5b2438a" species="STIM1" stoichiometry="2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1b65c26e-1239-42b4-b5df-f1b54bde70b5" species="STIM1_2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="STIM1"/>
+          <modifierSpeciesReference species="STIM1_2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="ae5cb0a1-f090-4212-87ce-f9275f878742">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchSOCE </ci>
+              <ci> IM </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_on_STIM1_STIM1 </ci>
+                  <ci> STIM1 </ci>
+                  <ci> STIM1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_off_STIM1_STIM1 </ci>
+                  <ci> STIM1_2 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_756344ad-c0ea-44fc-986b-2472e7c9c4b4" id="STIM_puncta_entry" name="STIM_puncta_entry">
+        <listOfReactants>
+          <speciesReference metaid="ea82431a-1269-4284-83a2-66024f98ff4c" species="STIM1_2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_88dd18fb-0b97-4aa9-94db-322b2df0440f" species="STIM_puncta"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="STIM1_2"/>
+          <modifierSpeciesReference species="STIM_puncta"/>
+        </listOfModifiers>
+        <kineticLaw metaid="b76763ef-dac0-43a0-a948-3d32ec8a4ec2">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchSOCE </ci>
+              <ci> IM </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_in </ci>
+                  <ci> STIM1_2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_out </ci>
+                  <ci> STIM_puncta </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="f73d1807-eeca-4c12-a7da-806cd022db45" id="PMCA_rxn4" name="PMCA_rxn4">
+        <listOfReactants>
+          <speciesReference metaid="_1c1db403-0e2b-486b-8471-45fd87a0ea0c" species="Ca_cyt"/>
+          <speciesReference metaid="_105b634c-4baf-454b-8323-33229cf8a1c0" species="PMCA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_590f65a9-3c93-4412-9381-1cb8bc05bedc" species="Ca_PMCA"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="PMCA"/>
+          <modifierSpeciesReference species="Ca_cyt"/>
+          <modifierSpeciesReference species="Ca_PMCA"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_128e008f-d8a1-46ec-929b-947b66d0583e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchPMCA </ci>
+              <ci> cytosol </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_PMCA_4f </ci>
+                  <apply>
+                    <divide/>
+                    <ci> PM </ci>
+                    <ci> cytosol </ci>
+                  </apply>
+                  <ci> PMCA </ci>
+                  <ci> Ca_cyt </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_PMCA_4r </ci>
+                  <apply>
+                    <divide/>
+                    <ci> PM </ci>
+                    <ci> cytosol </ci>
+                  </apply>
+                  <ci> Ca_PMCA </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_45673858-9a60-4c1b-a45e-88263a7339c3" id="PMCA_rxn5" name="PMCA_rxn5" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_5abd751f-3199-44bf-b8dc-2ec7a44132ff" species="Ca_PMCA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_56c2ab8d-2461-4734-8858-e21d5d653274" species="Ca_ex"/>
+          <speciesReference metaid="_39fd6e66-0cd7-4ede-b54e-5f1d5dc0c8f2" species="PMCA"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Ca_PMCA"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_9856de6c-de64-4314-a2c4-18ecfff82bd6">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchPMCA </ci>
+              <ci> PRP </ci>
+              <ci> k_PMCA_5f </ci>
+              <apply>
+                <divide/>
+                <ci> PM </ci>
+                <ci> PRP </ci>
+              </apply>
+              <ci> Ca_PMCA </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_056adc49-edb8-4646-87e2-a3d60e8dd940" id="PMCA_rxn6" name="PMCA_rxn6">
+        <listOfReactants>
+          <speciesReference metaid="_5b4b6244-4a87-47de-955e-d210040f511c" species="Ca_cyt" stoichiometry="2"/>
+          <speciesReference metaid="_8f2adb29-3529-4189-b231-deb7f53063b3" species="CaM"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_367c7fd4-3455-4eb8-b77a-b69d6ebd45c8" species="Ca2_CaM"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CaM"/>
+          <modifierSpeciesReference species="Ca_cyt"/>
+          <modifierSpeciesReference species="Ca2_CaM"/>
+        </listOfModifiers>
+        <kineticLaw metaid="b1de0b64-78b4-4a64-9ad0-ed04055e80a9">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchPMCA </ci>
+              <ci> cytosol </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_PMCA_6f </ci>
+                  <ci> CaM </ci>
+                  <ci> Ca_cyt </ci>
+                  <ci> Ca_cyt </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_PMCA_6r </ci>
+                  <ci> Ca2_CaM </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_505d8ecb-9cbb-46cb-ac0b-91da77d84d8f" id="PMCA_rxn7" name="PMCA_rxn7">
+        <listOfReactants>
+          <speciesReference metaid="_535f8119-bc30-42b3-9881-c53d45af29b6" species="Ca_cyt" stoichiometry="2"/>
+          <speciesReference metaid="_86a2d556-a222-48e8-af92-0b23c0499b9e" species="Ca2_CaM"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_71af798c-5217-4941-b62a-5812e47efb24" species="Ca4_CaM"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Ca2_CaM"/>
+          <modifierSpeciesReference species="Ca_cyt"/>
+          <modifierSpeciesReference species="Ca4_CaM"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_7c75617f-895b-40fb-8c31-14c4c2a23174">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchPMCA </ci>
+              <ci> cytosol </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_PMCA_7f </ci>
+                  <ci> Ca2_CaM </ci>
+                  <ci> Ca_cyt </ci>
+                  <ci> Ca_cyt </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_PMCA_7r </ci>
+                  <ci> Ca4_CaM </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_2fe484b4-1ad8-42bb-999b-236acce389c3" id="PMCA_rxn8" name="PMCA_rxn8">
+        <listOfReactants>
+          <speciesReference metaid="_59496faf-1c72-47da-a2fc-1c1adc7739b4" species="PMCA"/>
+          <speciesReference metaid="c54af89b-a0c6-40a0-b4e7-fd9fabb6bd64" species="Ca4_CaM"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_698f2ba9-d47f-4a17-8312-be534eb889c2" species="PMCA_Ca4_CaM"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Ca4_CaM"/>
+          <modifierSpeciesReference species="PMCA"/>
+          <modifierSpeciesReference species="PMCA_Ca4_CaM"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d9afb09b-73b4-407b-8317-55141512e31f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchPMCA </ci>
+              <ci> cytosol </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_PMCA_8f </ci>
+                  <ci> Ca4_CaM </ci>
+                  <apply>
+                    <divide/>
+                    <ci> PM </ci>
+                    <ci> cytosol </ci>
+                  </apply>
+                  <ci> PMCA </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_PMCA_8r </ci>
+                  <apply>
+                    <divide/>
+                    <ci> PM </ci>
+                    <ci> cytosol </ci>
+                  </apply>
+                  <ci> PMCA_Ca4_CaM </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_84bfb6e0-e8ad-4c19-a758-433ff440d3ad" id="PMCA_rxn9" name="PMCA_rxn9">
+        <listOfReactants>
+          <speciesReference metaid="ca0b5e8f-3359-44e5-83c9-ea93039d596d" species="Ca_cyt"/>
+          <speciesReference metaid="_85f91352-730f-47a2-a605-9e937cc65e66" species="PMCA_Ca4_CaM"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8fa66c9c-b754-4d7f-aba5-5c42d76c4804" species="PMCA_Ca4_CaM_Ca"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="PMCA_Ca4_CaM"/>
+          <modifierSpeciesReference species="Ca_cyt"/>
+          <modifierSpeciesReference species="PMCA_Ca4_CaM_Ca"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_0a27fda1-9190-4867-b97d-515e787b136f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchPMCA </ci>
+              <ci> cytosol </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_PMCA_9f </ci>
+                  <apply>
+                    <divide/>
+                    <ci> PM </ci>
+                    <ci> cytosol </ci>
+                  </apply>
+                  <ci> PMCA_Ca4_CaM </ci>
+                  <ci> Ca_cyt </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_PMCA_9r </ci>
+                  <apply>
+                    <divide/>
+                    <ci> PM </ci>
+                    <ci> cytosol </ci>
+                  </apply>
+                  <ci> PMCA_Ca4_CaM_Ca </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_7e736f24-bbee-414c-8cb1-7c9becd3db82" id="PMCA_rxn10" name="PMCA_rxn10" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_210072f0-0b5e-4420-9f88-2896ea5e3435" species="PMCA_Ca4_CaM_Ca"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="ade5f0d9-1447-47e5-a7d6-adcf1ff5eb84" species="Ca_ex"/>
+          <speciesReference metaid="_503e4806-0cad-4e6f-824c-62a037261448" species="PMCA_Ca4_CaM"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="PMCA_Ca4_CaM_Ca"/>
+        </listOfModifiers>
+        <kineticLaw metaid="a50efb4e-8331-44af-b4be-376781eb32f6">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchPMCA </ci>
+              <ci> PRP </ci>
+              <ci> k_PMCA_10f </ci>
+              <apply>
+                <divide/>
+                <ci> PM </ci>
+                <ci> PRP </ci>
+              </apply>
+              <ci> PMCA_Ca4_CaM_Ca </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="afb74e24-ec57-48bb-b8cd-2589d1d1eb0d" id="PMCA_rxn11" name="PMCA_rxn11">
+        <listOfReactants>
+          <speciesReference metaid="_209d67d9-03c2-431d-8906-7be9ec7f1113" species="PMCA_Ca4_CaM"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_596121ff-c6f8-451e-a5cf-fa4825e87926" species="Ca_cyt" stoichiometry="4"/>
+          <speciesReference metaid="_93439ee2-bce5-4998-88dd-400e36be47ce" species="PMCA_CaM"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="PMCA_Ca4_CaM"/>
+          <modifierSpeciesReference species="PMCA_CaM"/>
+          <modifierSpeciesReference species="Ca_cyt"/>
+        </listOfModifiers>
+        <kineticLaw metaid="f7705d38-926f-4dee-aa3a-87f191492e78">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchPMCA </ci>
+              <ci> cytosol </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_PMCA_11f </ci>
+                  <apply>
+                    <divide/>
+                    <ci> PM </ci>
+                    <ci> cytosol </ci>
+                  </apply>
+                  <ci> PMCA_Ca4_CaM </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_PMCA_11r </ci>
+                  <apply>
+                    <divide/>
+                    <ci> PM </ci>
+                    <ci> cytosol </ci>
+                  </apply>
+                  <ci> PMCA_CaM </ci>
+                  <apply>
+                    <power/>
+                    <ci> Ca_cyt </ci>
+                    <cn type="integer"> 4 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_02a8f4e3-c685-40f6-b4df-a0473bdc0546" id="PMCA_rxn12" name="PMCA_rxn12" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_3220e198-9cf1-4a54-b239-ded8253c5a99" species="PMCA_CaM"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5fb1887a-bce9-4383-8703-957fe2843d6a" species="PMCA"/>
+          <speciesReference metaid="_7047015f-ec5e-4547-9b79-a49e23616c2e" species="CaM"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="PMCA_CaM"/>
+        </listOfModifiers>
+        <kineticLaw metaid="a6572594-07d8-4139-a95b-b146a63eb5db">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchPMCA </ci>
+              <ci> cytosol </ci>
+              <ci> k_PMCA_12f </ci>
+              <apply>
+                <divide/>
+                <ci> PM </ci>
+                <ci> cytosol </ci>
+              </apply>
+              <ci> PMCA_CaM </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_291bcaeb-b484-4036-9b23-5d4ea03d703b" id="IM_leak" name="IM_leak" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+k_leak_im*(Ca_dts-Ca_cyt)  %mol/s</body>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference metaid="_4475c7a9-22bc-4d2e-9389-e07ac07cc865" species="Ca_dts"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="b67d57f4-cb9d-4e99-a5c7-0c390546d80e" species="Ca_cyt"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Ca_dts"/>
+          <modifierSpeciesReference species="Ca_cyt"/>
+        </listOfModifiers>
+        <kineticLaw metaid="b387805b-a4a2-4dd7-b6a1-404dc9c1ee98">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> switchIMleak </ci>
+              <ci> DTS </ci>
+              <ci> k_leak_im </ci>
+              <apply>
+                <minus/>
+                <ci> Ca_dts </ci>
+                <ci> Ca_cyt </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="eefeadcd-4ac4-4927-b105-6630aacca048" id="Calcium_Release" name="Calcium_Release" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+mol Ca/s</body>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference metaid="_446a6642-5969-497a-a2da-918c1dd0a3f4" species="Ca_dts"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_727aff69-72ac-4959-bfea-d4f4192f5e47" species="Ca_cyt"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="c04b32ce-5690-4765-b58d-28c127b9a52d" species="IP3Ra"/>
+          <modifierSpeciesReference metaid="ebccc83d-5af5-4c85-bc99-743a8166ffd2" species="IP3Ri1"/>
+          <modifierSpeciesReference metaid="_91f379c6-aacc-4a53-baac-a76c08befe8f" species="IP3Ri2"/>
+          <modifierSpeciesReference metaid="_25a562a1-eb97-4c39-a371-9490e27061d5" species="IP3Rn"/>
+          <modifierSpeciesReference metaid="_6bfc8865-4002-4207-80d4-853057e269bf" species="IP3Ro"/>
+          <modifierSpeciesReference metaid="f8eb8383-63e7-4fc7-adfb-3e485fa27e96" species="IP3Rs"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_5845237d-99d9-40e6-bae6-528df55f7420">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> switchIP3R </ci>
+                <ci> G_IP3R </ci>
+                <ci> IP3R_open </ci>
+                <apply>
+                  <minus/>
+                  <ci> V_IM </ci>
+                  <ci> psi_IM </ci>
+                </apply>
+                <ci> Ampere </ci>
+              </apply>
+              <cn type="integer"> 2 </cn>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_4a3d15d0-69d0-4f74-85d1-6f438585813e" id="Calcium_Entry" name="Calcium_Entry" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+mol Ca/s</body>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference metaid="_63258bca-9b37-44c8-b5a1-73a430657801" species="Ca_cyt"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_59848b53-45d0-4f57-9245-1b0b87c893f3" species="Ca_ex"/>
+        </listOfProducts>
+        <kineticLaw metaid="_8ffea3aa-37f6-410b-b5b2-1b52e731d3cd">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> switchSOCE </ci>
+                <ci> G_CRAC </ci>
+                <ci> CRAC_open </ci>
+                <apply>
+                  <minus/>
+                  <ci> V_PM </ci>
+                  <ci> psi_PM </ci>
+                </apply>
+                <cn type="integer"> 1 </cn>
+              </apply>
+              <apply>
+                <times/>
+                <cn type="integer"> 2 </cn>
+                <ci> F </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="b6956e70-50ba-4499-acc6-dc413d138bfb" id="PM_leak" name="PM_leak" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <body>
+/(F*2) don&apos;t need Ampere here bc there&apos;s no mol of channels to be converted to number of channels</body>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference metaid="_9890464c-5ee7-441e-91cc-4680e3095573" species="Ca_ex"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="abe8e840-5cfa-4b94-97e0-f9e7d9afada8" species="Ca_cyt"/>
+        </listOfProducts>
+        <kineticLaw metaid="_52896f01-3a8b-42e6-bd66-e7eae987ae40">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> switchPMleak </ci>
+                <ci> PM </ci>
+                <ci> G_PM </ci>
+                <ci> psi_PM </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> F </ci>
+                <cn type="integer"> 2 </cn>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

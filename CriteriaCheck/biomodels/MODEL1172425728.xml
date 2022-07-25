@@ -1,0 +1,1023 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version3" metaid="_151847" level="2" version="3">
+  <model metaid="metaid_0000002" id="Cui2008_CardiacMyocytes" name="Cui2008_CardiacMyocytes">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This a model from the article:      <br/>
+        <strong>Simulating Complex Calcium-Calcineurin Signaling Network</strong>
+        <br/>
+          Jiangjun Cui and Jaap A. Kaandorp      <em>Lecture Notes in Computer Science</em>
+          2008; Volume 5103/2008;110-119      <a href="http://dx.doi.org/10.1007/978-3-540-69389-5_14">doi:10.1007/978-3-540-69389-5_14</a>
+          ,      <br/>
+        <strong>Abstract:</strong>
+        <br/>
+          Understanding of processes in which calcium signaling is involved is of fundamental importance in systems biology and has many applications in medicine. In this paper we have studied the particular case of the complex calcium-calcineurin-MCIP-NFAT signaling network in cardiac myocytes, the understanding of which is critical for treatment of pathologic hypertrophy and heart failure. By including some most recent experimental findings, we constructed a computational model totally based on biochemical principles. The model can correctly predict the mutant (MCIP1− / −) behavior under different stress such as PO (pressure overload) and CaN* (activated calcineurin) overexpression.      </p>
+      <p>This model was taken from the      <a href="http://www.cellml.org/models">CellML repository</a>
+          and automatically converted to SBML.      <br/>
+          The original model was:      <a href="http://www.cellml.org/models/cui_kaandorp_2008_version02">
+        <strong>Jiangjun Cui and Jaap A. Kaandorp, (2008) -version02</strong>
+      </a>
+      <br/>
+          The original CellML model was created by:      <br/>
+      <strong>Lloyd, Catherine, May</strong>
+      <br/>
+          c.lloyd@aukland.ac.nz      <br/>
+          The University of Auckland      <br/>
+          The Bioengineering Institute      <br/></p>
+    <p>This model originates from BioModels Database: A Database of Annotated Published Models (http://www.ebi.ac.uk/biomodels/). It is copyright (c) 2005-2011 The BioModels.net Team.      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+  <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not..      <br/>
+  <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+</p>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#metaid_0000002">
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/doi/10.1007/978-3-540-69389-5_14"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1172425728"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/doi/10.1007/978-3-540-69389-5_14"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://www.geneontology.org/GO:0033173"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+      <bqbiol:occursIn>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/bto/BTO:0002320"/>
+        </rdf:Bag>
+      </bqbiol:occursIn>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfUnitDefinitions>
+  <unitDefinition metaid="_151859" id="minute" name="minute">
+    <listOfUnits>
+      <unit metaid="_151871" kind="second" multiplier="60"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_151883" id="micromolar" name="micromolar">
+    <listOfUnits>
+      <unit metaid="_151895" kind="mole" scale="-9"/>
+      <unit metaid="_151907" kind="litre" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_151919" id="flux" name="flux">
+    <listOfUnits>
+      <unit metaid="_151931" kind="mole" scale="-9"/>
+      <unit metaid="_151943" kind="litre" exponent="-1"/>
+      <unit metaid="_151955" kind="second" exponent="-1" multiplier="60"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_151967" id="first_order_rate_constant" name="first_order_rate_constant">
+    <listOfUnits>
+      <unit metaid="_151979" kind="second" exponent="-1" multiplier="60"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_151991" id="second_order_rate_constant" name="second_order_rate_constant">
+    <listOfUnits>
+      <unit metaid="_152003" kind="mole" exponent="-1" scale="-9"/>
+      <unit metaid="_152015" kind="litre"/>
+      <unit metaid="_152027" kind="second" exponent="-1" multiplier="60"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_152039" id="fifth_order_rate_constant" name="fifth_order_rate_constant">
+    <listOfUnits>
+      <unit metaid="_152051" kind="mole" exponent="-4" scale="-9"/>
+      <unit metaid="_152063" kind="litre" exponent="4"/>
+      <unit metaid="_152075" kind="second" exponent="-1" multiplier="60"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_152087" id="time" name="time">
+    <listOfUnits>
+      <unit metaid="_152099" kind="second" multiplier="60"/>
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions><listOfCompartments>
+  <compartment metaid="_686108" id="COMpartment" size="1" units="litre"/>
+</listOfCompartments><listOfParameters>
+  <parameter metaid="_686223" id="BMK1" name="BMK1" value="0.012" units="micromolar" constant="false"/>
+  <parameter metaid="_686225" id="MRNA" name="MRNA" value="0.000333" units="micromolar" constant="false"/>
+  <parameter metaid="_686226" id="NFATc" name="NFATc" value="2e-05" units="micromolar" constant="false"/>
+  <parameter metaid="_686228" id="NFATn" name="NFATn" value="0.000499" units="micromolar" constant="false"/>
+  <parameter metaid="_686229" id="NFATpc" name="NFATpc" value="0.00494" units="micromolar" constant="false"/>
+  <parameter metaid="_686231" id="NFATpn" name="NFATpn" value="8.01e-05" units="micromolar" constant="false"/>
+  <parameter metaid="_686232" id="GSK3betac" name="GSK3betac" value="0.17" units="micromolar" constant="false"/>
+  <parameter metaid="_686234" id="GSK3betan" name="GSK3betan" value="0.339" units="micromolar" constant="false"/>
+  <parameter metaid="_686235" id="CaNc" name="CaNc" value="0.91" units="micromolar" constant="false"/>
+  <parameter metaid="_686237" id="CaNc_star" name="CaNc_star" value="0.0275" units="micromolar" constant="false"/>
+  <parameter metaid="_686238" id="CaNn_star" name="CaNn_star" value="0.0568" units="micromolar" constant="false"/>
+  <parameter metaid="_686240" id="CaNn" name="CaNn" value="0.0057" units="micromolar" constant="false"/>
+  <parameter metaid="_686241" id="CaM" name="CaM" value="25.2" units="micromolar" constant="false"/>
+  <parameter metaid="_686243" id="CaMCa" name="CaMCa" value="7.88e-07" units="micromolar" constant="false"/>
+  <parameter metaid="_686244" id="MCIP" name="MCIP" value="0.000215" units="micromolar" constant="false"/>
+  <parameter metaid="_686246" id="MCIPp" name="MCIPp" value="0.00776" units="micromolar" constant="false"/>
+  <parameter metaid="_686247" id="MCIPpp" name="MCIPpp" value="0.0798" units="micromolar" constant="false"/>
+  <parameter metaid="_686249" id="Comp1" name="Comp1" value="0.00521" units="micromolar" constant="false"/>
+  <parameter metaid="_686250" id="Comp2" name="Comp2" value="0.283" units="micromolar" constant="false"/>
+  <parameter metaid="_686252" id="Comp3" name="Comp3" value="0.014" units="micromolar" constant="false"/>
+  <parameter metaid="_686253" id="P1433" name="P1433" value="0.708" units="micromolar" constant="false"/>
+  <parameter metaid="_686255" id="MCIP_BMK1" name="MCIP_BMK1" value="2.14e-05" units="micromolar" constant="false"/>
+  <parameter metaid="_686256" id="MCIPp_CaNc_star" name="MCIPp_CaNc_star" value="0.000107" units="micromolar" constant="false"/>
+  <parameter metaid="_686258" id="MCIPp_GSK3betac" name="MCIPp_GSK3betac" value="0.0011" units="micromolar" constant="false"/>
+  <parameter metaid="_686259" id="MCIPpp_CaNc_star" name="MCIPpp_CaNc_star" value="0.0011" units="micromolar" constant="false"/>
+  <parameter metaid="_686261" id="NFATpc_CaNc_star" name="NFATpc_CaNc_star" value="8.15e-05" units="micromolar" constant="false"/>
+  <parameter metaid="_686262" id="NFATc_GSK3betac" name="NFATc_GSK3betac" value="1.36e-06" units="micromolar" constant="false"/>
+  <parameter metaid="_686264" id="NFATpn_CaNn_star" name="NFATpn_CaNn_star" value="2.27e-06" units="micromolar" constant="false"/>
+  <parameter metaid="_686265" id="NFATn_GSK3betan" name="NFATn_GSK3betan" value="8.46e-05" units="micromolar" constant="false"/>
+  <parameter metaid="_686267" id="v1" name="v1" units="flux" constant="false"/>
+  <parameter metaid="_686268" id="v2" name="v2" units="flux" constant="false"/>
+  <parameter metaid="_686270" id="v3" name="v3" units="flux" constant="false"/>
+  <parameter metaid="_686271" id="v4" name="v4" units="flux" constant="false"/>
+  <parameter metaid="_686273" id="v5" name="v5" units="flux" constant="false"/>
+  <parameter metaid="_686274" id="v6" name="v6" units="flux" constant="false"/>
+  <parameter metaid="_686276" id="v7" name="v7" units="flux" constant="false"/>
+  <parameter metaid="_686277" id="v8" name="v8" units="flux" constant="false"/>
+  <parameter metaid="_686279" id="v9" name="v9" units="flux" constant="false"/>
+  <parameter metaid="_686280" id="v10" name="v10" units="flux" constant="false"/>
+  <parameter metaid="_686281" id="v10a" name="v10a" units="flux" constant="false"/>
+  <parameter metaid="_686283" id="v10b" name="v10b" units="flux" constant="false"/>
+  <parameter metaid="_686284" id="v11" name="v11" units="flux" constant="false"/>
+  <parameter metaid="_686286" id="v11a" name="v11a" units="flux" constant="false"/>
+  <parameter metaid="_686287" id="v11b" name="v11b" units="flux" constant="false"/>
+  <parameter metaid="_686289" id="v12" name="v12" units="flux" constant="false"/>
+  <parameter metaid="_686290" id="v12a" name="v12a" units="flux" constant="false"/>
+  <parameter metaid="_686292" id="v12b" name="v12b" units="flux" constant="false"/>
+  <parameter metaid="_686293" id="v13" name="v13" units="flux" constant="false"/>
+  <parameter metaid="_686295" id="v13a" name="v13a" units="flux" constant="false"/>
+  <parameter metaid="_686296" id="v13b" name="v13b" units="flux" constant="false"/>
+  <parameter metaid="_686298" id="v14" name="v14" units="flux" constant="false"/>
+  <parameter metaid="_686299" id="v14a" name="v14a" units="flux" constant="false"/>
+  <parameter metaid="_686301" id="v14b" name="v14b" units="flux" constant="false"/>
+  <parameter metaid="_686302" id="v15" name="v15" units="flux" constant="false"/>
+  <parameter metaid="_686304" id="v15a" name="v15a" units="flux" constant="false"/>
+  <parameter metaid="_686305" id="v15b" name="v15b" units="flux" constant="false"/>
+  <parameter metaid="_686307" id="v16" name="v16" units="flux" constant="false"/>
+  <parameter metaid="_686308" id="v16a" name="v16a" units="flux" constant="false"/>
+  <parameter metaid="_686310" id="v16b" name="v16b" units="flux" constant="false"/>
+  <parameter metaid="_686311" id="v17" name="v17" units="flux" constant="false"/>
+  <parameter metaid="_686313" id="v17a" name="v17a" units="flux" constant="false"/>
+  <parameter metaid="_686314" id="v17b" name="v17b" units="flux" constant="false"/>
+  <parameter metaid="_686316" id="v18" name="v18" units="flux" constant="false"/>
+  <parameter metaid="_686317" id="v19" name="v19" units="flux" constant="false"/>
+  <parameter metaid="_686319" id="k1" name="k1" value="5"/>
+  <parameter metaid="_686320" id="k2" name="k2" value="100"/>
+  <parameter metaid="_686322" id="k3" name="k3" value="2760" units="second_order_rate_constant"/>
+  <parameter metaid="_686323" id="k4" name="k4" value="0.072" units="first_order_rate_constant"/>
+  <parameter metaid="_686325" id="k5" name="k5" value="50" units="second_order_rate_constant"/>
+  <parameter metaid="_686326" id="k6" name="k6" value="0.0567" units="first_order_rate_constant"/>
+  <parameter metaid="_686328" id="k7" name="k7" value="5" units="second_order_rate_constant"/>
+  <parameter metaid="_686329" id="k8" name="k8" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_686331" id="k9" name="k9" value="0.5" units="first_order_rate_constant"/>
+  <parameter metaid="_686332" id="k10" name="k10" value="0.1" units="second_order_rate_constant"/>
+  <parameter metaid="_686334" id="k11" name="k11" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_686335" id="k12" name="k12" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_686337" id="k13" name="k13" value="0.5" units="second_order_rate_constant"/>
+  <parameter metaid="_686338" id="k14" name="k14" value="0.5" units="first_order_rate_constant"/>
+  <parameter metaid="_686340" id="k15" name="k15" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_686341" id="k16" name="k16" value="0.1" units="second_order_rate_constant"/>
+  <parameter metaid="_686343" id="k17" name="k17" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_686344" id="k18" name="k18" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_686346" id="k19" name="k19" value="0.5" units="second_order_rate_constant"/>
+  <parameter metaid="_686347" id="k20" name="k20" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_686349" id="k21" name="k21" value="0.15" units="second_order_rate_constant"/>
+  <parameter metaid="_686350" id="k22" name="k22" value="0.15" units="first_order_rate_constant"/>
+  <parameter metaid="_686352" id="k23" name="k23" value="0.15" units="first_order_rate_constant"/>
+  <parameter metaid="_686353" id="k24" name="k24" value="0.1" units="second_order_rate_constant"/>
+  <parameter metaid="_686355" id="k25" name="k25" value="0.15" units="first_order_rate_constant"/>
+  <parameter metaid="_686356" id="k26" name="k26" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_686358" id="k27" name="k27" value="0.4" units="second_order_rate_constant"/>
+  <parameter metaid="_686359" id="k28" name="k28" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_686361" id="k29" name="k29" value="0.4" units="first_order_rate_constant"/>
+  <parameter metaid="_686362" id="k30" name="k30" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_686364" id="k31" name="k31" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_686365" id="k32" name="k32" value="0.05" units="first_order_rate_constant"/>
+  <parameter metaid="_686367" id="k33" name="k33" value="0.114" units="first_order_rate_constant"/>
+  <parameter metaid="_686368" id="k34" name="k34" value="0.0552" units="first_order_rate_constant"/>
+  <parameter metaid="_686370" id="k35" name="k35" value="0.15" units="second_order_rate_constant"/>
+  <parameter metaid="_686371" id="k36" name="k36" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_686373" id="k37" name="k37" value="0.2" units="first_order_rate_constant"/>
+  <parameter metaid="_686374" id="k38" name="k38" value="0.1" units="second_order_rate_constant"/>
+  <parameter metaid="_686376" id="k39" name="k39" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_686377" id="k40" name="k40" value="0.1" units="first_order_rate_constant"/>
+  <parameter metaid="_686379" id="k41" name="k41" value="0.02" units="first_order_rate_constant"/>
+  <parameter metaid="_686380" id="k42" name="k42" value="0.03" units="first_order_rate_constant"/>
+  <parameter metaid="_686382" id="k43" name="k43" value="0.03" units="first_order_rate_constant"/>
+  <parameter metaid="_686383" id="t_half" name="t_half" value="15" units="minute"/>
+  <parameter metaid="_686385" id="Ca" name="Ca" value="0.2" units="micromolar"/>
+</listOfParameters><listOfRules>
+  <rateRule metaid="_686112" variable="BMK1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v10b </ci>
+        <ci> v10a </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686113" variable="MRNA">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v19 </ci>
+        <ci> v18 </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686114" variable="NFATc">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v14 </ci>
+        <apply>
+          <plus/>
+          <ci> v1 </ci>
+          <ci> v15 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686115" variable="NFATn">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <ci> v1 </ci>
+          <ci> v16 </ci>
+        </apply>
+        <apply>
+          <plus/>
+          <ci> v17 </ci>
+          <ci> v18 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686116" variable="NFATpc">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <ci> v2 </ci>
+          <ci> v15 </ci>
+        </apply>
+        <apply>
+          <plus/>
+          <ci> v9 </ci>
+          <ci> v14 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686118" variable="NFATpn">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v17 </ci>
+        <apply>
+          <plus/>
+          <ci> v2 </ci>
+          <ci> v16 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686119" variable="GSK3betac">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <ci> v12b </ci>
+          <ci> v15b </ci>
+        </apply>
+        <apply>
+          <plus/>
+          <ci> v3 </ci>
+          <ci> v12a </ci>
+          <ci> v15a </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686120" variable="GSK3betan">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <ci> v3 </ci>
+          <ci> v17b </ci>
+        </apply>
+        <ci> v17a </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686121" variable="CaNc">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v6 </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686122" variable="CaNc_star">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <ci> v6 </ci>
+          <ci> v11b </ci>
+          <ci> v13b </ci>
+          <ci> v14b </ci>
+        </apply>
+        <apply>
+          <plus/>
+          <ci> v4 </ci>
+          <ci> v7 </ci>
+          <ci> v11a </ci>
+          <ci> v13a </ci>
+          <ci> v14a </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686124" variable="CaNn_star">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <ci> v4 </ci>
+          <ci> v16b </ci>
+        </apply>
+        <ci> v16a </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686125" variable="CaNn">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v6 </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686126" variable="CaM">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v5 </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686127" variable="CaMCa">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v5 </ci>
+        <ci> v6 </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686129" variable="MCIP">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v11 </ci>
+        <apply>
+          <plus/>
+          <ci> v7 </ci>
+          <ci> v10 </ci>
+          <ci> v19 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686130" variable="MCIPp">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <ci> v10 </ci>
+          <ci> v13 </ci>
+        </apply>
+        <apply>
+          <plus/>
+          <ci> v11 </ci>
+          <ci> v12 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686131" variable="MCIPpp">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v12 </ci>
+        <apply>
+          <plus/>
+          <ci> v8 </ci>
+          <ci> v13 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686132" variable="Comp1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <ci> v7 </ci>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686134" variable="Comp2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <ci> v8 </ci>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686135" variable="Comp3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <ci> v9 </ci>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686136" variable="P1433">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <ci> v8 </ci>
+          <ci> v9 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686137" variable="MCIP_BMK1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v10a </ci>
+        <ci> v10b </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686139" variable="MCIPp_CaNc_star">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v11a </ci>
+        <ci> v11b </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686140" variable="MCIPp_GSK3betac">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v12a </ci>
+        <ci> v12b </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686142" variable="MCIPpp_CaNc_star">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v13a </ci>
+        <ci> v13b </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686159" variable="NFATpc_CaNc_star">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v14a </ci>
+        <ci> v14b </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686161" variable="NFATc_GSK3betac">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v15a </ci>
+        <ci> v15b </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686162" variable="NFATpn_CaNn_star">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v16a </ci>
+        <ci> v16b </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="_686164" variable="NFATn_GSK3betan">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> v17a </ci>
+        <ci> v17b </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <assignmentRule metaid="_686165" variable="v1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> k29 </ci>
+        <ci> NFATc </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686166" variable="v2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> k30 </ci>
+        <ci> NFATpn </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686168" variable="v3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k31 </ci>
+          <ci> GSK3betac </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k32 </ci>
+          <ci> GSK3betan </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686169" variable="v4">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k33 </ci>
+          <ci> CaNc_star </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k34 </ci>
+          <ci> CaNn_star </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686170" variable="v5">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> CaM </ci>
+          <apply>
+            <power/>
+            <ci> Ca </ci>
+            <cn> 4 </cn>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k2 </ci>
+          <ci> CaMCa </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686171" variable="v6">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> CaMCa </ci>
+          <ci> CaNc </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k4 </ci>
+          <ci> CaNc_star </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686173" variable="v7">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k5 </ci>
+          <ci> CaNc_star </ci>
+          <ci> MCIP </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k6 </ci>
+          <ci> Comp1 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686174" variable="v8">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k19 </ci>
+          <ci> P1433 </ci>
+          <ci> MCIPpp </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k20 </ci>
+          <ci> Comp2 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686176" variable="v9">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k27 </ci>
+          <ci> NFATpc </ci>
+          <ci> P1433 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k28 </ci>
+          <ci> Comp3 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686177" variable="v10a">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k7 </ci>
+          <ci> MCIP </ci>
+          <ci> BMK1 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k8 </ci>
+          <ci> MCIP_BMK1 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686178" variable="v10b">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> k9 </ci>
+        <ci> MCIP_BMK1 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686180" variable="v10">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> v10a </ci>
+        <ci> v10b </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686181" variable="v11a">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k10 </ci>
+          <ci> MCIPp </ci>
+          <ci> CaNc_star </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k11 </ci>
+          <ci> MCIPp_CaNc_star </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686183" variable="v11b">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> k12 </ci>
+        <ci> MCIPp_CaNc_star </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686184" variable="v11">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> v11a </ci>
+        <ci> v11b </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686186" variable="v12a">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k13 </ci>
+          <ci> MCIPp </ci>
+          <ci> GSK3betac </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k14 </ci>
+          <ci> MCIPp_GSK3betac </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686187" variable="v12b">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> k15 </ci>
+        <ci> MCIPp_GSK3betac </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686189" variable="v12">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> v12a </ci>
+        <ci> v12b </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686190" variable="v13a">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k16 </ci>
+          <ci> MCIPpp </ci>
+          <ci> CaNc_star </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k17 </ci>
+          <ci> MCIPpp_CaNc_star </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686192" variable="v13b">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> k18 </ci>
+        <ci> MCIPpp_CaNc_star </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686193" variable="v13">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> v13a </ci>
+        <ci> v13b </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686195" variable="v14a">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k21 </ci>
+          <ci> NFATpc </ci>
+          <ci> CaNc_star </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k22 </ci>
+          <ci> NFATpc_CaNc_star </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686196" variable="v14b">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> k23 </ci>
+        <ci> NFATpc_CaNc_star </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686198" variable="v14">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> v14a </ci>
+        <ci> v14b </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686199" variable="v15a">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k24 </ci>
+          <ci> NFATc </ci>
+          <ci> GSK3betac </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k25 </ci>
+          <ci> NFATc_GSK3betac </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686201" variable="v15b">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> k26 </ci>
+        <ci> NFATc_GSK3betac </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686202" variable="v15">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> v15a </ci>
+        <ci> v15b </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686204" variable="v16a">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k35 </ci>
+          <ci> NFATpn </ci>
+          <ci> CaNn_star </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k36 </ci>
+          <ci> NFATpn_CaNn_star </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686205" variable="v16b">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> k37 </ci>
+        <ci> NFATpn_CaNn_star </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686207" variable="v16">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> v16a </ci>
+        <ci> v16b </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686208" variable="v17a">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k38 </ci>
+          <ci> NFATn </ci>
+          <ci> GSK3betan </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k39 </ci>
+          <ci> NFATn_GSK3betan </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686210" variable="v17b">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> k40 </ci>
+        <ci> NFATn_GSK3betan </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686211" variable="v17">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> v17a </ci>
+        <ci> v17b </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686213" variable="v18">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k41 </ci>
+          <ci> NFATn </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k42 </ci>
+          <ci> MRNA </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_686221" variable="v19">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k43 </ci>
+          <ci> MRNA </ci>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <divide/>
+            <apply>
+              <ln/>
+              <cn> 2 </cn>
+            </apply>
+            <ci> t_half </ci>
+          </apply>
+          <ci> MCIP </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+</listOfRules>
+</model>
+</sbml>

@@ -1,0 +1,1734 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" metaid="aec7d4b0-38b4-409c-a83e-955975d6fd2e" version="4">
+  <model id="MODEL1504240000" name="Kyrtsos2011 - A systems biology model for Alzheimer's disease (Cholesterol in AD)" metaid="COPASI0">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <div class="dc:title">Kyrtsos2011 - A systems biology model for
+Alzheimer's disease (Cholesterol in AD)</div>
+<div class="dc:description">Encoded non-curated model. Issues:
+<div>
+  <br/>
+</div>
+<div>- Confusing HmgCoA differential equation</div>
+<div>- Confusing d2 and t1 parameters</div>
+<div>- Lack of initial values for several key species</div></div>
+<div class="dc:bibliographicCitation">
+  <p>This model is described in the article:</p>
+  <div class="bibo:title">
+    <a href="http://hdl.handle.net/1903/11919" title="Access to this publication">Of Mice and Math: A Systems
+    Biology Model for Alzheimer's disease</a>
+  </div>
+  <div class="bibo:authorList">Kyrtsos, Christina Rose</div>
+  <div class="bibo:Journal">UMD Theses and Dissertations</div>
+  <p>Abstract:</p>
+  <div class="bibo:abstract">
+    <p>Alzheimer's disease (AD) is the most prevalent
+    neurodegenerative disorder in the US, affecting over 1 in 8
+    people over the age of 65. There are several well-known
+    pathological changes in the brains of AD patients, namely: the
+    presence of diffuse beta amyloid plaques derived from the
+    amyloid precursor protein (APP), hyper-phosphorylated tau
+    protein, neuroinflammation and mitochondrial dysfunction.
+    Recent studies have shown that cholesterol levels in both the
+    plasma and the brain may play a role in disease pathogenesis,
+    however, this exact role is not well understood. Additional
+    proteins of interest have also been identified (ApoE, LRP-1,
+    IL-1) as possible contributors to AD pathogenesis. To help
+    understand these roles better, a systems biology mathematical
+    model was developed. Basic principles from graph theory and
+    control analysis were used to study the effect of altered
+    cholesterol, ApoE, LRP and APP on the system as a whole.
+    Negative feedback regulation and the rate of cholesterol
+    transfer between astrocytes and neurons were identified as key
+    modulators in the level of beta amyloid. Experiments were run
+    concurrently to test whether decreasing plasma and brain
+    cholesterol levels with simvastatin altered the expression
+    levels of beta amyloid, ApoE, and LRP-1, to ascertain the edge
+    directions in the network model and to better understand
+    whether statin treatment served as a viable treatment option
+    for AD patients. The work completed herein represents the first
+    attempt to create a systems-level mathematical model to study
+    AD that looks at intercellular interactions, as well as
+    interactions between metabolic and inflammatory pathways.</p>
+  </div>
+</div>
+<div class="dc:publisher">
+  <p>This model is hosted on 
+  <a href="http://www.ebi.ac.uk/biomodels/">BioModels Database</a>
+  and identified by: 
+  <a href="http://identifiers.org/biomodels.db/MODEL1504240000">MODEL1504240000</a>.</p>
+  <p>To cite BioModels Database, please use: 
+  <a href="http://identifiers.org/pubmed/20587024" title="Latest BioModels Database publication">BioModels Database:
+  An enhanced, curated and annotated resource for published
+  quantitative kinetic models</a>.</p>
+</div>
+<div class="dc:license">
+  <p>To the extent possible under law, all copyright and related or
+  neighbouring rights to this encoded model have been dedicated to
+  the public domain worldwide. Please refer to 
+  <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Access to: CC0 1.0 Universal (CC0 1.0), Public Domain Dedication">CC0
+  Public Domain Dedication</a> for more information.</p>
+</div>
+</body>
+    </notes>
+    <annotation>
+      <COPASI xmlns="http://www.copasi.org/static/sbml">
+        <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="#COPASI0">
+            <dcterms:created>
+              <rdf:Description>
+                <dcterms:W3CDTF>2015-04-23T10:33:55Z</dcterms:W3CDTF>
+              </rdf:Description>
+            </dcterms:created>
+          </rdf:Description>
+        </rdf:RDF>
+      </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI0">
+	<dc:creator>
+	<rdf:Bag>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Lloret i Villas</vCard:Family>
+	<vCard:Given>Audald</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>lloret@ebi.ac.uk</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>EMBL-EBI</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	</rdf:Bag>
+	</dc:creator>
+	<dcterms:created rdf:parseType="Resource">
+	<dcterms:W3CDTF>2015-04-23T09:20:00Z</dcterms:W3CDTF>
+	</dcterms:created>
+	<dcterms:modified rdf:parseType="Resource">
+	<dcterms:W3CDTF>2014-04-23T10:30:00Z</dcterms:W3CDTF>
+	</dcterms:modified>
+	<bqmodel:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://hdl.handle.net/1903/11919"/>
+	</rdf:Bag>
+	</bqmodel:isDescribedBy>
+	<bqmodel:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1504240000"/>
+	</rdf:Bag>
+	</bqmodel:is>
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:1990000"/>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0070723"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	<bqbiol:hasProperty>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/doid/DOID:10652"/>
+	</rdf:Bag>
+	</bqbiol:hasProperty>
+	<bqbiol:hasTaxon>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+	<rdf:li rdf:resource="http://identifiers.org/taxonomy/10090"/>
+	</rdf:Bag>
+	</bqbiol:hasTaxon>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+      <listOfFunctionDefinitions>
+      <functionDefinition id="Constant_flux__irreversible" name="Constant flux (irreversible)" metaid="COPASI42">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI42">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-22T17:18:06Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> v </ci>
+            </bvar>
+            <ci> v </ci>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="_1Product" name="1Product" metaid="COPASI43">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI43">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T11:38:35Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> t </ci>
+            </bvar>
+            <bvar>
+              <ci> P </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> t </ci>
+              <ci> P </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Abeta_binding_and_removal" name="Abeta binding and removal" metaid="COPASI44">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI44">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T13:07:26Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> K </ci>
+            </bvar>
+            <bvar>
+              <ci> S1 </ci>
+            </bvar>
+            <bvar>
+              <ci> S2 </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> K </ci>
+              <ci> S1 </ci>
+              <ci> S2 </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="ApoE_death" name="ApoE death" metaid="COPASI45">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI45">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T11:47:45Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> S </ci>
+            </bvar>
+            <bvar>
+              <ci> M </ci>
+            </bvar>
+            <apply>
+              <minus/>
+              <ci> S </ci>
+              <ci> M </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="ApoE_transport_to_brain_0" name="ApoE transport to brain" metaid="COPASI46">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI46">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T13:09:24Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> K1 </ci>
+            </bvar>
+            <bvar>
+              <ci> K2 </ci>
+            </bvar>
+            <bvar>
+              <ci> M1 </ci>
+            </bvar>
+            <bvar>
+              <ci> K3 </ci>
+            </bvar>
+            <bvar>
+              <ci> M2 </ci>
+            </bvar>
+            <bvar>
+              <ci> P </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> K1 </ci>
+                  <ci> K2 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> M1 </ci>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <plus/>
+                        <ci> K1 </ci>
+                        <ci> K2 </ci>
+                      </apply>
+                      <ci> K3 </ci>
+                    </apply>
+                    <ci> M2 </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> M2 </ci>
+              <ci> M1 </ci>
+              <ci> P </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Inhibition_1Mod" name="Inhibition 1Mod" metaid="COPASI47">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI47">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-22T17:06:47Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> K1 </ci>
+            </bvar>
+            <bvar>
+              <ci> K2 </ci>
+            </bvar>
+            <bvar>
+              <ci> M </ci>
+            </bvar>
+            <bvar>
+              <ci> S </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> K1 </ci>
+              <apply>
+                <divide/>
+                <cn> 1 </cn>
+                <apply>
+                  <plus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <times/>
+                    <ci> K2 </ci>
+                    <ci> M </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> S </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+    </listOfFunctionDefinitions>
+    <listOfUnitDefinitions>
+      <unitDefinition id="volume" name="volume" metaid="f00dadce-614e-4fb3-8a4e-235cf3bfd6e1">
+        <listOfUnits>
+          <unit scale="-3" exponent="1" metaid="_5108fa69-4b80-4cd0-ad69-02e847faee81" multiplier="1" kind="litre"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="time" name="time" metaid="d2e51820-06dc-46d5-a100-e69672b679c4">
+        <listOfUnits>
+          <unit scale="0" exponent="1" metaid="_323ce15d-f7f9-46a6-ac00-20810623d398" multiplier="86400" kind="second"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="substance" name="substance" metaid="_8d3f79a0-2afa-4d41-a99f-e7e2935257b8">
+        <listOfUnits>
+          <unit scale="0" exponent="1" metaid="_2ce67386-e268-403c-8f15-716946c555a9" multiplier="1" kind="dimensionless"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="Brain" constant="true" spatialDimensions="3" name="Brain" metaid="COPASI1" size="1">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI1">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T13:37:43Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI1">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/bto/BTO:0000142"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="Pyruvate" initialConcentration="1" constant="false" hasOnlySubstanceUnits="false" name="Pyruvate" metaid="COPASI2" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Pyruvate</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI2">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:51:50Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI2">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:15361"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="PDH" initialConcentration="1" constant="false" hasOnlySubstanceUnits="false" name="PDH" metaid="COPASI3" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Pyruvate dehydrogenase</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI3">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:51:30Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI3">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/O00330"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="TCA" initialConcentration="1" constant="false" hasOnlySubstanceUnits="false" name="TCA" metaid="COPASI4" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Citric Acid Cycle</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI4">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:51:41Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI4">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006099"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="HmgCoA" initialConcentration="500" constant="false" hasOnlySubstanceUnits="false" name="HmgCoA" metaid="COPASI5" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>3-hydroxy-3-methylglutaryl-coenzyme A</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI5">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:50:50Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI5">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:11814"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="MalonylCoA" initialConcentration="1" constant="false" hasOnlySubstanceUnits="false" name="MalonylCoA" metaid="COPASI6" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>MalonylCoA</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI6">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:51:56Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI6">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:15531"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="Mevalonate" initialConcentration="1" constant="false" hasOnlySubstanceUnits="false" name="Mevalonate" metaid="COPASI7" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Mevalonate</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI7">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:51:55Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI7">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:25350"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="Cholesterol_N" initialConcentration="500" constant="false" hasOnlySubstanceUnits="false" name="Cholesterol_N" metaid="COPASI8" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Neuronal Cholesterol</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI8">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:52:02Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI8">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:16113"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="ApoE_A" initialConcentration="750" constant="false" hasOnlySubstanceUnits="false" name="ApoE_A" metaid="COPASI9" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Astrocytic cholesterol bound Apolipoprotein E</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI9">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:49:41Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI9">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:16113"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P02649"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="LRP_1" initialConcentration="1" constant="true" hasOnlySubstanceUnits="false" name="LRP-1" metaid="COPASI10" boundaryCondition="true" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Low density lipoprotein receptor-related protein</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI10">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:51:11Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI10">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q07954"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="APP" initialConcentration="1000" constant="false" hasOnlySubstanceUnits="false" name="APP" metaid="COPASI11" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Amyloid precursor protein</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI11">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:49:18Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI11">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P05067"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="BACE" initialConcentration="1" constant="false" hasOnlySubstanceUnits="false" name="BACE" metaid="COPASI12" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Beta-secretase 1</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI12">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:49:36Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI12">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P56817"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="sAPP" initialConcentration="1" constant="false" hasOnlySubstanceUnits="false" name="sAPP" metaid="COPASI13" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Soluble Amyloid precursor protein</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI13">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:49:30Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI13">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P05067"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="gamma_secretase" initialConcentration="1" constant="false" hasOnlySubstanceUnits="false" name="gamma_secretase" metaid="COPASI14" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Gamma secretase</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI14">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:52:26Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI14">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9NZ42"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="Abeta" initialConcentration="800" constant="false" hasOnlySubstanceUnits="false" name="Abeta" metaid="COPASI15" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Beta amyloid</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI15">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:50:33Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI15">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P05067"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="CTF" initialConcentration="1" constant="false" hasOnlySubstanceUnits="false" name="CTF" metaid="COPASI16" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>C-terminal fragment</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI16">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:50:42Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI16">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:33711"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="AICD" initialConcentration="1" constant="false" hasOnlySubstanceUnits="false" name="AICD" metaid="COPASI17" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>APP intracellullar domain</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI17">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:49:52Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI17">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P05067"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="AcetylCoA" initialConcentration="10000" constant="false" hasOnlySubstanceUnits="false" name="AcetylCoA" metaid="COPASI18" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>AcetylCoA</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI18">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T10:52:37Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI18">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:15351"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="Cholesterol_A" initialConcentration="1500" constant="false" hasOnlySubstanceUnits="false" name="Cholesterol_A" metaid="COPASI19" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Astrocytic Cholesterol</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI19">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T11:21:42Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI19">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:16113"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="ApoE" initialConcentration="2000" constant="false" hasOnlySubstanceUnits="false" name="ApoE" metaid="COPASI20" boundaryCondition="false" compartment="Brain">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Free Apolipoprotein E</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI20">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T11:31:20Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI20">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P02649"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="k1" constant="true" name="k1" metaid="a8e0bbd1-9e22-4014-88d4-6f10207b348d" value="0.9"/>
+      <parameter id="k2" constant="true" name="k2" metaid="_7cd912ff-b82e-4b70-a271-2f40fe8799aa" value="0.05"/>
+      <parameter id="k3" constant="true" name="k3" metaid="e2dbfd04-0609-4831-8230-cc554e5d5840" value="0.05"/>
+      <parameter id="k4" constant="true" name="k4" metaid="_41e840da-41c2-469b-b358-807d4e54d210" value="1"/>
+      <parameter id="k5" constant="true" name="k5" metaid="a6cf4420-48b8-4f3f-a60c-d6012cd70eb1" value="1"/>
+      <parameter id="k6" constant="true" name="k6" metaid="e25bd20a-61a7-4cb5-8a37-53de9dd354b2" value="1"/>
+      <parameter id="k7" constant="true" name="k7" metaid="f492e252-7870-4a7f-b264-fb793fdbe9b0" value="0.8"/>
+      <parameter id="a1" constant="true" name="a1" metaid="_7b677b68-4164-46ed-aaed-3a30a734dcfd" value="0.9"/>
+      <parameter id="b1" constant="true" name="b1" metaid="_970c2666-2921-4455-ac86-a41eb03d506f" value="1"/>
+      <parameter id="bn" constant="true" name="bn" metaid="_44bb4421-7b30-4f60-86fa-305ff50f6541" value="2000"/>
+      <parameter id="ba" constant="true" name="ba" metaid="_5af49ca0-2d88-461b-b2a2-93d7f0b7850a" value="750"/>
+      <parameter id="d1" constant="true" name="d1" metaid="_834a5a57-68c3-48ac-96ae-d083e05e29fd" value="0.8"/>
+      <parameter id="d2" constant="true" name="d2" metaid="_66275b58-2a26-4f79-aba7-f06974cbc323" value="0.00055"/>
+      <parameter id="d3" constant="true" name="d3" metaid="_14aef74b-851d-4bcd-a957-b69427fe91e0" value="0.8336"/>
+      <parameter id="d4" constant="true" name="d4" metaid="b5c26fda-6c56-4e57-9f5b-08d5e774b7c5" value="8000"/>
+      <parameter id="d5" constant="true" name="d5" metaid="_79bfd531-252d-418e-b58d-800ca206d523" value="1"/>
+      <parameter id="d6" constant="true" name="d6" metaid="e3a48de2-748f-45b6-b2c9-db634eed6fbd" value="0.9"/>
+      <parameter id="t1" constant="true" name="t1" metaid="f51ee249-d3e6-41fb-b568-8ff388ad5365" value="0.99945"/>
+      <parameter id="t2" constant="true" name="t2" metaid="e07f3619-8ace-4f39-a447-9861433f6752" value="0.5"/>
+      <parameter id="kf1" constant="true" name="kf1" metaid="f71381d6-4401-48bb-a210-3c66a4883697" value="0.005"/>
+      <parameter id="kf2" constant="true" name="kf2" metaid="bc92f1e3-da93-4dc2-9aa4-b1d1373c5595" value="0.001"/>
+      <parameter id="kf3" constant="true" name="kf3" metaid="_8b1a1a28-da65-46ee-9429-373e1db6567e" value="0.005"/>
+      <parameter id="alpha" constant="true" name="alpha" metaid="_25cf19d5-9987-4b4d-892f-fc5bae76f421" value="0.001"/>
+      <parameter id="beta" constant="true" name="beta" metaid="_7f7994bc-166c-4708-8ebb-8cd059caaacc" value="0.01"/>
+      <parameter id="gamma" constant="true" name="gamma" metaid="e015d386-9612-4db0-8947-62150879c616" value="0.8"/>
+      <parameter id="endo" constant="true" name="endo" metaid="abac24cc-fff6-4b54-ac39-545dfa7067ef" value="0.25"/>
+      <parameter id="kt" constant="true" name="kt" metaid="_3a4c193c-9488-4808-a2b9-d7e4f1c8eb1e" value="0.00025"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="AcetylCoA_synthesis" name="AcetylCoA synthesis" metaid="COPASI21" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI21">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T11:14:25Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="Pyruvate" metaid="_4245f53a-4970-4363-9f34-aa4fd24eefd8" stoichiometry="1"/>
+          <speciesReference species="PDH" metaid="_3150672b-961e-4ab0-b432-64f552313e2a" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AcetylCoA" metaid="_82c80b33-d70e-4c55-a80b-7d1b06ec31fb" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Abeta" metaid="ca366241-b561-4e3d-a70c-0e15f14d9f45"/>
+          <modifierSpeciesReference species="Abeta" metaid="_01db9458-df5a-419e-a6fc-25eb8db7f96e"/>
+          <modifierSpeciesReference species="Pyruvate" metaid="_1a0e0569-78ff-4897-b012-66c136ddbff6"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_6af5e2dd-8714-4b89-aefa-9052218ecb37">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <apply>
+                <ci> Inhibition_1Mod </ci>
+                <ci> k1 </ci>
+                <ci> alpha </ci>
+                <ci> Abeta </ci>
+                <ci> Pyruvate </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="HmgCoA_synthesis" name="HmgCoA synthesis" metaid="COPASI22" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI22">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T11:16:10Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="AcetylCoA" metaid="a7bd305c-5605-454b-9c9a-583003ac3384" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="HmgCoA" metaid="_9e0ef15f-eab0-49cb-8502-f493235908e7" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="AcetylCoA" metaid="_437f1257-0ec3-4dec-9fef-0cb7f43bfa05"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_6823ee96-b0b6-4820-8d84-b4672c9f45c6">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <ci> k2 </ci>
+              <ci> AcetylCoA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TCA_input" name="TCA input" metaid="COPASI23" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI23">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T11:17:59Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="AcetylCoA" metaid="b79db78e-9e4e-44ab-94bb-85aed984079b" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="TCA" metaid="ace278b6-c88c-4bed-a09f-7b39663d9f08" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="AcetylCoA" metaid="_069e7d94-aa31-4bc3-92b8-3f93490789fb"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_5961e6f9-e21b-4bc6-b78e-748ea84c2edb">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <ci> a1 </ci>
+              <ci> AcetylCoA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Mevalonate_synthesis" name="Mevalonate synthesis" metaid="COPASI24" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI24">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T11:22:46Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="HmgCoA" metaid="_4098b679-3ce2-4c5e-be9c-aa34cc3ab76e" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Mevalonate" metaid="_62e3c6c3-2883-4897-8c9d-aa3006af2f46" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Cholesterol_N" metaid="_1b9510b4-76dc-43b2-9987-dd2142b36e90"/>
+          <modifierSpeciesReference species="Cholesterol_N" metaid="_81a32f06-8cdb-4749-9f0f-12a1211cc410"/>
+          <modifierSpeciesReference species="HmgCoA" metaid="_1f4978a9-e5f7-45bf-b9ea-686d2a8d233c"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_897f5c65-03aa-4d2a-b1ec-a276d267e747">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <apply>
+                <ci> Inhibition_1Mod </ci>
+                <ci> k4 </ci>
+                <ci> gamma </ci>
+                <ci> Cholesterol_N </ci>
+                <ci> HmgCoA </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="HmgCoA_output" name="HmgCoA output" metaid="COPASI25" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI25">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T11:25:34Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="HmgCoA" metaid="_5f651480-5e1c-4dbf-a64e-6095814036b0" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="HmgCoA" metaid="_63bc71a7-642f-4691-9b03-82b0af62ccf2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_8621687e-ebea-40a6-845f-41024fbf1068">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <ci> d6 </ci>
+              <ci> HmgCoA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="CholesterolA_synthesis" name="CholesterolA synthesis" metaid="COPASI26" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI26">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T11:27:46Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="Mevalonate" metaid="e0bea215-9fe6-48d3-b396-ab500f7da174" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cholesterol_A" metaid="b898c2fc-48a5-4558-bc8c-f585e06d6bec" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Mevalonate" metaid="_9da0f010-1b3e-4614-9bf3-b77be343a439"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_430c1ab5-7308-4434-b5c7-f26032269e3e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <ci> k5 </ci>
+              <ci> Mevalonate </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="CholesterolA_transport" name="CholesterolA transport" metaid="COPASI27" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI27">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T11:32:38Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="Cholesterol_A" metaid="_73266603-9abb-4db5-bc30-ed96d0860543" stoichiometry="1"/>
+          <speciesReference species="ApoE_A" metaid="_2ba00dee-372e-4c69-be39-06a6df0a063a" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="ApoE" metaid="d4ab7924-cad9-4910-aab2-57d8d6270643" stoichiometry="1"/>
+          <speciesReference species="Cholesterol_N" metaid="_33975edf-1f7e-4a0f-8d78-7a148319821e" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="ApoE" metaid="c27ec189-905b-4180-8f88-d0ed6442d23b"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_770a0d5d-4753-41d2-a096-6b9818c4fd5b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <apply>
+                <ci> _1Product </ci>
+                <ci> t1 </ci>
+                <ci> ApoE </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="CholesterolA_degradation" name="CholesterolA degradation" metaid="COPASI28" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI28">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T11:34:23Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="Cholesterol_A" metaid="_6b4eb945-1d6f-4667-a6aa-18db876adf38" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Cholesterol_A" metaid="_32c0a983-e4bf-4bba-85f7-f5295ed2b339"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_1830add6-941b-4eba-b76c-81d4db15ca8f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <ci> d2 </ci>
+              <ci> Cholesterol_A </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="ApoE_A_generation" name="ApoE_A generation" metaid="COPASI29" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI29">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T11:46:51Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="ApoE_A" metaid="d77987ff-5135-49f1-824c-e12224cdfe05" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw metaid="b4dd0b86-d7a1-4429-9aaa-ea8ce6c7edad">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <apply>
+                <ci> Constant_flux__irreversible </ci>
+                <ci> ba </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="ApoE_A_death" name="ApoE_A death" metaid="COPASI30" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI30">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T11:48:30Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="ApoE_A" metaid="_5f0d2604-7894-4e7f-853e-717402206fce" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Cholesterol_A" metaid="_274faf96-ef1d-4c40-827b-77332cd21a7b"/>
+          <modifierSpeciesReference species="ApoE_A" metaid="_0cada42b-dc3b-4f64-a1af-d3ec6acc5332"/>
+          <modifierSpeciesReference species="Cholesterol_A" metaid="e1cd1e82-7152-477e-8c3e-674b133739ac"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_70505171-53e4-4a16-9446-445476a557d4">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <apply>
+                <ci> ApoE_death </ci>
+                <ci> ApoE_A </ci>
+                <ci> Cholesterol_A </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="CholesterolN_degradation" name="CholesterolN degradation" metaid="COPASI31" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI31">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T11:54:10Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="Cholesterol_N" metaid="d550ff08-c8fd-4467-bda3-b8186d49ab32" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Cholesterol_N" metaid="_6f56e4bb-a953-4f3a-aaae-f08ad4e2da3b"/>
+        </listOfModifiers>
+        <kineticLaw metaid="f437c3bc-bc8d-4b9c-853a-4b416782ba97">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <ci> d2 </ci>
+              <ci> Cholesterol_N </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="ApoE_generation" name="ApoE generation" metaid="COPASI32" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI32">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T13:05:38Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="ApoE" metaid="_80359e48-28d5-4f65-abdc-ec30bcfd3ca7" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw metaid="_6e526c73-592e-435c-a9c8-ea54d3527ac0">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <apply>
+                <ci> Constant_flux__irreversible </ci>
+                <ci> bn </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="ApoE_transport_from_brain" name="ApoE transport from brain" metaid="COPASI33" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI33">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T13:08:03Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="Abeta" metaid="_60ac8d08-8c7e-47b4-9605-b96c53d58b69" stoichiometry="1"/>
+          <speciesReference species="ApoE" metaid="a86c5f15-920a-4d41-8905-37c05e2159ca" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Abeta" metaid="_884212de-b457-464f-9740-c300adc18821"/>
+          <modifierSpeciesReference species="ApoE" metaid="adeafa8b-8dd6-4194-96f6-fd2878ba2316"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_78aee5d0-5cf6-44c6-82c3-3a1660c22f1b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <apply>
+                <ci> Abeta_binding_and_removal </ci>
+                <ci> kf1 </ci>
+                <ci> Abeta </ci>
+                <ci> ApoE </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="ApoE_transport_to_brain" name="ApoE transport to brain" metaid="COPASI34" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI34">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T13:12:18Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="ApoE" metaid="_102b0d42-79ac-41d9-b22f-024887ad7637" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Abeta" metaid="ac0a0335-97cd-47d1-ada8-4eb8801c3c56"/>
+          <modifierSpeciesReference species="LRP_1" metaid="_8e54c7fe-e7ed-4181-a608-3acb960dbe32"/>
+          <modifierSpeciesReference species="Abeta" metaid="aea3974f-5a5d-4320-ada3-647bd683374b"/>
+          <modifierSpeciesReference species="LRP_1" metaid="dee2b945-93ea-46eb-af4b-92ac4a25f96d"/>
+          <modifierSpeciesReference species="ApoE" metaid="_8b15b85c-b95b-4873-a772-561fc421f27c"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_97e4dd85-f9f0-4507-84ff-ce35c9a30a2a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <apply>
+                <ci> ApoE_transport_to_brain_0 </ci>
+                <ci> kf2 </ci>
+                <ci> kf3 </ci>
+                <ci> Abeta </ci>
+                <ci> kf1 </ci>
+                <ci> LRP_1 </ci>
+                <ci> ApoE </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="ApoE_degradation" name="ApoE degradation" metaid="COPASI35" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI35">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T13:13:23Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="ApoE" metaid="db6a147b-752e-4e07-b40c-8429f9afeb15" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="ApoE" metaid="_47464d32-78c5-4e98-962e-ef3012459772"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_09d4f4e8-6164-4a4b-a4c0-37277430f0d7">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <ci> d5 </ci>
+              <ci> ApoE </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="APP_generation" name="APP generation" metaid="COPASI36" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI36">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T13:17:19Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="APP" metaid="_8e69fbd6-076b-461e-8db0-5828a81dee94" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="APP" metaid="fe349c99-e3ad-4c2a-a666-8c08778b3bd9"/>
+        </listOfModifiers>
+        <kineticLaw metaid="e45bb208-7f22-4f43-862d-1e5354fdc945">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <apply>
+                <ci> _1Product </ci>
+                <ci> b1 </ci>
+                <ci> APP </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="APP_degradation" name="APP degradation" metaid="COPASI37" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI37">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T13:19:10Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="APP" metaid="a25dbe51-58eb-41e3-b947-994fbc83cfce" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="APP" metaid="_535d1fd0-9ef5-47b4-8966-c3a138ac85d3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_8be5b9be-c0d3-4883-81b9-3770ead57953">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <ci> d3 </ci>
+              <ci> APP </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="sAPP_generation" name="sAPP generation" metaid="COPASI38" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI38">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T13:19:40Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="APP" metaid="_3a57d787-b39d-4184-b7b0-70159d495d4e" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="sAPP" metaid="_4dd0c485-3c70-4952-994e-0f822a76c751" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Cholesterol_N" metaid="a2f0c629-fc50-4c74-803d-089b1d16b814"/>
+          <modifierSpeciesReference species="Cholesterol_N" metaid="fa9f54da-6c79-4850-bf9d-4960efc577ea"/>
+          <modifierSpeciesReference species="APP" metaid="_8d26fdc6-611c-41ce-be7b-0a57ced7da0e"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_1b87c063-cc4a-4627-8901-d650b20a7518">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <apply>
+                <ci> Inhibition_1Mod </ci>
+                <ci> k6 </ci>
+                <ci> beta </ci>
+                <ci> Cholesterol_N </ci>
+                <ci> APP </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Abeta_generation" name="Abeta generation" metaid="COPASI39" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI39">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T13:25:03Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="sAPP" metaid="_93947f04-6ceb-46b9-9a6f-8997a265486a" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Abeta" metaid="_14de0a05-9d86-4243-848b-7f803d5aa50b" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="sAPP" metaid="_1cb37ddb-bfc4-40a9-abb4-3cec070e06be"/>
+        </listOfModifiers>
+        <kineticLaw metaid="dfdad033-ace0-4564-b8d1-4288e531251e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <ci> k7 </ci>
+              <ci> sAPP </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Abeta_degadation_by_endocytosis" name="Abeta degadation by endocytosis" metaid="COPASI40" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI40">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T13:25:44Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="Abeta" metaid="_698d864d-2a22-4409-b69d-7a6925e390cf" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Abeta" metaid="_1a70cfdc-c95f-4ee8-a81f-30f44ae38b2b"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_02f56250-80a9-43fe-8a8e-f187ef91222f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <ci> endo </ci>
+              <ci> Abeta </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Abeta_removal" name="Abeta removal" metaid="COPASI41" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI41">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-04-23T13:30:23Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="Abeta" metaid="_6bdc8f4a-3cbd-4e38-bf9b-0b28ce376aa5" stoichiometry="1"/>
+          <speciesReference species="LRP_1" metaid="adb5ddfa-6175-460c-ac80-5d85be15dc3f" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Abeta" metaid="c264a03c-49fc-488e-aa5b-c1f21a35a2dd"/>
+          <modifierSpeciesReference species="LRP_1" metaid="d745d028-870c-406f-8d73-b5abee60a24c"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_35324b15-9b81-4655-8337-dbdd30ea4f11">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Brain </ci>
+              <apply>
+                <ci> Abeta_binding_and_removal </ci>
+                <ci> kt </ci>
+                <ci> Abeta </ci>
+                <ci> LRP_1 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

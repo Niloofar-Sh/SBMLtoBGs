@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2" metaid="_310870" level="2" version="1">
+  <model metaid="_698496" id="testid" name="Hayer2005_simple_AMPAR_traff_model2">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    This is a highly simplified model of the AMPAR trafficking cycle that exhibits bistability. It is model 2 from Hayer and Bhalla, PLoS 2005. Its main purpose it to illustrate how the bistability arises.    <p>This model originates from BioModels Database: A Database of Annotated Published Models (http://www.ebi.ac.uk/biomodels/). It is copyright (c) 2005-2011 The BioModels.net Team.      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+    <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not..      <br/>
+    <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+</p>
+</body>
+</notes><annotation xmlns:doqcs="http://www.doqcs.ncbs.res.in">
+  <doqcs:timestamp>Tue Jul 24 16:36:59 2007</doqcs:timestamp>
+  <doqcs:accesstype>network</doqcs:accesstype>
+  <doqcs:transcriber>Upinder S. Bhalla, NCBS</doqcs:transcriber>
+  <doqcs:developer>Upinder S. Bhalla, NCBS</doqcs:developer>
+  <doqcs:species>General Mammalian</doqcs:species>
+  <doqcs:tissue>Neuronal</doqcs:tissue>
+  <doqcs:cellcompartment>Postsynaptic Density, Synaptic Spine</doqcs:cellcompartment>
+  <doqcs:methodology>Illustrative</doqcs:methodology>
+  <doqcs:model_implementation>Exact GENESIS implementation</doqcs:model_implementation>
+  <doqcs:model_validation>Approximates original data</doqcs:model_validation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#_698496">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL9086628127"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/pubmed/16110334"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/40674"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/go/GO:2000311"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+      <bqbiol:occursIn>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/bto/BTO:0000938"/>
+        </rdf:Bag>
+      </bqbiol:occursIn>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfUnitDefinitions>
+  <unitDefinition metaid="_310882" id="vol_secINV">
+    <listOfUnits>
+      <unit metaid="_310894" kind="litre"/>
+      <unit metaid="_310906" kind="second" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_310918" id="vol_uMINVsecINV">
+    <listOfUnits>
+      <unit metaid="_310930" kind="litre" exponent="2"/>
+      <unit metaid="_310942" kind="mole" exponent="-1" scale="-6"/>
+      <unit metaid="_310954" kind="second" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_310966" id="substance">
+    <listOfUnits>
+      <unit metaid="_310978" kind="mole" scale="-6"/>
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions><listOfCompartments>
+  <compartment metaid="_698499" id="default_compartment" size="1e-18"/>
+  <compartment metaid="_698513" id="dendrite_geometry" size="5e-15"/>
+  <compartment metaid="_698533" id="spine_geometry" size="9e-17"/>
+  <compartment metaid="_698553" id="PSD_geometry" size="1e-17"/>
+</listOfCompartments><listOfSpecies>
+  <species metaid="_698573" id="Membrane_slash_PP1_minus_active" compartment="PSD_geometry" initialConcentration="0.333333333333333"/>
+  <species metaid="_698593" id="Membrane_slash_PP1_minus_active_slash_PP1_slash_PP1_cplx" compartment="PSD_geometry" initialConcentration="0"/>
+  <species metaid="_698613" id="Membrane_slash_PP1_minus_active_slash_PP1_sbo_1_sbc__slash_PP1_sbo_1_sbc__cplx" compartment="PSD_geometry" initialConcentration="0"/>
+  <species metaid="_698633" id="Membrane_slash_MR_star_" compartment="PSD_geometry" initialConcentration="0"/>
+  <species metaid="_698653" id="Membrane_slash_MR" compartment="PSD_geometry" initialConcentration="0"/>
+  <species metaid="_698673" id="Membrane_slash_MR_star__star_" compartment="PSD_geometry" initialConcentration="0"/>
+  <species metaid="_698693" id="Internal_slash_IR_star__star_" compartment="spine_geometry" initialConcentration="0"/>
+  <species metaid="_698712" id="Internal_slash_IR" compartment="spine_geometry" initialConcentration="0"/>
+  <species metaid="_698713" id="Internal_slash_IR_star_" compartment="spine_geometry" initialConcentration="0"/>
+  <species metaid="_698732" id="PKA_minus_active_slash_memb_minus_PKA_minus_act_slash_memb_minus_PKA_minus_act_cplx" compartment="spine_geometry" initialConcentration="0"/>
+  <species metaid="_698733" id="PKA_minus_active_slash_internal_minus_PKA_minus_act_slash_internal_minus_PKA_minus_act_cplx" compartment="spine_geometry" initialConcentration="0"/>
+  <species metaid="_698753" id="PKA_minus_active_slash_memb_minus_PKA_minus_act_sbo_1_sbc__slash_memb_minus_PKA_minus_act_sbo_1_sbc__cplx" compartment="spine_geometry" initialConcentration="0"/>
+  <species metaid="_698772" id="PKA_minus_active_slash_internal_minus_PKA_minus_act_sbo_1_sbc__slash_internal_minus_PKA_minus_act_sbo_1_sbc__cplx" compartment="spine_geometry" initialConcentration="0"/>
+  <species metaid="_698773" id="Anchor" compartment="PSD_geometry" initialConcentration="27.3333333333333"/>
+  <species metaid="_698792" id="PKA_minus_active" compartment="spine_geometry" initialConcentration="0.0185185185185185" boundaryCondition="true" constant="true"/>
+  <species metaid="_698793" id="Bulk_AMPAR" compartment="dendrite_geometry" initialConcentration="0.003" boundaryCondition="true" constant="true"/>
+</listOfSpecies><listOfReactions>
+  <reaction metaid="_698812" id="to_memb">
+    <listOfReactants>
+      <speciesReference metaid="_310990" species="Anchor"/>
+      <speciesReference metaid="_311002" species="Internal_slash_IR_star__star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311014" species="Membrane_slash_MR_star__star_"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311026">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*Anchor*Internal_slash_IR_star__star_-kb*Membrane_slash_MR_star__star_</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> Anchor </ci>
+            <ci> Internal_slash_IR_star__star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> Membrane_slash_MR_star__star_ </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178616" id="kf" value="1.08e-19" units="vol_uMINVsecINV"/>
+        <parameter metaid="_178617" id="kb" value="8e-20" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_698813" id="from_memb">
+    <listOfReactants>
+      <speciesReference metaid="_311038" species="Membrane_slash_MR"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311050" species="Anchor"/>
+      <speciesReference metaid="_311062" species="Internal_slash_IR"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311074">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*Membrane_slash_MR-kb*Anchor*Internal_slash_IR</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> Membrane_slash_MR </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> Anchor </ci>
+            <ci> Internal_slash_IR </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178618" id="kf" value="8e-21" units="vol_secINV"/>
+        <parameter metaid="_178619" id="kb" value="0" units="vol_uMINVsecINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_698832" id="exchange">
+    <listOfReactants>
+      <speciesReference metaid="_311086" species="Bulk_AMPAR"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311098" species="Internal_slash_IR"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311111">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*Bulk_AMPAR-kb*Internal_slash_IR</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> Bulk_AMPAR </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> Internal_slash_IR </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178620" id="kf" value="9e-17" units="vol_secINV"/>
+        <parameter metaid="_178621" id="kb" value="9e-17" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_698833" id="degradation_sbo_1_sbc_">
+    <listOfReactants>
+      <speciesReference metaid="_311124" species="Internal_slash_IR_star__star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311137" species="Bulk_AMPAR"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311149">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*Internal_slash_IR_star__star_-kb*Bulk_AMPAR</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> Internal_slash_IR_star__star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> Bulk_AMPAR </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178622" id="kf" value="1.8e-21" units="vol_secINV"/>
+        <parameter metaid="_178623" id="kb" value="0" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_698852" id="degradation">
+    <listOfReactants>
+      <speciesReference metaid="_311161" species="Internal_slash_IR_star_"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311173" species="Bulk_AMPAR"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311185">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          kf*Internal_slash_IR_star_-kb*Bulk_AMPAR</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> kf </ci>
+            <ci> Internal_slash_IR_star_ </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> kb </ci>
+            <ci> Bulk_AMPAR </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178624" id="kf" value="1.8e-21" units="vol_secINV"/>
+        <parameter metaid="_178625" id="kb" value="0" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_698853" id="Membrane_slash_PP1_minus_active_slash_PP1_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Note that Km is halved from 2 to 1, as compared to original detailed model. This is because each substrate represents two subunits of the original detailed model.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_311197" species="Membrane_slash_MR_star_"/>
+      <speciesReference metaid="_311209" species="Membrane_slash_PP1_minus_active"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311222" species="Membrane_slash_PP1_minus_active_slash_PP1_slash_PP1_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311234">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*Membrane_slash_MR_star_*Membrane_slash_PP1_minus_active-k2*Membrane_slash_PP1_minus_active_slash_PP1_slash_PP1_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> Membrane_slash_MR_star_ </ci>
+            <ci> Membrane_slash_PP1_minus_active </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> Membrane_slash_PP1_minus_active_slash_PP1_slash_PP1_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178626" id="k1" value="1.75002e-17" units="vol_uMINVsecINV"/>
+        <parameter metaid="_178627" id="k2" value="1.4e-17" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_698872" id="Membrane_slash_PP1_minus_active_slash_PP1_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_311247" species="Membrane_slash_PP1_minus_active_slash_PP1_slash_PP1_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311259" species="Membrane_slash_MR"/>
+      <speciesReference metaid="_311271" species="Membrane_slash_PP1_minus_active"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311283">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*Membrane_slash_PP1_minus_active_slash_PP1_slash_PP1_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> Membrane_slash_PP1_minus_active_slash_PP1_slash_PP1_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178628" id="k3" value="3.5e-18" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_698873" id="Membrane_slash_PP1_minus_active_slash_PP1_sbo_1_sbc__1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Note halving of Km from 2 to 1. See also notes for internal-PKA-act. Basically, the enzyme must act on two substrate subunits which are lumped in the current simplification of the original detailed model. We thank an anonymous reviewer for pointing this out.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_311295" species="Membrane_slash_MR_star__star_"/>
+      <speciesReference metaid="_311307" species="Membrane_slash_PP1_minus_active"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311319" species="Membrane_slash_PP1_minus_active_slash_PP1_sbo_1_sbc__slash_PP1_sbo_1_sbc__cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311331">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*Membrane_slash_MR_star__star_*Membrane_slash_PP1_minus_active-k2*Membrane_slash_PP1_minus_active_slash_PP1_sbo_1_sbc__slash_PP1_sbo_1_sbc__cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> Membrane_slash_MR_star__star_ </ci>
+            <ci> Membrane_slash_PP1_minus_active </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> Membrane_slash_PP1_minus_active_slash_PP1_sbo_1_sbc__slash_PP1_sbo_1_sbc__cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178630" id="k1" value="1.75002e-17" units="vol_uMINVsecINV"/>
+        <parameter metaid="_178632" id="k2" value="1.4e-17" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_698892" id="Membrane_slash_PP1_minus_active_slash_PP1_sbo_1_sbc__2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_311344" species="Membrane_slash_PP1_minus_active_slash_PP1_sbo_1_sbc__slash_PP1_sbo_1_sbc__cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311357" species="Membrane_slash_MR_star_"/>
+      <speciesReference metaid="_311370" species="Membrane_slash_PP1_minus_active"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311383">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*Membrane_slash_PP1_minus_active_slash_PP1_sbo_1_sbc__slash_PP1_sbo_1_sbc__cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> Membrane_slash_PP1_minus_active_slash_PP1_sbo_1_sbc__slash_PP1_sbo_1_sbc__cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178634" id="k3" value="3.5e-18" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_698912" id="PKA_minus_active_slash_memb_minus_PKA_minus_act_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Note halving of Km. See notes for internal-PKA-act enzymatic step.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_311396" species="Membrane_slash_MR"/>
+      <speciesReference metaid="_311409" species="PKA_minus_active"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311422" species="PKA_minus_active_slash_memb_minus_PKA_minus_act_slash_memb_minus_PKA_minus_act_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311435">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*Membrane_slash_MR*PKA_minus_active-k2*PKA_minus_active_slash_memb_minus_PKA_minus_act_slash_memb_minus_PKA_minus_act_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> Membrane_slash_MR </ci>
+            <ci> PKA_minus_active </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PKA_minus_active_slash_memb_minus_PKA_minus_act_slash_memb_minus_PKA_minus_act_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178635" id="k1" value="8.0001e-17" units="vol_uMINVsecINV"/>
+        <parameter metaid="_178636" id="k2" value="2.16e-15" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_698932" id="PKA_minus_active_slash_memb_minus_PKA_minus_act_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_311447" species="PKA_minus_active_slash_memb_minus_PKA_minus_act_slash_memb_minus_PKA_minus_act_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311459" species="Membrane_slash_MR_star_"/>
+      <speciesReference metaid="_311471" species="PKA_minus_active"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311484">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PKA_minus_active_slash_memb_minus_PKA_minus_act_slash_memb_minus_PKA_minus_act_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PKA_minus_active_slash_memb_minus_PKA_minus_act_slash_memb_minus_PKA_minus_act_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178637" id="k3" value="5.4e-16" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_698933" id="PKA_minus_active_slash_internal_minus_PKA_minus_act_1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Note that Km is halved from the main model, from 7.5 to 3.75. This is because here we lump two subunits into one, thus double the effective substrate conc that the enzyme must deal with. We thank an anonymous reviewer for pointing this out.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_311497" species="Internal_slash_IR"/>
+      <speciesReference metaid="_311509" species="PKA_minus_active"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311521" species="PKA_minus_active_slash_internal_minus_PKA_minus_act_slash_internal_minus_PKA_minus_act_cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311533">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*Internal_slash_IR*PKA_minus_active-k2*PKA_minus_active_slash_internal_minus_PKA_minus_act_slash_internal_minus_PKA_minus_act_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> Internal_slash_IR </ci>
+            <ci> PKA_minus_active </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PKA_minus_active_slash_internal_minus_PKA_minus_act_slash_internal_minus_PKA_minus_act_cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178638" id="k1" value="7.20009e-16" units="vol_uMINVsecINV"/>
+        <parameter metaid="_178639" id="k2" value="2.16e-15" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_698952" id="PKA_minus_active_slash_internal_minus_PKA_minus_act_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_311545" species="PKA_minus_active_slash_internal_minus_PKA_minus_act_slash_internal_minus_PKA_minus_act_cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311557" species="Internal_slash_IR_star_"/>
+      <speciesReference metaid="_311569" species="PKA_minus_active"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311581">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PKA_minus_active_slash_internal_minus_PKA_minus_act_slash_internal_minus_PKA_minus_act_cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PKA_minus_active_slash_internal_minus_PKA_minus_act_slash_internal_minus_PKA_minus_act_cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178640" id="k3" value="5.4e-16" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_698972" id="PKA_minus_active_slash_memb_minus_PKA_minus_act_sbo_1_sbc__1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Note halving of Km. See notes for internal-PKA-act enzyme step.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_311593" species="Membrane_slash_MR_star_"/>
+      <speciesReference metaid="_311605" species="PKA_minus_active"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311617" species="PKA_minus_active_slash_memb_minus_PKA_minus_act_sbo_1_sbc__slash_memb_minus_PKA_minus_act_sbo_1_sbc__cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311630">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*Membrane_slash_MR_star_*PKA_minus_active-k2*PKA_minus_active_slash_memb_minus_PKA_minus_act_sbo_1_sbc__slash_memb_minus_PKA_minus_act_sbo_1_sbc__cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> Membrane_slash_MR_star_ </ci>
+            <ci> PKA_minus_active </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PKA_minus_active_slash_memb_minus_PKA_minus_act_sbo_1_sbc__slash_memb_minus_PKA_minus_act_sbo_1_sbc__cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178642" id="k1" value="8.0001e-17" units="vol_uMINVsecINV"/>
+        <parameter metaid="_178644" id="k2" value="2.16e-15" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_698992" id="PKA_minus_active_slash_memb_minus_PKA_minus_act_sbo_1_sbc__2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_311642" species="PKA_minus_active_slash_memb_minus_PKA_minus_act_sbo_1_sbc__slash_memb_minus_PKA_minus_act_sbo_1_sbc__cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311654" species="Membrane_slash_MR_star__star_"/>
+      <speciesReference metaid="_311667" species="PKA_minus_active"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311679">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PKA_minus_active_slash_memb_minus_PKA_minus_act_sbo_1_sbc__slash_memb_minus_PKA_minus_act_sbo_1_sbc__cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PKA_minus_active_slash_memb_minus_PKA_minus_act_sbo_1_sbc__slash_memb_minus_PKA_minus_act_sbo_1_sbc__cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178646" id="k3" value="5.4e-16" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_699012" id="PKA_minus_active_slash_internal_minus_PKA_minus_act_sbo_1_sbc__1">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        Note that Km is halved from the detailed model, as the reaction represents enzyme activity on 2 subunits.</body>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_311691" species="Internal_slash_IR_star_"/>
+      <speciesReference metaid="_311703" species="PKA_minus_active"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311716" species="PKA_minus_active_slash_internal_minus_PKA_minus_act_sbo_1_sbc__slash_internal_minus_PKA_minus_act_sbo_1_sbc__cplx"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311728">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k1*Internal_slash_IR_star_*PKA_minus_active-k2*PKA_minus_active_slash_internal_minus_PKA_minus_act_sbo_1_sbc__slash_internal_minus_PKA_minus_act_sbo_1_sbc__cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> Internal_slash_IR_star_ </ci>
+            <ci> PKA_minus_active </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k2 </ci>
+            <ci> PKA_minus_active_slash_internal_minus_PKA_minus_act_sbo_1_sbc__slash_internal_minus_PKA_minus_act_sbo_1_sbc__cplx </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178647" id="k1" value="7.20009e-16" units="vol_uMINVsecINV"/>
+        <parameter metaid="_178648" id="k2" value="2.16e-15" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_699013" id="PKA_minus_active_slash_internal_minus_PKA_minus_act_sbo_1_sbc__2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_311740" species="PKA_minus_active_slash_internal_minus_PKA_minus_act_sbo_1_sbc__slash_internal_minus_PKA_minus_act_sbo_1_sbc__cplx"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_311752" species="Internal_slash_IR_star__star_"/>
+      <speciesReference metaid="_311764" species="PKA_minus_active"/>
+    </listOfProducts>
+    <kineticLaw metaid="_311776">
+      <notes>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          k3*PKA_minus_active_slash_internal_minus_PKA_minus_act_sbo_1_sbc__slash_internal_minus_PKA_minus_act_sbo_1_sbc__cplx</body>
+      </notes>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> PKA_minus_active_slash_internal_minus_PKA_minus_act_sbo_1_sbc__slash_internal_minus_PKA_minus_act_sbo_1_sbc__cplx </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_178649" id="k3" value="5.4e-16" units="vol_secINV"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+</model>
+</sbml>

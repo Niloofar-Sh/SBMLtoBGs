@@ -1,0 +1,6520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:dc="http://purl.org/dc/elements/1.1/" metaid="_136869" level="2" version="4">
+  <model metaid="metaid_jamshidi01" id="Jamshidi01_RBC_MetabolicNetwork" name="Jamshidi01_RBC_MetabolicNetwork">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+          <b>Dynamic simulation of the human red blood cell metabolic network</b>
+          <br/>
+          Neema Jamshidi, Jeremy S. Edwards, Tom Fahland, George M. Church, Bernhard O. Palsson,      <i>Bioinformatics</i>
+          2001 17:286-287      </p>
+        <p>This SBML file was created from      <a href="http://docs.u003f.com/run_kinetic.m">run_kinetic.m</a>
+          (very kindly provided by Keren Yizhak) - a Matlab implementation of the original      <a href="http://atlas.med.harvard.edu/gmc/rbc.html">Mathematica workbook</a>
+          .      </p>
+      <p>This model originates from BioModels Database: A Database of Annotated Published Models (http://www.ebi.ac.uk/biomodels/). It is copyright (c) 2005-2011 The BioModels.net Team.      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+    <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not.
+          .      <br/>
+    <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+</p>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+    <rdf:Description rdf:about="#metaid_jamshidi01">
+      <dc:creator>
+        <rdf:Bag>
+          <rdf:li rdf:parseType="Resource">
+            <vCard:N rdf:parseType="Resource">
+              <vCard:Family>Smallbone</vCard:Family>
+              <vCard:Given>Kieran</vCard:Given>
+            </vCard:N>
+            <vCard:EMAIL>kieran.smallbone@manchester.ac.uk</vCard:EMAIL>
+            <vCard:ORG rdf:parseType="Resource">
+              <vCard:Orgname>University of Manchester</vCard:Orgname>
+            </vCard:ORG>
+          </rdf:li>
+          <rdf:li rdf:parseType="Resource">
+            <vCard:N rdf:parseType="Resource">
+              <vCard:Family>Smallbone</vCard:Family>
+              <vCard:Given>Kieran</vCard:Given>
+            </vCard:N>
+            <vCard:EMAIL>kieran.smallbone@manchester.ac.uk</vCard:EMAIL>
+            <vCard:ORG rdf:parseType="Resource">
+              <vCard:Orgname>University of Manchester</vCard:Orgname>
+            </vCard:ORG>
+          </rdf:li>
+          <rdf:li rdf:parseType="Resource">
+            <vCard:N rdf:parseType="Resource">
+              <vCard:Family>Smallbone</vCard:Family>
+              <vCard:Given>Kieran</vCard:Given>
+            </vCard:N>
+            <vCard:EMAIL>kieran.smallbone@manchester.ac.uk</vCard:EMAIL>
+            <vCard:ORG rdf:parseType="Resource">
+              <vCard:Orgname>University of Manchester</vCard:Orgname>
+            </vCard:ORG>
+          </rdf:li>
+        </rdf:Bag>
+      </dc:creator>
+      <dcterms:created rdf:parseType="Resource">
+        <dcterms:W3CDTF>2011-02-07T00:00:00Z</dcterms:W3CDTF>
+      </dcterms:created>
+      <dcterms:modified rdf:parseType="Resource">
+        <dcterms:W3CDTF>2012-02-03T11:14:12Z</dcterms:W3CDTF>
+      </dcterms:modified>
+      <dcterms:modified rdf:parseType="Resource">
+        <dcterms:W3CDTF>2012-02-03T11:14:12Z</dcterms:W3CDTF>
+      </dcterms:modified>
+      <dcterms:modified rdf:parseType="Resource">
+        <dcterms:W3CDTF>2012-02-03T11:14:12Z</dcterms:W3CDTF>
+      </dcterms:modified>
+      <dcterms:modified rdf:parseType="Resource">
+        <dcterms:W3CDTF>2012-02-03T11:14:12Z</dcterms:W3CDTF>
+      </dcterms:modified>
+      <bqbiol:occursIn>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+          <rdf:li rdf:resource="http://identifiers.org/bto/BTO:0000424"/>
+        </rdf:Bag>
+      </bqbiol:occursIn>
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1103210001"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/pubmed/11294796"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/go/GO:0044237"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfCompartments>
+  <compartment metaid="meta_cell" sboTerm="SBO:0000290" id="cell" name="cell" size="1">
+    <annotation>
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+        <rdf:Description rdf:about="#meta_cell">
+          <bqbiol:is>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/obo.go/GO:0005622"/>
+            </rdf:Bag>
+          </bqbiol:is>
+        </rdf:Description>
+      </rdf:RDF>
+    </annotation>
+  </compartment>
+  <compartment metaid="meta_extracellular" sboTerm="SBO:0000290" id="extracellular" name="extracellular" size="1">
+    <annotation>
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+        <rdf:Description rdf:about="#meta_extracellular">
+          <bqbiol:is>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/obo.go/GO:0005576"/>
+            </rdf:Bag>
+          </bqbiol:is>
+        </rdf:Description>
+      </rdf:RDF>
+    </annotation>
+  </compartment>
+</listOfCompartments><listOfSpecies>
+  <species metaid="_136881" sboTerm="SBO:0000247" id="ADE" name="adenine" compartment="cell" initialConcentration="0.00103"/>
+  <species metaid="_136893" sboTerm="SBO:0000247" id="ADO" name="adenosine" compartment="cell" initialConcentration="5.19e-05"/>
+  <species metaid="_136905" sboTerm="SBO:0000247" id="ADP" name="adenosine di-phosphate" compartment="cell" initialConcentration="0.492"/>
+  <species metaid="_136917" sboTerm="SBO:0000247" id="AMP" name="adensoine mono-phosphate" compartment="cell" initialConcentration="0.148"/>
+  <species metaid="_136929" sboTerm="SBO:0000247" id="ATP" name="adenosine tri-phosphate" compartment="cell" initialConcentration="2.401"/>
+  <species metaid="_136941" sboTerm="SBO:0000247" id="DHAP" name="dihydroxy acetone phosphate" compartment="cell" initialConcentration="0.147"/>
+  <species metaid="_136953" sboTerm="SBO:0000247" id="DPG13" name="1,2 diphosphoglycerate (bis phosphoglycerate)" compartment="cell" initialConcentration="0.000228"/>
+  <species metaid="_136965" sboTerm="SBO:0000247" id="DPG23" name="2,3 diphosphoglycerate (bis phosphoglycerate)" compartment="cell" initialConcentration="4.65"/>
+  <species metaid="_136977" sboTerm="SBO:0000247" id="E4P" name="erythrose 4 phosphate" compartment="cell" initialConcentration="0.00507"/>
+  <species metaid="_136989" sboTerm="SBO:0000247" id="F6P" name="fructose 6 phosphate" compartment="cell" initialConcentration="0.0272"/>
+  <species metaid="_137001" sboTerm="SBO:0000247" id="FDP" name="fructose diphosphate (bisphosphate)" compartment="cell" initialConcentration="0.01386"/>
+  <species metaid="_137013" sboTerm="SBO:0000247" id="G6P" name="glucose 6 phosphate" compartment="cell" initialConcentration="0.066"/>
+  <species metaid="_137025" sboTerm="SBO:0000247" id="GAP" name="glyceraldehyde 3 phosphate" compartment="cell" initialConcentration="0.00669"/>
+  <species metaid="_137037" sboTerm="SBO:0000247" id="GL6P" name="6 phosphogluconolactone" compartment="cell" initialConcentration="0.001759"/>
+  <species metaid="_137049" sboTerm="SBO:0000247" id="GO6P" name="6 phosphogluconate" compartment="cell" initialConcentration="0.0374"/>
+  <species metaid="_137061" sboTerm="SBO:0000247" id="GSH" name="glutathione - reduced form" compartment="cell" initialConcentration="3.312"/>
+  <species metaid="_137073" sboTerm="SBO:0000247" id="HX" name="hypoxanthine" compartment="cell" initialConcentration="0.000226"/>
+  <species metaid="_137085" sboTerm="SBO:0000247" id="IMP" name="inosine monophosphate" compartment="cell" initialConcentration="0.0192"/>
+  <species metaid="_137097" sboTerm="SBO:0000247" id="INO" name="inosine" compartment="cell" initialConcentration="4.27e-05"/>
+  <species metaid="_137109" sboTerm="SBO:0000247" id="KI" name="internal potassium concentration" compartment="cell" initialConcentration="139.882"/>
+  <species metaid="_137121" sboTerm="SBO:0000247" id="LAC" name="lactate" compartment="cell" initialConcentration="1.398"/>
+  <species metaid="_137133" sboTerm="SBO:0000247" id="MG" name="uncomplexed magnesium" compartment="cell" initialConcentration="0.233836"/>
+  <species metaid="_137145" sboTerm="SBO:0000247" id="MGADP" name="magnesium complexed with ADP" compartment="cell" initialConcentration="0.110216"/>
+  <species metaid="_137157" sboTerm="SBO:0000247" id="MGAMP" name="magnesium complexed with AMP" compartment="cell" initialConcentration="0.00154265"/>
+  <species metaid="_137170" sboTerm="SBO:0000247" id="MGATP" name="magnesium complexed with ATP" compartment="cell" initialConcentration="1.78328"/>
+  <species metaid="_137182" sboTerm="SBO:0000247" id="MGDPG23" name="magnesium complexed with 2,3 DPG" compartment="cell" initialConcentration="0.571129"/>
+  <species metaid="_137194" sboTerm="SBO:0000247" id="NADH" name="nicotinamide dinucleotide - reduced" compartment="cell" initialConcentration="0.030592"/>
+  <species metaid="_137206" sboTerm="SBO:0000247" id="NADPH" name="nicotinamide dinucleotide phosphate - reduced" compartment="cell" initialConcentration="0.0659"/>
+  <species metaid="_137218" sboTerm="SBO:0000247" id="NAI" name="internal sodium concentration " compartment="cell" initialConcentration="14.135"/>
+  <species metaid="_137230" sboTerm="SBO:0000247" id="PEP" name="phosphoenolpyruvate" compartment="cell" initialConcentration="0.02087"/>
+  <species metaid="_137242" sboTerm="SBO:0000247" id="PG2" name="2 phsophoglycerate" compartment="cell" initialConcentration="0.01226"/>
+  <species metaid="_137254" sboTerm="SBO:0000247" id="PG3" name="3 phosphoglycerate" compartment="cell" initialConcentration="0.0839"/>
+  <species metaid="_137266" sboTerm="SBO:0000247" id="PRPP" name="phosphoribosyl pyrophosphate" compartment="cell" initialConcentration="0.0136"/>
+  <species metaid="_137278" sboTerm="SBO:0000247" id="PYR" name="pyruvate" compartment="cell" initialConcentration="0.062"/>
+  <species metaid="_137290" sboTerm="SBO:0000247" id="R1P" name="ribose 1 phosphate" compartment="cell" initialConcentration="0.0117"/>
+  <species metaid="_137302" sboTerm="SBO:0000247" id="R5P" name="ribose 5 phosphate" compartment="cell" initialConcentration="0.01266"/>
+  <species metaid="_137314" sboTerm="SBO:0000247" id="RU5P" name="ribulose 5 phosphate" compartment="cell" initialConcentration="0.00493"/>
+  <species metaid="_137326" sboTerm="SBO:0000247" id="S7P" name="seduheptulose 7 phosphate" compartment="cell" initialConcentration="0.02398"/>
+  <species metaid="_137339" sboTerm="SBO:0000247" id="X5P" name="xylulose 5 phosphate" compartment="cell" initialConcentration="0.01478"/>
+  <species metaid="_137351" sboTerm="SBO:0000247" id="LACEXT" compartment="extracellular" initialConcentration="1.2" boundaryCondition="true" constant="true"/>
+  <species metaid="_137363" sboTerm="SBO:0000247" id="PYREXT" compartment="extracellular" initialConcentration="0.06" boundaryCondition="true" constant="true"/>
+  <species metaid="_137375" sboTerm="SBO:0000247" id="adoex" compartment="extracellular" initialConcentration="8e-05" boundaryCondition="true" constant="true"/>
+  <species metaid="_137387" sboTerm="SBO:0000247" id="adeex" compartment="extracellular" initialConcentration="0.0013" boundaryCondition="true" constant="true"/>
+  <species metaid="_137399" sboTerm="SBO:0000247" id="inoex" compartment="extracellular" initialConcentration="0.0002" boundaryCondition="true" constant="true"/>
+  <species metaid="_137411" sboTerm="SBO:0000247" id="GSHex" compartment="extracellular" initialConcentration="0" boundaryCondition="true" constant="true"/>
+  <species metaid="_137423" sboTerm="SBO:0000247" id="HXex" compartment="extracellular" initialConcentration="0" boundaryCondition="true" constant="true"/>
+  <species metaid="_137436" sboTerm="SBO:0000247" id="KLEak" compartment="extracellular" initialConcentration="0" boundaryCondition="true" constant="true"/>
+  <species metaid="_137448" sboTerm="SBO:0000247" id="NALEak" compartment="extracellular" initialConcentration="0" boundaryCondition="true" constant="true"/>
+</listOfSpecies><listOfParameters>
+  <parameter metaid="_137460" id="PHE" value="7.4"/>
+  <parameter metaid="_137472" id="CO2" value="1.2"/>
+  <parameter metaid="_137484" id="TEMP" value="310"/>
+  <parameter metaid="_137496" id="RT" value="0.6"/>
+  <parameter metaid="_137508" id="NADHT" value="0.089"/>
+  <parameter metaid="_137520" id="NADPHT" value="0.066"/>
+  <parameter metaid="_137532" id="GSSGT" value="3.32"/>
+  <parameter metaid="_137544" id="GLC" value="5"/>
+  <parameter metaid="_137556" id="MGT" value="2.7"/>
+  <parameter metaid="_137568" id="PI" value="1.2"/>
+  <parameter metaid="_137580" id="KE" value="5"/>
+  <parameter metaid="_137592" id="NAE" value="140"/>
+  <parameter metaid="_137604" id="S" value="1.55e-06"/>
+  <parameter metaid="_137616" id="V" value="8.7e-11"/>
+  <parameter metaid="_137628" id="KMGATP" value="1.13"/>
+  <parameter metaid="_137640" id="KMGAMG" value="1.14"/>
+  <parameter metaid="_137652" id="KMG" value="1.03"/>
+  <parameter metaid="_137665" id="KG6P" value="0.334"/>
+  <parameter metaid="_137678" id="KPG23" value="2.7"/>
+  <parameter metaid="_137690" id="KMGPG" value="3.44"/>
+  <parameter metaid="_137702" id="CONSTHK" value="1.55"/>
+  <parameter metaid="_137715" id="KMAGLC" value="0.051"/>
+  <parameter metaid="_137727" id="KGLC" value="0.04"/>
+  <parameter metaid="_137739" id="Kglcg6p" value="0.069"/>
+  <parameter metaid="_137751" id="G16P" value="0.16"/>
+  <parameter metaid="_137763" id="KG16P" value="0.334"/>
+  <parameter metaid="_137775" id="kpgi1" value="60290"/>
+  <parameter metaid="_137787" id="KPGI" value="0.41"/>
+  <parameter metaid="_137799" id="pfkKMG" value="0.44"/>
+  <parameter metaid="_137811" id="pfkKF6P" value="0.1"/>
+  <parameter metaid="_137823" id="pfkKAMP" value="0.033"/>
+  <parameter metaid="_137836" id="pfkLO" value="0.001072"/>
+  <parameter metaid="_137848" id="aldkeq" value="0.081"/>
+  <parameter metaid="_137860" id="aldK1" value="38500000"/>
+  <parameter metaid="_137872" id="aldK2" value="838800"/>
+  <parameter metaid="_137884" id="aldK3" value="6840000"/>
+  <parameter metaid="_137897" id="aldK4" value="40320000"/>
+  <parameter metaid="_137909" id="aldK5" value="252000"/>
+  <parameter metaid="_137921" id="aldK6" value="23076000"/>
+  <parameter metaid="_137933" id="tpiEPSI" value="200"/>
+  <parameter metaid="_137945" id="tpiKTPI" value="22"/>
+  <parameter metaid="_137957" id="tpiKTP1" value="31056"/>
+  <parameter metaid="_137969" id="KGAPDH" value="1.1294e-06"/>
+  <parameter metaid="_137981" id="KGA1" value="115975"/>
+  <parameter metaid="_137994" id="KPG" value="1800"/>
+  <parameter metaid="_138006" id="kpgk1" value="8633310"/>
+  <parameter metaid="_138018" id="KPGM1" value="5000"/>
+  <parameter metaid="_138030" id="KPGM" value="0.1470588235"/>
+  <parameter metaid="_138042" id="KEN" value="1.708543057"/>
+  <parameter metaid="_138054" id="KEN1" value="50000"/>
+  <parameter metaid="_138067" id="pkKADP" value="0.474"/>
+  <parameter metaid="_138079" id="pkKPEP" value="0.225"/>
+  <parameter metaid="_138091" id="pkKFDP" value="0.005"/>
+  <parameter metaid="_138103" id="pkKATP" value="3.39"/>
+  <parameter metaid="_138116" id="KLDH" value="44.64"/>
+  <parameter metaid="_138128" id="KLD1" value="308642.2"/>
+  <parameter metaid="_138140" id="KLAC" value="12.8"/>
+  <parameter metaid="_138152" id="adaKII" value="1.3"/>
+  <parameter metaid="_138164" id="adkK1" value="0.081"/>
+  <parameter metaid="_138176" id="adkK2" value="0.81"/>
+  <parameter metaid="_138188" id="adkK3" value="22.2"/>
+  <parameter metaid="_138201" id="adkk0" value="0.22933781"/>
+  <parameter metaid="_138214" id="adkKAP1" value="54.4"/>
+  <parameter metaid="_138227" id="ampdaKIMP" value="2.5"/>
+  <parameter metaid="_138239" id="ETG6PD" value="9.3e-08"/>
+  <parameter metaid="_138251" id="KG6PD1" value="110000000"/>
+  <parameter metaid="_138264" id="KG6PD2" value="870"/>
+  <parameter metaid="_138276" id="KG6PD3" value="26000000"/>
+  <parameter metaid="_138288" id="KG6PD4" value="300"/>
+  <parameter metaid="_138301" id="KG6PD5" value="750"/>
+  <parameter metaid="_138313" id="KG6PD6" value="2000"/>
+  <parameter metaid="_138325" id="KG6PD7" value="220000"/>
+  <parameter metaid="_138337" id="KG6PD8" value="1100000000"/>
+  <parameter metaid="_138349" id="KG6PD9" value="10000"/>
+  <parameter metaid="_138361" id="KG6PD10" value="1400000000"/>
+  <parameter metaid="_138373" id="ETG16PD" value="2.1e-06"/>
+  <parameter metaid="_138385" id="KG16PD1" value="1200000"/>
+  <parameter metaid="_138397" id="KG16PD2" value="410"/>
+  <parameter metaid="_138409" id="KG16PD3" value="1000000000"/>
+  <parameter metaid="_138421" id="KG16PD4" value="26000"/>
+  <parameter metaid="_138433" id="KG16PD5" value="48"/>
+  <parameter metaid="_138445" id="KG16PD6" value="30"/>
+  <parameter metaid="_138457" id="KG16PD7" value="630"/>
+  <parameter metaid="_138469" id="KG16PD8" value="36000"/>
+  <parameter metaid="_138481" id="KG16PD9" value="800"/>
+  <parameter metaid="_138494" id="KG16PD10" value="450000"/>
+  <parameter metaid="_138506" id="KG16PD11" value="300"/>
+  <parameter metaid="_138518" id="KG16PD12" value="9900000"/>
+  <parameter metaid="_138531" id="gssgK3" value="100000000"/>
+  <parameter metaid="_138543" id="gssgET" value="1.25e-07"/>
+  <parameter metaid="_138555" id="gssgK1" value="85000000"/>
+  <parameter metaid="_138567" id="gssgK2" value="510"/>
+  <parameter metaid="_138579" id="gssgK4" value="7200"/>
+  <parameter metaid="_138591" id="gssgK5" value="810"/>
+  <parameter metaid="_138603" id="gssgK6" value="1000"/>
+  <parameter metaid="_138615" id="gssgK7" value="1000000"/>
+  <parameter metaid="_138627" id="gssgK8" value="50000000"/>
+  <parameter metaid="_138639" id="gssgK9" value="1000000"/>
+  <parameter metaid="_138651" id="gssgK10" value="50000000"/>
+  <parameter metaid="_138663" id="gssgK11" value="7000"/>
+  <parameter metaid="_138675" id="gssgK12" value="100000000"/>
+  <parameter metaid="_138687" id="tkiKEQ" value="1.2"/>
+  <parameter metaid="_138699" id="tkiK1" value="777600"/>
+  <parameter metaid="_138711" id="tkiK4" value="561600"/>
+  <parameter metaid="_138723" id="tkiK5" value="1184400"/>
+  <parameter metaid="_138735" id="tkiK8" value="161280"/>
+  <parameter metaid="_138747" id="tkiK2" value="136800"/>
+  <parameter metaid="_138760" id="tkiK3" value="122400"/>
+  <parameter metaid="_138772" id="tkiK6" value="630000"/>
+  <parameter metaid="_138784" id="tkiK7" value="144000"/>
+  <parameter metaid="_138796" id="KEQTKII" value="10.3"/>
+  <parameter metaid="_138808" id="KTKII1" value="777600"/>
+  <parameter metaid="_138820" id="KTKII2" value="136800"/>
+  <parameter metaid="_138832" id="KTKII3" value="122400"/>
+  <parameter metaid="_138844" id="KTKII4" value="561600"/>
+  <parameter metaid="_138856" id="KTKII5" value="806400"/>
+  <parameter metaid="_138868" id="KTKII6" value="630000"/>
+  <parameter metaid="_138881" id="KTKII7" value="144000"/>
+  <parameter metaid="_138893" id="KTKII8" value="76680"/>
+  <parameter metaid="_138905" id="KALD1" value="2088000"/>
+  <parameter metaid="_138917" id="KALD2" value="163080"/>
+  <parameter metaid="_138929" id="KALD3" value="58680"/>
+  <parameter metaid="_138941" id="KALD4" value="3636000"/>
+  <parameter metaid="_138953" id="KALD5" value="1764000"/>
+  <parameter metaid="_138965" id="KALD6" value="216000"/>
+  <parameter metaid="_138977" id="KALD7" value="61200"/>
+  <parameter metaid="_138989" id="KALD8" value="284400"/>
+  <parameter metaid="_139001" id="KEQALD" value="1.05"/>
+  <parameter metaid="_139013" id="pnpaseKeq" value="0.09"/>
+  <parameter metaid="_139025" id="pnpaseKA1" value="1950"/>
+  <parameter metaid="_139037" id="prmKeq" value="13.3"/>
+  <parameter metaid="_139049" id="prmKA1" value="427.59"/>
+  <parameter metaid="_139061" id="kPK" value="3.564e-07"/>
+  <parameter metaid="_139073" id="kKM" value="4"/>
+  <parameter metaid="_139085" id="kFMAXK" value="3.115"/>
+  <parameter metaid="_139097" id="PNA" value="3.96e-07"/>
+  <parameter metaid="_139109" id="naKM" value="21"/>
+  <parameter metaid="_139121" id="FMAXN" value="2.8166"/>
+  <parameter metaid="_139133" id="KSPPUMP" value="0.1328"/>
+  <parameter metaid="_139145" id="KSPUMP" value="0.0617"/>
+  <parameter metaid="_139157" id="PSIPUMP" value="0.7114"/>
+  <parameter metaid="_139169" id="KPUMP1" value="0.0082"/>
+  <parameter metaid="_139181" id="KPUMP2" value="0.0501"/>
+  <parameter metaid="_139194" id="KNAPUMP" value="6.2672"/>
+  <parameter metaid="_139206" id="kAss" value="10000"/>
+  <parameter metaid="_139218" id="SV" constant="false"/>
+  <parameter metaid="_139230" id="GSSG" constant="false"/>
+  <parameter metaid="_139242" id="NADP" constant="false"/>
+  <parameter metaid="_139255" id="ATPF" constant="false"/>
+  <parameter metaid="_139267" id="HE" constant="false"/>
+  <parameter metaid="_139279" id="HI" constant="false"/>
+  <parameter metaid="_139291" id="PHI" constant="false"/>
+  <parameter metaid="_139303" id="NAD" constant="false"/>
+  <parameter metaid="_139315" id="KDPGM" constant="false"/>
+  <parameter metaid="_139327" id="VM1HK" constant="false"/>
+  <parameter metaid="_139339" id="N1HK" constant="false"/>
+  <parameter metaid="_139351" id="kpgi2" constant="false"/>
+  <parameter metaid="_139363" id="pfkKATP" constant="false"/>
+  <parameter metaid="_139375" id="pfkVM" constant="false"/>
+  <parameter metaid="_139387" id="LPFK" constant="false"/>
+  <parameter metaid="_139399" id="aldN1" constant="false"/>
+  <parameter metaid="_139411" id="aldN2" constant="false"/>
+  <parameter metaid="_139424" id="aldD1" constant="false"/>
+  <parameter metaid="_139436" id="aldD2" constant="false"/>
+  <parameter metaid="_139448" id="aldD3" constant="false"/>
+  <parameter metaid="_139460" id="aldD4" constant="false"/>
+  <parameter metaid="_139472" id="aldD5" constant="false"/>
+  <parameter metaid="_139484" id="aldD6" constant="false"/>
+  <parameter metaid="_139497" id="tpiKTP2" constant="false"/>
+  <parameter metaid="_139509" id="KGA2" constant="false"/>
+  <parameter metaid="_139522" id="kpgk2" constant="false"/>
+  <parameter metaid="_139535" id="dpgmk" constant="false"/>
+  <parameter metaid="_139548" id="dpgasek" constant="false"/>
+  <parameter metaid="_139561" id="KPGM2" constant="false"/>
+  <parameter metaid="_139574" id="KEN2" constant="false"/>
+  <parameter metaid="_139587" id="pkDEN1" constant="false"/>
+  <parameter metaid="_139600" id="pkDEN2" constant="false"/>
+  <parameter metaid="_139613" id="pkDEN3" constant="false"/>
+  <parameter metaid="_139626" id="KLD2" constant="false"/>
+  <parameter metaid="_139638" id="VLAC" constant="false"/>
+  <parameter metaid="_139650" id="KAMPAS" constant="false"/>
+  <parameter metaid="_139662" id="adaVM" constant="false"/>
+  <parameter metaid="_139674" id="akVM" constant="false"/>
+  <parameter metaid="_139686" id="adkKADK" constant="false"/>
+  <parameter metaid="_139698" id="adkKAP2" constant="false"/>
+  <parameter metaid="_139710" id="katpase" constant="false"/>
+  <parameter metaid="_139722" id="adprtVM" constant="false"/>
+  <parameter metaid="_139734" id="MG6PD1" constant="false"/>
+  <parameter metaid="_139746" id="MG6PD2" constant="false"/>
+  <parameter metaid="_139758" id="DG6PD1" constant="false"/>
+  <parameter metaid="_139770" id="DG6PD2" constant="false"/>
+  <parameter metaid="_139783" id="DG6PD5" constant="false"/>
+  <parameter metaid="_139795" id="DG6PD3" constant="false"/>
+  <parameter metaid="_139807" id="DG6PD4" constant="false"/>
+  <parameter metaid="_139819" id="DG6PD6" constant="false"/>
+  <parameter metaid="_139831" id="DG6PD7" constant="false"/>
+  <parameter metaid="_139843" id="DG6PD8" constant="false"/>
+  <parameter metaid="_139856" id="DG6PD9" constant="false"/>
+  <parameter metaid="_139868" id="DG6PD10" constant="false"/>
+  <parameter metaid="_139880" id="DG6PD11" constant="false"/>
+  <parameter metaid="_139892" id="NUMG6PDH" constant="false"/>
+  <parameter metaid="_139904" id="DENG6PD1" constant="false"/>
+  <parameter metaid="_139916" id="DENG6PD2" constant="false"/>
+  <parameter metaid="_139928" id="DENG6PD3" constant="false"/>
+  <parameter metaid="_139940" id="DENG6PD4" constant="false"/>
+  <parameter metaid="_139952" id="DENG6PDH" constant="false"/>
+  <parameter metaid="_139964" id="MG16PD1" constant="false"/>
+  <parameter metaid="_139976" id="MG16PD2" constant="false"/>
+  <parameter metaid="_139988" id="DG16PD1" constant="false"/>
+  <parameter metaid="_140000" id="DG16PD2" constant="false"/>
+  <parameter metaid="_140012" id="DG16PD3" constant="false"/>
+  <parameter metaid="_140024" id="DG16PD4" constant="false"/>
+  <parameter metaid="_140036" id="DG16PD5" constant="false"/>
+  <parameter metaid="_140048" id="AG16PD1" constant="false"/>
+  <parameter metaid="_140060" id="BG16PD1" constant="false"/>
+  <parameter metaid="_140072" id="CG16PD1" constant="false"/>
+  <parameter metaid="_140084" id="DG16PD6" constant="false"/>
+  <parameter metaid="_140097" id="DG16PD7" constant="false"/>
+  <parameter metaid="_140109" id="DG16PD8" constant="false"/>
+  <parameter metaid="_140122" id="DG16PD9" constant="false"/>
+  <parameter metaid="_140134" id="DG16PD10" constant="false"/>
+  <parameter metaid="_140146" id="DG16PD11" constant="false"/>
+  <parameter metaid="_140158" id="DG16PD12" constant="false"/>
+  <parameter metaid="_140170" id="DG16PD13" constant="false"/>
+  <parameter metaid="_140182" id="DG16PD14" constant="false"/>
+  <parameter metaid="_140194" id="DG16PD15" constant="false"/>
+  <parameter metaid="_140206" id="DG16PD16" constant="false"/>
+  <parameter metaid="_140218" id="DG16PD17" constant="false"/>
+  <parameter metaid="_140230" id="DG16PD18" constant="false"/>
+  <parameter metaid="_140242" id="NUMG16PD" constant="false"/>
+  <parameter metaid="_140254" id="DENG16PD1" constant="false"/>
+  <parameter metaid="_140266" id="DENG16PD2" constant="false"/>
+  <parameter metaid="_140279" id="DENG16PD3" constant="false"/>
+  <parameter metaid="_140291" id="DENG16PD4" constant="false"/>
+  <parameter metaid="_140303" id="DENG16PD5" constant="false"/>
+  <parameter metaid="_140315" id="DENG16PD6A" constant="false"/>
+  <parameter metaid="_140327" id="DENG16PD6B" constant="false"/>
+  <parameter metaid="_140339" id="DENG16PD6" constant="false"/>
+  <parameter metaid="_140351" id="DENG16PD7" constant="false"/>
+  <parameter metaid="_140363" id="DENG16PD" constant="false"/>
+  <parameter metaid="_140375" id="gssgM1" constant="false"/>
+  <parameter metaid="_140387" id="gssgM2" constant="false"/>
+  <parameter metaid="_140399" id="gssgD1" constant="false"/>
+  <parameter metaid="_140411" id="gssgD2" constant="false"/>
+  <parameter metaid="_140423" id="gssgD3" constant="false"/>
+  <parameter metaid="_140435" id="gssgD4" constant="false"/>
+  <parameter metaid="_140447" id="gssgD5" constant="false"/>
+  <parameter metaid="_140459" id="gssgD6" constant="false"/>
+  <parameter metaid="_140472" id="gssgD7" constant="false"/>
+  <parameter metaid="_140484" id="gssgD8" constant="false"/>
+  <parameter metaid="_140496" id="gssgD9" constant="false"/>
+  <parameter metaid="_140508" id="gssgD10" constant="false"/>
+  <parameter metaid="_140520" id="gssgD11" constant="false"/>
+  <parameter metaid="_140532" id="gssgD12" constant="false"/>
+  <parameter metaid="_140545" id="gssgD13" constant="false"/>
+  <parameter metaid="_140557" id="gssgD14" constant="false"/>
+  <parameter metaid="_140569" id="gssgD15" constant="false"/>
+  <parameter metaid="_140581" id="gssgD16" constant="false"/>
+  <parameter metaid="_140593" id="gssgD17" constant="false"/>
+  <parameter metaid="_140605" id="gssgD18" constant="false"/>
+  <parameter metaid="_140617" id="gssgNUM" constant="false"/>
+  <parameter metaid="_140629" id="gssgDEN1" constant="false"/>
+  <parameter metaid="_140641" id="gssgDEN2" constant="false"/>
+  <parameter metaid="_140653" id="gssgDEN3" constant="false"/>
+  <parameter metaid="_140665" id="gssgDEN4" constant="false"/>
+  <parameter metaid="_140677" id="gssgDEN5" constant="false"/>
+  <parameter metaid="_140689" id="gssgDEN6" constant="false"/>
+  <parameter metaid="_140701" id="gssgDEN7" constant="false"/>
+  <parameter metaid="_140713" id="gssgDEN" constant="false"/>
+  <parameter metaid="_140725" id="gshconst" constant="false"/>
+  <parameter metaid="_140738" id="tkiN1" constant="false"/>
+  <parameter metaid="_140750" id="tkiN2" constant="false"/>
+  <parameter metaid="_140762" id="tkiD1" constant="false"/>
+  <parameter metaid="_140774" id="tkiD3" constant="false"/>
+  <parameter metaid="_140786" id="tkiD5" constant="false"/>
+  <parameter metaid="_140799" id="tkiD7" constant="false"/>
+  <parameter metaid="_140810" id="tkiD2" constant="false"/>
+  <parameter metaid="_140822" id="tkiD4" constant="false"/>
+  <parameter metaid="_140834" id="tkiD6" constant="false"/>
+  <parameter metaid="_140846" id="tkiD8" constant="false"/>
+  <parameter metaid="_140858" id="tkiD" constant="false"/>
+  <parameter metaid="_140870" id="NTKII1" constant="false"/>
+  <parameter metaid="_140882" id="NTKII2" constant="false"/>
+  <parameter metaid="_140894" id="DTKII1" constant="false"/>
+  <parameter metaid="_140906" id="DTKII2" constant="false"/>
+  <parameter metaid="_140918" id="DTKII3" constant="false"/>
+  <parameter metaid="_140931" id="DTKII4" constant="false"/>
+  <parameter metaid="_140943" id="DTKII5" constant="false"/>
+  <parameter metaid="_140955" id="DTKII6" constant="false"/>
+  <parameter metaid="_140967" id="DTKII7" constant="false"/>
+  <parameter metaid="_140979" id="DTKII8" constant="false"/>
+  <parameter metaid="_140991" id="DENTKII" constant="false"/>
+  <parameter metaid="_141003" id="NALD1" constant="false"/>
+  <parameter metaid="_141015" id="NALD2" constant="false"/>
+  <parameter metaid="_141028" id="DALD1" constant="false"/>
+  <parameter metaid="_141040" id="DALD3" constant="false"/>
+  <parameter metaid="_141052" id="DALD5" constant="false"/>
+  <parameter metaid="_141065" id="DALD7" constant="false"/>
+  <parameter metaid="_141077" id="DALD2" constant="false"/>
+  <parameter metaid="_141089" id="DALD4" constant="false"/>
+  <parameter metaid="_141101" id="DALD6" constant="false"/>
+  <parameter metaid="_141113" id="DALD8" constant="false"/>
+  <parameter metaid="_141125" id="DENTALD" constant="false"/>
+  <parameter metaid="_141137" id="KIASE" constant="false"/>
+  <parameter metaid="_141149" id="pnpaseKA2" constant="false"/>
+  <parameter metaid="_141161" id="prmKA2" constant="false"/>
+  <parameter metaid="_141173" id="VMPRPPSYN" constant="false"/>
+  <parameter metaid="_141186" id="VRPRPPSYN" constant="false"/>
+  <parameter metaid="_141198" id="kV1" constant="false"/>
+  <parameter metaid="_141210" id="kV2" constant="false"/>
+  <parameter metaid="_141222" id="naV1" constant="false"/>
+  <parameter metaid="_141234" id="naV2" constant="false"/>
+  <parameter metaid="_141246" id="VMPUMP" constant="false"/>
+  <parameter metaid="_141258" id="NUMPUMP" constant="false"/>
+  <parameter metaid="_141270" id="DENPUMP1" constant="false"/>
+  <parameter metaid="_141282" id="DENPUMP2" constant="false"/>
+  <parameter metaid="_141294" id="DENPUMP3" constant="false"/>
+  <parameter metaid="_141306" id="DENPUMP" constant="false"/>
+  <parameter metaid="_141318" id="FATP" constant="false"/>
+  <parameter metaid="_141330" id="pkVM" constant="false"/>
+</listOfParameters><listOfRules>
+  <assignmentRule metaid="_141343" variable="SV">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> S </ci>
+        <ci> V </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141355" variable="GSSG">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 0.5 </cn>
+        <apply>
+          <minus/>
+          <ci> GSSGT </ci>
+          <ci> GSH </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141367" variable="NADP">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> NADPHT </ci>
+        <ci> NADPH </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141379" variable="ATPF">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> ATP </ci>
+        <ci> MGATP </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141391" variable="HE">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <apply>
+            <minus/>
+            <ci> PHE </ci>
+          </apply>
+        </apply>
+        <cn type="integer"> 1000 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141403" variable="HI">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> HE </ci>
+        <apply>
+          <times/>
+          <apply>
+            <divide/>
+            <cn type="integer"> 92 </cn>
+            <cn type="integer"> 100 </cn>
+          </apply>
+          <ci> RT </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141415" variable="PHI">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <minus/>
+          <apply>
+            <log/>
+            <logbase>
+              <cn type="integer"> 10 </cn>
+            </logbase>
+            <ci> HI </ci>
+          </apply>
+        </apply>
+        <cn type="integer"> 3 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141428" variable="NAD">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <ci> NADHT </ci>
+        <ci> NADH </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141440" variable="KDPGM">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 2.75 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> 5 </cn>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <minus/>
+            <cn> 16.907 </cn>
+            <apply>
+              <divide/>
+              <cn> 5236.7 </cn>
+              <ci> TEMP </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141452" variable="VM1HK">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <cn> 7.5095 </cn>
+          <apply>
+            <plus/>
+            <cn type="integer"> 1 </cn>
+            <apply>
+              <divide/>
+              <ci> HI </ci>
+              <apply>
+                <times/>
+                <cn> 2.2718 </cn>
+                <apply>
+                  <power/>
+                  <cn type="integer"> 10 </cn>
+                  <cn type="integer"> -4 </cn>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn> 4.6015 </cn>
+                <apply>
+                  <power/>
+                  <cn type="integer"> 10 </cn>
+                  <cn type="integer"> -6 </cn>
+                </apply>
+              </apply>
+              <ci> HI </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <minus/>
+            <cn> 18.21 </cn>
+            <apply>
+              <divide/>
+              <cn> 5637.9 </cn>
+              <ci> TEMP </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141464" variable="N1HK">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <cn type="integer"> 1 </cn>
+        <apply>
+          <divide/>
+          <ci> GLC </ci>
+          <ci> KGLC </ci>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> GLC </ci>
+                <ci> KMAGLC </ci>
+              </apply>
+            </apply>
+            <ci> MGATP </ci>
+          </apply>
+          <ci> KMGATP </ci>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> GLC </ci>
+                <ci> KGLC </ci>
+              </apply>
+            </apply>
+            <ci> MG </ci>
+          </apply>
+          <ci> KMG </ci>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> GLC </ci>
+                  <ci> KMAGLC </ci>
+                </apply>
+              </apply>
+              <ci> MGATP </ci>
+              <ci> MG </ci>
+            </apply>
+            <ci> KMGATP </ci>
+          </apply>
+          <ci> KMGAMG </ci>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <ci> G6P </ci>
+              <ci> KG6P </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> GLC </ci>
+                  <ci> G6P </ci>
+                </apply>
+                <ci> KGLC </ci>
+              </apply>
+              <ci> Kglcg6p </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> G16P </ci>
+              <ci> KG16P </ci>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> GLC </ci>
+                <ci> KGLC </ci>
+              </apply>
+              <ci> CONSTHK </ci>
+            </apply>
+          </apply>
+          <apply>
+            <plus/>
+            <cn type="integer"> 1 </cn>
+            <apply>
+              <divide/>
+              <ci> MG </ci>
+              <ci> KMG </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <cn type="integer"> 1 </cn>
+            <apply>
+              <divide/>
+              <ci> GLC </ci>
+              <ci> KGLC </ci>
+            </apply>
+          </apply>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <ci> DPG23 </ci>
+              <ci> KPG23 </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> MG </ci>
+                  <ci> DPG23 </ci>
+                </apply>
+                <ci> KMG </ci>
+              </apply>
+              <ci> KMGPG </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141476" variable="kpgi2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> kpgi1 </ci>
+        <ci> KPGI </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141488" variable="pfkKATP">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <cn> -5.8693 </cn>
+              <apply>
+                <power/>
+                <cn type="integer"> 10 </cn>
+                <cn type="integer"> -2 </cn>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 0.32796 </cn>
+              <ci> PHI </ci>
+            </apply>
+          </apply>
+        </apply>
+        <cn> 1000 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141500" variable="pfkVM">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 250 </cn>
+        <apply>
+          <exp/>
+          <apply>
+            <minus/>
+            <cn> 13.474 </cn>
+            <apply>
+              <divide/>
+              <cn> 4174.8 </cn>
+              <ci> TEMP </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141512" variable="LPFK">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <ci> pfkLO </ci>
+          <apply>
+            <power/>
+            <apply>
+              <plus/>
+              <cn> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> ATPF </ci>
+                <ci> pfkKATP </ci>
+              </apply>
+            </apply>
+            <cn type="integer"> 4 </cn>
+          </apply>
+          <apply>
+            <power/>
+            <apply>
+              <plus/>
+              <cn> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> MG </ci>
+                <ci> pfkKMG </ci>
+              </apply>
+            </apply>
+            <cn type="integer"> 4 </cn>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <power/>
+            <apply>
+              <plus/>
+              <cn> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> F6P </ci>
+                <ci> pfkKF6P </ci>
+              </apply>
+            </apply>
+            <cn type="integer"> 4 </cn>
+          </apply>
+          <apply>
+            <power/>
+            <apply>
+              <plus/>
+              <cn> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> AMP </ci>
+                <ci> pfkKAMP </ci>
+              </apply>
+            </apply>
+            <cn type="integer"> 4 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141524" variable="aldN1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> aldK1 </ci>
+        <ci> aldK3 </ci>
+        <ci> aldK5 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141536" variable="aldN2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> aldN1 </ci>
+        <ci> aldkeq </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141548" variable="aldD1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> aldK5 </ci>
+        <apply>
+          <plus/>
+          <ci> aldK3 </ci>
+          <ci> aldK2 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141560" variable="aldD2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> aldK1 </ci>
+        <apply>
+          <plus/>
+          <ci> aldK3 </ci>
+          <ci> aldK5 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141572" variable="aldD3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> aldK2 </ci>
+        <ci> aldK4 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141584" variable="aldD4">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> aldK6 </ci>
+        <apply>
+          <plus/>
+          <ci> aldK3 </ci>
+          <ci> aldK2 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141596" variable="aldD5">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> aldK1 </ci>
+        <ci> aldK4 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141608" variable="aldD6">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> aldK4 </ci>
+        <ci> aldK6 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141620" variable="tpiKTP2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> tpiKTP1 </ci>
+        <ci> tpiKTPI </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141633" variable="KGA2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> KGA1 </ci>
+        <ci> KGAPDH </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141645" variable="kpgk2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> kpgk1 </ci>
+        <ci> KPG </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141657" variable="dpgmk">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <cn type="integer"> 17778 </cn>
+          <cn type="integer"> 10000 </cn>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <cn type="integer"> -144503 </cn>
+              <cn type="integer"> 10000 </cn>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <cn type="integer"> 148 </cn>
+                <cn type="integer"> 100 </cn>
+              </apply>
+              <ci> PHI </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141669" variable="dpgasek">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 0.5208 </cn>
+        <apply>
+          <exp/>
+          <apply>
+            <plus/>
+            <cn> -8.0287 </cn>
+            <apply>
+              <times/>
+              <cn> 0.98217 </cn>
+              <ci> PHI </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141682" variable="KPGM2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> KPGM1 </ci>
+        <ci> KPGM </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141694" variable="KEN2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> KEN1 </ci>
+        <ci> KEN </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141706" variable="pkDEN1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <apply>
+            <divide/>
+            <ci> MGADP </ci>
+            <apply>
+              <plus/>
+              <ci> pkKADP </ci>
+              <ci> MGADP </ci>
+            </apply>
+          </apply>
+          <ci> PEP </ci>
+        </apply>
+        <apply>
+          <plus/>
+          <ci> pkKPEP </ci>
+          <ci> PEP </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141718" variable="pkDEN2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <power/>
+        <apply>
+          <plus/>
+          <cn type="integer"> 1 </cn>
+          <apply>
+            <divide/>
+            <ci> ATP </ci>
+            <ci> pkKATP </ci>
+          </apply>
+        </apply>
+        <cn type="integer"> 4 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141730" variable="pkDEN3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <power/>
+          <apply>
+            <plus/>
+            <cn type="integer"> 1 </cn>
+            <apply>
+              <divide/>
+              <ci> PEP </ci>
+              <ci> pkKPEP </ci>
+            </apply>
+          </apply>
+          <cn type="integer"> 4 </cn>
+        </apply>
+        <apply>
+          <power/>
+          <apply>
+            <plus/>
+            <cn type="integer"> 1 </cn>
+            <apply>
+              <divide/>
+              <ci> FDP </ci>
+              <ci> pkKFDP </ci>
+            </apply>
+          </apply>
+          <cn type="integer"> 4 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141742" variable="KLD2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> KLD1 </ci>
+        <ci> KLDH </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141754" variable="VLAC">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <minus/>
+          <ci> KLAC </ci>
+        </apply>
+        <apply>
+          <minus/>
+          <ci> LACEXT </ci>
+          <ci> LAC </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141766" variable="KAMPAS">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <cn> 1.648 </cn>
+        <apply>
+          <plus/>
+          <cn type="integer"> 1 </cn>
+          <apply>
+            <divide/>
+            <ci> HI </ci>
+            <apply>
+              <times/>
+              <cn> 2.5642 </cn>
+              <apply>
+                <power/>
+                <cn type="integer"> 10 </cn>
+                <cn type="integer"> -3 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <cn> 1.2159 </cn>
+              <apply>
+                <power/>
+                <cn type="integer"> 10 </cn>
+                <cn type="integer"> -6 </cn>
+              </apply>
+            </apply>
+            <ci> HI </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141778" variable="adaVM">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <cn> 36.348 </cn>
+          <apply>
+            <plus/>
+            <cn type="integer"> 1 </cn>
+            <apply>
+              <divide/>
+              <ci> HI </ci>
+              <apply>
+                <times/>
+                <cn> 1.995 </cn>
+                <apply>
+                  <power/>
+                  <cn type="integer"> 10 </cn>
+                  <cn type="integer"> -4 </cn>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn> 3.162 </cn>
+                <apply>
+                  <power/>
+                  <cn type="integer"> 10 </cn>
+                  <cn type="integer"> -5 </cn>
+                </apply>
+              </apply>
+              <ci> HI </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <minus/>
+            <cn> 19.876 </cn>
+            <apply>
+              <divide/>
+              <cn> 6152.2 </cn>
+              <ci> TEMP </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141790" variable="akVM">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <cn> 8.6229 </cn>
+          <apply>
+            <plus/>
+            <cn type="integer"> 1 </cn>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn> 1.636 </cn>
+                <apply>
+                  <power/>
+                  <cn type="integer"> 10 </cn>
+                  <cn type="integer"> -4 </cn>
+                </apply>
+              </apply>
+              <ci> HI </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <minus/>
+            <cn> 19.876 </cn>
+            <apply>
+              <divide/>
+              <cn> 6152.2 </cn>
+              <ci> TEMP </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141802" variable="adkKADK">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> adkk0 </ci>
+            <apply>
+              <plus/>
+              <ci> MG </ci>
+              <ci> adkK1 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> MG </ci>
+              <ci> adkK3 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> MG </ci>
+            <ci> adkK2 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <ci> MG </ci>
+          <ci> adkK2 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141814" variable="adkKAP2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> adkKAP1 </ci>
+        <ci> adkKADK </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141826" variable="katpase">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <cn> 0.4149938 </cn>
+          <apply>
+            <plus/>
+            <cn type="integer"> 1 </cn>
+            <apply>
+              <divide/>
+              <ci> HI </ci>
+              <apply>
+                <times/>
+                <cn> 3.7342 </cn>
+                <apply>
+                  <power/>
+                  <cn type="integer"> 10 </cn>
+                  <cn type="integer"> -3 </cn>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn> 8.2714 </cn>
+                <apply>
+                  <power/>
+                  <cn type="integer"> 10 </cn>
+                  <cn type="integer"> -7 </cn>
+                </apply>
+              </apply>
+              <ci> HI </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <minus/>
+            <cn> 14.543 </cn>
+            <apply>
+              <divide/>
+              <cn> 4501.5 </cn>
+              <ci> TEMP </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141838" variable="adprtVM">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <cn> 0.202 </cn>
+          <apply>
+            <plus/>
+            <cn type="integer"> 1 </cn>
+            <apply>
+              <divide/>
+              <ci> HI </ci>
+              <apply>
+                <times/>
+                <cn> 3.981 </cn>
+                <apply>
+                  <power/>
+                  <cn type="integer"> 10 </cn>
+                  <cn type="integer"> -5 </cn>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn> 3.162 </cn>
+                <apply>
+                  <power/>
+                  <cn type="integer"> 10 </cn>
+                  <cn type="integer"> -7 </cn>
+                </apply>
+              </apply>
+              <ci> HI </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <minus/>
+            <cn> 23.356 </cn>
+            <apply>
+              <divide/>
+              <cn> 7240.2 </cn>
+              <ci> TEMP </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141850" variable="MG6PD1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> KG6PD1 </ci>
+            <ci> KG6PD3 </ci>
+            <ci> KG6PD5 </ci>
+            <ci> KG6PD7 </ci>
+            <ci> KG6PD9 </ci>
+            <cn> 1.1631 </cn>
+          </apply>
+          <apply>
+            <plus/>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <ci> HI </ci>
+              <apply>
+                <times/>
+                <cn> 3.867 </cn>
+                <apply>
+                  <power/>
+                  <cn type="integer"> 10 </cn>
+                  <cn type="integer"> -4 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <minus/>
+            <cn> 14.167 </cn>
+            <apply>
+              <divide/>
+              <cn> 4380.4 </cn>
+              <ci> TEMP </ci>
+            </apply>
+          </apply>
+        </apply>
+        <ci> ETG6PD </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141863" variable="MG6PD2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> KG6PD2 </ci>
+            <ci> KG6PD4 </ci>
+            <ci> KG6PD6 </ci>
+            <ci> KG6PD8 </ci>
+            <ci> KG6PD10 </ci>
+            <cn> 1.1631 </cn>
+          </apply>
+          <apply>
+            <plus/>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <ci> HI </ci>
+              <apply>
+                <times/>
+                <cn> 3.867 </cn>
+                <apply>
+                  <power/>
+                  <cn type="integer"> 10 </cn>
+                  <cn type="integer"> -4 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <minus/>
+            <cn> 14.167 </cn>
+            <apply>
+              <divide/>
+              <cn> 4380.4 </cn>
+              <ci> TEMP </ci>
+            </apply>
+          </apply>
+        </apply>
+        <ci> ETG6PD </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141875" variable="DG6PD1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG6PD2 </ci>
+        <ci> KG6PD9 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> KG6PD4 </ci>
+            <ci> KG6PD6 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG6PD4 </ci>
+            <ci> KG6PD7 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG6PD5 </ci>
+            <ci> KG6PD7 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141887" variable="DG6PD2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG6PD1 </ci>
+        <ci> KG6PD9 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> KG6PD4 </ci>
+            <ci> KG6PD6 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG6PD4 </ci>
+            <ci> KG6PD7 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG6PD5 </ci>
+            <ci> KG6PD7 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141899" variable="DG6PD5">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG6PD2 </ci>
+        <ci> KG6PD10 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> KG6PD4 </ci>
+            <ci> KG6PD6 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG6PD4 </ci>
+            <ci> KG6PD7 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG6PD5 </ci>
+            <ci> KG6PD7 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141911" variable="DG6PD3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG6PD3 </ci>
+        <ci> KG6PD5 </ci>
+        <ci> KG6PD7 </ci>
+        <ci> KG6PD9 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141923" variable="DG6PD4">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG6PD2 </ci>
+        <ci> KG6PD4 </ci>
+        <ci> KG6PD6 </ci>
+        <ci> KG6PD8 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141936" variable="DG6PD6">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG6PD1 </ci>
+        <ci> KG6PD3 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> KG6PD5 </ci>
+            <ci> KG6PD7 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG6PD5 </ci>
+            <ci> KG6PD9 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG6PD6 </ci>
+            <ci> KG6PD9 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG6PD7 </ci>
+            <ci> KG6PD9 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141948" variable="DG6PD7">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG6PD1 </ci>
+        <ci> KG6PD4 </ci>
+        <ci> KG6PD6 </ci>
+        <ci> KG6PD8 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141960" variable="DG6PD8">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG6PD3 </ci>
+        <ci> KG6PD5 </ci>
+        <ci> KG6PD7 </ci>
+        <ci> KG6PD10 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141972" variable="DG6PD9">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG6PD8 </ci>
+        <ci> KG6PD10 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> KG6PD2 </ci>
+            <ci> KG6PD4 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG6PD2 </ci>
+            <ci> KG6PD5 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG6PD2 </ci>
+            <ci> KG6PD6 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG6PD4 </ci>
+            <ci> KG6PD6 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141984" variable="DG6PD10">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG6PD1 </ci>
+        <ci> KG6PD3 </ci>
+        <ci> KG6PD8 </ci>
+        <apply>
+          <plus/>
+          <ci> KG6PD5 </ci>
+          <ci> KG6PD6 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_141996" variable="DG6PD11">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG6PD3 </ci>
+        <ci> KG6PD8 </ci>
+        <ci> KG6PD10 </ci>
+        <apply>
+          <plus/>
+          <ci> KG6PD5 </ci>
+          <ci> KG6PD6 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142008" variable="NUMG6PDH">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> MG6PD1 </ci>
+            <ci> NADP </ci>
+            <ci> G6P </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> MG6PD2 </ci>
+            <ci> GL6P </ci>
+            <ci> NADPH </ci>
+          </apply>
+        </apply>
+        <cn> 1 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> -6 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142020" variable="DENG6PD1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> DG6PD1 </ci>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <ci> DG6PD2 </ci>
+              <ci> NADP </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> DG6PD3 </ci>
+              <ci> G6P </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> DG6PD4 </ci>
+              <ci> GL6P </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> DG6PD5 </ci>
+              <ci> NADPH </ci>
+            </apply>
+          </apply>
+          <cn> 1 </cn>
+          <apply>
+            <power/>
+            <cn type="integer"> 10 </cn>
+            <cn type="integer"> -3 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142032" variable="DENG6PD2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> DG6PD6 </ci>
+            <ci> NADP </ci>
+            <ci> G6P </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> DG6PD7 </ci>
+            <ci> NADP </ci>
+            <ci> GL6P </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> DG6PD8 </ci>
+            <ci> G6P </ci>
+            <ci> NADPH </ci>
+          </apply>
+        </apply>
+        <cn> 1 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> -6 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142045" variable="DENG6PD3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <ci> DG6PD9 </ci>
+          <ci> GL6P </ci>
+          <ci> NADPH </ci>
+          <cn> 1 </cn>
+          <apply>
+            <power/>
+            <cn type="integer"> 10 </cn>
+            <cn type="integer"> -6 </cn>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <ci> DG6PD10 </ci>
+          <ci> NADP </ci>
+          <ci> G6P </ci>
+          <ci> GL6P </ci>
+          <cn> 1 </cn>
+          <apply>
+            <power/>
+            <cn type="integer"> 10 </cn>
+            <cn type="integer"> -9 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142057" variable="DENG6PD4">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> DG6PD11 </ci>
+        <ci> G6P </ci>
+        <ci> GL6P </ci>
+        <ci> NADPH </ci>
+        <cn> 1 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> -9 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142069" variable="DENG6PDH">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> DENG6PD1 </ci>
+        <ci> DENG6PD2 </ci>
+        <ci> DENG6PD3 </ci>
+        <ci> DENG6PD4 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142081" variable="MG16PD1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD1 </ci>
+        <ci> KG16PD3 </ci>
+        <ci> KG16PD5 </ci>
+        <ci> KG16PD7 </ci>
+        <ci> KG16PD9 </ci>
+        <ci> KG16PD11 </ci>
+        <apply>
+          <exp/>
+          <apply>
+            <minus/>
+            <cn> 17.896 </cn>
+            <apply>
+              <divide/>
+              <cn> 5546.8 </cn>
+              <ci> TEMP </ci>
+            </apply>
+          </apply>
+        </apply>
+        <ci> ETG16PD </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142093" variable="MG16PD2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD2 </ci>
+        <ci> KG16PD4 </ci>
+        <ci> KG16PD6 </ci>
+        <ci> KG16PD8 </ci>
+        <ci> KG16PD10 </ci>
+        <ci> KG16PD12 </ci>
+        <apply>
+          <exp/>
+          <apply>
+            <minus/>
+            <cn> 17.896 </cn>
+            <apply>
+              <divide/>
+              <cn> 5546.8 </cn>
+              <ci> TEMP </ci>
+            </apply>
+          </apply>
+        </apply>
+        <ci> ETG16PD </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142105" variable="DG16PD1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD2 </ci>
+        <ci> KG16PD9 </ci>
+        <ci> KG16PD11 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> KG16PD4 </ci>
+            <ci> KG16PD6 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG16PD4 </ci>
+            <ci> KG16PD7 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG16PD5 </ci>
+            <ci> KG16PD7 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142118" variable="DG16PD2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD1 </ci>
+        <ci> KG16PD9 </ci>
+        <ci> KG16PD11 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> KG16PD4 </ci>
+            <ci> KG16PD6 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG16PD4 </ci>
+            <ci> KG16PD7 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG16PD5 </ci>
+            <ci> KG16PD7 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142131" variable="DG16PD3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD3 </ci>
+        <ci> KG16PD5 </ci>
+        <ci> KG16PD7 </ci>
+        <ci> KG16PD9 </ci>
+        <ci> KG16PD11 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142143" variable="DG16PD4">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD2 </ci>
+        <ci> KG16PD4 </ci>
+        <ci> KG16PD6 </ci>
+        <ci> KG16PD8 </ci>
+        <ci> KG16PD11 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142155" variable="DG16PD5">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD2 </ci>
+        <ci> KG16PD9 </ci>
+        <ci> KG16PD12 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> KG16PD4 </ci>
+            <ci> KG16PD6 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG16PD4 </ci>
+            <ci> KG16PD7 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG16PD5 </ci>
+            <ci> KG16PD7 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142167" variable="AG16PD1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD1 </ci>
+        <ci> KG16PD3 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> KG16PD5 </ci>
+            <ci> KG16PD9 </ci>
+            <ci> KG16PD11 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG16PD6 </ci>
+            <ci> KG16PD9 </ci>
+            <ci> KG16PD11 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142179" variable="BG16PD1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD1 </ci>
+        <ci> KG16PD3 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> KG16PD7 </ci>
+            <ci> KG16PD9 </ci>
+            <ci> KG16PD11 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG16PD5 </ci>
+            <ci> KG16PD7 </ci>
+            <ci> KG16PD9 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142191" variable="CG16PD1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD1 </ci>
+        <ci> KG16PD3 </ci>
+        <ci> KG16PD5 </ci>
+        <ci> KG16PD7 </ci>
+        <ci> KG16PD11 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142204" variable="DG16PD6">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> AG16PD1 </ci>
+        <ci> BG16PD1 </ci>
+        <ci> CG16PD1 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142216" variable="DG16PD7">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD1 </ci>
+        <ci> KG16PD4 </ci>
+        <ci> KG16PD6 </ci>
+        <ci> KG16PD8 </ci>
+        <ci> KG16PD11 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142228" variable="DG16PD8">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD3 </ci>
+        <ci> KG16PD5 </ci>
+        <ci> KG16PD7 </ci>
+        <ci> KG16PD9 </ci>
+        <ci> KG16PD12 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142240" variable="DG16PD9">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD2 </ci>
+        <ci> KG16PD4 </ci>
+        <ci> KG16PD6 </ci>
+        <ci> KG16PD8 </ci>
+        <ci> KG16PD10 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142252" variable="DG16PD10">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD2 </ci>
+        <ci> KG16PD4 </ci>
+        <ci> KG16PD6 </ci>
+        <ci> KG16PD8 </ci>
+        <ci> KG16PD12 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142264" variable="DG16PD11">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD2 </ci>
+        <ci> KG16PD10 </ci>
+        <ci> KG16PD12 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> KG16PD4 </ci>
+            <ci> KG16PD6 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG16PD4 </ci>
+            <ci> KG16PD7 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG16PD5 </ci>
+            <ci> KG16PD7 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142276" variable="DG16PD12">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD1 </ci>
+        <ci> KG16PD3 </ci>
+        <ci> KG16PD8 </ci>
+        <ci> KG16PD11 </ci>
+        <apply>
+          <plus/>
+          <ci> KG16PD5 </ci>
+          <ci> KG16PD6 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142288" variable="DG16PD13">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD1 </ci>
+        <ci> KG16PD3 </ci>
+        <ci> KG16PD5 </ci>
+        <ci> KG16PD7 </ci>
+        <ci> KG16PD10 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142300" variable="DG16PD14">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD1 </ci>
+        <ci> KG16PD4 </ci>
+        <ci> KG16PD6 </ci>
+        <ci> KG16PD8 </ci>
+        <ci> KG16PD10 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142312" variable="DG16PD15">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD3 </ci>
+        <ci> KG16PD5 </ci>
+        <ci> KG16PD7 </ci>
+        <ci> KG16PD10 </ci>
+        <ci> KG16PD12 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142324" variable="DG16PD16">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD8 </ci>
+        <ci> KG16PD10 </ci>
+        <ci> KG16PD12 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> KG16PD2 </ci>
+            <ci> KG16PD4 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG16PD2 </ci>
+            <ci> KG16PD5 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG16PD2 </ci>
+            <ci> KG16PD6 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KG16PD4 </ci>
+            <ci> KG16PD6 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142336" variable="DG16PD17">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD1 </ci>
+        <ci> KG16PD3 </ci>
+        <ci> KG16PD8 </ci>
+        <ci> KG16PD10 </ci>
+        <apply>
+          <plus/>
+          <ci> KG16PD5 </ci>
+          <ci> KG16PD6 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142349" variable="DG16PD18">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KG16PD3 </ci>
+        <ci> KG16PD8 </ci>
+        <ci> KG16PD10 </ci>
+        <ci> KG16PD12 </ci>
+        <apply>
+          <plus/>
+          <ci> KG16PD5 </ci>
+          <ci> KG16PD6 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142361" variable="NUMG16PD">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> MG16PD1 </ci>
+          <ci> NADP </ci>
+          <ci> GO6P </ci>
+          <cn> 36.7065 </cn>
+          <apply>
+            <power/>
+            <cn type="integer"> 10 </cn>
+            <cn type="integer"> -3 </cn>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <ci> MG16PD2 </ci>
+          <ci> CO2 </ci>
+          <ci> RU5P </ci>
+          <ci> NADPH </ci>
+          <cn> 36.7065 </cn>
+          <apply>
+            <power/>
+            <cn type="integer"> 10 </cn>
+            <cn type="integer"> -6 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142373" variable="DENG16PD1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> DG16PD1 </ci>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <ci> DG16PD2 </ci>
+              <ci> NADP </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> DG16PD3 </ci>
+              <ci> GO6P </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> DG16PD4 </ci>
+              <ci> CO2 </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> DG16PD5 </ci>
+              <ci> NADPH </ci>
+            </apply>
+          </apply>
+          <cn> 1 </cn>
+          <apply>
+            <power/>
+            <cn type="integer"> 10 </cn>
+            <cn type="integer"> -3 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142385" variable="DENG16PD2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> DG16PD6 </ci>
+            <ci> NADP </ci>
+            <ci> GO6P </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> DG16PD7 </ci>
+            <ci> NADP </ci>
+            <ci> CO2 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> DG16PD8 </ci>
+            <ci> GO6P </ci>
+            <ci> NADPH </ci>
+          </apply>
+        </apply>
+        <cn> 1 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> -6 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142397" variable="DENG16PD3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> DG16PD9 </ci>
+            <ci> CO2 </ci>
+            <ci> RU5P </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> DG16PD10 </ci>
+            <ci> CO2 </ci>
+            <ci> NADPH </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> DG16PD11 </ci>
+            <ci> RU5P </ci>
+            <ci> NADPH </ci>
+          </apply>
+        </apply>
+        <cn> 1 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> -6 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142409" variable="DENG16PD4">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> DG16PD12 </ci>
+            <ci> NADP </ci>
+            <ci> GO6P </ci>
+            <ci> CO2 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> DG16PD13 </ci>
+            <ci> NADP </ci>
+            <ci> GO6P </ci>
+            <ci> RU5P </ci>
+          </apply>
+        </apply>
+        <cn> 1 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> -9 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142421" variable="DENG16PD5">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> DG16PD14 </ci>
+            <ci> NADP </ci>
+            <ci> CO2 </ci>
+            <ci> RU5P </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> DG16PD15 </ci>
+            <ci> GO6P </ci>
+            <ci> RU5P </ci>
+            <ci> NADPH </ci>
+          </apply>
+        </apply>
+        <cn> 1 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> -9 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142434" variable="DENG16PD6A">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> DG16PD16 </ci>
+        <ci> CO2 </ci>
+        <ci> RU5P </ci>
+        <ci> NADPH </ci>
+        <cn> 1 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> -9 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142446" variable="DENG16PD6B">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> DG16PD17 </ci>
+        <ci> NADP </ci>
+        <ci> GO6P </ci>
+        <ci> CO2 </ci>
+        <ci> RU5P </ci>
+        <cn> 1 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> -12 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142458" variable="DENG16PD6">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> DENG16PD6A </ci>
+        <ci> DENG16PD6B </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142470" variable="DENG16PD7">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> DG16PD18 </ci>
+        <ci> GO6P </ci>
+        <ci> CO2 </ci>
+        <ci> RU5P </ci>
+        <ci> NADPH </ci>
+        <cn> 1 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> -12 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142482" variable="DENG16PD">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> DENG16PD1 </ci>
+        <ci> DENG16PD2 </ci>
+        <ci> DENG16PD3 </ci>
+        <ci> DENG16PD4 </ci>
+        <ci> DENG16PD5 </ci>
+        <ci> DENG16PD6 </ci>
+        <ci> DENG16PD7 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142494" variable="gssgM1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK1 </ci>
+        <ci> gssgK3 </ci>
+        <ci> gssgK5 </ci>
+        <ci> gssgK7 </ci>
+        <ci> gssgK9 </ci>
+        <ci> gssgK11 </ci>
+        <apply>
+          <exp/>
+          <apply>
+            <minus/>
+            <cn> 15.136 </cn>
+            <apply>
+              <divide/>
+              <cn> 4690.8 </cn>
+              <ci> TEMP </ci>
+            </apply>
+          </apply>
+        </apply>
+        <ci> gssgET </ci>
+        <cn> 15455.6 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142506" variable="gssgM2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK2 </ci>
+        <ci> gssgK4 </ci>
+        <ci> gssgK6 </ci>
+        <ci> gssgK8 </ci>
+        <ci> gssgK10 </ci>
+        <ci> gssgK12 </ci>
+        <apply>
+          <exp/>
+          <apply>
+            <minus/>
+            <cn> 15.136 </cn>
+            <apply>
+              <divide/>
+              <cn> 4690.8 </cn>
+              <ci> TEMP </ci>
+            </apply>
+          </apply>
+        </apply>
+        <ci> gssgET </ci>
+        <cn> 15455.6 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142518" variable="gssgD1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK2 </ci>
+        <ci> gssgK9 </ci>
+        <ci> gssgK11 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> gssgK4 </ci>
+            <ci> gssgK6 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgK4 </ci>
+            <ci> gssgK7 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgK5 </ci>
+            <ci> gssgK7 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142530" variable="gssgD2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK1 </ci>
+        <ci> gssgK9 </ci>
+        <ci> gssgK11 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> gssgK4 </ci>
+            <ci> gssgK6 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgK4 </ci>
+            <ci> gssgK7 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgK5 </ci>
+            <ci> gssgK7 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142542" variable="gssgD3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK3 </ci>
+        <ci> gssgK5 </ci>
+        <ci> gssgK7 </ci>
+        <ci> gssgK9 </ci>
+        <ci> gssgK11 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142554" variable="gssgD4">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK2 </ci>
+        <ci> gssgK4 </ci>
+        <ci> gssgK6 </ci>
+        <ci> gssgK8 </ci>
+        <ci> gssgK11 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142566" variable="gssgD5">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK2 </ci>
+        <ci> gssgK9 </ci>
+        <ci> gssgK12 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> gssgK4 </ci>
+            <ci> gssgK6 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgK4 </ci>
+            <ci> gssgK7 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgK5 </ci>
+            <ci> gssgK7 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142578" variable="gssgD6">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK1 </ci>
+        <ci> gssgK3 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> gssgK5 </ci>
+            <ci> gssgK9 </ci>
+            <ci> gssgK11 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgK6 </ci>
+            <ci> gssgK9 </ci>
+            <ci> gssgK11 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgK7 </ci>
+            <ci> gssgK9 </ci>
+            <ci> gssgK11 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgK5 </ci>
+            <ci> gssgK7 </ci>
+            <ci> gssgK9 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgK5 </ci>
+            <ci> gssgK7 </ci>
+            <ci> gssgK11 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142590" variable="gssgD7">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK1 </ci>
+        <ci> gssgK4 </ci>
+        <ci> gssgK6 </ci>
+        <ci> gssgK8 </ci>
+        <ci> gssgK11 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142602" variable="gssgD8">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK3 </ci>
+        <ci> gssgK5 </ci>
+        <ci> gssgK7 </ci>
+        <ci> gssgK9 </ci>
+        <ci> gssgK12 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142615" variable="gssgD9">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK2 </ci>
+        <ci> gssgK4 </ci>
+        <ci> gssgK6 </ci>
+        <ci> gssgK8 </ci>
+        <ci> gssgK10 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142627" variable="gssgD10">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK2 </ci>
+        <ci> gssgK4 </ci>
+        <ci> gssgK6 </ci>
+        <ci> gssgK8 </ci>
+        <ci> gssgK12 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142639" variable="gssgD11">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK2 </ci>
+        <ci> gssgK10 </ci>
+        <ci> gssgK12 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> gssgK4 </ci>
+            <ci> gssgK6 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgK4 </ci>
+            <ci> gssgK7 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgK5 </ci>
+            <ci> gssgK7 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142651" variable="gssgD12">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK1 </ci>
+        <ci> gssgK3 </ci>
+        <ci> gssgK8 </ci>
+        <ci> gssgK11 </ci>
+        <apply>
+          <plus/>
+          <ci> gssgK5 </ci>
+          <ci> gssgK6 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142663" variable="gssgD13">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK1 </ci>
+        <ci> gssgK3 </ci>
+        <ci> gssgK5 </ci>
+        <ci> gssgK7 </ci>
+        <ci> gssgK10 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142675" variable="gssgD14">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK1 </ci>
+        <ci> gssgK4 </ci>
+        <ci> gssgK6 </ci>
+        <ci> gssgK8 </ci>
+        <ci> gssgK10 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142687" variable="gssgD15">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK3 </ci>
+        <ci> gssgK5 </ci>
+        <ci> gssgK7 </ci>
+        <ci> gssgK10 </ci>
+        <ci> gssgK12 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142699" variable="gssgD16">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK8 </ci>
+        <ci> gssgK10 </ci>
+        <ci> gssgK12 </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> gssgK2 </ci>
+            <ci> gssgK4 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgK2 </ci>
+            <ci> gssgK5 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgK2 </ci>
+            <ci> gssgK6 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgK4 </ci>
+            <ci> gssgK6 </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142711" variable="gssgD17">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK1 </ci>
+        <ci> gssgK3 </ci>
+        <ci> gssgK8 </ci>
+        <ci> gssgK10 </ci>
+        <apply>
+          <plus/>
+          <ci> gssgK5 </ci>
+          <ci> gssgK6 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142724" variable="gssgD18">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgK3 </ci>
+        <ci> gssgK8 </ci>
+        <ci> gssgK10 </ci>
+        <ci> gssgK12 </ci>
+        <apply>
+          <plus/>
+          <ci> gssgK5 </ci>
+          <ci> gssgK6 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142736" variable="gssgNUM">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> gssgM1 </ci>
+          <ci> NADPH </ci>
+          <ci> GSSG </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> gssgM2 </ci>
+          <ci> GSH </ci>
+          <ci> GSH </ci>
+          <ci> NADP </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142748" variable="gssgDEN1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> gssgD1 </ci>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <ci> gssgD2 </ci>
+              <ci> NADPH </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> gssgD3 </ci>
+              <ci> GSSG </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> gssgD4 </ci>
+              <ci> GSH </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> gssgD5 </ci>
+              <ci> NADP </ci>
+            </apply>
+          </apply>
+          <cn type="integer"> 1 </cn>
+          <apply>
+            <power/>
+            <cn type="integer"> 10 </cn>
+            <cn type="integer"> -3 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142760" variable="gssgDEN2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> gssgD6 </ci>
+            <ci> NADPH </ci>
+            <ci> GSSG </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgD7 </ci>
+            <ci> NADPH </ci>
+            <ci> GSH </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgD8 </ci>
+            <ci> GSSG </ci>
+            <ci> NADP </ci>
+          </apply>
+        </apply>
+        <cn type="integer"> 1 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> -6 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142773" variable="gssgDEN3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <ci> gssgD9 </ci>
+          <ci> GSH </ci>
+          <ci> GSH </ci>
+          <cn type="integer"> 1 </cn>
+          <apply>
+            <power/>
+            <cn type="integer"> 10 </cn>
+            <cn type="integer"> -6 </cn>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <ci> gssgD10 </ci>
+            <ci> gssgD11 </ci>
+          </apply>
+          <ci> GSH </ci>
+          <ci> NADP </ci>
+          <cn type="integer"> 1 </cn>
+          <apply>
+            <power/>
+            <cn type="integer"> 10 </cn>
+            <cn type="integer"> -6 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142785" variable="gssgDEN4">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <plus/>
+          <ci> gssgD12 </ci>
+          <ci> gssgD13 </ci>
+        </apply>
+        <ci> NADPH </ci>
+        <ci> GSSG </ci>
+        <ci> GSH </ci>
+        <cn type="integer"> 1 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> -9 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142797" variable="gssgDEN5">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> gssgD14 </ci>
+            <ci> NADPH </ci>
+            <ci> GSH </ci>
+            <ci> GSH </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> gssgD15 </ci>
+            <ci> GSSG </ci>
+            <ci> GSH </ci>
+            <ci> NADP </ci>
+          </apply>
+        </apply>
+        <cn type="integer"> 1 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> -9 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142809" variable="gssgDEN6">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <ci> gssgD16 </ci>
+          <ci> GSH </ci>
+          <ci> GSH </ci>
+          <ci> NADP </ci>
+          <cn type="integer"> 1 </cn>
+          <apply>
+            <power/>
+            <cn type="integer"> 10 </cn>
+            <cn type="integer"> -9 </cn>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <ci> gssgD17 </ci>
+          <ci> NADPH </ci>
+          <ci> GSSG </ci>
+          <ci> GSH </ci>
+          <ci> GSH </ci>
+          <cn type="integer"> 1 </cn>
+          <apply>
+            <power/>
+            <cn type="integer"> 10 </cn>
+            <cn type="integer"> -12 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142821" variable="gssgDEN7">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> gssgD18 </ci>
+        <ci> GSSG </ci>
+        <ci> GSH </ci>
+        <ci> GSH </ci>
+        <ci> NADP </ci>
+        <cn type="integer"> 1 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> -12 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142833" variable="gssgDEN">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> gssgDEN1 </ci>
+        <ci> gssgDEN2 </ci>
+        <ci> gssgDEN3 </ci>
+        <ci> gssgDEN4 </ci>
+        <ci> gssgDEN5 </ci>
+        <ci> gssgDEN6 </ci>
+        <ci> gssgDEN7 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142845" variable="gshconst">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 1.1429 </cn>
+        <apply>
+          <power/>
+          <cn type="integer"> 10 </cn>
+          <cn type="integer"> -3 </cn>
+        </apply>
+        <apply>
+          <exp/>
+          <apply>
+            <minus/>
+            <cn> 5.0476 </cn>
+            <apply>
+              <divide/>
+              <cn> 1567.2 </cn>
+              <ci> TEMP </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142857" variable="tkiN1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> tkiK1 </ci>
+        <ci> tkiK3 </ci>
+        <ci> tkiK5 </ci>
+        <ci> tkiK7 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142869" variable="tkiN2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> tkiN1 </ci>
+        <ci> tkiKEQ </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142881" variable="tkiD1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> tkiK1 </ci>
+        <ci> tkiK3 </ci>
+        <apply>
+          <plus/>
+          <ci> tkiK6 </ci>
+          <ci> tkiK7 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142893" variable="tkiD3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> tkiK2 </ci>
+        <ci> tkiK4 </ci>
+        <apply>
+          <plus/>
+          <ci> tkiK6 </ci>
+          <ci> tkiK7 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142906" variable="tkiD5">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> tkiK1 </ci>
+        <ci> tkiK5 </ci>
+        <apply>
+          <plus/>
+          <ci> tkiK3 </ci>
+          <ci> tkiK7 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142918" variable="tkiD7">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> tkiK5 </ci>
+        <ci> tkiK8 </ci>
+        <apply>
+          <plus/>
+          <ci> tkiK2 </ci>
+          <ci> tkiK3 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142931" variable="tkiD2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> tkiK5 </ci>
+        <ci> tkiK7 </ci>
+        <apply>
+          <plus/>
+          <ci> tkiK2 </ci>
+          <ci> tkiK3 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142943" variable="tkiD4">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> tkiK6 </ci>
+        <ci> tkiK8 </ci>
+        <apply>
+          <plus/>
+          <ci> tkiK2 </ci>
+          <ci> tkiK3 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142955" variable="tkiD6">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> tkiK4 </ci>
+        <ci> tkiK8 </ci>
+        <apply>
+          <plus/>
+          <ci> tkiK2 </ci>
+          <ci> tkiK6 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142967" variable="tkiD8">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> tkiK1 </ci>
+        <ci> tkiK4 </ci>
+        <apply>
+          <plus/>
+          <ci> tkiK6 </ci>
+          <ci> tkiK7 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142979" variable="tkiD">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <ci> tkiD1 </ci>
+          <ci> X5P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> tkiD2 </ci>
+          <ci> R5P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> tkiD3 </ci>
+          <ci> GAP </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> tkiD4 </ci>
+          <ci> S7P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> tkiD5 </ci>
+          <ci> X5P </ci>
+          <ci> R5P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> tkiD6 </ci>
+          <ci> GAP </ci>
+          <ci> S7P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> tkiD7 </ci>
+          <ci> R5P </ci>
+          <ci> S7P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> tkiD8 </ci>
+          <ci> X5P </ci>
+          <ci> GAP </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_142991" variable="NTKII1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KTKII1 </ci>
+        <ci> KTKII3 </ci>
+        <ci> KTKII5 </ci>
+        <ci> KTKII7 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143003" variable="NTKII2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> NTKII1 </ci>
+        <ci> KEQTKII </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143015" variable="DTKII1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KTKII1 </ci>
+        <ci> KTKII3 </ci>
+        <apply>
+          <plus/>
+          <ci> KTKII6 </ci>
+          <ci> KTKII7 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143027" variable="DTKII2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KTKII5 </ci>
+        <ci> KTKII7 </ci>
+        <apply>
+          <plus/>
+          <ci> KTKII2 </ci>
+          <ci> KTKII3 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143039" variable="DTKII3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KTKII2 </ci>
+        <ci> KTKII4 </ci>
+        <apply>
+          <plus/>
+          <ci> KTKII6 </ci>
+          <ci> KTKII7 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143051" variable="DTKII4">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KTKII6 </ci>
+        <ci> KTKII8 </ci>
+        <apply>
+          <plus/>
+          <ci> KTKII2 </ci>
+          <ci> KTKII3 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143063" variable="DTKII5">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KTKII1 </ci>
+        <ci> KTKII5 </ci>
+        <apply>
+          <plus/>
+          <ci> KTKII3 </ci>
+          <ci> KTKII7 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143075" variable="DTKII6">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KTKII4 </ci>
+        <ci> KTKII8 </ci>
+        <apply>
+          <plus/>
+          <ci> KTKII2 </ci>
+          <ci> KTKII6 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143087" variable="DTKII7">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KTKII5 </ci>
+        <ci> KTKII8 </ci>
+        <apply>
+          <plus/>
+          <ci> KTKII2 </ci>
+          <ci> KTKII3 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143100" variable="DTKII8">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KTKII1 </ci>
+        <ci> KTKII4 </ci>
+        <apply>
+          <plus/>
+          <ci> KTKII6 </ci>
+          <ci> KTKII7 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143112" variable="DENTKII">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <ci> DTKII1 </ci>
+          <ci> X5P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> DTKII2 </ci>
+          <ci> E4P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> DTKII3 </ci>
+          <ci> GAP </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> DTKII4 </ci>
+          <ci> F6P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> DTKII5 </ci>
+          <ci> X5P </ci>
+          <ci> E4P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> DTKII6 </ci>
+          <ci> GAP </ci>
+          <ci> F6P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> DTKII7 </ci>
+          <ci> E4P </ci>
+          <ci> F6P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> DTKII8 </ci>
+          <ci> X5P </ci>
+          <ci> GAP </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143124" variable="NALD1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KALD1 </ci>
+        <ci> KALD3 </ci>
+        <ci> KALD5 </ci>
+        <ci> KALD7 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143136" variable="NALD2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> NALD1 </ci>
+        <ci> KEQALD </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143148" variable="DALD1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KALD1 </ci>
+        <ci> KALD3 </ci>
+        <apply>
+          <plus/>
+          <ci> KALD6 </ci>
+          <ci> KALD7 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143160" variable="DALD3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KALD2 </ci>
+        <ci> KALD4 </ci>
+        <apply>
+          <plus/>
+          <ci> KALD6 </ci>
+          <ci> KALD7 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143172" variable="DALD5">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KALD1 </ci>
+        <ci> KALD5 </ci>
+        <apply>
+          <plus/>
+          <ci> KALD3 </ci>
+          <ci> KALD7 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143184" variable="DALD7">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KALD5 </ci>
+        <ci> KALD8 </ci>
+        <apply>
+          <plus/>
+          <ci> KALD2 </ci>
+          <ci> KALD3 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143196" variable="DALD2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KALD5 </ci>
+        <ci> KALD7 </ci>
+        <apply>
+          <plus/>
+          <ci> KALD2 </ci>
+          <ci> KALD3 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143208" variable="DALD4">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KALD6 </ci>
+        <ci> KALD8 </ci>
+        <apply>
+          <plus/>
+          <ci> KALD2 </ci>
+          <ci> KALD3 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143220" variable="DALD6">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KALD4 </ci>
+        <ci> KALD8 </ci>
+        <apply>
+          <plus/>
+          <ci> KALD2 </ci>
+          <ci> KALD6 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143232" variable="DALD8">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> KALD1 </ci>
+        <ci> KALD4 </ci>
+        <apply>
+          <plus/>
+          <ci> KALD6 </ci>
+          <ci> KALD7 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143244" variable="DENTALD">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <ci> DALD1 </ci>
+          <ci> S7P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> DALD2 </ci>
+          <ci> GAP </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> DALD3 </ci>
+          <ci> E4P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> DALD4 </ci>
+          <ci> F6P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> DALD5 </ci>
+          <ci> S7P </ci>
+          <ci> GAP </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> DALD6 </ci>
+          <ci> E4P </ci>
+          <ci> F6P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> DALD7 </ci>
+          <ci> GAP </ci>
+          <ci> F6P </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> DALD8 </ci>
+          <ci> S7P </ci>
+          <ci> E4P </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143256" variable="KIASE">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <cn> 0.09 </cn>
+          <cn> 1.0431 </cn>
+        </apply>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <divide/>
+            <ci> HI </ci>
+            <apply>
+              <times/>
+              <cn> 2.5642 </cn>
+              <apply>
+                <power/>
+                <cn type="integer"> 10 </cn>
+                <cn type="integer"> -3 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <cn> 1.2159 </cn>
+              <apply>
+                <power/>
+                <cn type="integer"> 10 </cn>
+                <cn type="integer"> -6 </cn>
+              </apply>
+            </apply>
+            <ci> HI </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143268" variable="pnpaseKA2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> pnpaseKA1 </ci>
+        <ci> pnpaseKeq </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143281" variable="prmKA2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> prmKA1 </ci>
+        <ci> prmKeq </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143293" variable="VMPRPPSYN">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <cn> 0.5054 </cn>
+          <cn> 1.6548 </cn>
+        </apply>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <divide/>
+            <ci> HI </ci>
+            <apply>
+              <times/>
+              <cn> 1.0099 </cn>
+              <apply>
+                <power/>
+                <cn type="integer"> 10 </cn>
+                <cn type="integer"> -4 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <cn> 1.8835 </cn>
+              <apply>
+                <power/>
+                <cn type="integer"> 10 </cn>
+                <cn type="integer"> -6 </cn>
+              </apply>
+            </apply>
+            <ci> HI </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143305" variable="VRPRPPSYN">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> VMPRPPSYN </ci>
+        <cn> 7.5 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143317" variable="kV1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> kPK </ci>
+            <ci> SV </ci>
+            <apply>
+              <ln/>
+              <ci> RT </ci>
+            </apply>
+          </apply>
+          <apply>
+            <minus/>
+            <ci> RT </ci>
+            <cn type="integer"> 1 </cn>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <ci> KE </ci>
+          <apply>
+            <times/>
+            <ci> RT </ci>
+            <ci> KI </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143329" variable="kV2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> kFMAXK </ci>
+        <apply>
+          <minus/>
+          <apply>
+            <divide/>
+            <ci> KE </ci>
+            <apply>
+              <plus/>
+              <ci> kKM </ci>
+              <ci> KE </ci>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> KI </ci>
+              <ci> RT </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> KI </ci>
+                <ci> RT </ci>
+              </apply>
+              <ci> kKM </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143341" variable="naV1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> PNA </ci>
+            <ci> SV </ci>
+            <apply>
+              <ln/>
+              <ci> RT </ci>
+            </apply>
+          </apply>
+          <apply>
+            <minus/>
+            <ci> RT </ci>
+            <cn type="integer"> 1 </cn>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <ci> NAE </ci>
+          <apply>
+            <times/>
+            <ci> RT </ci>
+            <ci> NAI </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143353" variable="naV2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> FMAXN </ci>
+        <apply>
+          <minus/>
+          <apply>
+            <divide/>
+            <ci> NAE </ci>
+            <apply>
+              <plus/>
+              <ci> naKM </ci>
+              <ci> NAE </ci>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> NAI </ci>
+              <ci> RT </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> NAI </ci>
+                <ci> RT </ci>
+              </apply>
+              <ci> naKM </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143365" variable="VMPUMP">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <cn> 2.318 </cn>
+        <apply>
+          <plus/>
+          <cn type="integer"> 1 </cn>
+          <apply>
+            <divide/>
+            <ci> HI </ci>
+            <apply>
+              <times/>
+              <cn> 3.7342 </cn>
+              <apply>
+                <power/>
+                <cn type="integer"> 10 </cn>
+                <cn type="integer"> -3 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <cn> 8.2714 </cn>
+              <apply>
+                <power/>
+                <cn type="integer"> 10 </cn>
+                <cn type="integer"> -7 </cn>
+              </apply>
+            </apply>
+            <ci> HI </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143377" variable="NUMPUMP">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> VMPUMP </ci>
+        <apply>
+          <plus/>
+          <apply>
+            <power/>
+            <ci> KE </ci>
+            <cn type="integer"> 2 </cn>
+          </apply>
+          <apply>
+            <times/>
+            <ci> KSPPUMP </ci>
+            <ci> KE </ci>
+            <ci> PSIPUMP </ci>
+            <cn> 0.5 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143389" variable="DENPUMP1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <ci> KSPUMP </ci>
+          <ci> KSPPUMP </ci>
+        </apply>
+        <apply>
+          <times/>
+          <cn> 2 </cn>
+          <ci> KSPPUMP </ci>
+          <ci> KE </ci>
+        </apply>
+        <apply>
+          <power/>
+          <ci> KE </ci>
+          <cn type="integer"> 2 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143401" variable="DENPUMP2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <power/>
+        <apply>
+          <plus/>
+          <apply>
+            <divide/>
+            <ci> KNAPUMP </ci>
+            <ci> NAI </ci>
+          </apply>
+          <cn type="integer"> 1 </cn>
+        </apply>
+        <cn type="integer"> 3 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143413" variable="DENPUMP3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <ci> KPUMP1 </ci>
+          <ci> KSPUMP </ci>
+          <ci> KSPPUMP </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> KPUMP2 </ci>
+          <apply>
+            <plus/>
+            <apply>
+              <power/>
+              <ci> KE </ci>
+              <cn type="integer"> 2 </cn>
+            </apply>
+            <apply>
+              <times/>
+              <ci> PSIPUMP </ci>
+              <ci> KSPPUMP </ci>
+              <ci> KE </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143425" variable="DENPUMP">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> DENPUMP1 </ci>
+        <apply>
+          <times/>
+          <ci> DENPUMP2 </ci>
+          <ci> DENPUMP3 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143437" variable="FATP">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> ATP </ci>
+        <apply>
+          <plus/>
+          <ci> ATP </ci>
+          <cn> 0.04 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_143449" variable="pkVM">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <apply>
+            <minus/>
+            <cn type="integer"> 300 </cn>
+            <apply>
+              <times/>
+              <cn> 90.9 </cn>
+              <apply>
+                <minus/>
+                <ci> PHI </ci>
+                <cn> 7.2 </cn>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 20.61 </cn>
+              <apply>
+                <divide/>
+                <cn> 6379.6 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+          <cn type="integer"> 250 </cn>
+        </apply>
+        <cn type="integer"> 300 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+</listOfRules><listOfReactions>
+  <reaction metaid="_143461" sboTerm="SBO:0000176" id="ADA" name="adenosine deaminase">
+    <listOfReactants>
+      <speciesReference metaid="_143473" species="ADO"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_143485" species="INO"/>
+    </listOfProducts>
+    <kineticLaw metaid="_143497">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> scaleada </ci>
+            <ci> adaVM </ci>
+            <ci> ADO </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> adaKA </ci>
+            <ci> ADO </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_143509" id="adaKA" value="0.052"/>
+        <parameter metaid="_143521" id="scaleada" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_143533" sboTerm="SBO:0000185" id="ADEEX" name="adenine transport channel">
+    <listOfReactants>
+      <speciesReference metaid="_143545" species="ADE"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_143557" species="adeex"/>
+    </listOfProducts>
+    <kineticLaw metaid="_143569">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scaleadeex </ci>
+          <ci> vmade </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <divide/>
+              <ci> ADE </ci>
+              <apply>
+                <plus/>
+                <ci> kmade </ci>
+                <ci> ADE </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> adeex </ci>
+              <apply>
+                <plus/>
+                <ci> kmade </ci>
+                <ci> adeex </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_143581" id="kmade" value="2.6"/>
+        <parameter metaid="_143594" id="vmade" value="90"/>
+        <parameter metaid="_143606" id="scaleadeex" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_143618" sboTerm="SBO:0000176" id="ADK" name="adenylate kinase">
+    <listOfReactants>
+      <speciesReference metaid="_143630" species="ADP" stoichiometry="2"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_143642" species="AMP"/>
+      <speciesReference metaid="_143654" species="ATP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_143666">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scaleadk </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> adkKAP1 </ci>
+              <apply>
+                <power/>
+                <ci> ADP </ci>
+                <cn type="integer"> 2 </cn>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> adkKAP2 </ci>
+              <ci> ATP </ci>
+              <ci> AMP </ci>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 19.876 </cn>
+              <apply>
+                <divide/>
+                <cn> 6152.2 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_143678" id="scaleadk" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_143690" sboTerm="SBO:0000185" id="ADOEX" name="adenosine transport channel">
+    <listOfReactants>
+      <speciesReference metaid="_143702" species="ADO"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_143715" species="adoex"/>
+    </listOfProducts>
+    <kineticLaw metaid="_143727">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scaleadoex </ci>
+          <ci> vmaex </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <divide/>
+              <ci> ADO </ci>
+              <apply>
+                <plus/>
+                <ci> kmaex </ci>
+                <ci> ADO </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> adoex </ci>
+              <apply>
+                <plus/>
+                <ci> kmaex </ci>
+                <ci> adoex </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_143739" id="vmaex" value="61.2"/>
+        <parameter metaid="_143751" id="kmaex" value="0.13"/>
+        <parameter metaid="_143763" id="scaleadoex" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_143775" sboTerm="SBO:0000176" id="ADPRT" name="adenosine phosphoribosyl transferase">
+    <listOfReactants>
+      <speciesReference metaid="_143787" species="ADE"/>
+      <speciesReference metaid="_143799" species="PRPP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_143811" species="AMP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_143823">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scaleadprt </ci>
+          <ci> adprtVM </ci>
+          <apply>
+            <divide/>
+            <ci> ADE </ci>
+            <apply>
+              <plus/>
+              <ci> adprtKADE </ci>
+              <ci> ADE </ci>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <ci> PRPP </ci>
+            <apply>
+              <plus/>
+              <ci> PRPP </ci>
+              <ci> adprtKPRPP </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_143835" id="adprtKADE" value="0.0023"/>
+        <parameter metaid="_143847" id="adprtKPRPP" value="0.0195"/>
+        <parameter metaid="_143859" id="scaleadprt" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_143871" sboTerm="SBO:0000176" id="AK" name="adenosine kinase">
+    <listOfReactants>
+      <speciesReference metaid="_143883" species="ADO"/>
+      <speciesReference metaid="_143895" species="ATP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_143907" species="ADP"/>
+      <speciesReference metaid="_143919" species="AMP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_143931">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> scaleak </ci>
+                <ci> akVM </ci>
+                <ci> ATP </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> ATP </ci>
+                <ci> akKMGATP </ci>
+              </apply>
+            </apply>
+            <ci> ADO </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> ADO </ci>
+            <ci> akKA </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_143943" id="akKMGATP" value="0.8"/>
+        <parameter metaid="_143955" id="akKA" value="0.0004"/>
+        <parameter metaid="_143967" id="scaleak" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_143979" sboTerm="SBO:0000176" id="ALD" name="aldolase">
+    <listOfReactants>
+      <speciesReference metaid="_143991" species="FDP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_144004" species="DHAP"/>
+      <speciesReference metaid="_144016" species="GAP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_144028">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> scaleald </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> aldN1 </ci>
+                <ci> FDP </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> aldN2 </ci>
+                <ci> GAP </ci>
+                <ci> DHAP </ci>
+              </apply>
+            </apply>
+            <ci> aldET </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> aldD1 </ci>
+            <apply>
+              <times/>
+              <ci> aldD2 </ci>
+              <ci> FDP </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> aldD3 </ci>
+              <ci> GAP </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> aldD4 </ci>
+              <ci> DHAP </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> aldD5 </ci>
+              <ci> FDP </ci>
+              <ci> GAP </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> aldD6 </ci>
+              <ci> GAP </ci>
+              <ci> DHAP </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_144040" id="aldET" value="0.00037"/>
+        <parameter metaid="_144052" id="scaleald" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_144064" sboTerm="SBO:0000176" id="AMPase" name="adenosine mono-phosphate phosphatase">
+    <listOfReactants>
+      <speciesReference metaid="_144076" species="AMP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_144088" species="ADO"/>
+    </listOfProducts>
+    <kineticLaw metaid="_144101">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scaleampase </ci>
+          <ci> KAMPAS </ci>
+          <ci> AMP </ci>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 19.876 </cn>
+              <apply>
+                <divide/>
+                <cn> 6152.2 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_144113" id="scaleampase" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_144125" sboTerm="SBO:0000176" id="AMPDA" name="adenosine mono-phosphate deaminase">
+    <listOfReactants>
+      <speciesReference metaid="_144137" species="AMP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_144149" species="IMP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_144161">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> scaleampda </ci>
+              <ci> ampdaVM </ci>
+              <ci> AMP </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> ampdaKAMP </ci>
+              <ci> AMP </ci>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 19.876 </cn>
+              <apply>
+                <divide/>
+                <cn> 6152.2 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_144173" id="ampdaVM" value="0.01"/>
+        <parameter metaid="_144186" id="ampdaKAMP" value="0.8"/>
+        <parameter metaid="_144198" id="scaleampda" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_144210" sboTerm="SBO:0000176" id="ATPase" name="adenosine tri-phosphate phosphatase">
+    <listOfReactants>
+      <speciesReference metaid="_144222" species="ATP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_144234" species="ADP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_144246">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scaleatpase </ci>
+          <ci> katpase </ci>
+          <ci> ATP </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_144258" id="scaleatpase" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_144271" sboTerm="SBO:0000176" id="DPGase" name="diphosphoglycerate phosphatase">
+    <listOfReactants>
+      <speciesReference metaid="_144283" species="DPG23"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_144295" species="PG3"/>
+    </listOfProducts>
+    <kineticLaw metaid="_144307">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> scaledpgase </ci>
+            <ci> dpgaseVM </ci>
+            <ci> DPG23 </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> dpgasek </ci>
+            <ci> DPG23 </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_144319" id="dpgaseVM" value="0.52"/>
+        <parameter metaid="_144331" id="scaledpgase" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_144343" sboTerm="SBO:0000176" id="DPGM" name="diphosphoglycerate mutase">
+    <listOfReactants>
+      <speciesReference metaid="_144355" species="DPG13"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_144367" species="DPG23"/>
+    </listOfProducts>
+    <kineticLaw metaid="_144379">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> scaledpgm </ci>
+            <ci> KDPGM </ci>
+            <ci> DPG13 </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <cn> 1 </cn>
+            <apply>
+              <divide/>
+              <ci> DPG23 </ci>
+              <ci> dpgmk </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_144391" id="scaledpgm" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_144404" sboTerm="SBO:0000176" id="EN" name="enolase">
+    <listOfReactants>
+      <speciesReference metaid="_144416" species="PG2"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_144428" species="PEP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_144440">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scaleen </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> KEN1 </ci>
+              <ci> PG2 </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> KEN2 </ci>
+              <ci> PEP </ci>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 19.876 </cn>
+              <apply>
+                <divide/>
+                <cn> 6152.2 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_144452" id="scaleen" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_144464" sboTerm="SBO:0000176" id="G6PDH" name="glucose 6 phosphate dehydrogenase">
+    <listOfReactants>
+      <speciesReference metaid="_144476" species="G6P"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_144488" species="GL6P"/>
+      <speciesReference metaid="_144500" species="NADPH"/>
+    </listOfProducts>
+    <kineticLaw metaid="_144512">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> scaleg6pd </ci>
+              <ci> NUMG6PDH </ci>
+              <cn type="integer"> 3600 </cn>
+            </apply>
+            <ci> DENG6PDH </ci>
+          </apply>
+          <apply>
+            <times/>
+            <cn type="integer"> 1 </cn>
+            <apply>
+              <power/>
+              <cn type="integer"> 10 </cn>
+              <cn type="integer"> -3 </cn>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_144525" id="scaleg6pd" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_144537" sboTerm="SBO:0000176" id="GAPDH" name="glyceraldehyde phosphate dehydrogenase">
+    <listOfReactants>
+      <speciesReference metaid="_144549" species="GAP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_144561" species="DPG13"/>
+      <speciesReference metaid="_144573" species="NADH"/>
+    </listOfProducts>
+    <kineticLaw metaid="_144585">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scalegapdh </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> KGA1 </ci>
+              <pi/>
+              <ci> GAP </ci>
+              <apply>
+                <minus/>
+                <ci> NADHT </ci>
+                <ci> NADH </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> KGA2 </ci>
+              <ci> DPG13 </ci>
+              <ci> NADH </ci>
+              <ci> HI </ci>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 16.203 </cn>
+              <apply>
+                <divide/>
+                <cn> 5021.3 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_144598" id="scalegapdh" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_144610" sboTerm="SBO:0000176" id="GL6PDH" name="phosphogluconate dehydrogenase">
+    <listOfReactants>
+      <speciesReference metaid="_144622" species="GO6P"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_144634" species="NADPH"/>
+      <speciesReference metaid="_144647" species="RU5P"/>
+    </listOfProducts>
+    <kineticLaw metaid="_144659">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> scalegl6pd </ci>
+              <ci> NUMG16PD </ci>
+            </apply>
+            <ci> DENG16PD </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <apply>
+              <minus/>
+              <cn> 160.84 </cn>
+              <apply>
+                <times/>
+                <cn> 39.173 </cn>
+                <ci> HI </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 4.1322 </cn>
+              <ci> HI </ci>
+              <ci> HI </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_144671" id="scalegl6pd" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_144683" sboTerm="SBO:0000185" id="GSHR" name="glutathione oxidase">
+    <listOfReactants>
+      <speciesReference metaid="_144695" species="GSH"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_144707" species="GSHex"/>
+    </listOfProducts>
+    <kineticLaw metaid="_144719">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scalegshr </ci>
+          <ci> gshconst </ci>
+          <ci> GSH </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <cn type="integer"> -2880 </cn>
+              <apply>
+                <times/>
+                <cn> 902.33 </cn>
+                <ci> PHI </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 65.272 </cn>
+              <ci> PHI </ci>
+              <ci> PHI </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_144731" id="scalegshr" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_144743" sboTerm="SBO:0000176" id="GSSGR" name="glutathione reducatase">
+    <listOfReactants>
+      <speciesReference metaid="_144756" species="NADPH"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_144768" species="GSH" stoichiometry="2"/>
+    </listOfProducts>
+    <kineticLaw metaid="_144780">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> scalegssgr </ci>
+                <ci> gssgNUM </ci>
+              </apply>
+              <ci> gssgDEN </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <apply>
+                <plus/>
+                <cn type="integer"> -2880 </cn>
+                <apply>
+                  <times/>
+                  <cn> 902.33 </cn>
+                  <ci> PHI </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <cn> 65.272 </cn>
+                <ci> PHI </ci>
+                <ci> PHI </ci>
+              </apply>
+            </apply>
+          </apply>
+          <cn> 233.075 </cn>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_144792" id="scalegssgr" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_144804" sboTerm="SBO:0000176" id="HGPRT" name="hypoxanthine-guanine phosphoribosyl transferase">
+    <listOfReactants>
+      <speciesReference metaid="_144816" species="HX"/>
+      <speciesReference metaid="_144828" species="PRPP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_144840" species="IMP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_144852">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scalehgprt </ci>
+          <ci> hgprtVM </ci>
+          <apply>
+            <divide/>
+            <ci> PRPP </ci>
+            <apply>
+              <plus/>
+              <ci> PRPP </ci>
+              <ci> hgprtKPRPP </ci>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <ci> HX </ci>
+            <apply>
+              <plus/>
+              <ci> HX </ci>
+              <ci> hgprtKHX </ci>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 14.543 </cn>
+              <apply>
+                <divide/>
+                <cn> 4501.5 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_144864" id="hgprtVM" value="0.2011"/>
+        <parameter metaid="_144876" id="hgprtKPRPP" value="0.005"/>
+        <parameter metaid="_144889" id="hgprtKHX" value="0.22"/>
+        <parameter metaid="_144901" id="scalehgprt" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_144913" sboTerm="SBO:0000176" id="HK" name="hexokinase">
+    <listOfReactants>
+      <speciesReference metaid="_144925" species="ATP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_144937" species="ADP"/>
+      <speciesReference metaid="_144949" species="G6P"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_144961" species="MG"/>
+      <modifierSpeciesReference metaid="_144974" species="MGATP"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_144986">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> scalehk </ci>
+                    <ci> VM1HK </ci>
+                    <ci> GLC </ci>
+                  </apply>
+                  <ci> KMAGLC </ci>
+                </apply>
+                <ci> MGATP </ci>
+              </apply>
+              <ci> KMGATP </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 2.1187 </cn>
+                  <ci> MG </ci>
+                </apply>
+                <ci> KMGAMG </ci>
+              </apply>
+            </apply>
+          </apply>
+          <ci> N1HK </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_144998" id="scalehk" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145010" sboTerm="SBO:0000185" id="HXEX" name="hypoxanthine transport channel">
+    <listOfReactants>
+      <speciesReference metaid="_145022" species="HX"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_145034" species="HXex"/>
+    </listOfProducts>
+    <kineticLaw metaid="_145046">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scalehxex </ci>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <ci> hxexPM </ci>
+              <ci> HX </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> hxexVM </ci>
+                <ci> HX </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> HX </ci>
+                <ci> hxexKM </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 14.543 </cn>
+              <apply>
+                <divide/>
+                <cn> 4501.5 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_145058" id="hxexPM" value="37.8"/>
+        <parameter metaid="_145070" id="hxexVM" value="151.6"/>
+        <parameter metaid="_145082" id="hxexKM" value="0.4"/>
+        <parameter metaid="_145094" id="scalehxex" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145106" sboTerm="SBO:0000176" id="IMPase" name="inosine mono-phosphate phosphatase">
+    <listOfReactants>
+      <speciesReference metaid="_145118" species="IMP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_145130" species="INO"/>
+    </listOfProducts>
+    <kineticLaw metaid="_145142">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> scaleimpase </ci>
+              <ci> KIASE </ci>
+              <ci> IMP </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <cn> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> INO </ci>
+                <ci> KINO </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 14.543 </cn>
+              <apply>
+                <divide/>
+                <cn> 4501.5 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_145154" id="KINO" value="25"/>
+        <parameter metaid="_145166" id="scaleimpase" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145178" sboTerm="SBO:0000185" id="INOEX">
+    <listOfReactants>
+      <speciesReference metaid="_145191" species="INO"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_145203" species="inoex"/>
+    </listOfProducts>
+    <kineticLaw metaid="_145215">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> vmino </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <divide/>
+              <ci> INO </ci>
+              <apply>
+                <plus/>
+                <ci> kmino </ci>
+                <ci> INO </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <ci> inoex </ci>
+              <apply>
+                <plus/>
+                <ci> kmino </ci>
+                <ci> inoex </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_145228" id="kmino" value="0.13"/>
+        <parameter metaid="_145241" id="vmino" value="61.2"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145254" sboTerm="SBO:0000185" id="KLEAK" name="potassium leak channel">
+    <listOfReactants>
+      <speciesReference metaid="_145267" species="KLEak"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_145280" species="KI"/>
+    </listOfProducts>
+    <kineticLaw metaid="_145293">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scalekleak </ci>
+          <apply>
+            <plus/>
+            <ci> kV1 </ci>
+            <ci> kV2 </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <cn> -1.16 </cn>
+            <apply>
+              <times/>
+              <cn> 0.3 </cn>
+              <ci> PHI </ci>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 22.7283 </cn>
+              <apply>
+                <divide/>
+                <cn> 7045.7976 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_145306" id="scalekleak" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145319" sboTerm="SBO:0000176" id="LDH" name="lactate dehydrogenase">
+    <listOfReactants>
+      <speciesReference metaid="_145332" species="NADH"/>
+      <speciesReference metaid="_145345" species="PYR"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_145358" species="LAC"/>
+    </listOfProducts>
+    <kineticLaw metaid="_145370">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scaleldh </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> KLD1 </ci>
+              <ci> PYR </ci>
+              <ci> NADH </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> KLD2 </ci>
+              <ci> LAC </ci>
+              <apply>
+                <minus/>
+                <ci> NADHT </ci>
+                <ci> NADH </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 20.237 </cn>
+              <apply>
+                <divide/>
+                <cn> 6267.2 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_145383" id="scaleldh" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145396" sboTerm="SBO:0000185" id="LEX" name="lactate transport channel">
+    <listOfReactants>
+      <speciesReference metaid="_145408" species="LAC"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_145420" species="LACEXT"/>
+    </listOfProducts>
+    <kineticLaw metaid="_145432">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scalelex </ci>
+          <ci> VLAC </ci>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 14.543 </cn>
+              <apply>
+                <divide/>
+                <cn> 4501.5 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_145444" id="scalelex" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145456" sboTerm="SBO:0000185" id="NALEAK" name="sodium leak channel">
+    <listOfReactants>
+      <speciesReference metaid="_145468" species="NALEak"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_145480" species="NAI"/>
+    </listOfProducts>
+    <kineticLaw metaid="_145492">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scalenaleak </ci>
+          <apply>
+            <plus/>
+            <ci> naV1 </ci>
+            <ci> naV2 </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <cn> -1.16 </cn>
+            <apply>
+              <times/>
+              <cn> 0.3 </cn>
+              <ci> PHI </ci>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 29.2222 </cn>
+              <apply>
+                <divide/>
+                <cn> 9058.88 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_145505" id="scalenaleak" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145517" sboTerm="SBO:0000176" id="MGADPass">
+    <listOfReactants>
+      <speciesReference metaid="_145529" species="ADP"/>
+      <speciesReference metaid="_145541" species="MG"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_145553" species="MGADP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_145565">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> kAss </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> ADP </ci>
+                <ci> MG </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mgadpk </ci>
+                <ci> MG </ci>
+              </apply>
+            </apply>
+            <ci> MGADP </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_145577" id="mgadpk" value="0.81"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145589" sboTerm="SBO:0000176" id="MGAMPass">
+    <listOfReactants>
+      <speciesReference metaid="_145601" species="AMP"/>
+      <speciesReference metaid="_145613" species="MG"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_145625" species="MGAMP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_145637">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> kAss </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> AMP </ci>
+                <ci> MG </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mgampk </ci>
+                <ci> MG </ci>
+              </apply>
+            </apply>
+            <ci> MGAMP </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_145649" id="mgampk" value="22.2"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145661" sboTerm="SBO:0000176" id="MGATPass">
+    <listOfReactants>
+      <speciesReference metaid="_145673" species="ATP"/>
+      <speciesReference metaid="_145685" species="MG"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_145697" species="MGATP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_145709">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> kAss </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> ATP </ci>
+                <ci> MG </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mgatpk </ci>
+                <ci> MG </ci>
+              </apply>
+            </apply>
+            <ci> MGATP </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_145721" id="mgatpk" value="0.081"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145733" sboTerm="SBO:0000176" id="MGDPG23ass">
+    <listOfReactants>
+      <speciesReference metaid="_145745" species="DPG23"/>
+      <speciesReference metaid="_145758" species="MG"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_145770" species="MGDPG23"/>
+    </listOfProducts>
+    <kineticLaw metaid="_145782">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> kAss </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> DPG23 </ci>
+                <ci> MG </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mgdpgk </ci>
+                <ci> MG </ci>
+              </apply>
+            </apply>
+            <ci> MGDPG23 </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_145794" id="mgdpgk" value="1.67"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145806" sboTerm="SBO:0000185" id="PEX" name="pyruvate transport channel">
+    <listOfReactants>
+      <speciesReference metaid="_145818" species="PYR"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_145831" species="PYREXT"/>
+    </listOfProducts>
+    <kineticLaw metaid="_145843">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <apply>
+            <minus/>
+            <ci> scalepex </ci>
+          </apply>
+          <ci> KPYR </ci>
+          <apply>
+            <minus/>
+            <ci> PYREXT </ci>
+            <ci> PYR </ci>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 14.52096 </cn>
+              <apply>
+                <divide/>
+                <cn> 4501.5 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_145855" id="KPYR" value="63.8"/>
+        <parameter metaid="_145868" id="scalepex" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145881" sboTerm="SBO:0000176" id="PFK" name="phosphofructokinase">
+    <listOfReactants>
+      <speciesReference metaid="_145893" species="ATP"/>
+      <speciesReference metaid="_145905" species="F6P"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_145918" species="ADP"/>
+      <speciesReference metaid="_145930" species="FDP"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_145942" species="MGATP"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_145954">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> scalepfk </ci>
+                  <ci> pfkVM </ci>
+                  <ci> F6P </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> pfkKF6P </ci>
+                  <ci> F6P </ci>
+                </apply>
+              </apply>
+              <ci> MGATP </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> pfkKMGATP </ci>
+              <ci> MGATP </ci>
+            </apply>
+          </apply>
+          <apply>
+            <plus/>
+            <cn> 1 </cn>
+            <ci> LPFK </ci>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_145966" id="pfkKMGATP" value="0.068"/>
+        <parameter metaid="_145979" id="scalepfk" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_145992" sboTerm="SBO:0000176" id="PGI" name="phosphoglucoisomerase">
+    <listOfReactants>
+      <speciesReference metaid="_146004" species="G6P"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_146016" species="F6P"/>
+    </listOfProducts>
+    <kineticLaw metaid="_146028">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scalepgi </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> kpgi1 </ci>
+              <ci> G6P </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kpgi2 </ci>
+              <ci> F6P </ci>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 13.042 </cn>
+              <apply>
+                <divide/>
+                <cn> 4040.7 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_146040" id="scalepgi" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_146052" sboTerm="SBO:0000176" id="PGK" name="phosphoglycerate kinase">
+    <listOfReactants>
+      <speciesReference metaid="_146064" species="ADP"/>
+      <speciesReference metaid="_146076" species="DPG13"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_146089" species="ATP"/>
+      <speciesReference metaid="_146101" species="PG3"/>
+    </listOfProducts>
+    <kineticLaw metaid="_146113">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scalepgk </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> kpgk1 </ci>
+              <ci> DPG13 </ci>
+              <ci> ADP </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kpgk2 </ci>
+              <ci> PG3 </ci>
+              <ci> ATP </ci>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 12.56 </cn>
+              <apply>
+                <divide/>
+                <cn> 3895.3 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_146125" id="scalepgk" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_146137" sboTerm="SBO:0000176" id="PGLase" name="6 phosphogluconolactonase">
+    <listOfReactants>
+      <speciesReference metaid="_146149" species="GL6P"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_146161" species="GO6P"/>
+    </listOfProducts>
+    <kineticLaw metaid="_146173">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> scalepglase </ci>
+              <ci> pglaseVM </ci>
+              <ci> GL6P </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> pglaseKM </ci>
+              <ci> GL6P </ci>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 14.167 </cn>
+              <apply>
+                <divide/>
+                <cn> 4380.4 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_146185" id="pglaseKM" value="0.08"/>
+        <parameter metaid="_146197" id="pglaseVM" value="9.93"/>
+        <parameter metaid="_146209" id="scalepglase" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_146221" sboTerm="SBO:0000176" id="PGM" name="phosphoglycerate mutase">
+    <listOfReactants>
+      <speciesReference metaid="_146233" species="PG3"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_146245" species="PG2"/>
+    </listOfProducts>
+    <kineticLaw metaid="_146257">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scalepgm </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> KPGM1 </ci>
+              <ci> PG3 </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> KPGM2 </ci>
+              <ci> PG2 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 16.907 </cn>
+              <apply>
+                <divide/>
+                <cn> 5236.7 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_146269" id="scalepgm" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_146281" sboTerm="SBO:0000176" id="PK" name="pyruvate kinase">
+    <listOfReactants>
+      <speciesReference metaid="_146293" species="ADP"/>
+      <speciesReference metaid="_146305" species="PEP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_146317" species="ATP"/>
+      <speciesReference metaid="_146329" species="PYR"/>
+    </listOfProducts>
+    <kineticLaw metaid="_146341">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> scalepk </ci>
+            <ci> pkVM </ci>
+            <ci> pkDEN1 </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <cn type="integer"> 1 </cn>
+            <apply>
+              <times/>
+              <ci> pkL0 </ci>
+              <apply>
+                <divide/>
+                <ci> pkDEN2 </ci>
+                <ci> pkDEN3 </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_146353" id="pkL0" value="19"/>
+        <parameter metaid="_146365" id="scalepk" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_146377" sboTerm="SBO:0000176" id="PNPase" name="purine nucleotide phosphorylase">
+    <listOfReactants>
+      <speciesReference metaid="_146389" species="INO"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_146401" species="HX"/>
+      <speciesReference metaid="_146414" species="R1P"/>
+    </listOfProducts>
+    <kineticLaw metaid="_146426">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scalepnpase </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> pnpaseKA1 </ci>
+              <ci> INO </ci>
+              <pi/>
+            </apply>
+            <apply>
+              <times/>
+              <ci> pnpaseKA2 </ci>
+              <ci> HX </ci>
+              <ci> R1P </ci>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 14.543 </cn>
+              <apply>
+                <divide/>
+                <cn> 4501.5 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_146438" id="scalepnpase" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_146451" sboTerm="SBO:0000176" id="PRM" name="phosphoribomutase">
+    <listOfReactants>
+      <speciesReference metaid="_146463" species="R1P"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_146475" species="R5P"/>
+    </listOfProducts>
+    <kineticLaw metaid="_146487">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scaleprm </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> prmKA1 </ci>
+              <ci> R1P </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> prmKA2 </ci>
+              <ci> R5P </ci>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 14.543 </cn>
+              <apply>
+                <divide/>
+                <cn> 4501.5 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_146499" id="scaleprm" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_146511" sboTerm="SBO:0000176" id="PRPPSYN" name="phosphoribosyl pyrophosphate synthase">
+    <listOfReactants>
+      <speciesReference metaid="_146523" species="ATP"/>
+      <speciesReference metaid="_146535" species="R5P"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_146547" species="AMP"/>
+      <speciesReference metaid="_146559" species="PRPP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_146571">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> scaleprppsyn </ci>
+              <ci> VMPRPPSYN </ci>
+              <ci> VRPRPPSYN </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> R5P </ci>
+                  <ci> ATP </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> PRPP </ci>
+                    <ci> AMP </ci>
+                  </apply>
+                  <ci> KEQPRPPSYN </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> VRPRPPSYN </ci>
+                <ci> KR5PPRPPSYN </ci>
+                <ci> ATP </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> VRPRPPSYN </ci>
+                <ci> KATPPRPPSYN </ci>
+                <ci> R5P </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> VMPRPPSYN </ci>
+                  <ci> KAMPPRPPSYN </ci>
+                  <ci> PRPP </ci>
+                </apply>
+                <ci> KEQPRPPSYN </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> VMPRPPSYN </ci>
+                  <ci> KPRPPPRPPSYN </ci>
+                  <ci> AMP </ci>
+                </apply>
+                <ci> KEQPRPPSYN </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> VRPRPPSYN </ci>
+                <ci> R5P </ci>
+                <ci> ATP </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> VMPRPPSYN </ci>
+                  <ci> PRPP </ci>
+                  <ci> AMP </ci>
+                </apply>
+                <ci> KEQPRPPSYN </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 14.543 </cn>
+              <apply>
+                <divide/>
+                <cn> 4501.5 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_146583" id="KATPPRPPSYN" value="0.17"/>
+        <parameter metaid="_146595" id="KR5PPRPPSYN" value="0.65"/>
+        <parameter metaid="_146607" id="KEQPRPPSYN" value="28.6"/>
+        <parameter metaid="_146620" id="KPRPPPRPPSYN" value="0.09"/>
+        <parameter metaid="_146633" id="KAMPPRPPSYN" value="0.275"/>
+        <parameter metaid="_146645" id="scaleprppsyn" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_146657" sboTerm="SBO:0000176" id="PUMP" name="sodium/potassium ATPase pump">
+    <listOfReactants>
+      <speciesReference metaid="_146669" species="ATP"/>
+      <speciesReference metaid="_146681" species="NAI" stoichiometry="3"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_146693" species="ADP"/>
+      <speciesReference metaid="_146706" species="KI" stoichiometry="2"/>
+    </listOfProducts>
+    <kineticLaw metaid="_146718">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> scalepump </ci>
+              <ci> FATP </ci>
+              <ci> NUMPUMP </ci>
+              <cn> 0.5 </cn>
+            </apply>
+            <ci> DENPUMP </ci>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 40.7298 </cn>
+              <apply>
+                <divide/>
+                <cn> 12626.2626 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_146730" id="scalepump" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_146742" sboTerm="SBO:0000176" id="RU5PI" name="ribulose 5 phosphate isomerase">
+    <listOfReactants>
+      <speciesReference metaid="_146755" species="RU5P"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_146767" species="R5P"/>
+    </listOfProducts>
+    <kineticLaw metaid="_146779">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> scaleru5pi </ci>
+            <ci> ru5iVF </ci>
+            <apply>
+              <minus/>
+              <ci> RU5P </ci>
+              <apply>
+                <divide/>
+                <ci> R5P </ci>
+                <ci> ru5iKEQ </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> ru5iK1 </ci>
+            <ci> RU5P </ci>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> ru5iK1 </ci>
+                <ci> ru5iK2 </ci>
+              </apply>
+              <ci> R5P </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_146791" id="ru5iVF" value="1702.296"/>
+        <parameter metaid="_146803" id="ru5iKEQ" value="2.57"/>
+        <parameter metaid="_146816" id="ru5iK1" value="0.78"/>
+        <parameter metaid="_146828" id="ru5iK2" value="2.2"/>
+        <parameter metaid="_146840" id="scaleru5pi" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_146852" sboTerm="SBO:0000176" id="TALD" name="transaldolase">
+    <listOfReactants>
+      <speciesReference metaid="_146864" species="GAP"/>
+      <speciesReference metaid="_146876" species="S7P"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_146889" species="E4P"/>
+      <speciesReference metaid="_146902" species="F6P"/>
+    </listOfProducts>
+    <kineticLaw metaid="_146914">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> scaletald </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> NALD1 </ci>
+                <ci> S7P </ci>
+                <ci> GAP </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> NALD2 </ci>
+                <ci> E4P </ci>
+                <ci> F6P </ci>
+              </apply>
+            </apply>
+            <ci> ETALD </ci>
+          </apply>
+          <ci> DENTALD </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_146926" id="ETALD" value="0.00069"/>
+        <parameter metaid="_146938" id="scaletald" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_146950" sboTerm="SBO:0000176" id="TKI" name="transketolase">
+    <listOfReactants>
+      <speciesReference metaid="_146962" species="R5P"/>
+      <speciesReference metaid="_146974" species="X5P"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_146986" species="GAP"/>
+      <speciesReference metaid="_146998" species="S7P"/>
+    </listOfProducts>
+    <kineticLaw metaid="_147010">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> scaletki </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> tkiN1 </ci>
+                <ci> X5P </ci>
+                <ci> R5P </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> tkiN2 </ci>
+                <ci> GAP </ci>
+                <ci> S7P </ci>
+              </apply>
+            </apply>
+            <ci> tkiET </ci>
+          </apply>
+          <ci> tkiD </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_147022" id="tkiET" value="0.00033"/>
+        <parameter metaid="_147034" id="scaletki" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_147046" sboTerm="SBO:0000176" id="TKII" name="transketolase">
+    <listOfReactants>
+      <speciesReference metaid="_147058" species="E4P"/>
+      <speciesReference metaid="_147070" species="X5P"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_147082" species="F6P"/>
+      <speciesReference metaid="_147094" species="GAP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_147106">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> scaletkii </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> NTKII1 </ci>
+                <ci> X5P </ci>
+                <ci> E4P </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> NTKII2 </ci>
+                <ci> GAP </ci>
+                <ci> F6P </ci>
+              </apply>
+            </apply>
+            <ci> ETTKII </ci>
+          </apply>
+          <ci> DENTKII </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_147118" id="ETTKII" value="0.00033"/>
+        <parameter metaid="_147130" id="scaletkii" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_147142" sboTerm="SBO:0000176" id="TPI" name="triose phosphate isomerase">
+    <listOfReactants>
+      <speciesReference metaid="_147154" species="DHAP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_147166" species="GAP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_147178">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> scaletpi </ci>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> tpiKTP1 </ci>
+              <ci> DHAP </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> tpiKTP2 </ci>
+              <ci> GAP </ci>
+            </apply>
+          </apply>
+          <apply>
+            <exp/>
+            <apply>
+              <minus/>
+              <cn> 18.475 </cn>
+              <apply>
+                <divide/>
+                <cn> 5726.8 </cn>
+                <ci> TEMP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_147190" id="scaletpi" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_147202" sboTerm="SBO:0000176" id="XU5PE" name="xylulose 5 phosphate epimerase">
+    <listOfReactants>
+      <speciesReference metaid="_147214" species="RU5P"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_147226" species="X5P"/>
+    </listOfProducts>
+    <kineticLaw metaid="_147238">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> scalexu5pe </ci>
+            <ci> xu5eVF </ci>
+            <apply>
+              <minus/>
+              <ci> RU5P </ci>
+              <apply>
+                <divide/>
+                <ci> X5P </ci>
+                <ci> xu5eKEQ </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> xu5eK1 </ci>
+            <ci> RU5P </ci>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> xu5eK1 </ci>
+                <ci> xu5eK2 </ci>
+              </apply>
+              <ci> X5P </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_147250" id="xu5eVF" value="4633.56"/>
+        <parameter metaid="_147262" id="xu5eKEQ" value="3"/>
+        <parameter metaid="_147275" id="xu5eK1" value="0.19"/>
+        <parameter metaid="_147287" id="xu5eK2" value="1.5"/>
+        <parameter metaid="_147299" id="scalexu5pe" value="1"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+</model>
+</sbml>

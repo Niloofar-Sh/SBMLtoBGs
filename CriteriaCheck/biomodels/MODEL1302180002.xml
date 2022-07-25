@@ -1,0 +1,1772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1">
+  <model metaid="_4ec6c9e2_2a19_464e_826c_8d0e31e39cbb" id="MODEL1302180002" name="Sanjuan2013 - Evolution of HIV T-cell epitope, control model">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <div class="dc:title">Sanjuan2013 - Evolution of HIV T-cell epitope, control model</div>
+        <div class="dc:description">
+          <p>Control model in which the virus targets a nonimmune cell type C (e.g., hepatocytes, epithelial cells, etc.), instead of T        <sub>H</sub>
+            cells.        </p>
+      </div>
+      <div class="dc:bibliographicCitation">
+        <p>This model is described in the article:</p>
+        <div class="bibo:title">
+          <a href="http://identifiers.org/pubmed/23565057" title="Access to this publication">Immune activation promotes evolutionary conservation of T-cell epitopes in HIV-1.</a>
+        </div>
+        <div class="bibo:authorList">Sanjuán R, Nebot MR, Peris JB, Alcamí J.</div>
+        <div class="bibo:Journal">PLoS Biol. 2013 Apr;11(4):e1001523</div>
+        <p>Abstract:</p>
+        <div class="bibo:abstract">
+          <p>The immune system should constitute a strong selective pressure promoting viral genetic diversity and evolution. However, HIV shows lower sequence variability at T-cell epitopes than elsewhere in the genome, in contrast with other human RNA viruses. Here, we propose that epitope conservation is a consequence of the particular interactions established between HIV and the immune system. On one hand, epitope recognition triggers an anti-HIV response mediated by cytotoxic T-lymphocytes (CTLs), but on the other hand, activation of CD4(+) helper T lymphocytes (TH cells) promotes HIV replication. Mathematical modeling of these opposite selective forces revealed that selection at the intrapatient level can promote either T-cell epitope conservation or escape. We predict greater conservation for epitopes contributing significantly to total immune activation levels (immunodominance), and when TH cell infection is concomitant to epitope recognition (trans-infection). We suggest that HIV-driven immune activation in the lymph nodes during the chronic stage of the disease may offer a favorable scenario for epitope conservation. Our results also support the view that some pathogens draw benefits from the immune response and suggest that vaccination strategies based on conserved TH epitopes may be counterproductive.</p>
+        </div>
+      </div>
+      <div class="dc:publisher">
+        <p>This model is hosted on        <a href="http://www.ebi.ac.uk/biomodels/">BioModels Database</a>
+            and identified
+by:        <a href="http://identifiers.org/biomodels.db/MODEL1302180002">MODEL1302180002</a>
+            .        </p>
+      <p>To cite BioModels Database, please use:        <a href="http://identifiers.org/pubmed/20587024" title="Latest BioModels Database publication">BioModels Database: An enhanced, curated and annotated resource
+for published quantitative kinetic models</a>
+            .        </p>
+  </div>
+  <div class="dc:license">
+    <p>To the extent possible under law, all copyright and related or
+neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to        <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Access to: CC0 1.0 Universal (CC0 1.0), Public Domain Dedication">CC0 Public Domain
+Dedication</a>
+            for more information.        </p>
+</div>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#_4ec6c9e2_2a19_464e_826c_8d0e31e39cbb">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1302180002"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/go/GO:0002253"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfFunctionDefinitions>
+  <functionDefinition id="Int" name="Interaction term">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar>
+          <ci> x </ci>
+        </bvar>
+        <bvar>
+          <ci> y </ci>
+        </bvar>
+        <bvar>
+          <ci> z </ci>
+        </bvar>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> x </ci>
+            <ci> y </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> x </ci>
+            <ci> z </ci>
+          </apply>
+        </apply>
+      </lambda>
+    </math>
+  </functionDefinition>
+</listOfFunctionDefinitions><listOfCompartments>
+  <compartment id="org" name="body" spatialDimensions="3" size="1" constant="true"/>
+</listOfCompartments><listOfSpecies>
+  <species id="THr" name="THr" compartment="org" initialAmount="1000000" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="THa" name="THa" compartment="org" initialAmount="1000000" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="C" name="C" compartment="org" initialAmount="1" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="Cw" name="Cw" compartment="org" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="C4" name="C4" compartment="org" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="C8" name="C8" compartment="org" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="C48" name="C48" compartment="org" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="TCr" name="TCr" compartment="org" initialAmount="3000000" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="TCPr1" name="TCPr1" compartment="org" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="TCPr2" name="TCPr2" compartment="org" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="TCa" name="TCa" compartment="org" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="Dr" name="Dr" compartment="org" initialAmount="100000" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="Dw" name="Dw" compartment="org" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="D4" name="D4" compartment="org" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="D8" name="D8" compartment="org" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="D48" name="D48" compartment="org" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="Vw" name="Vw" compartment="org" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="V4" name="V4" compartment="org" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="V8" name="V8" compartment="org" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+  <species id="V48" name="V48" compartment="org" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+</listOfSpecies><listOfParameters>
+  <parameter id="rho4" name="rho4" value="0.05" constant="true"/>
+  <parameter id="C4r0" name="C4r0" value="1000000" constant="true"/>
+  <parameter id="gamma4r" name="gamma4r" value="0.005" constant="true"/>
+  <parameter id="gamma4a" name="gamma4a" value="0.1" constant="true"/>
+  <parameter id="rho8" name="rho8" value="0.05" constant="true"/>
+  <parameter id="C8r0" name="C8r0" value="3000000" constant="true"/>
+  <parameter id="gamma8r" name="gamma8r" value="0.005" constant="true"/>
+  <parameter id="gamma8pr" name="gamma8pr" value="0.005" constant="true"/>
+  <parameter id="gamma8a" name="gamma8a" value="0.1" constant="true"/>
+  <parameter id="rhoD" name="rhoD" value="0.05" constant="true"/>
+  <parameter id="CDr0" name="CDr0" value="100000" constant="true"/>
+  <parameter id="gammaDr" name="gammaDr" value="0.005" constant="true"/>
+  <parameter id="gammaDa" name="gammaDa" value="0.1" constant="true"/>
+  <parameter id="rhoC" name="rhoC" value="0.05" constant="true"/>
+  <parameter id="CC0" name="CC0" value="250000" constant="true"/>
+  <parameter id="gammaC" name="gammaC" value="0.1" constant="true"/>
+  <parameter id="gammaCi" name="gammaCi" value="1" constant="true"/>
+  <parameter id="a4" name="a4" value="0.1" constant="true"/>
+  <parameter id="a8" name="a8" value="0.1" constant="true"/>
+  <parameter id="a8D" name="a8D" value="0.1" constant="true"/>
+  <parameter id="a8prime" name="a8prime" value="0.1" constant="true"/>
+  <parameter id="b" name="b" value="0.001" constant="true"/>
+  <parameter id="b8" name="b8" value="0" constant="true"/>
+  <parameter id="k" name="k" value="0.1" constant="true"/>
+  <parameter id="sigma" name="sigma" value="0.01" constant="true"/>
+  <parameter id="sigmaD" name="sigmaD" value="0.01" constant="true"/>
+  <parameter id="alpha" name="alpha" value="5000" constant="true"/>
+  <parameter id="alphaD" name="alphaD" value="0" constant="true"/>
+  <parameter id="gammaV" name="gammaV" value="15" constant="true"/>
+  <parameter id="muw4" name="muw4" value="0" constant="true"/>
+  <parameter id="muw8" name="muw8" value="0" constant="true"/>
+  <parameter id="muw48" name="muw48" value="0" constant="true"/>
+  <parameter id="murevw4" name="murevw4" value="0" constant="true"/>
+  <parameter id="murevw8" name="murevw8" value="0" constant="true"/>
+  <parameter id="murevw48" name="murevw48" value="0" constant="true"/>
+  <parameter id="cost" name="cost" value="0" constant="true"/>
+</listOfParameters><listOfReactions>
+  <reaction id="_Evolution_THr" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="THr" constant="false"/>
+      <speciesReference species="Dw" constant="false"/>
+      <speciesReference species="D8" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="THr" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> rho4 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> C4r0 </ci>
+                    <ci> THr </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> gamma4r </ci>
+                  <ci> THr </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> b </ci>
+                <ci> THr </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> a4 </ci>
+                <ci> THr </ci>
+                <ci> Dw </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> THr </ci>
+                <ci> Dw </ci>
+                <ci> D8 </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> a4 </ci>
+              <ci> THr </ci>
+              <ci> D8 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> THr </ci>
+              <ci> Dw </ci>
+              <ci> D8 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_THa" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="THr" constant="false"/>
+      <speciesReference species="THa" constant="false"/>
+      <speciesReference species="Dw" constant="false"/>
+      <speciesReference species="D8" constant="false"/>
+      <speciesReference species="Vw" constant="false"/>
+      <speciesReference species="V4" constant="false"/>
+      <speciesReference species="V8" constant="false"/>
+      <speciesReference species="V48" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="THa" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> gamma4a </ci>
+            </apply>
+            <ci> THa </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> b </ci>
+            <ci> THr </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> a4 </ci>
+              <ci> THr </ci>
+              <ci> Dw </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> THr </ci>
+              <ci> Dw </ci>
+              <ci> D8 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> a4 </ci>
+              <ci> THr </ci>
+              <ci> D8 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> THr </ci>
+              <ci> Dw </ci>
+              <ci> D8 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_TCr" name="_Evolution_TCr" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="THa" constant="false"/>
+      <speciesReference species="TCr" constant="false"/>
+      <speciesReference species="Dw" constant="false"/>
+      <speciesReference species="D4" constant="false"/>
+      <speciesReference species="Cw" constant="false"/>
+      <speciesReference species="C4" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="TCr" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <minus/>
+                      <apply>
+                        <times/>
+                        <ci> rho8 </ci>
+                        <apply>
+                          <minus/>
+                          <ci> C8r0 </ci>
+                          <ci> TCr </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> gamma8r </ci>
+                        <ci> TCr </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> b8 </ci>
+                      <ci> TCr </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> a8 </ci>
+                      <ci> TCr </ci>
+                      <ci> Cw </ci>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <ci> TCr </ci>
+                      <ci> Cw </ci>
+                      <ci> C4 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> a8 </ci>
+                    <ci> TCr </ci>
+                    <ci> C4 </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> TCr </ci>
+                    <ci> Cw </ci>
+                    <ci> C4 </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> a8D </ci>
+                  <ci> TCr </ci>
+                  <ci> Dw </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> TCr </ci>
+                  <ci> Dw </ci>
+                  <ci> D4 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> a8D </ci>
+                <ci> TCr </ci>
+                <ci> D4 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> TCr </ci>
+                <ci> Dw </ci>
+                <ci> D4 </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> a8prime </ci>
+              <ci> TCr </ci>
+              <ci> THa </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> TCr </ci>
+              <ci> THa </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_TCPr1" name="_Evolution_TCPr1" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="THa" constant="false"/>
+      <speciesReference species="TCr" constant="false"/>
+      <speciesReference species="TCPr1" constant="false"/>
+      <speciesReference species="Dw" constant="false"/>
+      <speciesReference species="D4" constant="false"/>
+      <speciesReference species="Cw" constant="false"/>
+      <speciesReference species="C4" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="TCPr1" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <ci> gamma8pr </ci>
+              </apply>
+              <ci> TCPr1 </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> a8 </ci>
+                <ci> TCr </ci>
+                <ci> Cw </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> TCr </ci>
+                <ci> Cw </ci>
+                <ci> C4 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> a8 </ci>
+                <ci> TCr </ci>
+                <ci> C4 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> TCr </ci>
+                <ci> Cw </ci>
+                <ci> C4 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> a8D </ci>
+                <ci> TCr </ci>
+                <ci> Dw </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> TCr </ci>
+                <ci> Dw </ci>
+                <ci> D4 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> a8D </ci>
+                <ci> TCr </ci>
+                <ci> D4 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> TCr </ci>
+                <ci> Dw </ci>
+                <ci> D4 </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> a8prime </ci>
+              <ci> TCPr1 </ci>
+              <ci> THa </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> TCPr1 </ci>
+              <ci> THa </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_TCPr2" name="_Evolution_TCPr2" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="THa" constant="false"/>
+      <speciesReference species="TCr" constant="false"/>
+      <speciesReference species="TCPr2" constant="false"/>
+      <speciesReference species="TCa" constant="false"/>
+      <speciesReference species="Dw" constant="false"/>
+      <speciesReference species="D4" constant="false"/>
+      <speciesReference species="Cw" constant="false"/>
+      <speciesReference species="C4" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="TCPr2" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <minus/>
+                      <ci> gamma8pr </ci>
+                    </apply>
+                    <ci> TCPr2 </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> a8prime </ci>
+                      <ci> TCr </ci>
+                      <ci> THa </ci>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <ci> TCr </ci>
+                      <ci> THa </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> a8 </ci>
+                    <ci> TCPr2 </ci>
+                    <ci> Cw </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> TCPr2 </ci>
+                    <ci> Cw </ci>
+                    <ci> C4 </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> a8 </ci>
+                  <ci> TCPr2 </ci>
+                  <ci> C4 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> TCPr2 </ci>
+                  <ci> Cw </ci>
+                  <ci> C4 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> a8D </ci>
+                <ci> TCPr2 </ci>
+                <ci> Dw </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> TCPr2 </ci>
+                <ci> Dw </ci>
+                <ci> D4 </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> a8D </ci>
+              <ci> TCPr2 </ci>
+              <ci> D4 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> TCPr2 </ci>
+              <ci> Dw </ci>
+              <ci> D4 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_TCa" name="_Evolution_TCa" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="THa" constant="false"/>
+      <speciesReference species="TCr" constant="false"/>
+      <speciesReference species="TCPr1" constant="false"/>
+      <speciesReference species="TCPr2" constant="false"/>
+      <speciesReference species="TCa" constant="false"/>
+      <speciesReference species="Dw" constant="false"/>
+      <speciesReference species="D4" constant="false"/>
+      <speciesReference species="Cw" constant="false"/>
+      <speciesReference species="C4" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="TCa" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> gamma8a </ci>
+            </apply>
+            <ci> TCa </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> b8 </ci>
+            <ci> TCr </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> a8prime </ci>
+              <ci> TCPr1 </ci>
+              <ci> THa </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> TCPr1 </ci>
+              <ci> THa </ci>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> a8 </ci>
+              <ci> TCPr2 </ci>
+              <ci> Cw </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> TCPr2 </ci>
+              <ci> Cw </ci>
+              <ci> C4 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> a8 </ci>
+              <ci> TCPr2 </ci>
+              <ci> C4 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> TCPr2 </ci>
+              <ci> Cw </ci>
+              <ci> C4 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> a8D </ci>
+              <ci> TCPr2 </ci>
+              <ci> Dw </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> TCPr2 </ci>
+              <ci> Dw </ci>
+              <ci> D4 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> a8D </ci>
+              <ci> TCPr2 </ci>
+              <ci> D4 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> TCPr2 </ci>
+              <ci> Dw </ci>
+              <ci> D4 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_Dr" name="_Evolution_Dr" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="Dr" constant="false"/>
+      <speciesReference species="Dw" constant="false"/>
+      <speciesReference species="D4" constant="false"/>
+      <speciesReference species="D8" constant="false"/>
+      <speciesReference species="D48" constant="false"/>
+      <speciesReference species="Vw" constant="false"/>
+      <speciesReference species="V4" constant="false"/>
+      <speciesReference species="V8" constant="false"/>
+      <speciesReference species="V48" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="Dr" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <times/>
+                    <ci> rhoD </ci>
+                    <apply>
+                      <minus/>
+                      <ci> CDr0 </ci>
+                      <apply>
+                        <plus/>
+                        <ci> Dr </ci>
+                        <ci> Dw </ci>
+                        <ci> D4 </ci>
+                        <ci> D8 </ci>
+                        <ci> D48 </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> gammaDr </ci>
+                    <ci> Dr </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> sigmaD </ci>
+                    <ci> Dr </ci>
+                    <ci> Vw </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> Dr </ci>
+                    <ci> V48 </ci>
+                    <ci> Vw </ci>
+                    <ci> V4 </ci>
+                    <ci> V8 </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> sigmaD </ci>
+                  <ci> Dr </ci>
+                  <ci> V4 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> Dr </ci>
+                  <ci> V48 </ci>
+                  <ci> Vw </ci>
+                  <ci> V4 </ci>
+                  <ci> V8 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> sigmaD </ci>
+                <ci> Dr </ci>
+                <ci> V8 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Dr </ci>
+                <ci> V48 </ci>
+                <ci> Vw </ci>
+                <ci> V4 </ci>
+                <ci> V8 </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> sigmaD </ci>
+              <ci> Dr </ci>
+              <ci> V48 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Dr </ci>
+              <ci> V48 </ci>
+              <ci> Vw </ci>
+              <ci> V4 </ci>
+              <ci> V8 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_Dw" name="_Evolution_Dw" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="Dr" constant="false"/>
+      <speciesReference species="Dw" constant="false"/>
+      <speciesReference species="Vw" constant="false"/>
+      <speciesReference species="V4" constant="false"/>
+      <speciesReference species="V8" constant="false"/>
+      <speciesReference species="V48" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="Dw" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> gammaDa </ci>
+            </apply>
+            <ci> Dw </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> sigmaD </ci>
+              <ci> Dr </ci>
+              <ci> Vw </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Dr </ci>
+              <ci> V48 </ci>
+              <ci> Vw </ci>
+              <ci> V4 </ci>
+              <ci> V8 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_D4" name="_Evolution_D4" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="Dr" constant="false"/>
+      <speciesReference species="D4" constant="false"/>
+      <speciesReference species="Vw" constant="false"/>
+      <speciesReference species="V4" constant="false"/>
+      <speciesReference species="V8" constant="false"/>
+      <speciesReference species="V48" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="D4" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> gammaDa </ci>
+            </apply>
+            <ci> D4 </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> sigmaD </ci>
+              <ci> Dr </ci>
+              <ci> V4 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Dr </ci>
+              <ci> V48 </ci>
+              <ci> Vw </ci>
+              <ci> V4 </ci>
+              <ci> V8 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_D8" name="_Evolution_D8" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="Dr" constant="false"/>
+      <speciesReference species="D8" constant="false"/>
+      <speciesReference species="Vw" constant="false"/>
+      <speciesReference species="V4" constant="false"/>
+      <speciesReference species="V8" constant="false"/>
+      <speciesReference species="V48" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="D8" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> gammaDa </ci>
+            </apply>
+            <ci> D8 </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> sigmaD </ci>
+              <ci> Dr </ci>
+              <ci> V8 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Dr </ci>
+              <ci> V48 </ci>
+              <ci> Vw </ci>
+              <ci> V4 </ci>
+              <ci> V8 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_D48" name="_Evolution_D48" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="Dr" constant="false"/>
+      <speciesReference species="D48" constant="false"/>
+      <speciesReference species="Vw" constant="false"/>
+      <speciesReference species="V4" constant="false"/>
+      <speciesReference species="V8" constant="false"/>
+      <speciesReference species="V48" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="D48" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> gammaDa </ci>
+            </apply>
+            <ci> D48 </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> sigmaD </ci>
+              <ci> Dr </ci>
+              <ci> V48 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Dr </ci>
+              <ci> V48 </ci>
+              <ci> Vw </ci>
+              <ci> V4 </ci>
+              <ci> V8 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_Vw" name="_Evolution_Vw" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="Dr" constant="false"/>
+      <speciesReference species="Vw" constant="false"/>
+      <speciesReference species="V4" constant="false"/>
+      <speciesReference species="V8" constant="false"/>
+      <speciesReference species="V48" constant="false"/>
+      <speciesReference species="C" constant="false"/>
+      <speciesReference species="Cw" constant="false"/>
+      <speciesReference species="C4" constant="false"/>
+      <speciesReference species="C8" constant="false"/>
+      <speciesReference species="C48" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="Vw" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <plus/>
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <apply>
+                  <minus/>
+                  <ci> gammaV </ci>
+                </apply>
+                <ci> Vw </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> sigma </ci>
+                  <ci> C </ci>
+                  <ci> Vw </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> C </ci>
+                  <ci> Vw </ci>
+                  <ci> V4 </ci>
+                  <ci> V8 </ci>
+                  <ci> V48 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> sigmaD </ci>
+                <ci> Dr </ci>
+                <ci> Vw </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Dr </ci>
+                <ci> Vw </ci>
+                <ci> V4 </ci>
+                <ci> V8 </ci>
+                <ci> V48 </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> alpha </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> muw4 </ci>
+                </apply>
+                <ci> muw8 </ci>
+              </apply>
+              <ci> muw48 </ci>
+            </apply>
+            <ci> Cw </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> alpha </ci>
+            <ci> murevw4 </ci>
+            <ci> C4 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> alpha </ci>
+            <ci> murevw8 </ci>
+            <ci> C8 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> alpha </ci>
+            <ci> murevw48 </ci>
+            <ci> C48 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_V4" name="_Evolution_V4" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="THa" constant="false"/>
+      <speciesReference species="Dr" constant="false"/>
+      <speciesReference species="Vw" constant="false"/>
+      <speciesReference species="V4" constant="false"/>
+      <speciesReference species="V8" constant="false"/>
+      <speciesReference species="V48" constant="false"/>
+      <speciesReference species="C" constant="false"/>
+      <speciesReference species="Cw" constant="false"/>
+      <speciesReference species="C4" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="V4" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <plus/>
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <apply>
+                  <minus/>
+                  <ci> gammaV </ci>
+                </apply>
+                <ci> V4 </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> sigma </ci>
+                  <ci> C </ci>
+                  <ci> V4 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> C </ci>
+                  <ci> Vw </ci>
+                  <ci> V4 </ci>
+                  <ci> V8 </ci>
+                  <ci> V48 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> sigmaD </ci>
+                <ci> Dr </ci>
+                <ci> V4 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Dr </ci>
+                <ci> Vw </ci>
+                <ci> V4 </ci>
+                <ci> V8 </ci>
+                <ci> V48 </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> alpha </ci>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <ci> murevw4 </ci>
+            </apply>
+            <ci> C4 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> alpha </ci>
+            <ci> muw4 </ci>
+            <ci> Cw </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_V8" name="_Evolution_V8" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="Dr" constant="false"/>
+      <speciesReference species="Vw" constant="false"/>
+      <speciesReference species="V4" constant="false"/>
+      <speciesReference species="V8" constant="false"/>
+      <speciesReference species="V48" constant="false"/>
+      <speciesReference species="C" constant="false"/>
+      <speciesReference species="Cw" constant="false"/>
+      <speciesReference species="C8" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="V8" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <plus/>
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <apply>
+                  <minus/>
+                  <ci> gammaV </ci>
+                </apply>
+                <ci> V8 </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> sigma </ci>
+                  <ci> C </ci>
+                  <ci> V8 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> C </ci>
+                  <ci> Vw </ci>
+                  <ci> V4 </ci>
+                  <ci> V8 </ci>
+                  <ci> V48 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> sigmaD </ci>
+                <ci> Dr </ci>
+                <ci> V8 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Dr </ci>
+                <ci> Vw </ci>
+                <ci> V4 </ci>
+                <ci> V8 </ci>
+                <ci> V48 </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> alpha </ci>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <ci> murevw8 </ci>
+            </apply>
+            <ci> C8 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> alpha </ci>
+            <ci> muw8 </ci>
+            <ci> Cw </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_V48" name="_Evolution_V48" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="THa" constant="false"/>
+      <speciesReference species="Dr" constant="false"/>
+      <speciesReference species="Dw" constant="false"/>
+      <speciesReference species="D48" constant="false"/>
+      <speciesReference species="Vw" constant="false"/>
+      <speciesReference species="V4" constant="false"/>
+      <speciesReference species="V8" constant="false"/>
+      <speciesReference species="V48" constant="false"/>
+      <speciesReference species="C" constant="false"/>
+      <speciesReference species="Cw" constant="false"/>
+      <speciesReference species="C48" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="V48" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <plus/>
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <apply>
+                  <minus/>
+                  <ci> gammaV </ci>
+                </apply>
+                <ci> V48 </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> sigma </ci>
+                  <ci> C </ci>
+                  <ci> V48 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> C </ci>
+                  <ci> Vw </ci>
+                  <ci> V4 </ci>
+                  <ci> V8 </ci>
+                  <ci> V48 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> sigmaD </ci>
+                <ci> Dr </ci>
+                <ci> V48 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Dr </ci>
+                <ci> V48 </ci>
+                <ci> Vw </ci>
+                <ci> V4 </ci>
+                <ci> V8 </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> alpha </ci>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <ci> murevw48 </ci>
+            </apply>
+            <ci> C48 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> alpha </ci>
+            <ci> muw48 </ci>
+            <ci> Cw </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_C" name="_Evolution_C" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="C" constant="false"/>
+      <speciesReference species="Cw" constant="false"/>
+      <speciesReference species="C4" constant="false"/>
+      <speciesReference species="C8" constant="false"/>
+      <speciesReference species="C48" constant="false"/>
+      <speciesReference species="Vw" constant="false"/>
+      <speciesReference species="V4" constant="false"/>
+      <speciesReference species="V8" constant="false"/>
+      <speciesReference species="V48" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="C" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <times/>
+                    <ci> rhoC </ci>
+                    <apply>
+                      <minus/>
+                      <ci> CC0 </ci>
+                      <apply>
+                        <plus/>
+                        <ci> C </ci>
+                        <ci> Cw </ci>
+                        <ci> C4 </ci>
+                        <ci> C8 </ci>
+                        <ci> C48 </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> gammaC </ci>
+                    <ci> C </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> sigma </ci>
+                    <ci> C </ci>
+                    <ci> Vw </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> C </ci>
+                    <ci> Vw </ci>
+                    <ci> V4 </ci>
+                    <ci> V8 </ci>
+                    <ci> V48 </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> sigma </ci>
+                  <ci> C </ci>
+                  <ci> V4 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> C </ci>
+                  <ci> Vw </ci>
+                  <ci> V4 </ci>
+                  <ci> V8 </ci>
+                  <ci> V48 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> sigma </ci>
+                <ci> C </ci>
+                <ci> V8 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> C </ci>
+                <ci> Vw </ci>
+                <ci> V4 </ci>
+                <ci> V8 </ci>
+                <ci> V48 </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> sigma </ci>
+              <ci> C </ci>
+              <ci> V48 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> C </ci>
+              <ci> Vw </ci>
+              <ci> V4 </ci>
+              <ci> V8 </ci>
+              <ci> V48 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_Cw" name="_Evolution_Cw" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="TCa" constant="false"/>
+      <speciesReference species="Vw" constant="false"/>
+      <speciesReference species="V4" constant="false"/>
+      <speciesReference species="V8" constant="false"/>
+      <speciesReference species="V48" constant="false"/>
+      <speciesReference species="C" constant="false"/>
+      <speciesReference species="Cw" constant="false"/>
+      <speciesReference species="C4" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="Cw" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <ci> gammaCi </ci>
+              </apply>
+              <ci> Cw </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> sigma </ci>
+                <ci> C </ci>
+                <ci> Vw </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> C </ci>
+                <ci> Vw </ci>
+                <ci> V4 </ci>
+                <ci> V8 </ci>
+                <ci> V48 </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> k </ci>
+              <ci> TCa </ci>
+              <ci> Cw </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> TCa </ci>
+              <ci> Cw </ci>
+              <ci> C4 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_C4" name="_Evolution_C4" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="TCa" constant="false"/>
+      <speciesReference species="Vw" constant="false"/>
+      <speciesReference species="V4" constant="false"/>
+      <speciesReference species="V8" constant="false"/>
+      <speciesReference species="V48" constant="false"/>
+      <speciesReference species="C" constant="false"/>
+      <speciesReference species="Cw" constant="false"/>
+      <speciesReference species="C4" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="C4" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <minus/>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <ci> gammaCi </ci>
+              </apply>
+              <ci> C4 </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> sigma </ci>
+                <ci> C </ci>
+                <ci> V4 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> C </ci>
+                <ci> Vw </ci>
+                <ci> V4 </ci>
+                <ci> V8 </ci>
+                <ci> V48 </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> k </ci>
+              <ci> TCa </ci>
+              <ci> C4 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> TCa </ci>
+              <ci> Cw </ci>
+              <ci> C4 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_C8" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="Vw" constant="false"/>
+      <speciesReference species="V4" constant="false"/>
+      <speciesReference species="V8" constant="false"/>
+      <speciesReference species="V48" constant="false"/>
+      <speciesReference species="C" constant="false"/>
+      <speciesReference species="C8" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="C8" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> gammaCi </ci>
+            </apply>
+            <ci> C8 </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> sigma </ci>
+              <ci> C </ci>
+              <ci> V8 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> C </ci>
+              <ci> Vw </ci>
+              <ci> V4 </ci>
+              <ci> V8 </ci>
+              <ci> V48 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction id="_Evolution_C48" reversible="false" fast="false" compartment="org">
+    <listOfReactants>
+      <speciesReference species="Vw" constant="false"/>
+      <speciesReference species="V4" constant="false"/>
+      <speciesReference species="V8" constant="false"/>
+      <speciesReference species="V48" constant="false"/>
+      <speciesReference species="C" constant="false"/>
+      <speciesReference species="C48" constant="false"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="C48" constant="false"/>
+    </listOfProducts>
+    <kineticLaw>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> gammaCi </ci>
+            </apply>
+            <ci> C48 </ci>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> sigma </ci>
+              <ci> C </ci>
+              <ci> V48 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> C </ci>
+              <ci> Vw </ci>
+              <ci> V4 </ci>
+              <ci> V8 </ci>
+              <ci> V48 </ci>
+            </apply>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+</model>
+</sbml>

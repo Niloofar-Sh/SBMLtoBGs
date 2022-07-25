@@ -1,0 +1,1402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" metaid="_949914" level="2" version="4">
+  <model metaid="COPASI1" id="GomezCabrero2011_Atherogenesis" name="Gomez-Cabrero2011_Atherogenesis">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This model is from the article:      <br/>
+        <strong>Workflow for generating competing hypothesis from models with parameter uncertainty.</strong>
+        <br/>
+          David Gomez-Cabrero, Albert Compte and Jesper Tegner      <em>Interface Focus</em>
+          6 June 2011 vol. 1 no. 3 438-449;  
+      doi:      <a href="http://dx.doi.org/10.1098/rsfs.2011.0015">10.1098/rsfs.2011.0015</a>
+        <br/>
+        <strong>Abstract:</strong>
+        <br/>
+          Mathematical models are increasingly used in life sciences. However, contrary to other disciplines, biological models are typically over-parametrized and loosely constrained by scarce experimental data and prior knowledge. Recent efforts on analysis of complex models have focused on isolated aspects without considering an integrated approach-ranging from model building to derivation of predictive experiments and refutation or validation of robust model behaviours. Here, we develop such an integrative workflow, a sequence of actions expanding upon current efforts with the purpose of setting the stage for a methodology facilitating an extraction of core behaviours and competing mechanistic hypothesis residing within underdetermined models. To this end, we make use of optimization search algorithms, statistical (machine-learning) classification techniques and cluster-based analysis of the state variables&apos; dynamics and their corresponding parameter sets. We apply the workflow to a mathematical model of fat accumulation in the arterial wall (atherogenesis), a complex phenomena with limited quantitative understanding, thus leading to a model plagued with inherent uncertainty. We find that the mathematical atherogenesis model can still be understood in terms of a few key behaviours despite the large number of parameters. This result enabled us to derive distinct mechanistic predictions from the model despite the lack of confidence in the model parameters. We conclude that building integrative workflows enable investigators to embrace modelling of complex biological processes despite uncertainty in parameters.      </p>
+      <p>This model originates from BioModels Database: A Database of Annotated Published Models (http://www.ebi.ac.uk/biomodels/).      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+    <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not..      <br/>
+    <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+</p>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#COPASI1">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1002160000"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/doi/doi:10.1098/rsfs.2011.0015"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/efo/0003914"/>
+          <rdf:li rdf:resource="http://identifiers.org/go/GO:0070723"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfFunctionDefinitions>
+  <functionDefinition metaid="_949926" id="SIGMOID_NON_VAR_noINH" name="SIGMOID_NON_VAR_noINH">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar>
+          <ci> Kconstant </ci>
+        </bvar>
+        <bvar>
+          <ci> stim_a </ci>
+        </bvar>
+        <bvar>
+          <ci> stim_b </ci>
+        </bvar>
+        <bvar>
+          <ci> stim_c </ci>
+        </bvar>
+        <bvar>
+          <ci> arg_stim </ci>
+        </bvar>
+        <apply>
+          <times/>
+          <ci> Kconstant </ci>
+          <apply>
+            <plus/>
+            <ci> stim_a </ci>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <cn> 1 </cn>
+                <ci> stim_a </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <cn> 4 </cn>
+                          </apply>
+                          <ci> stim_b </ci>
+                        </apply>
+                        <ci> stim_c </ci>
+                      </apply>
+                      <apply>
+                        <minus/>
+                        <cn> 1 </cn>
+                        <ci> stim_a </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <ci> arg_stim </ci>
+                      <ci> stim_c </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </lambda>
+    </math>
+  </functionDefinition>
+  <functionDefinition metaid="_949938" id="OUTFLUX" name="OUTFLUX">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar>
+          <ci> Kout </ci>
+        </bvar>
+        <bvar>
+          <ci> VAR </ci>
+        </bvar>
+        <apply>
+          <times/>
+          <ci> Kout </ci>
+          <ci> VAR </ci>
+        </apply>
+      </lambda>
+    </math>
+  </functionDefinition>
+  <functionDefinition metaid="_949950" id="INFLUX" name="INFLUX">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar>
+          <ci> Kin </ci>
+        </bvar>
+        <bvar>
+          <ci> VAR </ci>
+        </bvar>
+        <apply>
+          <times/>
+          <ci> Kin </ci>
+          <ci> VAR </ci>
+        </apply>
+      </lambda>
+    </math>
+  </functionDefinition>
+  <functionDefinition metaid="_949962" id="SIGMOID_2_VAR" name="SIGMOID_2_VAR">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar>
+          <ci> Kconstant </ci>
+        </bvar>
+        <bvar>
+          <ci> stim_a </ci>
+        </bvar>
+        <bvar>
+          <ci> stim_b </ci>
+        </bvar>
+        <bvar>
+          <ci> stim_c </ci>
+        </bvar>
+        <bvar>
+          <ci> arg_stim </ci>
+        </bvar>
+        <bvar>
+          <ci> inh_a </ci>
+        </bvar>
+        <bvar>
+          <ci> inh_b </ci>
+        </bvar>
+        <bvar>
+          <ci> inh_c </ci>
+        </bvar>
+        <bvar>
+          <ci> arg_inh </ci>
+        </bvar>
+        <bvar>
+          <ci> VAR1 </ci>
+        </bvar>
+        <bvar>
+          <ci> VAR2 </ci>
+        </bvar>
+        <apply>
+          <times/>
+          <ci> Kconstant </ci>
+          <apply>
+            <plus/>
+            <ci> stim_a </ci>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <cn> 1 </cn>
+                <ci> stim_a </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <cn> 4 </cn>
+                          </apply>
+                          <ci> stim_b </ci>
+                        </apply>
+                        <ci> stim_c </ci>
+                      </apply>
+                      <apply>
+                        <minus/>
+                        <cn> 1 </cn>
+                        <ci> stim_a </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <ci> arg_stim </ci>
+                      <ci> stim_c </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <cn> 1 </cn>
+              <ci> inh_a </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <cn> 1 </cn>
+                <ci> inh_a </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <cn> 4 </cn>
+                          </apply>
+                          <ci> inh_b </ci>
+                        </apply>
+                        <ci> inh_c </ci>
+                      </apply>
+                      <apply>
+                        <minus/>
+                        <cn> 1 </cn>
+                        <ci> inh_a </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <ci> arg_inh </ci>
+                      <ci> inh_c </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <ci> VAR1 </ci>
+          <ci> VAR2 </ci>
+        </apply>
+      </lambda>
+    </math>
+  </functionDefinition>
+  <functionDefinition metaid="_949974" id="TWO_TO_ONE" name="TWO_TO_ONE">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar>
+          <ci> Kconstant </ci>
+        </bvar>
+        <bvar>
+          <ci> VAR1 </ci>
+        </bvar>
+        <bvar>
+          <ci> VAR2 </ci>
+        </bvar>
+        <apply>
+          <times/>
+          <ci> Kconstant </ci>
+          <ci> VAR1 </ci>
+          <ci> VAR2 </ci>
+        </apply>
+      </lambda>
+    </math>
+  </functionDefinition>
+  <functionDefinition metaid="_949986" id="DEGRADATION" name="DEGRADATION">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar>
+          <ci> Kdeg </ci>
+        </bvar>
+        <bvar>
+          <ci> VAR </ci>
+        </bvar>
+        <apply>
+          <times/>
+          <ci> Kdeg </ci>
+          <ci> VAR </ci>
+        </apply>
+      </lambda>
+    </math>
+  </functionDefinition>
+  <functionDefinition metaid="_949998" id="TWO_TO_NOTHING" name="TWO_TO_NOTHING">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar>
+          <ci> Kconstant </ci>
+        </bvar>
+        <bvar>
+          <ci> VAR1 </ci>
+        </bvar>
+        <bvar>
+          <ci> VAR2 </ci>
+        </bvar>
+        <apply>
+          <times/>
+          <ci> Kconstant </ci>
+          <ci> VAR1 </ci>
+          <ci> VAR2 </ci>
+        </apply>
+      </lambda>
+    </math>
+  </functionDefinition>
+  <functionDefinition metaid="_950010" id="DEGRADATION_TO_ONE" name="DEGRADATION_TO_ONE">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar>
+          <ci> Kconstant </ci>
+        </bvar>
+        <bvar>
+          <ci> VAR </ci>
+        </bvar>
+        <apply>
+          <times/>
+          <ci> Kconstant </ci>
+          <ci> VAR </ci>
+        </apply>
+      </lambda>
+    </math>
+  </functionDefinition>
+  <functionDefinition metaid="_950022" id="SIGMOID_1_VAR" name="SIGMOID_1_VAR">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar>
+          <ci> Kconstant </ci>
+        </bvar>
+        <bvar>
+          <ci> stim_a </ci>
+        </bvar>
+        <bvar>
+          <ci> stim_b </ci>
+        </bvar>
+        <bvar>
+          <ci> stim_c </ci>
+        </bvar>
+        <bvar>
+          <ci> arg_stim </ci>
+        </bvar>
+        <bvar>
+          <ci> inh_a </ci>
+        </bvar>
+        <bvar>
+          <ci> inh_b </ci>
+        </bvar>
+        <bvar>
+          <ci> inh_c </ci>
+        </bvar>
+        <bvar>
+          <ci> arg_inh </ci>
+        </bvar>
+        <bvar>
+          <ci> VAR </ci>
+        </bvar>
+        <apply>
+          <times/>
+          <ci> Kconstant </ci>
+          <apply>
+            <plus/>
+            <ci> stim_a </ci>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <cn> 1 </cn>
+                <ci> stim_a </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <cn> 4 </cn>
+                          </apply>
+                          <ci> stim_b </ci>
+                        </apply>
+                        <ci> stim_c </ci>
+                      </apply>
+                      <apply>
+                        <minus/>
+                        <cn> 1 </cn>
+                        <ci> stim_a </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <ci> arg_stim </ci>
+                      <ci> stim_c </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <cn> 1 </cn>
+              <ci> inh_a </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <cn> 1 </cn>
+                <ci> inh_a </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <cn> 4 </cn>
+                          </apply>
+                          <ci> inh_b </ci>
+                        </apply>
+                        <ci> inh_c </ci>
+                      </apply>
+                      <apply>
+                        <minus/>
+                        <cn> 1 </cn>
+                        <ci> inh_a </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <ci> arg_inh </ci>
+                      <ci> inh_c </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <ci> VAR </ci>
+        </apply>
+      </lambda>
+    </math>
+  </functionDefinition>
+  <functionDefinition metaid="_950034" id="SIGMOID_NONVAR" name="SIGMOID_NONVAR">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <lambda>
+        <bvar>
+          <ci> Kconstant </ci>
+        </bvar>
+        <bvar>
+          <ci> stim_a </ci>
+        </bvar>
+        <bvar>
+          <ci> stim_b </ci>
+        </bvar>
+        <bvar>
+          <ci> stim_c </ci>
+        </bvar>
+        <bvar>
+          <ci> arg_stim </ci>
+        </bvar>
+        <bvar>
+          <ci> inh_a </ci>
+        </bvar>
+        <bvar>
+          <ci> inh_b </ci>
+        </bvar>
+        <bvar>
+          <ci> inh_c </ci>
+        </bvar>
+        <bvar>
+          <ci> arg_inh </ci>
+        </bvar>
+        <apply>
+          <times/>
+          <ci> Kconstant </ci>
+          <apply>
+            <plus/>
+            <ci> stim_a </ci>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <cn> 1 </cn>
+                <ci> stim_a </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <cn> 4 </cn>
+                          </apply>
+                          <ci> stim_b </ci>
+                        </apply>
+                        <ci> stim_c </ci>
+                      </apply>
+                      <apply>
+                        <minus/>
+                        <cn> 1 </cn>
+                        <ci> stim_a </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <ci> arg_stim </ci>
+                      <ci> stim_c </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <cn> 1 </cn>
+              <ci> inh_a </ci>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <cn> 1 </cn>
+                <ci> inh_a </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <cn> 4 </cn>
+                          </apply>
+                          <ci> inh_b </ci>
+                        </apply>
+                        <ci> inh_c </ci>
+                      </apply>
+                      <apply>
+                        <minus/>
+                        <cn> 1 </cn>
+                        <ci> inh_a </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <ci> arg_inh </ci>
+                      <ci> inh_c </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </lambda>
+    </math>
+  </functionDefinition>
+</listOfFunctionDefinitions><listOfUnitDefinitions>
+  <unitDefinition metaid="_950046" id="volume">
+    <listOfUnits>
+      <unit metaid="_950058" kind="dimensionless"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_950070" id="time">
+    <listOfUnits>
+      <unit metaid="_950082" kind="dimensionless"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_950094" id="substance">
+    <listOfUnits>
+      <unit metaid="_950106" kind="dimensionless"/>
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions><listOfCompartments>
+  <compartment metaid="_950118" id="compartment_1" name="compartment" size="1"/>
+</listOfCompartments><listOfSpecies>
+  <species metaid="_950130" id="species_1" name="LDL" compartment="compartment_1" initialConcentration="0"/>
+  <species metaid="_950142" id="species_2" name="oxLDL" compartment="compartment_1" initialConcentration="0"/>
+  <species metaid="_950154" id="species_3" name="HDL" compartment="compartment_1" initialConcentration="0"/>
+  <species metaid="_950166" id="species_4" name="MP" compartment="compartment_1" initialConcentration="0"/>
+  <species metaid="_950178" id="species_5" name="PLAQUE" compartment="compartment_1" initialConcentration="0"/>
+  <species metaid="_950190" id="species_6" name="TINF" compartment="compartment_1" initialConcentration="0"/>
+  <species metaid="_950202" id="species_7" name="TAINF" compartment="compartment_1" initialConcentration="0"/>
+  <species metaid="_950214" id="species_8" name="Bcells" compartment="compartment_1" initialConcentration="0"/>
+  <species metaid="_950226" id="species_9" name="ACT_END" compartment="compartment_1" initialConcentration="1.13222288015975e-07" boundaryCondition="true"/>
+  <species metaid="_950238" id="species_10" name="SUMoxidLDL" compartment="compartment_1" initialConcentration="1.76022162286916e-07" boundaryCondition="true"/>
+  <species metaid="_950250" id="species_11" name="SUMForFoam" compartment="compartment_1" initialConcentration="7.69116738046758e-08" boundaryCondition="true"/>
+  <species metaid="_950262" id="species_12" name="SUMRecTINF" compartment="compartment_1" initialConcentration="2.07677981793302e-07" boundaryCondition="true"/>
+  <species metaid="_950274" id="species_13" name="SUMRecTAINF" compartment="compartment_1" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="_950286" id="species_14" name="SUMRecBcells" compartment="compartment_1" initialConcentration="2.67523886569906e-07" boundaryCondition="true"/>
+  <species metaid="_950298" id="species_15" name="HDL_blood" compartment="compartment_1" initialConcentration="1" boundaryCondition="true" constant="true"/>
+  <species metaid="_950310" id="species_16" name="LDL_blood" compartment="compartment_1" initialConcentration="2.5" boundaryCondition="true"/>
+  <species metaid="_950322" id="species_17" name="SUMACT_END" compartment="compartment_1" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="_950334" id="species_18" name="SIGMOID_ACTENDstim" compartment="compartment_1" initialConcentration="7.69164659200097e-07" boundaryCondition="true"/>
+  <species metaid="_950346" id="species_19" name="SIGMOID_ACTENDinh" compartment="compartment_1" initialConcentration="0.000423556497672639" boundaryCondition="true"/>
+</listOfSpecies><listOfParameters>
+  <parameter metaid="_950358" id="parameter_1" name="alfa1" value="1.55466"/>
+  <parameter metaid="_950370" id="parameter_2" name="alfa2" value="4.37096"/>
+  <parameter metaid="_950382" id="parameter_3" name="alfa3" value="0.679298"/>
+  <parameter metaid="_950395" id="parameter_4" name="alfa4" value="0.969185"/>
+  <parameter metaid="_950407" id="parameter_5" name="alfa5" value="1.83425"/>
+  <parameter metaid="_950419" id="parameter_6" name="alfa6" value="1.14028"/>
+  <parameter metaid="_950431" id="parameter_7" name="alfa7" value="2.8067"/>
+  <parameter metaid="_950443" id="parameter_8" name="alfa8" value="1.90407"/>
+  <parameter metaid="_950456" id="parameter_9" name="alfa9" value="2.36282"/>
+  <parameter metaid="_950468" id="parameter_10" name="alfa10" value="2.67818"/>
+  <parameter metaid="_950480" id="parameter_11" name="alfa11" value="0.313487"/>
+  <parameter metaid="_950492" id="parameter_12" name="alfa12" value="4.19449"/>
+  <parameter metaid="_950504" id="parameter_13" name="alfa13" value="0.719488"/>
+  <parameter metaid="_950516" id="parameter_14" name="ActEndstim_a" value="0"/>
+  <parameter metaid="_950528" id="parameter_15" name="ActEndstim_b" value="3.51949"/>
+  <parameter metaid="_950540" id="parameter_16" name="ActEndstim_c" value="1.98699"/>
+  <parameter metaid="_950552" id="parameter_17" name="ActEndinh_a" value="0"/>
+  <parameter metaid="_950564" id="parameter_18" name="ActEndinh_b" value="1.9416"/>
+  <parameter metaid="_950576" id="parameter_19" name="ActEndinh_c" value="16.8895"/>
+  <parameter metaid="_950588" id="parameter_20" name="oxLDLstim_a" value="0"/>
+  <parameter metaid="_950600" id="parameter_21" name="oxLDLstim_b" value="0.229015"/>
+  <parameter metaid="_950612" id="parameter_22" name="oxLDLstim_c" value="15.8416"/>
+  <parameter metaid="_950625" id="parameter_23" name="oxLDLinh_a" value="0"/>
+  <parameter metaid="_950637" id="parameter_24" name="oxLDLinh_b" value="0.393913"/>
+  <parameter metaid="_950649" id="parameter_25" name="oxLDLinh_c" value="4.47565"/>
+  <parameter metaid="_950661" id="parameter_26" name="ForFoamstim_a" value="0"/>
+  <parameter metaid="_950674" id="parameter_27" name="ForFoamstim_b" value="1.00266"/>
+  <parameter metaid="_950687" id="parameter_28" name="ForFoamstim_c" value="4.39941"/>
+  <parameter metaid="_950699" id="parameter_29" name="ForFoaminh_a" value="0"/>
+  <parameter metaid="_950711" id="parameter_30" name="ForFoaminh_b" value="1.84577"/>
+  <parameter metaid="_950724" id="parameter_31" name="ForFoaminh_c" value="20.0861"/>
+  <parameter metaid="_950736" id="parameter_32" name="RecTINFstim_a" value="0"/>
+  <parameter metaid="_950748" id="parameter_33" name="RecTINFstim_b" value="2.27905"/>
+  <parameter metaid="_950760" id="parameter_34" name="RecTINFstim_c" value="16.8985"/>
+  <parameter metaid="_950772" id="parameter_35" name="RecTINFinh_a" value="0"/>
+  <parameter metaid="_950784" id="parameter_36" name="RecTINFinh_b" value="0.24317"/>
+  <parameter metaid="_950796" id="parameter_37" name="RecTINFinh_c" value="14.4186"/>
+  <parameter metaid="_950808" id="parameter_38" name="RecTAINFstim_a" value="0"/>
+  <parameter metaid="_950820" id="parameter_39" name="RecTAINFstim_b" value="0.347323"/>
+  <parameter metaid="_950832" id="parameter_40" name="RecTAINFstim_c" value="11.7167"/>
+  <parameter metaid="_950844" id="parameter_41" name="RecTAINFinh_a" value="0"/>
+  <parameter metaid="_950856" id="parameter_42" name="RecTAINFinh_b" value="0.160629"/>
+  <parameter metaid="_950868" id="parameter_43" name="RecTAINFinh_c" value="14.549"/>
+  <parameter metaid="_950880" id="parameter_44" name="RecBcellsstim_a" value="0"/>
+  <parameter metaid="_950892" id="parameter_45" name="RecBcellsstim_b" value="2.78714"/>
+  <parameter metaid="_950904" id="parameter_46" name="RecBcellsstim_c" value="2.23629"/>
+  <parameter metaid="_950916" id="parameter_47" name="Kdeg_Bcells" value="0.555078"/>
+  <parameter metaid="_950928" id="parameter_48" name="Kdeg_TINF" value="0.0882042"/>
+  <parameter metaid="_950941" id="parameter_49" name="Kdeg_TAINF" value="0.191241"/>
+  <parameter metaid="_950953" id="parameter_50" name="Kdeg_MP" value="0.196692"/>
+  <parameter metaid="_950965" id="parameter_51" name="KoutLDL" value="0.55296"/>
+  <parameter metaid="_950978" id="parameter_52" name="KoutHDL" value="0.375371"/>
+  <parameter metaid="_950990" id="parameter_53" name="KinLDL" value="4.06157"/>
+  <parameter metaid="_951002" id="parameter_54" name="KinHDL" value="1.0614"/>
+  <parameter metaid="_951014" id="parameter_55" name="MCblood" value="1"/>
+  <parameter metaid="_951026" id="parameter_56" name="ActEndConstant" value="0.147264"/>
+  <parameter metaid="_951038" id="parameter_57" name="oxLDLConstant" value="0.28495"/>
+  <parameter metaid="_951050" id="parameter_58" name="ForFoamConstant" value="0.571007"/>
+  <parameter metaid="_951062" id="parameter_59" name="RecTINFConstant" value="2.04297"/>
+  <parameter metaid="_951075" id="parameter_60" name="RecTAINFConstant" value="3.20264"/>
+  <parameter metaid="_951087" id="parameter_61" name="RecBcellsConstant" value="1.14614"/>
+  <parameter metaid="_951099" id="parameter_62" name="KBcleanoxLDL" value="0.150145"/>
+  <parameter metaid="_951111" id="parameter_63" name="KBcleanPLAQUE" value="0.431588"/>
+  <parameter metaid="_951123" id="parameter_64" name="KRCT" value="0.302073"/>
+</listOfParameters><listOfRules>
+  <assignmentRule metaid="_951135" variable="species_19">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> parameter_17 </ci>
+        <apply>
+          <divide/>
+          <apply>
+            <minus/>
+            <cn> 1 </cn>
+            <ci> parameter_17 </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <cn> 1 </cn>
+            <apply>
+              <exp/>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <minus/>
+                        <cn> 4 </cn>
+                      </apply>
+                      <ci> parameter_18 </ci>
+                    </apply>
+                    <ci> parameter_19 </ci>
+                  </apply>
+                  <apply>
+                    <minus/>
+                    <cn> 1 </cn>
+                    <ci> parameter_17 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <ci> species_7 </ci>
+                  <ci> parameter_19 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_951147" variable="species_17">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> species_4 </ci>
+        <apply>
+          <times/>
+          <ci> parameter_11 </ci>
+          <ci> species_2 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> parameter_12 </ci>
+          <ci> species_6 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> parameter_13 </ci>
+          <ci> species_5 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_951159" variable="species_18">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> parameter_14 </ci>
+        <apply>
+          <divide/>
+          <apply>
+            <minus/>
+            <cn> 1 </cn>
+            <ci> parameter_14 </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <cn> 1 </cn>
+            <apply>
+              <exp/>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <minus/>
+                        <cn> 4 </cn>
+                      </apply>
+                      <ci> parameter_15 </ci>
+                    </apply>
+                    <ci> parameter_16 </ci>
+                  </apply>
+                  <apply>
+                    <minus/>
+                    <cn> 1 </cn>
+                    <ci> parameter_14 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <ci> species_17 </ci>
+                  <ci> parameter_16 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_951171" variable="species_9">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> parameter_56 </ci>
+        <ci> species_18 </ci>
+        <apply>
+          <minus/>
+          <cn> 1 </cn>
+          <ci> species_19 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_951183" variable="species_16">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <ci> species_15 </ci>
+        <cn> 2.5 </cn>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <divide/>
+            <ci> species_5 </ci>
+            <cn> 5 </cn>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_951195" variable="species_14">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> species_4 </ci>
+        <apply>
+          <times/>
+          <ci> parameter_8 </ci>
+          <ci> species_7 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> parameter_9 </ci>
+          <ci> species_9 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> parameter_10 </ci>
+          <ci> species_5 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_951207" variable="species_13">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> species_7 </ci>
+        <apply>
+          <times/>
+          <ci> parameter_7 </ci>
+          <ci> species_4 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_951219" variable="species_12">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> species_4 </ci>
+        <apply>
+          <times/>
+          <ci> parameter_4 </ci>
+          <ci> species_6 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> parameter_5 </ci>
+          <ci> species_9 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> parameter_6 </ci>
+          <ci> species_2 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_951231" variable="species_11">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> species_4 </ci>
+        <apply>
+          <times/>
+          <ci> parameter_2 </ci>
+          <ci> species_6 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> parameter_3 </ci>
+          <ci> species_9 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="_951243" variable="species_10">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <ci> species_4 </ci>
+        <apply>
+          <times/>
+          <ci> parameter_1 </ci>
+          <ci> species_9 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+</listOfRules><listOfReactions>
+  <reaction metaid="_951255" id="reaction_1" name="oxidLDL" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_951268" species="species_1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_951280" species="species_2"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_951292" species="species_10"/>
+      <modifierSpeciesReference metaid="_951304" species="species_3"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_951316">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> SIGMOID_1_VAR </ci>
+            <ci> parameter_57 </ci>
+            <ci> parameter_20 </ci>
+            <ci> parameter_21 </ci>
+            <ci> parameter_22 </ci>
+            <ci> species_10 </ci>
+            <ci> parameter_23 </ci>
+            <ci> parameter_24 </ci>
+            <ci> parameter_25 </ci>
+            <ci> species_3 </ci>
+            <ci> species_1 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_951329" id="reaction_2" name="Bcell_deg" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_951341" species="species_8"/>
+    </listOfReactants>
+    <kineticLaw metaid="_951353">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> DEGRADATION </ci>
+            <ci> parameter_47 </ci>
+            <ci> species_8 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_951365" id="reaction_3" name="TINF_deg" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_951377" species="species_6"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_951389" species="species_5"/>
+    </listOfProducts>
+    <kineticLaw metaid="_951401">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> DEGRADATION_TO_ONE </ci>
+            <ci> parameter_48 </ci>
+            <ci> species_6 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_951413" id="reaction_4" name="TAINF_deg" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_951425" species="species_7"/>
+    </listOfReactants>
+    <kineticLaw metaid="_951437">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> DEGRADATION </ci>
+            <ci> parameter_49 </ci>
+            <ci> species_7 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_951449" id="reaction_5" name="MP_deg" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_951461" species="species_4"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_951473" species="species_5"/>
+    </listOfProducts>
+    <kineticLaw metaid="_951485">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> DEGRADATION </ci>
+            <ci> parameter_50 </ci>
+            <ci> species_4 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_951497" id="reaction_6" name="InLDL" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_951509" species="species_16"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_951521" species="species_1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_951533">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> INFLUX </ci>
+            <ci> parameter_53 </ci>
+            <ci> species_16 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_951545" id="reaction_7" name="InHDL" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_951557" species="species_15"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_951569" species="species_3"/>
+    </listOfProducts>
+    <kineticLaw metaid="_951581">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> INFLUX </ci>
+            <ci> parameter_54 </ci>
+            <ci> species_15 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_951593" id="reaction_8" name="OutLDL" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_951606" species="species_1"/>
+    </listOfReactants>
+    <kineticLaw metaid="_951618">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> OUTFLUX </ci>
+            <ci> parameter_51 </ci>
+            <ci> species_1 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_951630" id="reaction_9" name="OutHDL" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_951642" species="species_3"/>
+    </listOfReactants>
+    <kineticLaw metaid="_951654">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> OUTFLUX </ci>
+            <ci> parameter_52 </ci>
+            <ci> species_3 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_951666" id="reaction_10" name="B_clean_oxLDL" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_951678" species="species_8"/>
+      <speciesReference metaid="_951690" species="species_2"/>
+    </listOfReactants>
+    <kineticLaw metaid="_951702">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> TWO_TO_NOTHING </ci>
+            <ci> parameter_62 </ci>
+            <ci> species_8 </ci>
+            <ci> species_2 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_951714" id="reaction_11" name="B_clean_PLAQUE" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_951726" species="species_8"/>
+      <speciesReference metaid="_951738" species="species_5"/>
+    </listOfReactants>
+    <kineticLaw metaid="_951750">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> TWO_TO_NOTHING </ci>
+            <ci> parameter_63 </ci>
+            <ci> species_8 </ci>
+            <ci> species_5 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_951762" id="reaction_12" name="RCT" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_951774" species="species_3"/>
+      <speciesReference metaid="_951786" species="species_5"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_951798" species="species_4"/>
+    </listOfProducts>
+    <kineticLaw metaid="_951810">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> TWO_TO_ONE </ci>
+            <ci> parameter_64 </ci>
+            <ci> species_3 </ci>
+            <ci> species_5 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_951822" id="reaction_13" name="MP_Recruitment" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_951834" species="species_4"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_951846" species="species_17"/>
+      <modifierSpeciesReference metaid="_951858" species="species_7"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_951870">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> SIGMOID_NONVAR </ci>
+            <ci> parameter_56 </ci>
+            <ci> parameter_14 </ci>
+            <ci> parameter_15 </ci>
+            <ci> parameter_16 </ci>
+            <ci> species_17 </ci>
+            <ci> parameter_17 </ci>
+            <ci> parameter_18 </ci>
+            <ci> parameter_19 </ci>
+            <ci> species_7 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_951882" id="reaction_14" name="ForFoam" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_951894" species="species_4"/>
+      <speciesReference metaid="_951906" species="species_2"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_951918" species="species_5"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_951930" species="species_11"/>
+      <modifierSpeciesReference metaid="_951942" species="species_7"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_951955">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> SIGMOID_2_VAR </ci>
+            <ci> parameter_58 </ci>
+            <ci> parameter_26 </ci>
+            <ci> parameter_27 </ci>
+            <ci> parameter_28 </ci>
+            <ci> species_11 </ci>
+            <ci> parameter_29 </ci>
+            <ci> parameter_27 </ci>
+            <ci> parameter_31 </ci>
+            <ci> species_7 </ci>
+            <ci> species_4 </ci>
+            <ci> species_2 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_951967" id="reaction_15" name="Recrut_TINF" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_951979" species="species_6"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_951991" species="species_12"/>
+      <modifierSpeciesReference metaid="_952003" species="species_7"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_952015">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> SIGMOID_NONVAR </ci>
+            <ci> parameter_59 </ci>
+            <ci> parameter_32 </ci>
+            <ci> parameter_33 </ci>
+            <ci> parameter_34 </ci>
+            <ci> species_12 </ci>
+            <ci> parameter_35 </ci>
+            <ci> parameter_36 </ci>
+            <ci> parameter_37 </ci>
+            <ci> species_7 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_952027" id="reaction_16" name="Recrut_TAINF" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_952039" species="species_7"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_952051" species="species_13"/>
+      <modifierSpeciesReference metaid="_952063" species="species_6"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_952075">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> SIGMOID_NONVAR </ci>
+            <ci> parameter_60 </ci>
+            <ci> parameter_38 </ci>
+            <ci> parameter_39 </ci>
+            <ci> parameter_40 </ci>
+            <ci> species_13 </ci>
+            <ci> parameter_41 </ci>
+            <ci> parameter_42 </ci>
+            <ci> parameter_43 </ci>
+            <ci> species_6 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_952087" id="reaction_17" name="Recrut_Bcells" reversible="false">
+    <listOfProducts>
+      <speciesReference metaid="_952099" species="species_8"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_952112" species="species_14"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_952124">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> compartment_1 </ci>
+          <apply>
+            <ci> SIGMOID_NON_VAR_noINH </ci>
+            <ci> parameter_61 </ci>
+            <ci> parameter_44 </ci>
+            <ci> parameter_45 </ci>
+            <ci> parameter_46 </ci>
+            <ci> species_14 </ci>
+          </apply>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+</model>
+</sbml>

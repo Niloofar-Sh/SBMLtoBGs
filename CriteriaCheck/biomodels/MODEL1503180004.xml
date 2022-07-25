@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" metaid="_9f16450c-cc5f-4239-b9c0-3ea3c6ac5cd3" version="4">
+  <model id="MODEL1503180004" name="Smallbone2015 - forced pathway" metaid="meta">
+    <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#meta">
+	<dc:creator>
+	<rdf:Bag>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Smallbone</vCard:Family>
+	<vCard:Given>Kieran</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>kieran.smallbone@manchester.ac.uk</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>University of Manchester</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Wang</vCard:Family>
+	<vCard:Given>Yunjiao</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>wangyx@tsu.edu</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>Texas Southern University</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	</rdf:Bag>
+	</dc:creator>
+	<dcterms:created rdf:parseType="Resource">
+	<dcterms:W3CDTF>2015-01-01T12:00:00Z</dcterms:W3CDTF>
+	</dcterms:created>
+	<dcterms:modified rdf:parseType="Resource">
+	<dcterms:W3CDTF>2015-02-06T20:32:48Z</dcterms:W3CDTF>
+	</dcterms:modified>
+	<bqmodel:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1503180004"/>
+	</rdf:Bag>
+	</bqmodel:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+      <listOfUnitDefinitions>
+      <unitDefinition id="substance" metaid="_5091d1f2-f8c7-428f-9e28-3646b919ec71">
+        <listOfUnits>
+          <unit metaid="f323439d-45c7-45b6-837a-f82cd7c102e8" kind="dimensionless"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="time" metaid="_03d591c8-5c01-477c-9bb9-03ed8ba3bdd9">
+        <listOfUnits>
+          <unit metaid="_3c89078e-8faf-4e3e-8d35-8da396737ddd" kind="dimensionless"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="volume" metaid="_57f09e14-d1dd-41c7-902c-5e9b301dac45">
+        <listOfUnits>
+          <unit metaid="_0a5642c9-e37b-40c7-9611-442474ef9b02" kind="dimensionless"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="comp" metaid="ab0ab6ef-dbda-4e0b-9b11-f29f639d92e8" size="1"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="X0" initialConcentration="1" constant="false" metaid="_2383a320-1128-4cd0-b2b8-7744030dfa38" boundaryCondition="true" compartment="comp"/>
+      <species id="X1" initialConcentration="1" metaid="cf9d54d4-8a9b-4a28-807f-61ffacaf8f11" compartment="comp"/>
+      <species id="X2" initialConcentration="1" metaid="c606b898-82a9-4025-aaf5-08761ce2010d" compartment="comp"/>
+      <species id="X3" initialConcentration="1" metaid="_376a1d2e-c223-47c9-a0ba-1bc940d2ec29" compartment="comp"/>
+      <species id="X4" initialConcentration="1" constant="true" metaid="_708a7482-60de-443c-9cad-bacf3c3f4fcd" boundaryCondition="true" compartment="comp"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="X0bar" metaid="ed0ed756-947a-474f-99fb-82ffc86f0346" value="1" units="dimensionless"/>
+      <parameter id="alpha" metaid="_44917575-b97d-4402-af0c-978dc5a234cf" value="1" units="dimensionless"/>
+      <parameter id="omega" metaid="d8839b44-54d3-4d3b-8ac7-ef3f33b76ab0" value="6.28318530717959" units="dimensionless"/>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule metaid="bcffac1c-1594-4c63-9cc3-c078eae8bc03" variable="X0">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <times/>
+            <ci> X0bar </ci>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <times/>
+                <ci> alpha </ci>
+                <apply>
+                  <sin/>
+                  <apply>
+                    <times/>
+                    <ci> omega </ci>
+                    <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+            </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="R0" metaid="_524580b8-6793-4bcb-8c23-c38dcd135866">
+        <listOfReactants>
+          <speciesReference species="X0" metaid="_36f0d2c9-922a-4479-842b-9891946dee32"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="X1" metaid="_3ca9f1a8-3c86-4631-8cab-d73f79dbbdb3"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="X0" metaid="aa906a96-91fe-46a2-8811-70ea41267c37"/>
+        </listOfModifiers>
+        <kineticLaw metaid="f1a94a33-ab87-4d3c-bab6-6a2fe72e1df6">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> V0 </ci>
+                <ci> X0 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> X0 </ci>
+                <ci> K0 </ci>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="V0" metaid="_35740c60-d4a5-4459-977a-1f44b69146bc" value="2" units="dimensionless"/>
+            <parameter id="K0" metaid="_8db950b7-c55f-4b5a-a9c5-4a9e98878ac3" value="1" units="dimensionless"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R1" metaid="_5102b67d-6ac9-4b92-af28-e9c6ffbbded6">
+        <listOfReactants>
+          <speciesReference species="X1" metaid="_125772a7-2c21-4190-92f8-e33c4ff7a62f"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="X2" metaid="a1d70e04-fdea-4c7c-9d64-f9887ec16687"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="X1" metaid="_96faab29-9cf5-4cf5-beb3-551365c15407"/>
+        </listOfModifiers>
+        <kineticLaw metaid="f068ff89-f04d-4db5-abba-3376328c6e09">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> V1 </ci>
+                <ci> X1 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> X1 </ci>
+                <ci> K1 </ci>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="V1" metaid="_38cb236c-4e46-46be-bfbb-489ecd515de8" value="2" units="dimensionless"/>
+            <parameter id="K1" metaid="_5f81036b-ed11-4681-96df-7048642c8b68" value="1" units="dimensionless"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R2" metaid="b0884aec-ed6e-4a33-aea0-3388a6061031">
+        <listOfReactants>
+          <speciesReference species="X2" metaid="_5c30520e-5d93-4c22-8ca0-9c5c284b10f8"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="X3" metaid="_0bc121c3-bd14-46d5-aebb-3453b3f90afd"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="X2" metaid="_2b7063be-1926-40ec-a722-3c588f3a7e64"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_568ffb96-b1d1-4a03-8585-ad82009d1ab9">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> V2 </ci>
+                <ci> X2 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> X2 </ci>
+                <ci> K2 </ci>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="V2" metaid="ba802340-1d3c-4be8-9c0f-fd191980fac9" value="2" units="dimensionless"/>
+            <parameter id="K2" metaid="_78e862e5-0868-45f0-b080-c24136f60475" value="1" units="dimensionless"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R3" metaid="_5f0718fa-fc3d-4d47-9328-c3f9372aa39a">
+        <listOfReactants>
+          <speciesReference species="X3" metaid="_88036e2d-cbc4-413f-9c4e-4d7f695a3945"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="X4" metaid="bf4f1fe9-4e82-4635-baeb-d1d2135fe8aa"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="X3" metaid="e1d81d10-fc6f-40c4-91eb-6a8b6ea5ae36"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_72d0d406-8496-4ee3-8763-34604c9047bb">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> V3 </ci>
+                <ci> X3 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> X3 </ci>
+                <ci> K3 </ci>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="V3" metaid="d965b252-00b8-4780-93a7-bececc71ce9d" value="2" units="dimensionless"/>
+            <parameter id="K3" metaid="_7ccf6e34-d267-46c5-86dc-457599d1aeaa" value="1" units="dimensionless"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

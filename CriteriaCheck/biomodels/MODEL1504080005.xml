@@ -1,0 +1,2283 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" metaid="d71fd5a0-a2ed-4aaa-a03b-12f1e8914f78" version="4">
+  <model id="MODEL1504080005" name="Costa2015 - Central metabolism of E. coli, non-regulated linlog model (without allosteric regulations)" metaid="Costa2015_non-regulated_linlog">
+    <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+	<rdf:Description rdf:about="#Costa2015_non-regulated_linlog">
+	<bqmodel:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1504080005"/>
+	</rdf:Bag>
+	</bqmodel:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+      <listOfUnitDefinitions>
+      <unitDefinition id="substance" name="millimole" metaid="metaid_0000089">
+        <listOfUnits>
+          <unit scale="-3" metaid="CDMT00177" kind="mole"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mM" name="milli Molar" metaid="metaid_0000090">
+        <listOfUnits>
+          <unit scale="-3" metaid="CDMT00178" kind="mole"/>
+          <unit exponent="-1" metaid="CDMT00179" kind="litre"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="second_inverse" name="second inverse" metaid="metaid_0000091">
+        <listOfUnits>
+          <unit exponent="-1" metaid="CDMT00180" kind="second"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mM_per_second" name="mM per second" metaid="metaid_0000092">
+        <listOfUnits>
+          <unit scale="-3" metaid="CDMT00181" kind="mole"/>
+          <unit exponent="-1" metaid="CDMT00182" kind="litre"/>
+          <unit exponent="-1" metaid="CDMT00183" kind="second"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="per_mM_per_second" name="per mM per second" metaid="metaid_0010092">
+        <listOfUnits>
+          <unit scale="-3" exponent="-1" metaid="CDMT00184" kind="mole"/>
+          <unit metaid="CDMT00185" kind="litre"/>
+          <unit exponent="-1" metaid="CDMT00186" kind="second"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="volume" name="volume" metaid="volume">
+        <listOfUnits>
+          <unit metaid="CDMT00187" kind="litre"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="area" name="area" metaid="area">
+        <listOfUnits>
+          <unit exponent="2" metaid="CDMT00188" kind="metre"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="length" name="length" metaid="length">
+        <listOfUnits>
+          <unit metaid="CDMT00189" kind="metre"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="time" name="time" metaid="time">
+        <listOfUnits>
+          <unit metaid="CDMT00190" kind="second"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="default" metaid="default" units="volume" size="1"/>
+      <compartment id="extracellular" name="extracellular" metaid="_704545" units="volume" outside="default" size="65"/>
+      <compartment id="cytosol" name="cytosol" metaid="metaid_0000088" units="volume" outside="extracellular" size="1"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="cpep" initialConcentration="2.67" name="Phosphoenol pyruvate" metaid="_704563" compartment="cytosol"/>
+      <species id="cglcex" initialConcentration="0.0556" name="Extracellular Glucose" metaid="_704583" compartment="extracellular"/>
+      <species id="cg6p" initialConcentration="3.48" name="Glucose-6-Phosphate" metaid="_704603" compartment="cytosol"/>
+      <species id="cpyr" initialConcentration="2.67" name="Pyruvate" metaid="_704623" compartment="cytosol"/>
+      <species id="cf6p" initialConcentration="0.6" name="Fructose-6-Phosphate" metaid="_704643" compartment="cytosol"/>
+      <species id="cg1p" initialConcentration="0.653" name="Glucose-1-Phosphate" metaid="_704663" compartment="cytosol"/>
+      <species id="cpg" initialConcentration="0.808" name="6-Phosphogluconate" metaid="_704683" compartment="cytosol"/>
+      <species id="cfdp" initialConcentration="0.272" name="Fructose-1,6-bisphosphate" metaid="_704703" compartment="cytosol"/>
+      <species id="csed7p" initialConcentration="0.276" name="sedoheptulose-7-phosphate" metaid="_704723" compartment="cytosol"/>
+      <species id="cgap" initialConcentration="0.218" name="Glyceraldehyde-3-Phosphate" metaid="_704743" compartment="cytosol"/>
+      <species id="ce4p" initialConcentration="0.098" name="Erythrose-4-phosphate" metaid="_704763" compartment="cytosol"/>
+      <species id="cxyl5p" initialConcentration="0.138" name="Xylulose-5-phosphate" metaid="_704783" compartment="cytosol"/>
+      <species id="crib5p" initialConcentration="0.398" name="Ribose-5-phosphate" metaid="_704803" compartment="cytosol"/>
+      <species id="cdhap" initialConcentration="0.167" name="Dihydroxyacetonephosphate" metaid="_704823" compartment="cytosol"/>
+      <species id="cpgp" initialConcentration="0.008" name="1,3-diphosphosphoglycerate" metaid="_704843" compartment="cytosol"/>
+      <species id="cpg3" initialConcentration="2.13" name="3-Phosphoglycerate" metaid="_704863" compartment="cytosol"/>
+      <species id="cpg2" initialConcentration="0.399" name="2-Phosphoglycerate" metaid="_704883" compartment="cytosol"/>
+      <species id="cribu5p" initialConcentration="0.111" name="Ribulose-5-phosphate" metaid="_704903" compartment="cytosol"/>
+      <species id="s1" initialAmount="1" name="s1" metaid="s1" boundaryCondition="true" compartment="default"/>
+      <species id="s2" initialAmount="1" name="s2" metaid="s2" boundaryCondition="true" compartment="default"/>
+      <species id="s3" initialAmount="1" name="s3" metaid="s3" boundaryCondition="true" compartment="default"/>
+      <species id="s4" initialAmount="1" name="s4" metaid="s4" boundaryCondition="true" compartment="default"/>
+      <species id="s5" initialAmount="1" name="s5" metaid="s5" boundaryCondition="true" compartment="default"/>
+      <species id="s6" initialAmount="1" name="s6" metaid="s6" boundaryCondition="true" compartment="default"/>
+      <species id="s7" initialAmount="1" name="s7" metaid="s7" boundaryCondition="true" compartment="default"/>
+      <species id="s8" initialAmount="1" name="s8" metaid="s8" boundaryCondition="true" compartment="default"/>
+      <species id="s9" initialAmount="1" name="s9" metaid="s9" boundaryCondition="true" compartment="default"/>
+      <species id="s10" initialAmount="1" name="s10" metaid="s10" boundaryCondition="true" compartment="default"/>
+      <species id="s11" initialAmount="1" name="s11" metaid="s11" boundaryCondition="true" compartment="default"/>
+      <species id="s12" initialAmount="1" name="s12" metaid="s12" boundaryCondition="true" compartment="default"/>
+      <species id="s13" initialAmount="1" name="s13" metaid="s13" boundaryCondition="true" compartment="default"/>
+      <species id="s14" initialAmount="1" name="s14" metaid="s14" boundaryCondition="true" compartment="default"/>
+      <species id="s15" initialAmount="1" name="s15" metaid="s15" boundaryCondition="true" compartment="default"/>
+      <species id="s16" initialAmount="1" name="s16" metaid="s16" boundaryCondition="true" compartment="default"/>
+      <species id="s17" initialAmount="1" name="s17" metaid="s17" boundaryCondition="true" compartment="default"/>
+      <species id="s18" initialAmount="1" name="s18" metaid="s18" boundaryCondition="true" compartment="default"/>
+      <species id="s19" initialAmount="1" name="s19" metaid="s19" boundaryCondition="true" compartment="default"/>
+      <species id="s20" initialAmount="1" name="s20" metaid="s20" boundaryCondition="true" compartment="default"/>
+      <species id="s21" initialAmount="1" name="s21" metaid="s21" boundaryCondition="true" compartment="default"/>
+      <species id="s22" initialAmount="1" name="s22" metaid="s22" boundaryCondition="true" compartment="default"/>
+      <species id="s23" initialAmount="1" name="s23" metaid="s23" boundaryCondition="true" compartment="default"/>
+      <species id="s24" initialAmount="1" name="s24" metaid="s24" boundaryCondition="true" compartment="default"/>
+      <species id="s25" initialAmount="1" name="s25" metaid="s25" boundaryCondition="true" compartment="default"/>
+      <species id="s26" initialAmount="1" name="s26" metaid="s26" boundaryCondition="true" compartment="default"/>
+      <species id="s27" initialAmount="1" name="s27" metaid="s27" boundaryCondition="true" compartment="default"/>
+      <species id="s28" initialAmount="1" name="s28" metaid="s28" boundaryCondition="true" compartment="default"/>
+      <species id="s29" initialAmount="1" name="s29" metaid="s29" boundaryCondition="true" compartment="default"/>
+      <species id="s30" initialAmount="1" name="s30" metaid="s30" boundaryCondition="true" compartment="default"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="catp" constant="false" metaid="catp" value="4.27"/>
+      <parameter id="cadp" constant="false" metaid="cadp" value="0.595"/>
+      <parameter id="camp" constant="false" metaid="camp" value="0.955"/>
+      <parameter id="cnadp" constant="false" metaid="cnadp" value="0.195"/>
+      <parameter id="cnadph" constant="false" metaid="cnadph" value="0.062"/>
+      <parameter id="cnad" constant="false" metaid="cnad" value="1.47"/>
+      <parameter id="cnadh" constant="false" metaid="cnadh" value="0.1"/>
+      <parameter id="c0_pep" metaid="c0_pep" value="2.67" units="mM"/>
+      <parameter id="c0_glcex" metaid="c0_glcex" value="0.0556" units="mM"/>
+      <parameter id="c0_g6p" metaid="c0_g6p" value="3.48" units="mM"/>
+      <parameter id="c0_pyr" metaid="c0_pyr" value="2.67" units="mM"/>
+      <parameter id="c0_f6p" metaid="c0_f6p" value="0.6" units="mM"/>
+      <parameter id="c0_g1p" metaid="c0_g1p" value="0.653" units="mM"/>
+      <parameter id="c0_pg" metaid="c0_pg" value="0.808" units="mM"/>
+      <parameter id="c0_fdp" metaid="c0_fdp" value="0.272" units="mM"/>
+      <parameter id="c0_sed7p" metaid="c0_sed7p" value="0.276" units="mM"/>
+      <parameter id="c0_gap" metaid="c0_gap" value="0.218" units="mM"/>
+      <parameter id="c0_e4p" metaid="c0_e4p" value="0.098" units="mM"/>
+      <parameter id="c0_xyl5p" metaid="c0_xyl5p" value="0.138" units="mM"/>
+      <parameter id="c0_dhap" metaid="c0_dhap" value="0.167" units="mM"/>
+      <parameter id="c0_rib5p" metaid="c0_rib5p" value="0.398" units="mM"/>
+      <parameter id="c0_pgp" metaid="c0_pgp" value="0.008" units="mM"/>
+      <parameter id="c0_pg3" metaid="c0_pg3" value="2.13" units="mM"/>
+      <parameter id="c0_pg2" metaid="c0_pg2" value="0.399" units="mM"/>
+      <parameter id="c0_ribu5p" metaid="c0_ribu5p" value="0.111" units="mM"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="vPTS" name="Phosphotransferase system" metaid="_704943" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cglcex" metaid="CDMT00001"/>
+          <speciesReference species="cpep" metaid="CDMT00002"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cg6p" metaid="CDMT00003"/>
+          <speciesReference species="cpyr" metaid="CDMT00004"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cg6p" metaid="ca122581-3033-472a-9697-64b8dc5db844"/>
+          <modifierSpeciesReference species="cglcex" metaid="_9ec0a5a5-43d2-48f1-8cf3-0ec591f09bba"/>
+          <modifierSpeciesReference species="cpyr" metaid="af49e68b-d13e-4268-932e-a340d61f4350"/>
+          <modifierSpeciesReference species="cpep" metaid="cd8acb9c-9969-46df-9fcf-b1927ea6abb7"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00005">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> extracellular </ci>
+              <cn> 0.0031 </cn>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_PTS </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cg6p </ci>
+                      <ci> c0_g6p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_PTS </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cglcex </ci>
+                      <ci> c0_glcex </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> c_PTS </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpyr </ci>
+                      <ci> c0_pyr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> d_PTS </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpep </ci>
+                      <ci> c0_pep </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_PTS" metaid="a_PTS" value="-3.6" units="dimensionless"/>
+            <parameter id="b_PTS" metaid="b_PTS" value="1" units="dimensionless"/>
+            <parameter id="c_PTS" metaid="c_PTS" value="-1" units="dimensionless"/>
+            <parameter id="d_PTS" metaid="d_PTS" value="1" units="dimensionless"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vPGI" name="Glucose-6-phosphate isomerase" metaid="_704963" fast="false">
+        <listOfReactants>
+          <speciesReference species="cg6p" metaid="CDMT00006"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cf6p" metaid="CDMT00007"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cg6p" metaid="_3ad93af0-5ee4-47d7-a020-2eebb37735e5"/>
+          <modifierSpeciesReference species="cf6p" metaid="_90328cd6-121a-4560-a1bf-f3a6196d38e1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00009">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_PGI </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_PGI </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cg6p </ci>
+                      <ci> c0_g6p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_PGI </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cf6p </ci>
+                      <ci> c0_f6p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_PGI" metaid="a_PGI" value="1998.3" units="dimensionless"/>
+            <parameter id="b_PGI" metaid="b_PGI" value="-1997.5" units="dimensionless"/>
+            <parameter id="r0_PGI" metaid="r0_PGI" value="0.0585" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vPGM" name="Phosphoglucomutase" metaid="_704983" fast="false">
+        <listOfReactants>
+          <speciesReference species="cg6p" metaid="CDMT00010"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cg1p" metaid="CDMT00011"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cg6p" metaid="edaf5d10-5803-4669-8d2c-9097803e69c0"/>
+          <modifierSpeciesReference species="cg1p" metaid="_2186b6a9-2ccb-4bb1-a0fc-5dae406753a0"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00012">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_PGM </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_PGM </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cg6p </ci>
+                      <ci> c0_g6p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_PGM </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cg1p </ci>
+                      <ci> c0_g1p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_PGM" metaid="a_PGM" value="22.92" units="dimensionless"/>
+            <parameter id="b_PGM" metaid="b_PGM" value="-22.9" units="dimensionless"/>
+            <parameter id="r0_PGM" metaid="r0_PGM" value="0.00234" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vG6PDH" name="Glucose-6-phosphate dehydrogenase" metaid="_705003" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cg6p" metaid="CDMT00013"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cpg" metaid="CDMT00014"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cg6p" metaid="_7b493c1b-6e5f-455d-b1e9-8253999e72ec"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00015">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_G6PDH </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_G6PDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cg6p </ci>
+                      <ci> c0_g6p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_G6PDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cnadp </ci>
+                      <cn> 0.195 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> inh_c_G6PDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cnadph </ci>
+                      <cn> 0.062 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_G6PDH" metaid="a_G6PDH" value="0.81" units="dimensionless"/>
+            <parameter id="b_G6PDH" metaid="b_G6PDH" value="0.48" units="dimensionless"/>
+            <parameter id="inh_c_G6PDH" metaid="inh_c_G6PDH" value="-0.42" units="dimensionless"/>
+            <parameter id="r0_G6PDH" metaid="r0_G6PDH" value="0.139" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vPFK" name="Phosphofructokinase" metaid="_705023" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cf6p" metaid="CDMT00016"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cfdp" metaid="CDMT00017"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cf6p" metaid="_1825ac32-ed7f-4500-b54c-52d1d8f73e65"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00019">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_PFK </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_PFK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cf6p </ci>
+                      <ci> c0_f6p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_PFK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> catp </ci>
+                      <cn> 4.27 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> act_d_PFK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cadp </ci>
+                      <cn> 0.595 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> act_e_PFK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> camp </ci>
+                      <cn> 0.955 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_PFK" metaid="a_PFK" value="5.66" units="dimensionless"/>
+            <parameter id="b_PFK" metaid="b_PFK" value="0.032" units="dimensionless"/>
+            <parameter id="act_d_PFK" metaid="act_d_PFK" value="-0.36" units="dimensionless"/>
+            <parameter id="act_e_PFK" metaid="act_e_PFK" value="-0.48" units="dimensionless"/>
+            <parameter id="r0_PFK" metaid="r0_PFK" value="0.141" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vTA" name="Transaldolase" metaid="_705043" fast="false">
+        <listOfReactants>
+          <speciesReference species="cgap" metaid="CDMT00020"/>
+          <speciesReference species="csed7p" metaid="CDMT00021"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cf6p" metaid="CDMT00022"/>
+          <speciesReference species="ce4p" metaid="CDMT00023"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cgap" metaid="cd188e7d-39af-4ae7-9fb4-b11b5ffe69e3"/>
+          <modifierSpeciesReference species="csed7p" metaid="_312168d6-bc5e-4876-9948-dcb53a35eb18"/>
+          <modifierSpeciesReference species="cf6p" metaid="_387825b3-79a6-42be-a336-164e2576ba3a"/>
+          <modifierSpeciesReference species="ce4p" metaid="_0ab164d3-bed3-4b19-9a8c-9a610b85618e"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00024">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_TA </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_TA </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cgap </ci>
+                      <ci> c0_gap </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_TA </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> csed7p </ci>
+                      <ci> c0_sed7p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> c_TA </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cf6p </ci>
+                      <ci> c0_f6p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> d_TA </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> ce4p </ci>
+                      <ci> c0_e4p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_TA" metaid="a_TA" value="14.45" units="dimensionless"/>
+            <parameter id="b_TA" metaid="b_TA" value="14.45" units="dimensionless"/>
+            <parameter id="c_TA" metaid="c_TA" value="-13.45" units="dimensionless"/>
+            <parameter id="d_TA" metaid="d_TA" value="-13.45" units="dimensionless"/>
+            <parameter id="r0_TA" metaid="r0_TA" value="0.0453" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vTKA" name="Transketolase a" metaid="_705063" fast="false">
+        <listOfReactants>
+          <speciesReference species="crib5p" metaid="CDMT00025"/>
+          <speciesReference species="cxyl5p" metaid="CDMT00026"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cgap" metaid="CDMT00027"/>
+          <speciesReference species="csed7p" metaid="CDMT00028"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="crib5p" metaid="dbfb9d3e-87f1-4c68-af5f-816c0aa009c5"/>
+          <modifierSpeciesReference species="cxyl5p" metaid="_6cca818f-de13-4266-81bb-d1c8c8c9a2bc"/>
+          <modifierSpeciesReference species="csed7p" metaid="c2b7ace8-195e-4efa-8b57-b402ff24b8a5"/>
+          <modifierSpeciesReference species="cgap" metaid="_36c0269d-3b20-40ba-91e6-dfe6d202842c"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00029">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_TKA </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_TKA </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> crib5p </ci>
+                      <ci> c0_rib5p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_TKA </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cxyl5p </ci>
+                      <ci> c0_xyl5p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> c_TKA </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> csed7p </ci>
+                      <ci> c0_sed7p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> d_TKA </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cgap </ci>
+                      <ci> c0_gap </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_TKA" metaid="a_TKA" value="11.49" units="dimensionless"/>
+            <parameter id="b_TKA" metaid="b_TKA" value="11.49" units="dimensionless"/>
+            <parameter id="c_TKA" metaid="c_TKA" value="-10.49" units="dimensionless"/>
+            <parameter id="d_TKA" metaid="d_TKA" value="-10.49" units="dimensionless"/>
+            <parameter id="r0_TKA" metaid="r0_TKA" value="0.0453" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vTKB" name="Transketolase b" metaid="_705083" fast="false">
+        <listOfReactants>
+          <speciesReference species="ce4p" metaid="CDMT00030"/>
+          <speciesReference species="cxyl5p" metaid="CDMT00031"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cgap" metaid="CDMT00032"/>
+          <speciesReference species="cf6p" metaid="CDMT00033"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cxyl5p" metaid="_93bf18ca-1ef5-4d72-a49a-829d2e5a1267"/>
+          <modifierSpeciesReference species="ce4p" metaid="_563fd382-733b-456e-b40f-c70d89c0186e"/>
+          <modifierSpeciesReference species="cf6p" metaid="d665fcc1-d62b-4256-ac3d-db25045eff79"/>
+          <modifierSpeciesReference species="cgap" metaid="_33ca11cd-a921-474d-8946-6c72f7d50a9f"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00034">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_TKB </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_TKB </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cxyl5p </ci>
+                      <ci> c0_xyl5p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_TKB </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> ce4p </ci>
+                      <ci> c0_e4p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> c_TKB </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cf6p </ci>
+                      <ci> c0_f6p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> d_TKB </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cgap </ci>
+                      <ci> c0_gap </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_TKB" metaid="a_TKB" value="30.53" units="dimensionless"/>
+            <parameter id="b_TKB" metaid="b_TKB" value="30.53" units="dimensionless"/>
+            <parameter id="c_TKB" metaid="c_TKB" value="-29.53" units="dimensionless"/>
+            <parameter id="d_TKB" metaid="d_TKB" value="-29.53" units="dimensionless"/>
+            <parameter id="r0_TKB" metaid="r0_TKB" value="0.0384" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vMURSyNTH" name="Mureine synthesis" metaid="_705103" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cf6p" metaid="CDMT00035" stoichiometry="2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s1" metaid="CDMT00036"/>
+        </listOfProducts>
+        <kineticLaw metaid="CDMT00037">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> rmaxMurSynth </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="rmaxMurSynth" metaid="rmaxMurSynth" value="0.00043711" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vALDO" name="Aldolase" metaid="_705123" fast="false">
+        <listOfReactants>
+          <speciesReference species="cfdp" metaid="CDMT00038"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cdhap" metaid="CDMT00039"/>
+          <speciesReference species="cgap" metaid="CDMT00040"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cfdp" metaid="_3e296a5c-3a4c-4c86-bdc5-d57a1d32a16b"/>
+          <modifierSpeciesReference species="cgap" metaid="_87e15406-47ae-4bc1-9f38-fa715de69162"/>
+          <modifierSpeciesReference species="cdhap" metaid="_9c3457a9-2991-409e-86d0-5f234158c837"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00041">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_ALDO </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_ALDO </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cfdp </ci>
+                      <ci> c0_fdp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_ALDO </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cgap </ci>
+                      <ci> c0_gap </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> c_ALDO </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cdhap </ci>
+                      <ci> c0_dhap </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_ALDO" metaid="a_ALDO" value="14.05" units="dimensionless"/>
+            <parameter id="b_ALDO" metaid="b_ALDO" value="-13.3" units="dimensionless"/>
+            <parameter id="c_ALDO" metaid="c_ALDO" value="-13.28" units="dimensionless"/>
+            <parameter id="r0_ALDO" metaid="r0_ALDO" value="0.141" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vGAPDH" name="Glyceraldehyde-3-phosphate dehydrogenase" metaid="_705143" fast="false">
+        <listOfReactants>
+          <speciesReference species="cgap" metaid="CDMT00042"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cpgp" metaid="CDMT00043"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cgap" metaid="dfef6a29-fed9-4623-a841-2ea19c5f7a61"/>
+          <modifierSpeciesReference species="cpgp" metaid="_85ea8683-3399-43e3-90ab-aac4cdd98064"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00044">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_GAPDH </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_GAPDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cgap </ci>
+                      <ci> c0_gap </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_GAPDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cnad </ci>
+                      <cn> 1.47 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> c_GAPDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpgp </ci>
+                      <ci> c0_pgp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> d_GAPDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cnadh </ci>
+                      <cn> 0.1 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_GAPDH" metaid="a_GAPDH" value="1" units="dimensionless"/>
+            <parameter id="b_GAPDH" metaid="b_GAPDH" value="0.16" units="dimensionless"/>
+            <parameter id="c_GAPDH" metaid="c_GAPDH" value="-1" units="dimensionless"/>
+            <parameter id="d_GAPDH" metaid="d_GAPDH" value="-0.017" units="dimensionless"/>
+            <parameter id="r0_GAPDH" metaid="r0_GAPDH" value="0.321" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vTIS" name="Triosephosphate isomerase" metaid="_705163" fast="false">
+        <listOfReactants>
+          <speciesReference species="cdhap" metaid="CDMT00045"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cgap" metaid="CDMT00046"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cdhap" metaid="_8c639afd-bcac-4208-bf4d-bacc4ee3e8f2"/>
+          <modifierSpeciesReference species="cgap" metaid="_7ab26f74-ad25-4fae-816d-536da3bae892"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00047">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_TIS </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_TIS </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cdhap </ci>
+                      <ci> c0_dhap </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_TIS </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cgap </ci>
+                      <ci> c0_gap </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_TIS" metaid="a_TIS" value="16.4" units="dimensionless"/>
+            <parameter id="b_TIS" metaid="b_TIS" value="-15.84" units="dimensionless"/>
+            <parameter id="r0_TIS" metaid="r0_TIS" value="0.14" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vTRPSYNTH" name="Tryptophan synthesis" metaid="_705183" reversible="false">
+        <listOfReactants>
+          <speciesReference species="s2" metaid="CDMT00048"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cpyr" metaid="CDMT00049"/>
+          <speciesReference species="cgap" metaid="CDMT00050"/>
+        </listOfProducts>
+        <kineticLaw metaid="CDMT00051">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> rmaxTrpSynth </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="rmaxTrpSynth" metaid="rmaxTrpSynth" value="0.001037" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vG3PDH" name="Glycerol-3-phosphate dehydrogenase" metaid="_705203" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cdhap" metaid="CDMT00052"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s3" metaid="CDMT00053"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cdhap" metaid="_191d2e0a-9751-4660-b1ec-0604d18e8ac6"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00054">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_G3PDH </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_G3PDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cdhap </ci>
+                      <ci> c0_dhap </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_G3PDH" metaid="a_G3PDH" value="0.86" units="dimensionless"/>
+            <parameter id="r0_G3PDH" metaid="r0_G3PDH" value="0.00167" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vPGK" name="Phosphoglycerate kinase" metaid="_705223" fast="false">
+        <listOfReactants>
+          <speciesReference species="cpgp" metaid="CDMT00055"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cpg3" metaid="CDMT00056"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpgp" metaid="aaccddf8-b4da-482c-8d70-519ea542577d"/>
+          <modifierSpeciesReference species="cpg3" metaid="_4417556e-d946-49c8-a6b5-689e86ae50d7"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00057">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_PGK </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_PGK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpgp </ci>
+                      <ci> c0_pgp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_PGK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cadp </ci>
+                      <cn> 0.595 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> c_PGK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpg3 </ci>
+                      <ci> c0_pg3 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> d_PGK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> catp </ci>
+                      <cn> 4.27 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_PGK" metaid="a_PGK" value="84.89" units="dimensionless"/>
+            <parameter id="b_PGK" metaid="b_PGK" value="81.44" units="dimensionless"/>
+            <parameter id="c_PGK" metaid="c_PGK" value="-81.54" units="dimensionless"/>
+            <parameter id="d_PGK" metaid="d_PGK" value="-84.71" units="dimensionless"/>
+            <parameter id="r0_PGK" metaid="r0_PGK" value="0.321" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vsersynth" name="Serine synthesis" metaid="_705243" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cpg3" metaid="CDMT00058"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s4" metaid="CDMT00059"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpg3" metaid="_7d047d23-ab10-4433-abee-50664d03c3ce"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00060">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_SerSynth </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_SerSynth </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpg3 </ci>
+                      <ci> c0_pg3 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_SerSynth" metaid="a_SerSynth" value="0.32" units="dimensionless"/>
+            <parameter id="r0_SerSynth" metaid="r0_SerSynth" value="0.0175" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vrpGluMu" name="Phosphoglycerate mutase" metaid="_705263" fast="false">
+        <listOfReactants>
+          <speciesReference species="cpg3" metaid="CDMT00061"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cpg2" metaid="CDMT00062"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpg3" metaid="f864cb3b-09e1-4b10-872f-bb29df8f260a"/>
+          <modifierSpeciesReference species="cpg2" metaid="c51f7b09-ee61-4b79-b829-e9a2646c54f8"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00063">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_PgluMu </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_PgluMu </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpg3 </ci>
+                      <ci> c0_pg3 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_PGlMu </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpg2 </ci>
+                      <ci> c0_pg2 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_PgluMu" metaid="a_PgluMu" value="245.09" units="dimensionless"/>
+            <parameter id="b_PGlMu" metaid="b_PGlMu" value="-245.01" units="dimensionless"/>
+            <parameter id="r0_PgluMu" metaid="r0_PgluMu" value="0.303" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vENO" name="Enolase" metaid="_705283" fast="false">
+        <listOfReactants>
+          <speciesReference species="cpg2" metaid="CDMT00064"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cpep" metaid="CDMT00065"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpg2" metaid="_5e55d050-2037-4a3b-8dd9-2bb919434a6b"/>
+          <modifierSpeciesReference species="cpep" metaid="_5681ac32-453f-41ad-a049-f7ce1d49b799"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00066">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_ENO </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_ENO </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpg2 </ci>
+                      <ci> c0_pg2 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_ENO </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpep </ci>
+                      <ci> c0_pep </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_ENO" metaid="a_ENO" value="175.57" units="dimensionless"/>
+            <parameter id="b_ENO" metaid="b_ENO" value="-175.53" units="dimensionless"/>
+            <parameter id="r0_ENO" metaid="r0_ENO" value="0.303" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vPK" name="Pyruvate kinase" metaid="_705303" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cpep" metaid="CDMT00067"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cpyr" metaid="CDMT00068"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpep" metaid="_63b93029-4522-4a5e-b08c-a791388ed0ae"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00070">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_PK </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_PK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpep </ci>
+                      <ci> c0_pep </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> c_PK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cadp </ci>
+                      <cn> 0.595 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> act_d_PK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> camp </ci>
+                      <cn> 0.955 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> inh_e_PK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> catp </ci>
+                      <cn> 4.27 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_PK" metaid="a_PK" value="0.1" units="dimensionless"/>
+            <parameter id="c_PK" metaid="c_PK" value="0.3" units="dimensionless"/>
+            <parameter id="act_d_PK" metaid="act_d_PK" value="0.00023" units="dimensionless"/>
+            <parameter id="inh_e_PK" metaid="inh_e_PK" value="-5.56E-5" units="dimensionless"/>
+            <parameter id="r0_PK" metaid="r0_PK" value="0.0381" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vpepCxylase" name="PEP carboxylase" metaid="_705323" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cpep" metaid="CDMT00071"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s5" metaid="CDMT00072"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpep" metaid="eb37929a-80c3-4462-8e52-91e9e716df5c"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00074">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_PEPCxylase </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_PEPCxylase </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpep </ci>
+                      <ci> c0_pep </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_PEPCxylase" metaid="a_PEPCxylase" value="0.6" units="dimensionless"/>
+            <parameter id="r0_PEPCxylase" metaid="r0_PEPCxylase" value="0.0432" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vSynth1" name="Synthesis 1" metaid="_705343" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cpep" metaid="CDMT00075"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s6" metaid="CDMT00076"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpep" metaid="_7c0865e9-8c4e-4593-9de6-f86513d3076a"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00077">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_Synth1 </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_Synth1 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpep </ci>
+                      <ci> c0_pep </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_Synth1" metaid="a_Synth1" value="0.27" units="dimensionless"/>
+            <parameter id="r0_Synth1" metaid="r0_Synth1" value="0.0142" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vSynth2" name="Synthesis 2" metaid="_705363" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cpyr" metaid="CDMT00078"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s7" metaid="CDMT00079"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpyr" metaid="_670ae264-74b8-4ebb-b416-b1597dbcf73b"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00080">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_Synth2 </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_Synth2 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpyr </ci>
+                      <ci> c0_pyr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_Synth2" metaid="a_Synth2" value="0.27" units="dimensionless"/>
+            <parameter id="r0_Synth2" metaid="r0_Synth2" value="0.0536" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vDAHPS" name="DAHP synthesis" metaid="_705383" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="ce4p" metaid="CDMT00081"/>
+          <speciesReference species="cpep" metaid="CDMT00082"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s8" metaid="CDMT00083"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="ce4p" metaid="a4754a8d-f44d-47bf-a8a9-cfe43a5d1563"/>
+          <modifierSpeciesReference species="cpep" metaid="_0c207d2a-6f85-4c46-9f97-3a67f8b8f98d"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00084">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_DAHPS </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_DAHPS </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> ce4p </ci>
+                      <ci> c0_e4p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_DAHPS </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpep </ci>
+                      <ci> c0_pep </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_DAHPS" metaid="a_DAHPS" value="2.43" units="dimensionless"/>
+            <parameter id="b_DAHPS" metaid="b_DAHPS" value="0.0013" units="dimensionless"/>
+            <parameter id="r0_DAHPS" metaid="r0_DAHPS" value="0.0069" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vPDH" name="Pyruvate dehydrogenase" metaid="_705403" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cpyr" metaid="CDMT00085"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s9" metaid="CDMT00086"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpyr" metaid="_5e69b093-0954-4772-8c32-2d76818974e2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00087">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_PDH </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_PDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpyr </ci>
+                      <ci> c0_pyr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_PDH" metaid="a_PDH" value="3.56" units="dimensionless"/>
+            <parameter id="r0_PDH" metaid="r0_PDH" value="0.188" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vMethSynth" name="Methionine synthesis" metaid="_705423" reversible="false">
+        <listOfReactants>
+          <speciesReference species="s10" metaid="CDMT00088"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cpyr" metaid="CDMT00089"/>
+        </listOfProducts>
+        <kineticLaw metaid="CDMT00090">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> rmaxMetSynth </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="rmaxMetSynth" metaid="rmaxMetSynth" value="0.0022627" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vPGDH" name="6-Phosphogluconate dehydrogenase" metaid="_705443" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cpg" metaid="CDMT00091"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cribu5p" metaid="CDMT00092"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpg" metaid="_3b305ac3-10a3-4c4e-a5c6-8622ca702228"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00093">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_PGDH </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_PGDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cpg </ci>
+                      <ci> c0_pg </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_PGDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cnadp </ci>
+                      <cn> 0.195 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> inh_c_PGDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> catp </ci>
+                      <cn> 4.27 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> inh_d_PGDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cnadph </ci>
+                      <cn> 0.062 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_PGDH" metaid="a_PGDH" value="0.98" units="dimensionless"/>
+            <parameter id="b_PGDH" metaid="b_PGDH" value="0.59" units="dimensionless"/>
+            <parameter id="inh_c_PGDH" metaid="inh_c_PGDH" value="-0.012" units="dimensionless"/>
+            <parameter id="inh_d_PGDH" metaid="inh_d_PGDH" value="-0.48" units="dimensionless"/>
+            <parameter id="r0_PGDH" metaid="r0_PGDH" value="0.14" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vR5PI" name="Ribose-phosphate isomerase" metaid="_705463" fast="false">
+        <listOfReactants>
+          <speciesReference species="cribu5p" metaid="CDMT00094"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="crib5p" metaid="CDMT00095"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cribu5p" metaid="_7e05f546-90cd-4378-820e-06cf8ebf3717"/>
+          <modifierSpeciesReference species="crib5p" metaid="fee44fb6-e023-4382-a5d1-f05ee014b8a6"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00096">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_R5PI </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_R5PI </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cribu5p </ci>
+                      <ci> c0_ribu5p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_R5PI </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> crib5p </ci>
+                      <ci> c0_rib5p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_R5PI" metaid="a_R5PI" value="9.66" units="dimensionless"/>
+            <parameter id="b_R5PI" metaid="b_R5PI" value="-8.66" units="dimensionless"/>
+            <parameter id="r0_R5PI" metaid="r0_R5PI" value="0.0557" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vRu5P" name="Ribulose-phosphate epimerase" metaid="_705483" fast="false">
+        <listOfReactants>
+          <speciesReference species="cribu5p" metaid="CDMT00097"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cxyl5p" metaid="CDMT00098"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cribu5p" metaid="_36649bb5-44b6-420f-b2cd-493b59865ea8"/>
+          <modifierSpeciesReference species="cxyl5p" metaid="ca14a562-f75a-4466-9627-8571d6040691"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00099">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_Ru5P </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_Ru5P </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cribu5p </ci>
+                      <ci> c0_ribu5p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_Ru5P </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cxyl5p </ci>
+                      <ci> c0_xyl5p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_Ru5P" metaid="a_Ru5P" value="8.94" units="dimensionless"/>
+            <parameter id="b_Ru5P" metaid="b_Ru5P" value="-7.94" units="dimensionless"/>
+            <parameter id="r0_Ru5P" metaid="r0_Ru5P" value="0.0838" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vPPK" name="Ribose phosphate pyrophosphokinase" metaid="_705503" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="crib5p" metaid="CDMT00100"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s11" metaid="CDMT00101"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="crib5p" metaid="eb1ac299-f25c-46f9-a7b8-5c85dbe88312"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00102">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_PPK </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_PPK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> crib5p </ci>
+                      <ci> c0_rib5p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_PPK" metaid="a_PPK" value="0.2" units="dimensionless"/>
+            <parameter id="r0_PPK" metaid="r0_PPK" value="0.0103" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vG1PAT" name="Glucose-1-phosphate adenyltransferase" metaid="_705504" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cg1p" metaid="CDMT00103"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s12" metaid="CDMT00104"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cg1p" metaid="ff8f9323-f4dd-436f-bd0d-1b1ad45d38a0"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00106">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> r0_G1PAT </ci>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> a_G1PAT </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> cg1p </ci>
+                      <ci> c0_g1p </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> b_G1PAT </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> catp </ci>
+                      <cn> 4.27 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="a_G1PAT" metaid="a_G1PAT" value="0.83" units="dimensionless"/>
+            <parameter id="b_G1PAT" metaid="b_G1PAT" value="0.88" units="dimensionless"/>
+            <parameter id="r0_G1PAT" metaid="r0_G1PAT" value="0.00232" units="mM_per_second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vG6P" name="G6P degradation" metaid="_705523" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cg6p" metaid="CDMT00107"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s13" metaid="CDMT00108"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cg6p" metaid="_4eee349b-3863-4e96-a69d-c00611965367"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00109">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> cg6p </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="mu" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vf6P" name="F6P degradation" metaid="_705543" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cf6p" metaid="CDMT00110"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s14" metaid="CDMT00111"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cf6p" metaid="_3aa56497-2bef-48f0-96a9-98882a073a39"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00112">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> cf6p </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00113" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vfdP" name="FDP degradation" metaid="_705563" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cfdp" metaid="CDMT00114"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s15" metaid="CDMT00115"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cfdp" metaid="_3a220f72-a86b-4c78-992d-02ae180e3a40"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00116">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> cfdp </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00117" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vGAP" name="GAP degradation" metaid="_705583" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cgap" metaid="CDMT00118"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s16" metaid="CDMT00119"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cgap" metaid="_820418d6-cc68-4bf7-823d-76449e5e9331"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00120">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> cgap </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00121" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vDHAP" name="DHAP degradation" metaid="_705603" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cdhap" metaid="CDMT00122"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s17" metaid="CDMT00123"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cdhap" metaid="_59bfc11f-ae97-4ce5-9900-929fc4c8f3a2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00124">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> cdhap </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00125" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vPGP" name="PGP degradation" metaid="_705623" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cpgp" metaid="CDMT00126"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s18" metaid="CDMT00127"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpgp" metaid="_0bcfa5b2-bddc-479f-8a3e-01b21ae898b8"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00128">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> cpgp </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00129" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vPG3" name="PG3 degradation" metaid="_705643" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cpg3" metaid="CDMT00130"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s19" metaid="CDMT00131"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpg3" metaid="_194f233d-c816-4223-958e-98a8aec63371"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00132">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> cpg3 </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00133" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vpg2" name="PG2 degradation" metaid="_705645" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cpg2" metaid="CDMT00134"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s20" metaid="CDMT00135"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpg2" metaid="_0a5bc354-9d6b-4834-bc5e-4468b554cbcf"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00136">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> cpg2 </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00137" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vPEP" name="PEP degradation" metaid="_705663" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cpep" metaid="CDMT00138"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s21" metaid="CDMT00139"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpep" metaid="_8347c08b-1b35-46d6-8468-87dee08754dc"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00140">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> cpep </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00141" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vRibu5p" name="Ribu5P dilution" metaid="_705683" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cribu5p" metaid="CDMT00142"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s22" metaid="CDMT00143"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cribu5p" metaid="_52a66f49-6b7b-4de0-bb32-c26234768756"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00144">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> cribu5p </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00145" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vRIB5P" name="Rib5P dilution" metaid="_705684" reversible="false">
+        <listOfReactants>
+          <speciesReference species="crib5p" metaid="CDMT00146"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s23" metaid="CDMT00147"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="crib5p" metaid="_26c2fc3d-12fb-40cf-b69d-4e504b5475aa"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00148">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> crib5p </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00149" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vXYL5P" name="XYL5P dilution" metaid="_705703" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cxyl5p" metaid="CDMT00150"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s24" metaid="CDMT00151"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cxyl5p" metaid="_3dd208b3-2916-48a1-bcf5-d1c732d0c62a"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00152">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> cxyl5p </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00153" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vSED7P" name="SED7P dilution" metaid="_705723" reversible="false">
+        <listOfReactants>
+          <speciesReference species="csed7p" metaid="CDMT00154"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s25" metaid="CDMT00155"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="csed7p" metaid="_71d2de9a-853c-4666-ac75-3a613f22a1da"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00156">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> csed7p </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00157" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vpyr" name="Pyruvate dilution" metaid="_705743" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cpyr" metaid="CDMT00158"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s26" metaid="CDMT00159"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpyr" metaid="_3fe57be7-6ec5-446a-833a-3e3763e42c80"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00160">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> cpyr </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00161" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vPG" name="PG dilution" metaid="_705763" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cpg" metaid="CDMT00162"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s27" metaid="CDMT00163"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cpg" metaid="_4cb605cb-919b-4d2e-bfba-8a447fb04d53"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00164">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> cpg </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00165" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vE4P" name="E4P dilution" metaid="_705783" reversible="false">
+        <listOfReactants>
+          <speciesReference species="ce4p" metaid="CDMT00166"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s28" metaid="CDMT00167"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="ce4p" metaid="_2eda03ab-185b-4631-8c20-dd1188373001"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00168">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> ce4p </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00169" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vGLP" name="GLP dilution" metaid="_705803" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cg1p" metaid="CDMT00170"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s29" metaid="CDMT00171"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cg1p" metaid="_47e4a331-bf98-42ef-a106-c2f997c9fa85"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00172">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> mu </ci>
+              <ci> cg1p </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="mu" metaid="CDMT00173" value="2.78E-5" units="second_inverse"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vEXTER" name="Extracellular glucose kinetics" metaid="_705823" reversible="false">
+        <listOfReactants>
+          <speciesReference species="s30" metaid="CDMT00174"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cglcex" metaid="CDMT00175"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cglcex" metaid="d2d3c43a-2552-4ef0-8708-0e5da3dc1ba3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="CDMT00176">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> extracellular </ci>
+              <ci> Dil </ci>
+              <apply>
+                <minus/>
+                <ci> cfeed </ci>
+                <ci> cglcex </ci>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="Dil" metaid="Dil" value="2.78E-5" units="second_inverse"/>
+            <parameter id="cfeed" metaid="cfeed" value="110.96" units="mM"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
