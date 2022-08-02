@@ -32,3 +32,4 @@ Since we couldn't find a model that would both meet our criteria and include all
 
 **5. Verified_other_conversions:** includes other SBML models that have been converted into bond graphs using our function. Find the files here: [https://github.com/Niloofar-Sh/SBMLtoBGs/tree/main/Verified_other_conversions]
 
+**6. CriteriaCheck:** includes 2 folders: 1. ODE SBML models from BioModels (1136 curated+non-curated models) AND 2. Three exemplar annotated models which meet our criteria for bond graph conversion + one random model. The script (CriteriaCheck.ipynb) iterates through models in a directory and counts the proper models which meet the criteria for bond graph conversion. Find the files here: [https://github.com/Niloofar-Sh/SBMLtoBGs/tree/main/CriteriaCheck]
